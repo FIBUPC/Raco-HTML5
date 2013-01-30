@@ -1,12 +1,12 @@
-define (['router', 'controllers/loginController'], function (AppRouter, loginController) {
+define (['router', 'controllers/loginController', 'views/app/appView'], function (router, loginController, appView) {
     'use strict';
     
     var App = {};
     
-    App.init = function () {       
-    	Backbone.history.start();
+    App.init = function () {
+    	appView.render();
 
-    	router.navigate(window.location.hash);
+    	Backbone.history.start();
     };
       
     return App; 

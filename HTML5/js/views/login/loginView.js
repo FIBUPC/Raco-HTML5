@@ -1,17 +1,18 @@
-define([/*'text!../templates/login/loginTemplate.html'*/], function (/*loginTemplate*/) {
+define(['text!templates/login/loginTemplate.html'], function (loginTemplate) {
 	'use strict';
 
 	var self,
 	LoginView = Backbone.View.extend({
-		el: '#app',
+		el: '#content',
+		template: loginTemplate,
 
 		initialize: function() {
 			self = this;
 		},
 
-		render: function() {
-			console.log("hey");
-			self.$el.html("<p>Login page</p>");
+		render: function() {	
+			console.log(self.$el);
+			$(self.$el.selector).html(self.template);
 		}
 	});
 
