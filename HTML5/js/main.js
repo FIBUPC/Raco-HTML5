@@ -16,6 +16,7 @@
             /*jquery: 'libraries/vendor/jquery',
             underscore: 'libraries/vendor/underscore',
             backbone: 'libraries/vendor/backbone',*/
+            templates: 'templates',
             text: 'libraries/vendor/text'
         }
     });
