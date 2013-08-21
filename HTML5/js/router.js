@@ -1,29 +1,30 @@
-define(['views/login/loginView'/*, 'views/notes/latestNotesView'*/], function (loginView/*, latestNotesView*/) {
-    'use strict';
+define(
+    ['controllers/loginController',
+     'views/login/loginView',
+     'views/notes/latestNotesView'],
+    function (loginController, loginView, latestNotesView) {
+        'use strict';
 
-    var AppRouter = Backbone.Router.extend({
-        routes: {
-            '': 'main',
-            'login': 'login',
-            'latestNotes': 'latestNotes'
-        },
+        var AppRouter = Backbone.Router.extend({
+            routes: {
+                '': 'main',
+                'login': 'login'
+            },
 
-        main: function() {
-            console.log("router main");
-            /*if (loginHelper.isLoggedIn())
-                login();
-            else
-                latestNotes(); //TODO: check for user preferred home screen*/
-        },
+            main: function() {
+                if (!loginController.isLoggedIn()) {
+                    this.navigate('login', { trigger: true });
+                    return;
+                }
 
-        login: function () {
-            loginView.render();
-        },
+                latestNotesView.render();
+            },
 
-        latestNotes: function () {
-            console.log("router latestNotes");
-        }
-    });
-
-    return new AppRouter;
-});
+            login: function () {
+                loginView.render();
+            }
+        });
+        
+        return new AppRouter;
+    }
+);

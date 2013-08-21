@@ -17,11 +17,15 @@
             underscore: 'libraries/vendor/underscore',
             backbone: 'libraries/vendor/backbone',*/
             templates: 'templates',
-            text: 'libraries/vendor/text'
+            text: 'libraries/vendor/text',
+            jsOAuth: 'libraries/vendor/js-oauth'
         }
     });
 
-    require(['app'], function(app) {
-        app.init();
-    });
+    require(
+        ['app'],
+        function(app) {
+            app.init();
+        }
+    );
 }());

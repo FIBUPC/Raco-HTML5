@@ -1,19 +1,22 @@
-define(['text!templates/app/appTemplate.html'], function (appTemplate) {
-	'use strict';
+define(
+	['text!templates/app/appTemplate.html'],
+	function (appTemplate) {
+		'use strict';
 
-	var self,
-	AppView = Backbone.View.extend({
-		el: '#app',
-		template: appTemplate,
+		var self,
+		AppView = Backbone.View.extend({
+			el: '#app',
+			template: appTemplate,
 
-		initialize: function() {
-			self = this;
-		},
+			initialize: function() {
+				self = this;
+			},
 
-		render: function() {
-			self.$el.html(self.template);
-		}
-	});
+			render: function() {
+				self.$el.html(self.template);
+			}
+		});
 
-	return new AppView;
-});
+		return new AppView;
+	}
+);

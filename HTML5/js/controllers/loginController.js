@@ -1,13 +1,22 @@
-define ([/*'../models/user'*/], function () {
-    'use strict';
-    
-    var LoginController = {
-    	loggedIn: false
-    };
+define(
+	['./oAuthController'],
+	function (oAuthController) {
+	    'use strict';
+	    
+	    var LoginController = {};
 
-    LoginController.isLoggedIn = function () {       
-    	return this.loggedIn;
-    };
-    
-    return LoginController; 
-});
+	    LoginController.initialize = function() {
+	    	oAuthController.initialize();
+	    };
+		
+	    LoginController.isLoggedIn = function () {       
+	    	return oAuthController.isAuthenticated();
+	    };
+
+	    LoginController.login = function() {
+	    	oAuthController.connect();
+	    };
+	    
+	    return LoginController; 
+	}
+);
