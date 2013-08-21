@@ -39,9 +39,12 @@ define(
 	    	return (this.accessToken.key !== null && this.accessToken.secret !== null);
 	    }
 
-	    oAuthController.connect = function() {
+	    oAuthController.connect = function(successCallback, errorCallback) {
 	    	if (this.isAuthenticated()) {
 	    		console.error("User is already authenticated");
+	    		if (errorCallback) {
+	    			errorCallback();
+	    		}
 	    		return;
 	    	}
 
@@ -71,6 +74,9 @@ define(
 		    	console.log("Access token: " + that.oAuthService.getAccessToken());
 		    	localStorage.setItem("OAUTH_ACCESS_TOKEN_KEY", that.oAuthService.getAccessTokenKey());
 		    	localStorage.setItem("OAUTH_ACCESS_TOKEN_SECRET", that.oAuthService.getAccessTokenSecret());
+		    	if (successCallback) {
+		    		successCallback();
+		    	}
 				/*oauth.get("https://raco.fib.upc.edu/api-v1/info-personal.json", function (data) {
 					console.log("/api-v1/info-personal.json result:");
 		            console.log(data.text);
@@ -80,6 +86,10 @@ define(
 		    function failureHandler(data) {
 		    	console.error("Authentication error");
 		        console.error(data);
+
+		        if (errorCallback) {
+		        	errorCallback();
+		        }
 		    }
 	    };
 	    

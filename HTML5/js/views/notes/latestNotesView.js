@@ -8,18 +8,18 @@ define(
 			el: '#content',
 			template: latestNotesTemplate,
 
-			initialize: function() {
+			initialize: function () {
 				self = this;
 			},
 			
-			render: function() {	
+			render: function () {	
 				console.log(self.$el);
 				$(self.$el.selector).html(self.template);
 
-				this.bindEvents();
+				self.bindEvents();
 			},
 
-			bindEvents: function() {
+			bindEvents: function () {
 				
 			}
 		});

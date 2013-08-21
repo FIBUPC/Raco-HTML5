@@ -5,15 +5,31 @@ define(
     function (loginController, loginView, latestNotesView) {
         'use strict';
 
-        var AppRouter = Backbone.Router.extend({
+        var self,
+        AppRouter = Backbone.Router.extend({
+            // These are the main point of entrance to the app
             routes: {
-                '': 'main',
-                'login': 'login'
+                '': 'home',         // default action
+                'home': 'home',     // home action
+                'login': 'login'    // login action
             },
 
-            main: function() {
+            initialize: function () {
+                self = this;
+
+                // Since there is no way to navigate to another page from a BackboneJS View
+                // when using RequireJS we extend the basic View to have a navigation method
+                Backbone.View.prototype.navigate = function(hash, trigger) {
+                    // This just calls the original navigate method of the AppRouter
+                    self.navigate(hash, {
+                        trigger: (typeof(trigger) == 'undefined' ? false : trigger)
+                    });
+                }
+            },
+
+            home: function () {
                 if (!loginController.isLoggedIn()) {
-                    this.navigate('login', { trigger: true });
+                    self.navigate('login', { trigger: true });
                     return;
                 }
 

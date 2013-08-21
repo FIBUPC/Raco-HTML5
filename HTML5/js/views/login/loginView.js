@@ -9,24 +9,31 @@ define(
 			el: '#content',
 			template: loginTemplate,
 
-			initialize: function() {
+			initialize: function () {
 				self = this;
 			},
 			
-			render: function() {	
-				console.log(self.$el);
+			render: function () {
 				$(self.$el.selector).html(self.template);
 
-				this.bindEvents();
+				self.bindEvents();
 			},
 
-			bindEvents: function() {
-				$('#connectButton').click(this.connect);
+			bindEvents: function () {
+				$('#connectButton').click(self.connect);
 			},
 
-			connect: function() {
-				console.log("connect from view");
-				loginController.login();
+			connect: function () {
+				loginController.login(self.loginCompletedCallback, self.loginErrorCallback);
+			},
+
+			loginCompletedCallback: function () {
+				// TODO: this doesn't work
+				self.navigate('home', true);
+			},
+
+			loginErrorCallback: function () {
+				// TODO: show error message
 			}
 		});
 

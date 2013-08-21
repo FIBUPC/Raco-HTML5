@@ -3,9 +3,9 @@ define(
 	function (oAuthController) {
 	    'use strict';
 	    
-	    var LoginController = {};
+	    var LoginController = { };
 
-	    LoginController.initialize = function() {
+	    LoginController.initialize = function () {
 	    	oAuthController.initialize();
 	    };
 		
@@ -13,8 +13,8 @@ define(
 	    	return oAuthController.isAuthenticated();
 	    };
 
-	    LoginController.login = function() {
-	    	oAuthController.connect();
+	    LoginController.login = function (successCallback, errorCallback) {
+	    	oAuthController.connect(successCallback, errorCallback);
 	    };
 	    
 	    return LoginController; 
