@@ -1,5 +1,5 @@
 define(
-	['../../controllers/loginController',
+	['../../controllers/login/loginController',
 	 'text!templates/login/loginTemplate.html'],
 	function (loginController, loginTemplate) {
 		'use strict';

@@ -1,0 +1,14 @@
+#header {
+	min-height: 3em;
+}
+
+#header #logo,
+#header #logo img {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#header #logo img {
+	height: 2em;
+	margin: 0.5em 0;
+}

@@ -1,0 +1,16 @@
+/*
+ * Primary color: #ca0a00 (red)
+ *
+ * Secondary color: #141414 (dark gray)
+ *
+ *
+ */
+
+.primary-color-background {
+	background: #ca0a00;
+	color: white;
+}
+
+.primary-color-foreground {
+	color: #ca0a00;
+}

@@ -1,5 +1,5 @@
 define(
-    ['controllers/loginController',
+    ['controllers/login/loginController',
      'views/login/loginView',
      'views/notes/latestNotesView'],
     function (loginController, loginView, latestNotesView) {

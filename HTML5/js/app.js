@@ -1,6 +1,6 @@
 define (
     ['router',
-     'controllers/loginController',
+     'controllers/login/loginController',
      'views/app/appView'],
     function (router, loginController, appView) {
         'use strict';
