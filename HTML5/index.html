@@ -9,24 +9,32 @@
 		<script type="text/javascript" src="js/libraries/vendor/underscore.js"></script>
 		<script type="text/javascript" src="js/libraries/vendor/backbone.js"></script>
 
+		<script type="text/javascript" src="js/config/constants.js"></script>
+		<script type="text/javascript" src="js/libraries/helpers.js"></script>
+
 		<link href="css/common/reset.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="css/common/layout.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="css/common/style.css" rel="stylesheet" type="text/css" media="all" />
 
         <script type="text/javascript">
-            console.log("Waiting for device ready event...");
-            document.addEventListener("deviceReady", function () {
-                console.log("device ready");
-                var script = document.createElement('script');
+			function RunApplication() {
+            	var script = document.createElement('script');
                 script.setAttribute('data-main', 'js/main');
                 script.src = 'js/libraries/vendor/require.js';
                 document.getElementsByTagName('head')[0].appendChild(script);
-            }, false);
+            }
+
+            if (Helpers.Environment.isNativeApp()) {
+            	document.addEventListener('deviceReady', RunApplication, false);
+            }
+            else {
+            	RunApplication();
+            }
         </script>
 	</head>
-	<body>
+	<body class="web browser">
 		<div id="app">
-			<!-- Application content will appear here -->
+			<!-- Application content appears here -->
 		</div>
 	</body>
 </html>
