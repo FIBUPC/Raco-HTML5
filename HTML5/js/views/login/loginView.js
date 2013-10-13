@@ -1,13 +1,13 @@
 define(
 	['../../controllers/login/loginController',
 	 'text!templates/login/loginTemplate.html'],
-	function (loginController, loginTemplate) {
+	function (LoginController, LoginTemplate) {
 		'use strict';
 
 		var self,
 		LoginView = Backbone.View.extend({
 			el: '#content',
-			template: loginTemplate,
+			template: LoginTemplate,
 
 			initialize: function () {
 				self = this;
@@ -24,7 +24,7 @@ define(
 			},
 
 			connect: function () {
-				loginController.login(self.loginCompletedCallback, self.loginErrorCallback);
+				LoginController.login(self.loginCompletedCallback, self.loginErrorCallback);
 			},
 
 			loginCompletedCallback: function () {

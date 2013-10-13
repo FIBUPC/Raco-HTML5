@@ -1,19 +1,21 @@
 define(
-	['text!templates/notes/latestNotesTemplate.html'],
-	function (latestNotesTemplate) {
+	['controllers/notes/notesController',
+	 'text!templates/notes/latestNotesTemplate.html'],
+	function (NotesController, LatestNotesTemplate) {
 		'use strict';
 
 		var self,
 		LatestNotesView = Backbone.View.extend({
 			el: '#content',
-			template: latestNotesTemplate,
+			template: LatestNotesTemplate,
 
 			initialize: function () {
 				self = this;
 			},
 			
-			render: function () {	
-				console.log(self.$el);
+			render: function () {
+				NotesController.getLatestNotesAsync();
+
 				$(self.$el.selector).html(self.template);
 
 				self.bindEvents();

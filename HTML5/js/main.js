@@ -11,8 +11,8 @@
 
     require(
         ['app'],
-        function(app) {
-            app.init();
+        function(App) {
+            App.init();
         }
     );
 }());

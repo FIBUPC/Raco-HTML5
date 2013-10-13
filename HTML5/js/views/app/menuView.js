@@ -1,12 +1,12 @@
 define(
 	['text!templates/app/menuTemplate.html'],
-	function (menuTemplate) {
+	function (MenuTemplate) {
 		'use strict';
 
 		var self,
 		MenuView = Backbone.View.extend({
 			el: '#menu',
-			template: menuTemplate,
+			template: MenuTemplate,
 
 			initialize: function() {
 				self = this;

@@ -2,7 +2,7 @@ define(
     ['controllers/login/loginController',
      'views/login/loginView',
      'views/notes/latestNotesView'],
-    function (loginController, loginView, latestNotesView) {
+    function (LoginController, LoginView, LatestNotesView) {
         'use strict';
 
         var self,
@@ -28,16 +28,16 @@ define(
             },
 
             home: function () {
-                if (!loginController.isLoggedIn()) {
+                if (!LoginController.isLoggedIn()) {
                     self.navigate('login', { trigger: true });
                     return;
                 }
 
-                latestNotesView.render();
+                LatestNotesView.render();
             },
 
             login: function () {
-                loginView.render();
+                LoginView.render();
             }
         });
         

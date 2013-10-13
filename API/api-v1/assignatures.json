@@ -1,0 +1,27 @@
+[
+   {
+      "idAssig":"GRAU-ASMI",
+      "codi_upc":"270162",
+      "nom":"Aspectes Socials i Mediambientals de la Informàtica"
+   },
+   {
+      "idAssig":"GRAU-CBDE",
+      "codi_upc":"270087",
+      "nom":"Conceptes per a Bases de Dades Especialitzades"
+   },
+   {
+      "idAssig":"GRAU-PES",
+      "codi_upc":"270085",
+      "nom":"PROJECTE D'ENGINYERIA DEL SOFTWARE"
+   },
+   {
+      "idAssig":"GRAU-SIM",
+      "codi_upc":"270090",
+      "nom":"SIMULACIÓ"
+   },
+   {
+      "idAssig":"GRAU-VPE",
+      "codi_upc":"270109",
+      "nom":"Viabilitat de Projectes Empresarials"
+   }
+]

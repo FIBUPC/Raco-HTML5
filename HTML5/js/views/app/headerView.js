@@ -1,12 +1,12 @@
 define(
 	['text!templates/app/headerTemplate.html'],
-	function (headerTemplate) {
+	function (HeaderTemplate) {
 		'use strict';
 
 		var self,
 		HeaderView = Backbone.View.extend({
 			el: '#header',
-			template: headerTemplate,
+			template: HeaderTemplate,
 
 			initialize: function() {
 				self = this;

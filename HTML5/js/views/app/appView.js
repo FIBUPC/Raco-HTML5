@@ -2,13 +2,13 @@ define(
 	['text!templates/app/appTemplate.html',
 	 './headerView',
 	 './menuView'],
-	function (appTemplate, HeaderView, MenuView) {
+	function (AppTemplate, HeaderView, MenuView) {
 		'use strict';
 
 		var self,
 		AppView = Backbone.View.extend({
 			el: '#app',
-			template: appTemplate,
+			template: AppTemplate,
 			headerView: null,
 			menuView: null,
 

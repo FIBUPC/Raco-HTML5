@@ -1,6 +1,6 @@
 define(
 	['jsOAuth'],
-	function (jsOAuth) {
+	function (JsOAuth) {
 	    'use strict';
 	    
 	    var oAuthController = {
@@ -21,7 +21,7 @@ define(
 
 	    oAuthController.initialize = function() {
 	    	this.oAuthService = new OAuth(this.config);
-
+	    	
 	    	this.checkSavedAccessToken();
 	    };
 
@@ -41,10 +41,14 @@ define(
 
 	    oAuthController.connect = function(successCallback, errorCallback) {
 	    	if (this.isAuthenticated()) {
-	    		console.error("User is already authenticated");
 	    		if (errorCallback) {
-	    			errorCallback();
+	    			errorCallback("User is already authenticated.");
 	    		}
+	    		else
+	    		{
+	    			throw new Exception("User is already authenticated");
+	    		}
+
 	    		return;
 	    	}
 
@@ -58,10 +62,7 @@ define(
 
 		        function waitForPin() {
 		            if (wnd.closed) {
-						console.log("Application successfully authorized.");
-						console.log("Getting an access token...");
 		                that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);
-						console.log("Access token request done.");
 		            }
 		            else {
 		                setTimeout(waitForPin, 100);
@@ -70,25 +71,19 @@ define(
 		    }
 
 		    function saveAccessToken() {
-		    	console.log("Authentication successfull!");
-		    	console.log("Access token: " + that.oAuthService.getAccessToken());
 		    	localStorage.setItem("OAUTH_ACCESS_TOKEN_KEY", that.oAuthService.getAccessTokenKey());
 		    	localStorage.setItem("OAUTH_ACCESS_TOKEN_SECRET", that.oAuthService.getAccessTokenSecret());
 		    	if (successCallback) {
 		    		successCallback();
 		    	}
-				/*oauth.get("https://raco.fib.upc.edu/api-v1/info-personal.json", function (data) {
-					console.log("/api-v1/info-personal.json result:");
-		            console.log(data.text);
-		        }, failureHandler);*/	
 		    }
 
-		    function failureHandler(data) {
-		    	console.error("Authentication error");
-		        console.error(data);
-
+		    function failureHandler(error) {
 		        if (errorCallback) {
-		        	errorCallback();
+		        	errorCallback(error);
+		        }
+		        else {
+		        	throw new Exception(error);
 		        }
 		    }
 	    };

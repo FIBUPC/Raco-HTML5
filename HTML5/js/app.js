@@ -2,15 +2,15 @@ define (
     ['router',
      'controllers/login/loginController',
      'views/app/appView'],
-    function (router, loginController, appView) {
+    function (Router, LoginController, AppView) {
         'use strict';
         
         var App = {};
         
         App.init = function () {
-            loginController.initialize();
+            LoginController.initialize();
             
-            appView.render();
+            AppView.render();
 
             Backbone.history.start();
         };

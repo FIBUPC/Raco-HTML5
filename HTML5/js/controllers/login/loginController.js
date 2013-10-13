@@ -1,20 +1,20 @@
 define(
 	['./oAuthController'],
-	function (oAuthController) {
+	function (OAuthController) {
 	    'use strict';
 	    
 	    var LoginController = { };
 
 	    LoginController.initialize = function () {
-	    	oAuthController.initialize();
+	    	OAuthController.initialize();
 	    };
 		
 	    LoginController.isLoggedIn = function () {       
-	    	return oAuthController.isAuthenticated();
+	    	return OAuthController.isAuthenticated();
 	    };
 
 	    LoginController.login = function (successCallback, errorCallback) {
-	    	oAuthController.connect(successCallback, errorCallback);
+	    	OAuthController.connect(successCallback, errorCallback);
 	    };
 	    
 	    return LoginController; 
