@@ -6,6 +6,12 @@
  *
  */
 
+ body {
+ 	font-family: Arial, sans-serif;
+ 	font-weight: 300;
+ 	transition: margin-left 0.5s ease;
+ }
+
 .primary-color-background {
 	background: #ca0a00;
 	color: white;
@@ -13,4 +19,57 @@
 
 .primary-color-foreground {
 	color: #ca0a00;
+}
+
+#menu {
+	background: #222222;
+	color: white;
+	box-shadow: inset -5px 0 10px #000;
+}
+
+#menu #tabs > li.divider {
+	background: #666666;
+}
+
+#menu #tabs > li.active {
+	background-color: #3aa5f0;
+	box-shadow: inset 0 -1em 1em rgba(45, 45, 45, 0.15);
+}
+
+#menu #tabs > li {
+	background-position: 1em 0.4em;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+	padding-left: 3.3em;
+}
+
+#menu #tabs > li.notes {
+	background-image: url('../../img/common/icons/notes.png');
+}
+
+#menu #tabs > li.timetable {
+	background-image: url('../../img/common/icons/timetable.png');
+}
+
+#menu #tabs > li.subjects {
+	background-image: url('../../img/common/icons/subjects.png');
+}
+
+#menu #tabs > li.calendar {
+	background-image: url('../../img/common/icons/calendar.png');
+}
+
+#menu #tabs > li.settings {
+	background-image: url('../../img/common/icons/settings.png');
+	background-position: 1em 0.5em;
+}
+
+#menu #tabs > li.logout {
+	background-image: url('../../img/common/icons/logout.png');
+	background-position: 1.1em 0.5em;
+}
+
+#header .header-button.menu {
+	background: url('../../img/common/icons/menu.png') center center no-repeat;
+	background-size: auto 60%;
 }
