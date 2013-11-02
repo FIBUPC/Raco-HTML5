@@ -1,14 +1,81 @@
+html,
+body,
+#app {
+	height: 100%;
+	min-height: 100%;
+	height: 100%;
+	min-width: 100%;
+}
+
+html,
+body {
+	overflow: hidden;
+	height: 100%;
+}
+
+.header,
 #header {
 	min-height: 3em;
 }
 
+#header #logo {
+	float: left;
+}
+
 #header #logo,
 #header #logo img {
-	text-align: center;
 	margin: 0 auto;
+	padding-left: 0.5em;
 }
 
 #header #logo img {
 	height: 2em;
 	margin: 0.5em 0;
+}
+
+#menu {
+	width: 20%;
+	min-width: 20%;
+	max-width: 20%;
+	height: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
+#menu #tabs {
+	font-size: 1.2em;
+	margin-top: 3em;
+}
+
+#menu #tabs > li {
+	padding: 0.75em 1em;
+}
+
+#menu #tabs > li.divider {
+	height: 1px;
+	max-height: 1px;
+	min-height: 1px;
+	margin: 0.5em 0;
+	padding: 0;
+}
+
+#header .header-button {
+	min-height: 1em;
+	min-width: 1em;
+}
+
+#header #buttons-area {
+	float: right;
+	padding: 0.5em;
+}
+
+#header #buttons-area .header-button {
+	display: block;
+	padding: 0.5em 0.75em;
+}
+
+#content {
+	clear: both;
+	padding: 0.5em;
 }

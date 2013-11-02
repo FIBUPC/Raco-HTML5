@@ -93,6 +93,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bridges\FileBridge.cs" />
+    <Compile Include="Helpers\BackButtonHandler.cs" />
+    <Compile Include="Helpers\DisableBrowserDoubleTapEffect.cs" />
+    <Compile Include="Helpers\DisableBrowserZoom.cs" />
+    <Compile Include="Helpers\LinqToVisualTree.cs" />
     <Compile Include="Localization\LocalizedStrings.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -153,13 +158,30 @@
     <Content Include="www\css\platforms\windows\common.css" />
     <Content Include="www\css\platforms\windows\phone.css" />
     <Content Include="www\css\platforms\windows\tablet.css" />
+    <Content Include="www\img\common\icons\calendar.png" />
+    <Content Include="www\img\common\icons\logout.png" />
+    <Content Include="www\img\common\icons\menu.png" />
+    <Content Include="www\img\common\icons\notes.png" />
+    <Content Include="www\img\common\icons\settings.png" />
+    <Content Include="www\img\common\icons\subjects.png" />
+    <Content Include="www\img\common\icons\timetable.png" />
     <Content Include="www\img\common\logo_raco.png" />
     <Content Include="www\index.html" />
     <Content Include="www\js\app.js" />
+    <Content Include="www\js\bridges\FileBridge.js" />
+    <Content Include="www\js\collections\eventList.js" />
+    <Content Include="www\js\collections\noteList.js" />
+    <Content Include="www\js\collections\subjectList.js" />
+    <Content Include="www\js\collections\timetable.js" />
+    <Content Include="www\js\config\constants.js" />
+    <Content Include="www\js\config\remoteConfiguration.js" />
     <Content Include="www\js\controllers\login\loginController.js" />
     <Content Include="www\js\controllers\login\oAuthController.js" />
+    <Content Include="www\js\controllers\notes\notesController.js" />
+    <Content Include="www\js\libraries\helpers.js" />
     <Content Include="www\js\libraries\mobileDetector.js" />
     <Content Include="www\js\libraries\vendor\backbone.js" />
+    <Content Include="www\js\libraries\vendor\cordova-WP8.js" />
     <Content Include="www\js\libraries\vendor\cordova.js" />
     <Content Include="www\js\libraries\vendor\i18n.js" />
     <Content Include="www\js\libraries\vendor\jquery.js" />
@@ -169,12 +191,9 @@
     <Content Include="www\js\libraries\vendor\text.js" />
     <Content Include="www\js\libraries\vendor\underscore.js" />
     <Content Include="www\js\main.js" />
+    <Content Include="www\js\models\note.js" />
     <Content Include="www\js\router.js" />
-    <Resource Include="www\js\templates\app\appTemplate.html" />
-    <Resource Include="www\js\templates\app\headerTemplate.html" />
-    <Resource Include="www\js\templates\app\menuTemplate.html" />
-    <Resource Include="www\js\templates\login\loginTemplate.html" />
-    <Resource Include="www\js\templates\notes\latestNotesTemplate.html" />
+    <Content Include="www\js\utils\httpClient.js" />
     <Content Include="www\js\views\app\appView.js" />
     <Content Include="www\js\views\app\headerView.js" />
     <Content Include="www\js\views\app\menuView.js" />
@@ -191,7 +210,19 @@
     <Folder Include="www\img\platforms\android\" />
     <Folder Include="www\img\platforms\ios\" />
     <Folder Include="www\img\platforms\windows\" />
-    <Folder Include="www\js\controllers\notes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="www\js\templates\app\appTemplate.html" />
+    <Resource Include="www\js\templates\app\headerTemplate.html" />
+    <Resource Include="www\js\templates\app\menuTemplate.html" />
+    <Resource Include="www\js\templates\login\loginTemplate.html" />
+    <Resource Include="www\js\templates\notes\latestNotesTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ApacheCordovaWP8\ApacheCordovaWP8.csproj">
+      <Project>{344118C7-CDEB-46D1-9C98-B794D4A0B366}</Project>
+      <Name>ApacheCordovaWP8</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

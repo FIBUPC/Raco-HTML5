@@ -8,7 +8,10 @@
 
  body {
  	font-family: Arial, sans-serif;
- 	font-weight: 300;
+ 	font-weight: 300;	
+ }
+
+ #app {
  	transition: margin-left 0.5s ease;
  }
 

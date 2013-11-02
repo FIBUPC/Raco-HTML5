@@ -15,11 +15,11 @@
     shell:SystemTray.IsVisible="True">
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <cordova:CordovaView x:Name="Browser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <cordova:CordovaView x:Name="Browser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True">
+        <shell:ApplicationBar IsVisible="True" BackgroundColor="#FFE2E2E2">
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

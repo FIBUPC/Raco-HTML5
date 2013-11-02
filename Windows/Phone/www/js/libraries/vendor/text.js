@@ -1,5 +1,5 @@
 /**
- * @license RequireJS text 2.0.4 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
+ * @license RequireJS text 2.0.1 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
  * Available via the MIT or new BSD license.
  * see: http://github.com/requirejs/text for details
  */
@@ -11,8 +11,7 @@
 define(['module'], function (module) {
     'use strict';
 
-    var text, fs,
-        progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'],
+    var progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'],
         xmlRegExp = /^\s*<\?xml(\s)+version=[\'\"](\d)*.(\d)*[\'\"](\s)*\?>/im,
         bodyRegExp = /<body[^>]*>\s*([\s\S]+)\s*<\/body>/im,
         hasLocation = typeof location !== 'undefined' && location.href,
@@ -20,10 +19,11 @@ define(['module'], function (module) {
         defaultHostName = hasLocation && location.hostname,
         defaultPort = hasLocation && (location.port || undefined),
         buildMap = [],
-        masterConfig = (module.config && module.config()) || {};
+        masterConfig = (module.config && module.config()) || {},
+        text, fs;
 
     text = {
-        version: '2.0.4',
+        version: '2.0.1',
 
         strip: function (content) {
             //Strips <?xml ...?> declarations so that external SVG and XML
@@ -83,30 +83,16 @@ define(['module'], function (module) {
          * where strip is a boolean.
          */
         parseName: function (name) {
-            var modName, ext, temp,
-                strip = false,
-                index = name.indexOf("."),
-                isRelative = name.indexOf('./') === 0 ||
-                             name.indexOf('../') === 0;
-
-            if (index !== -1 && (!isRelative || index > 1)) {
-                modName = name.substring(0, index);
+            var strip = false, index = name.indexOf("."),
+                modName = name.substring(0, index),
                 ext = name.substring(index + 1, name.length);
-            } else {
-                modName = name;
-            }
 
-            temp = ext || modName;
-            index = temp.indexOf("!");
+            index = ext.indexOf("!");
             if (index !== -1) {
                 //Pull off the strip arg.
-                strip = temp.substring(index + 1) === "strip";
-                temp = temp.substring(0, index);
-                if (ext) {
-                    ext = temp;
-                } else {
-                    modName = temp;
-                }
+                strip = ext.substring(index + 1, ext.length);
+                strip = strip === "strip";
+                ext = ext.substring(0, index);
             }
 
             return {
@@ -127,8 +113,8 @@ define(['module'], function (module) {
          * @returns Boolean
          */
         useXhr: function (url, protocol, hostname, port) {
-            var uProtocol, uHostName, uPort,
-                match = text.xdRegExp.exec(url);
+            var match = text.xdRegExp.exec(url),
+                uProtocol, uHostName, uPort;
             if (!match) {
                 return true;
             }
@@ -170,8 +156,7 @@ define(['module'], function (module) {
             masterConfig.isBuild = config.isBuild;
 
             var parsed = text.parseName(name),
-                nonStripName = parsed.moduleName +
-                    (parsed.ext ? '.' + parsed.ext : ''),
+                nonStripName = parsed.moduleName + '.' + parsed.ext,
                 url = req.toUrl(nonStripName),
                 useXhr = (masterConfig.useXhr) ||
                          text.useXhr;
@@ -209,11 +194,11 @@ define(['module'], function (module) {
 
         writeFile: function (pluginName, moduleName, req, write, config) {
             var parsed = text.parseName(moduleName),
-                extPart = parsed.ext ? '.' + parsed.ext : '',
-                nonStripName = parsed.moduleName + extPart,
+                nonStripName = parsed.moduleName + '.' + parsed.ext,
                 //Use a '.js' file name so that it indicates it is a
                 //script that can be loaded across domains.
-                fileName = req.toUrl(parsed.moduleName + extPart) + '.js';
+                fileName = req.toUrl(parsed.moduleName + '.' +
+                                     parsed.ext) + '.js';
 
             //Leverage own load() method to load plugin value, but only
             //write out values that do not have the strip argument,
@@ -234,10 +219,9 @@ define(['module'], function (module) {
         }
     };
 
-    if (masterConfig.env === 'node' || (!masterConfig.env &&
-            typeof process !== "undefined" &&
-            process.versions &&
-            !!process.versions.node)) {
+    if (typeof process !== "undefined" &&
+             process.versions &&
+             !!process.versions.node) {
         //Using special require.nodeRequire, something added by r.js.
         fs = require.nodeRequire('fs');
 
@@ -249,44 +233,23 @@ define(['module'], function (module) {
             }
             callback(file);
         };
-    } else if (masterConfig.env === 'xhr' || (!masterConfig.env &&
-            text.createXhr())) {
+    } else if (text.createXhr()) {
         text.get = function (url, callback, errback) {
-            var xhr = text.createXhr();
-            xhr.open('GET', url, true);
-
-            //Allow overrides specified in config
-            if (masterConfig.onXhr) {
-                masterConfig.onXhr(xhr, url);
+			if (url.indexOf(":/") > -1) {
+                url = "/" + url.split(":/")[1];
             }
-
-            xhr.onreadystatechange = function (evt) {
-                var status, err;
-                //Do not explicitly handle errors, those should be
-                //visible via console output in the browser.
-                if (xhr.readyState === 4) {
-                    status = xhr.status;
-                    if (status > 399 && status < 600) {
-                        //An http 4xx or 5xx error. Signal an error.
-                        err = new Error(url + ' HTTP status: ' + status);
-                        err.xhr = xhr;
-                        errback(err);
-                    } else {
-                        callback(xhr.responseText);
-                    }
-                }
-            };
-            xhr.send(null);
+			
+			window.plugins.fileBridge.getFileContents(url, callback, errback);
         };
-    } else if (masterConfig.env === 'rhino' || (!masterConfig.env &&
-            typeof Packages !== 'undefined' && typeof java !== 'undefined')) {
+
+    } else if (typeof Packages !== 'undefined') {
         //Why Java, why is this so awkward?
         text.get = function (url, callback) {
-            var stringBuffer, line,
-                encoding = "utf-8",
+            var encoding = "utf-8",
                 file = new java.io.File(url),
                 lineSeparator = java.lang.System.getProperty("line.separator"),
                 input = new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream(file), encoding)),
+                stringBuffer, line,
                 content = '';
             try {
                 stringBuffer = new java.lang.StringBuffer();
