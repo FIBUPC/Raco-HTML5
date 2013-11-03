@@ -14,6 +14,16 @@ define(
 			
 			render: function() {
 				self.$el.html(self.template);
+
+				self.bindEventHandlers();
+			},
+
+			bindEventHandlers: function() {
+				$('#menu #tabs li.clickable a').click(function(){
+					if ($('body').hasClass('menu-displayed') && $('#menu-toggle-button:visible').length > 0) {
+						$('#menu-toggle-button').trigger('touchend');
+					}
+				});
 			}
 		});
 		

@@ -1,0 +1,7 @@
+body.ios.standalone #header #buttons-area {
+	top: 1em;
+}
+
+body.ios.standalone #menu #personal-info {
+	padding-top: 2em;
+}

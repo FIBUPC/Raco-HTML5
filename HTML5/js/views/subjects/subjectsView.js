@@ -1,23 +1,23 @@
 define(
-	['controllers/notes/notesController',
-	 'text!templates/notes/latestNotesTemplate.html'],
-	function (NotesController, LatestNotesTemplate) {
+	['controllers/subjects/subjectsController',
+	 'text!templates/subjects/subjectsTemplate.html'],
+	function (SubjectsController, SubjectsTemplate) {
 		'use strict';
 
 		var self,
-		LatestNotesView = Backbone.View.extend({
+		SubjectsView = Backbone.View.extend({
 			el: '#content',
-			template: LatestNotesTemplate,
+			template: SubjectsTemplate,
 
-			pageTitle: 'Latest notes',
-			menuElement: '.notes',
+			pageTitle: 'Subjects',
+			menuElement: '.subjects',
 
 			initialize: function () {
 				self = this;
 			},
 			
 			render: function () {
-				NotesController.getLatestNotesAsync();
+				SubjectsController.getSubjectsAsync();
 
 				$(Constants.Application.PageTitle).html(self.pageTitle);
 				Helpers.Application.setMenuActiveElement(self.menuElement);
@@ -31,6 +31,6 @@ define(
 			}
 		});
 
-		return new LatestNotesView;
+		return new SubjectsView;
 	}
 );

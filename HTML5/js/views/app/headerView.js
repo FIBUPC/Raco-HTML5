@@ -21,7 +21,7 @@ define(
 			bindMenuToggleButton: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
 
-				$menuToggleButton.click(function(e){
+				$menuToggleButton.bind('click touchend', function(e){
 					e.preventDefault();
 					e.stopPropagation();
 
@@ -29,7 +29,7 @@ define(
 					var $applicationWrapper = $('#application-wrapper');
 
 					if ($body.hasClass('menu-displayed')) {
-						$applicationWrapper.unbind('click');
+						$applicationWrapper.unbind('click touchend');
 
 						$body.removeClass('menu-displayed');
 					}
@@ -38,7 +38,7 @@ define(
 							e.preventDefault();
 							e.stopPropagation();
 
-							$menuToggleButton.trigger('click');
+							$menuToggleButton.trigger('touchend');
 
 							return false;
 						});

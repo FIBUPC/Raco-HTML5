@@ -19,21 +19,14 @@ body {
 .header,
 #header {
 	min-height: 3em;
+	position: relative;
 }
 
-#header #logo {
-	float: left;
-}
-
-#header #logo,
-#header #logo img {
+#header #page-title {
+	width: 60%;
+	text-align: center;
 	margin: 0 auto;
-	padding-left: 0.5em;
-}
-
-#header #logo img {
-	height: 2em;
-	margin: 0.5em 0;
+	line-height: 3em;
 }
 
 #menu {
@@ -48,7 +41,6 @@ body {
 
 #menu #tabs {
 	font-size: 1.2em;
-	margin-top: 3em;
 }
 
 #menu #tabs > li {
@@ -69,18 +61,15 @@ body {
 }
 
 #header #buttons-area {
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 	padding: 0.5em;
 }
 
 #header #buttons-area .header-button {
 	display: block;
 	padding: 0.5em 0.75em;
-}
-
-#content {
-	clear: both;
-	padding: 0.5em;
 }
 
 #iframe-login {
@@ -95,3 +84,91 @@ body {
 	border-radius: 0.3em;
 	margin: auto;
 }
+
+#content {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+#content h2 {
+	font-size: 1em;
+	padding: 0.5em 0.75em;
+	width: 100%;
+}
+
+#menu #personal-info {
+	padding: 1em 1.5em;
+	overflow: auto;
+	box-sizing: border-box;
+}
+
+#menu #personal-info .profile-picture {
+	float: left;
+}
+
+#menu #personal-info .profile-card {
+	float: left;
+	padding-left: 1em;
+	min-width: 49%;
+}
+
+#menu #personal-info .profile-card .name {
+	font-size: 1.1em;
+	font-weight: 500;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-wrap: nowrap;
+}
+
+#menu #personal-info .profile-card .surname {
+	font-size: 0.6em;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#menu #personal-info .profile-card .role {
+	margin-top: 1.5em;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0.75em 0.5em;
+	text-align: center;
+}
+
+body.login #header,
+body.login #menu {
+	display: none;
+}
+
+body.login #application-wrapper {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+body.login #centered-login {
+	position: fixed;
+	width: 15em;
+	height: 10em;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+body.login #connect-button-box {
+	margin-top: 5em;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+button {
+	padding: 0.5em 0.75em;
+}
+

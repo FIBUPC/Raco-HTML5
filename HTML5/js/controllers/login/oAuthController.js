@@ -126,6 +126,16 @@ define(
 		    	$('#' + that.iFrameLoginId).remove();
 		    }
 	    };
+
+	    oAuthController.logout = function(callback) {
+	    	localStorage.removeItem("OAUTH_ACCESS_TOKEN_KEY");
+	    	localStorage.removeItem("OAUTH_ACCESS_TOKEN_SECRET");
+
+	    	this.accessToken.key = null;
+	    	this.accessToken.secret = null;
+
+	    	callback();
+	    }
 	    
 	    return oAuthController; 
 	}

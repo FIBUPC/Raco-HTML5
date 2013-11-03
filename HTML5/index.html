@@ -3,6 +3,8 @@
 	<head>
 		<meta id="viewport" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="charset" content="utf-8" />
 		<title>Racó Mobile</title>
 		
@@ -16,10 +18,14 @@
 		<script type="text/javascript" src="js/libraries/helpers.js"></script>
 
 		<link href="css/common/reset.css" rel="stylesheet" type="text/css" media="screen" />
+
 		<link href="css/common/layout.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="css/common/layout_phone.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
 		<link href="css/common/layout_tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" />
+
 		<link href="css/common/style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="css/common/style_phone.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
+		<link href="css/common/style_tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" />
 
         <script type="text/javascript">
         	var DEBUG = true;
@@ -39,7 +45,7 @@
             }
         </script>
 	</head>
-	<body class="web browser">
+	<body class="web browser" onselectstart="return false;">
 		<div id="app">
 			<!-- Application content appears here -->
 		</div>

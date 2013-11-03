@@ -5,29 +5,33 @@ body {
 }
 
 #app {
-	width: 160%;
-	min-width: 160%;
-	max-width: 160%;
+	width: 180%;
+	min-width: 180%;
+	max-width: 180%;
 }
 
 body.menu-displayed #app {
-	margin-left: -60%;
+	margin-left: -80%;
 }
 
 #application-wrapper {
 	float: left;
-	width: 62.5%;
-	min-width: 62.5%;
-	max-width: 62.5%;
+	width: 55.56%;
+	min-width: 55.56%;
+	max-width: 55.56%;
 }
 
 #menu {
-	width: 37.5%;
-	min-width: 37.5%;
-	max-width: 37.5%;
+	width: 44.44%;
+	min-width: 44.44%;
+	max-width: 44.44%;
 	float: right;
 }
 
 #menu .header {
 	display: none;
+}
+
+#menu #personal-info .profile-card {
+	max-width: 49%;
 }

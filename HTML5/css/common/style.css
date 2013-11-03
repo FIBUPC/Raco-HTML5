@@ -24,6 +24,10 @@
 	color: #ca0a00;
 }
 
+#header #page-title {
+	font-weight: bold;
+}
+
 #menu {
 	background: #222222;
 	color: white;
@@ -35,8 +39,7 @@
 }
 
 #menu #tabs > li.active {
-	background-color: #3aa5f0;
-	box-shadow: inset 0 -1em 1em rgba(45, 45, 45, 0.15);
+	background-color: #666;
 }
 
 #menu #tabs > li {
@@ -44,6 +47,13 @@
 	background-repeat: no-repeat;
 	background-size: auto 60%;
 	padding-left: 3.3em;
+}
+
+#menu #tabs > li a:link,
+#menu #tabs > li a:visited,
+#menu #tabs > li a:hover {
+	text-decoration: none;
+	color: white;
 }
 
 #menu #tabs > li.notes {
@@ -75,4 +85,53 @@
 #header .header-button.menu {
 	background: url('../../img/common/icons/menu.png') center center no-repeat;
 	background-size: auto 60%;
+}
+
+#content h2 {
+	background: #ccc;
+	color: #222;
+	font-weight: 500;
+}
+
+#menu #personal-info {
+	background: #ccc;
+}
+
+#menu #personal-info .name,
+#menu #personal-info .surname {
+	color: #222;
+}
+
+#menu #personal-info .profile-picture img {
+	box-shadow: 0 0 1em rgba(45, 45, 45, 0.15);
+	border-radius: 0.3em;
+}
+
+#menu #personal-info .profile-card .role {
+	color: white;
+	background: #009CEB;
+	border-radius: 0.3em;
+	text-transform: uppercase;
+}
+
+body.login {
+	background-color: #ca0a00;
+	color: white;
+}
+
+button {
+	background-color: #ca0a00;
+	color: white;
+	border: 0;
+	border-radius: 0.3em;
+}
+
+body.login button {
+	background-color: white;
+	color: #ca0a00;
+}
+
+button:hover,
+button:focus {
+	opacity: 0.9;
 }

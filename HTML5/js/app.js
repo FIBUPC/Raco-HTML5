@@ -1,13 +1,17 @@
 define (
     ['router',
      'controllers/login/loginController',
-     'views/app/appView'],
-    function (Router, LoginController, AppView) {
+     'views/app/appView',
+     'libraries/mobileDetector'],
+    function (Router, LoginController, AppView, MobileDetector) {
         'use strict';
         
         var App = {};
         
         App.init = function () {
+            MobileDetector.detectMobileOS();
+            MobileDetector.detectNativeApp();
+
             LoginController.initialize();
             
             AppView.render();

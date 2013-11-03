@@ -14,8 +14,9 @@ define(
 			},
 			
 			render: function () {
-				$(self.$el.selector).html(self.template);
+				$('body').addClass('login');
 
+				$(self.$el.selector).html(self.template);
 				self.bindEvents();
 			},
 
