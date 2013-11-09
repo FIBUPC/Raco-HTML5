@@ -63,7 +63,7 @@ body {
 #header #buttons-area {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	padding: 0.5em;
 }
 
@@ -172,3 +172,12 @@ button {
 	padding: 0.5em 0.75em;
 }
 
+#latest-notes {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#latest-notes li {
+	padding: 1em;
+}

@@ -7,11 +7,16 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="charset" content="utf-8" />
 		<title>Racó Mobile</title>
+
+		<script type="text/javascript">
+			var DEBUG = true;
+		</script>
 		
         <script type="text/javascript" src="js/libraries/vendor/cordova.js"></script>
 		<script type="text/javascript" src="js/libraries/vendor/jquery.js"></script>
 		<script type="text/javascript" src="js/libraries/vendor/underscore.js"></script>
 		<script type="text/javascript" src="js/libraries/vendor/backbone.js"></script>
+		<script type="text/javascript" src="js/libraries/vendor/moment.js"></script>
 
 		<script type="text/javascript" src="js/config/constants.js"></script>
 		<script type="text/javascript" src="js/config/remoteConfiguration.js"></script>
@@ -28,8 +33,6 @@
 		<link href="css/common/style_tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" />
 
         <script type="text/javascript">
-        	var DEBUG = true;
-
 			function RunApplication() {
             	var script = document.createElement('script');
                 script.setAttribute('data-main', 'js/main');

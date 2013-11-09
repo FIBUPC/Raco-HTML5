@@ -8,14 +8,15 @@ body {
 	width: 180%;
 	min-width: 180%;
 	max-width: 180%;
-}
-
-body.menu-displayed #app {
 	margin-left: -80%;
 }
 
+body.menu-displayed #app {
+	margin-left: 0;
+}
+
 #application-wrapper {
-	float: left;
+	float: right;
 	width: 55.56%;
 	min-width: 55.56%;
 	max-width: 55.56%;
@@ -25,7 +26,7 @@ body.menu-displayed #app {
 	width: 44.44%;
 	min-width: 44.44%;
 	max-width: 44.44%;
-	float: right;
+	float: left;
 }
 
 #menu .header {

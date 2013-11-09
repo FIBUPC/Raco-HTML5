@@ -1,1 +1,59 @@
-[{"id": 1, "title": "Titol 1", "description": "avis 1"},{"id": 2, "title": "Titol 2", "description": "avis 2"},{"id": 3, "title": "Titol 3", "description": "avis 3"}]
+[
+	{
+		"id": 1,
+		"subject": "GRAU-ASMI",
+		"title": "EXAMEN FINAL (10/06/2013)",
+		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59715&assig=GRAU-ASMI",
+		"description": "&lt;div class=&quot;examen&quot;&gt;&lt;div class=&quot;topInfo&quot;&gt;&lt;span class=&quot;convocatoria&quot;&gt;Convocat&ograve;ria d'examen Final de GRAU-ASMI&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Data i hora&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;dataExamen&quot;&gt;10/06/2013&lt;/span&gt; a les &lt;span class=&quot;data&quot; id=&quot;horaExamen&quot;&gt;18:30&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Distribuci&oacute; d'aules&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;aulesExamen&quot;&gt;A5001 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Comentaris&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;comentarisExamen&quot;&gt;El examen final de ASAI ser&agrave;:&lt;br&gt;&lt;br&gt;el lunes 10 de junio de 2013&lt;br&gt;&lt;br&gt;a las 18:30 horas, con una duraci&oacute;n prevista de una hora y media.&lt;br&gt;&lt;br&gt;en el aula A5.001.&lt;br&gt;&lt;br&gt;Incluir&aacute;:&lt;br&gt;&lt;br&gt;- un test de 10 a 15 preguntas para elegir entre tres opciones y algunos items de la historia de la inform&aacute;tica de los que habr&aacute; que indicar el a&ntilde;o.&lt;br&gt;&lt;br&gt;- 3 preguntas breves sobre conceptos&lt;br&gt;&lt;br&gt;- un caso de &eacute;tica&lt;br&gt;&lt;br&gt;- un texto para ser comentado.&lt;br&gt;&lt;br&gt;Miquel Barcel&oacute;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;",
+		"pubDate": "Wed, 29 May 2013 12:28:34 +0200",
+		"llegit": false
+	},
+	{
+		"id": 2,
+		"subject": "GRAU-ASMI",
+		"title": "Presentació - 2013-05-28 - Violencia, videojuegos y sociedad",
+		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59706&assig=GRAU-ASMI",
+		"description": "",
+		"pubDate": "Wed, 29 May 2013 11:56:08 +0200",
+		"attachments": [
+			{
+				"title": "Violencia, videojuegos y sociedad.pdf",
+				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59706&assig=GRAU-ASMI"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"subject": "GRAU-CBDE",
+		"title": "Seminars, peer-marking and CBDE course survey",
+		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59719&assig=GRAU-CBDE",
+		"description": "&lt;p&gt;Ja teniu disponible al Learn-SQL una activitat d'avaluaci&amp;oacute; de l'&amp;uacute;ltim seminari (Everis). Teniu una setmana per respondre'l i manar-lo per email a oromero@essi.upc.edu. A m&amp;eacute;s, recordeu que avui &amp;eacute;s l'&amp;uacute;ltim dia per enviar el q&amp;uuml;estionari del seminari anterior (vinchucas, chagas i bases de dades).&lt;/p&gt;&lt;p&gt;Recordar-vos tamb&amp;eacute; que dilluns vinent s'obrir&amp;agrave; l'activitat de peer-marking per avaluar companys. Tindreu de temps fins el dia de l'examen (13/06/2013) per enviar les vostres notes.&lt;/p&gt;&lt;p&gt;Per &amp;uacute;ltim, el mateix dilluns, apareixer&amp;agrave; un link a una enquesta sobre el curs. Recordeu que CBDE &amp;eacute;s de nova implantaci&amp;oacute;. Per aquest motiu &amp;eacute;s molt important que ens doneu el vostre feedback per tal de millorar-la. Tindreu temps fins a finals de mes (30/06/2013) per a respondre-la i us hi estarem agra&amp;iuml;ts si us preneu la mol&amp;egrave;stia.&lt;/p&gt;",
+		"pubDate": "Wed, 29 May 2013 15:05:31 +0200"
+	},
+	{
+		"id": 4,
+		"subject": "GRAU-CBDE",
+		"title": "Video del seminari: A Real Case Study",
+		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE",
+		"description": "&lt;p&gt;El video del seminari del 17/5/2013 sobre un cas d'&amp;uacute;s real ja est&amp;agrave; disponible al Learn-SQL.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;line-height: 1.5em;&quot;&gt;Com sempre, aquest seminari t&amp;eacute; un q&amp;uuml;estionari assignat que heu de manar per mail a l'Oscar Romero (data l&amp;iacute;mit: 29/5/2013, el mateix dia incl&amp;ograve;s).&lt;/span&gt;&lt;/p&gt;",
+		"pubDate": "Wed, 29 May 2013 15:05:31 +0200",
+		"attachments": [
+			{
+				"title": "Video del seminari.mov",
+				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE"
+			},
+			{
+				"title": "Questionari seminari.docx",
+				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"subject": "GRAU-CBDE",
+		"title": "Classe dimarts dia 30 d'Abril",
+		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE",
+		"description": "&lt;p&gt;Dem&amp;agrave; dimarts dia 30 d'Abril &lt;strong&gt;hi haura classe tal com estava previst&lt;/strong&gt;. Tot i aix&amp;ograve;, per no coartar el dret a vaga de ning&amp;uacute;, &lt;strong&gt;no es far&amp;agrave; cap acte avaluatori&lt;/strong&gt; i a la corresponent sessi&amp;oacute; del Moodle &lt;strong&gt;s'han penjat materials&lt;/strong&gt; per tal de facilitar que pugueu asolir aquesta part del temari.&lt;/p&gt;",
+		"pubDate": "Mon, 29 Apr 2013 16:08:52 +0200"
+	}
+]

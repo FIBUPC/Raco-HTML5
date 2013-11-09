@@ -7,23 +7,19 @@ body.ios {
 	font-weight: 100;
 }
 
+body.ios #header {
+	box-shadow: none;
+	opacity: 0.9;
+}
+
 body.ios #header #page-title {
 	font: 17px/21px -apple-system-font;
 	font-weight: bold;
 	line-height: 3em;
 }
 
-body.ios #menu {
-	background: #222;
-}
-
-body.ios #menu #personal-info {
-	background: #333;
-}
-
 body.ios #menu #personal-info .name,
 body.ios #menu #personal-info .surname {
-	color: white;
 	margin: 0.5em 0 0 0;
 }
 
@@ -34,10 +30,6 @@ body.ios #menu #personal-info .surname {
 body.ios #menu #personal-info .role {
 	padding: 0.5em 0.25em 0.5em 0.25em;
 	margin: 0.75em 0 0 0;
-}
-
-#menu #tabs > li.active {
-	background-color: #D10003;
 }
 
 button {

@@ -1,9 +1,10 @@
 define (
     ['router',
      'controllers/login/loginController',
+     'controllers/notes/notesController',
      'views/app/appView',
      'libraries/mobileDetector'],
-    function (Router, LoginController, AppView, MobileDetector) {
+    function (Router, LoginController, NotesController, AppView, MobileDetector) {
         'use strict';
         
         var App = {};
@@ -13,6 +14,7 @@ define (
             MobileDetector.detectNativeApp();
 
             LoginController.initialize();
+            NotesController.initialize();
             
             AppView.render();
 

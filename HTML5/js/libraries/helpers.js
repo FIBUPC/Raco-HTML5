@@ -3,6 +3,11 @@ var Helpers = {
 		isNativeApp: function() {
 			// Check if Cordova declaration exists
 			return typeof(window.cordova) != 'undefined';
+		},
+		log: function(message) {
+			if (DEBUG && console && console.log) {
+				console.log(message);
+			}
 		}
 	},
 	Application: {
