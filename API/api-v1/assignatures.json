@@ -23,5 +23,10 @@
       "idAssig":"GRAU-VPE",
       "codi_upc":"270109",
       "nom":"Viabilitat de Projectes Empresarials"
+   },
+   {
+      "idAssig":"GRAU-GEP",
+      "codi_upc":"270101",
+      "nom":"Gestió de Projectes"
    }
 ]

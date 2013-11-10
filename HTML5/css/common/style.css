@@ -185,33 +185,33 @@ button:focus {
 	opacity: 0.9;
 }
 
-#latest-notes li {
+.regular-list li {
 	border-bottom: 1px solid #eee;
 }
 
-#latest-notes li:last-child {
+.regular-list li:last-child {
 	border-bottom: 0;
 }
 
-#latest-notes li .title {
+.regular-list li .title {
 	font-weight: 600;
 	color: #ca0a00;
 	line-height: 1.15em;
 	margin-bottom: 0.5em;
 }
 
-#latest-notes li .timeago,
-#latest-notes li .attachments {
+.regular-list li .timeago,
+.regular-list li .attachments {
 	font-size: 0.7em;
 	color: #666;
 }
 
-#latest-notes li .subject {
+.regular-list li .acronym {
 	margin-bottom: 0.3em;
 	font-size: 0.8em;
 }
 
-#latest-notes li .attachments {
+.regular-list li .attachments {
 	margin-left: 1em;
 	background: url('../../img/common/icons/clip.png') left center no-repeat;
 	background-size: auto 2em;

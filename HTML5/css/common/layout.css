@@ -177,17 +177,17 @@ button {
 	padding: 0.5em 0.75em;
 }
 
-#latest-notes {
+.regular-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#latest-notes li {
+.regular-list li {
 	padding: 1em;
 }
 
-#latest-notes li .timeago,
-#latest-notes li .attachments {
+.regular-list li .timeago,
+.regular-list li .attachments {
 	display: inline-block;
 }

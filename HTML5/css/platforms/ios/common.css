@@ -42,7 +42,7 @@ button {
 	font-size: 1em;
 }
 
-#latest-notes li {
+.regular-list li {
 	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
 	background-size: auto 1em;
 	padding-right: 3em;

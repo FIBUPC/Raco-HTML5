@@ -3,7 +3,7 @@
 		<p>There are no subjects.</p>
 	</div>
 <% } else { %>
-	<ul id="subject-list">
+	<ul id="subject-list" class="regular-list">
 	<% _.each(subjects, function(subject){ %>
 		<li>
 			<p class="acronym"><%= subject.get('idAssig') %></p>
