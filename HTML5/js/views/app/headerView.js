@@ -26,11 +26,16 @@ define(
 					e.stopPropagation();
 
 					var $body = $('body');
+					var $html = $('html');
 					var $applicationWrapper = $('#application-wrapper');
 
 					if ($body.hasClass('menu-displayed')) {
 						$applicationWrapper.unbind('click touchend');
 
+						$html.css({
+							height: 'auto',
+							overflow: 'auto'
+						});
 						$body.removeClass('menu-displayed');
 					}
 					else {
@@ -43,6 +48,10 @@ define(
 							return false;
 						});
 
+						$html.css({
+							height: $('#menu').height(),
+							overflow: 'hidden'
+						});
 						$body.addClass('menu-displayed');
 					}
 

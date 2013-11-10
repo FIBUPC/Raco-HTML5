@@ -1,8 +1,15 @@
 body.windows {
-	font-family: "Segoe WP", "Segoe UI", sans-serif;
+	font-family: "Segoe WP Light", "Segoe WP", "Segoe UI", "Roboto", "Sans Droid", "Droid Sans", helvetica, arial, sans-serif, verdana;
 }
 
-button {
+body.windows,
+body.windows * {
+	text-transform: lowercase;
+	font-weight: 300;
+	user-select: none;
+}
+
+body.windows button {
 	background: none;
 	border: 2px solid #ca0a00;
 	color: #ca0a00;
@@ -10,9 +17,32 @@ button {
 	border-radius: 0;
 }
 
-body.login button {
+body.windows body.login button {
 	background: none;
 	border: 2px solid white;
 	color: white;
 	font-size: 1em;
+}
+
+body.windows #header {
+	background: none !important;
+}
+
+body.windows #header #buttons-area {
+	display: none;
+}
+
+body.windows #page-title {
+	color: #1483ce;
+	font-family: "Segoe WP Light", sans-serif;
+	font-size: 2.5em !important;
+	text-align: left !important;
+	margin: -0.5em 0 -1em 0 !important;
+	padding-left: 0.35em !important;
+	font-weight: 100 !important;
+	white-space: nowrap;
+}
+
+body.windows #latest-notes li {
+	border-bottom: none !important;
 }

@@ -30,21 +30,23 @@
 }
 
 #menu {
-	background: #222;
+	background: #efefef;
 	color: white;
-	box-shadow: inset -5px 0 10px #000;
 }
 
 #menu #tabs > li.divider {
-	background: #666666;
+	background: #ccc;
 }
 
 #menu #tabs > li.active {
+	background: url('../../img/common/menu_arrow_inner.png') right center no-repeat;
 	background-color: #D10003;
-	background-image: url('../img/common/menu_arrow_inner.png');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+}
+
+#menu #tabs > li.active a:link,
+#menu #tabs > li.active a:hover,
+#menu #tabs > li.active a:visited {
+	color: white;
 }
 
 #menu #tabs > li a {
@@ -58,31 +60,73 @@
 #menu #tabs > li a:visited,
 #menu #tabs > li a:hover {
 	text-decoration: none;
-	color: white;
+	color: #333;
 }
 
 #menu #tabs > li.notes a {
-	background-image: url('../../img/common/icons/notes.png');
+	background-image: url('../../img/common/icons/notes_red.png');
 }
 
 #menu #tabs > li.timetable a {
-	background-image: url('../../img/common/icons/timetable.png');
+	background-image: url('../../img/common/icons/timetable_red.png');
 }
 
 #menu #tabs > li.subjects a {
-	background-image: url('../../img/common/icons/subjects.png');
+	background-image: url('../../img/common/icons/subjects_red.png');
 }
 
 #menu #tabs > li.calendar a {
-	background-image: url('../../img/common/icons/calendar.png');
+	background-image: url('../../img/common/icons/calendar_red.png');
+}
+
+#menu #tabs > li.rooms a {
+	background-image: url('../../img/common/icons/rooms_red.png');
+}
+
+#menu #tabs > li.news a {
+	background-image: url('../../img/common/icons/news_red.png');
 }
 
 #menu #tabs > li.settings a {
-	background-image: url('../../img/common/icons/settings.png');
+	background-image: url('../../img/common/icons/settings_red.png');
 	/*background-position: 1em 0.5em;*/
 }
 
 #menu #tabs > li.logout a {
+	background-image: url('../../img/common/icons/logout_red.png');
+	background-position: 0.2em 0;
+}
+
+#menu #tabs > li.notes.active a {
+	background-image: url('../../img/common/icons/notes.png');
+}
+
+#menu #tabs > li.timetable.active a {
+	background-image: url('../../img/common/icons/timetable.png');
+}
+
+#menu #tabs > li.subjects.active a {
+	background-image: url('../../img/common/icons/subjects.png');
+}
+
+#menu #tabs > li.calendar.active a {
+	background-image: url('../../img/common/icons/calendar.png');
+}
+
+#menu #tabs > li.rooms.active a {
+	background-image: url('../../img/common/icons/rooms.png');
+}
+
+#menu #tabs > li.news.active a {
+	background-image: url('../../img/common/icons/news.png');
+}
+
+#menu #tabs > li.settings.active a {
+	background-image: url('../../img/common/icons/settings.png');
+	/*background-position: 1em 0.5em;*/
+}
+
+#menu #tabs > li.logout.active a {
 	background-image: url('../../img/common/icons/logout.png');
 	background-position: 0.2em 0;
 }
@@ -99,12 +143,12 @@
 }
 
 #menu #personal-info {
-	background: #333;
+	background: #efefef;
 }
 
 #menu #personal-info .name,
 #menu #personal-info .surname {
-	color: white;
+	color: #333;
 }
 
 #menu #personal-info .profile-picture img {
@@ -156,7 +200,8 @@ button:focus {
 	margin-bottom: 0.5em;
 }
 
-#latest-notes li .timeago {
+#latest-notes li .timeago,
+#latest-notes li .attachments {
 	font-size: 0.7em;
 	color: #666;
 }
@@ -164,4 +209,11 @@ button:focus {
 #latest-notes li .subject {
 	margin-bottom: 0.3em;
 	font-size: 0.8em;
+}
+
+#latest-notes li .attachments {
+	margin-left: 1em;
+	background: url('../../img/common/icons/clip.png') left center no-repeat;
+	background-size: auto 2em;
+	padding-left: 2em;
 }

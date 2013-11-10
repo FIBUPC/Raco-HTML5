@@ -21,8 +21,8 @@ define(
 	    	Dispatcher.beginInvoke(function(){
 		    	var latestNotes = localStorage.getItem('LATEST_NOTES');
 		    	if (latestNotes != null) {
-		    		self.latestNotes = new NoteList(JSON.parse(latestNotes));
 		    		self.latestSync = moment(localStorage.getItem('LATEST_NOTES_LATEST_SYNC'));
+		    		self.latestNotes = new NoteList(JSON.parse(latestNotes));
 		    	}
 		    });
 	    };

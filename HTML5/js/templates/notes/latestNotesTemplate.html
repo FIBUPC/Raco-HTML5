@@ -9,6 +9,9 @@
 			<p class="subject"><%= note.get('subject') %></p>
 			<p class="title"><%= note.get('title') %></p>
 			<p class="timeago"><%= moment(note.get('pubDate')).fromNow() %></p>
+			<% if (!_.isEmpty(note.get('attachments'))) { %>
+				<p class="attachments"><%= _.size(note.get('attachments')) %> attachments</p>
+			<% } %>
 		</li>
 	<% }); %>
 	</ul>
