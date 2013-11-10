@@ -1,23 +1,47 @@
 define(
 	['utils/httpClient',
+	 'utils/dispatcher',
 	 'collections/noteList'],
-	function(HttpClient, NoteList) {
+	function(HttpClient, Dispatcher, NoteList) {
 	    'use strict';
 	    
-	    var NotesController = {
-	    	latestNotes: null //Observable collection
+	    var self,
+	    NotesController = {
+	    	latestNotes: new NoteList(), //Observable collection
+	    	latestSync: null
 	    };
 
 	    NotesController.initialize = function() {
-	    	
+	    	self = this;
+
+	    	self.fetchLatestNotesAsync();
 	    };
 
-	    NotesController.getLatestNotesAsync = function() {
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + RemoteConfiguration.Urls.Subjects.Notes.latestNotes).done(function(data) {
-	    		console.log("Response: " + data);
-	    		this.latestNotes = new NoteList(JSON.parse(data));
+	    NotesController.fetchLatestNotesAsync = function() {
+	    	Dispatcher.beginInvoke(function(){
+		    	var latestNotes = localStorage.getItem('LATEST_NOTES');
+		    	if (latestNotes != null) {
+		    		self.latestSync = moment(localStorage.getItem('LATEST_NOTES_LATEST_SYNC'));
+		    		self.latestNotes = new NoteList(JSON.parse(latestNotes));
+		    	}
+		    });
+	    };
+
+	    NotesController.getLatestNotesAsync = function(force) {
+	    	if (self.latestSync != null && !force) {
+	    		if (moment().diff(self.latestSync) < Constants.Application.AutoSyncDelay) {
+	    			return;
+	    		}
+	    	}
+
+	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
+	    		RemoteConfiguration.Urls.Subjects.Notes.latestNotes).done(function(data) {
+	    		self.latestNotes.reset(JSON.parse(data));
+	    		self.latestSync = moment();
+	    		Helpers.Environment.log('Notes synced.');
 	    	}).fail(function(error) {
-	    		console.log("Error retrieving notes");
+	    		// TODO: throw error to the view
+	    		Helpers.Environment.log("Error retrieving notes");
 	    	});
 	    };
 	    

@@ -14,20 +14,24 @@ define(
 
 			initialize: function () {
 				self = this;
+				self.collection = SubjectsController.subjects;
 			},
 			
 			render: function () {
-				SubjectsController.getSubjectsAsync();
-
 				$(Constants.Application.PageTitle).html(self.pageTitle);
 				Helpers.Application.setMenuActiveElement(self.menuElement);
-				$(self.$el.selector).html(self.template);
+
+				var compiledTemplate = _.template(self.template, {subjects: self.collection.models});
+				$(self.$el.selector).html(compiledTemplate);
 
 				self.bindEvents();
+
+				SubjectsController.getSubjectsAsync();
 			},
 
 			bindEvents: function () {
-				
+				self.collection.on('change', self.render);
+				self.collection.on('reset', self.render);
 			}
 		});
 

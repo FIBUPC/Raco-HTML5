@@ -21,16 +21,21 @@ define(
 			bindMenuToggleButton: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
 
-				$menuToggleButton.click(function(e){
+				$menuToggleButton.bind('click touchend', function(e){
 					e.preventDefault();
 					e.stopPropagation();
 
 					var $body = $('body');
+					var $html = $('html');
 					var $applicationWrapper = $('#application-wrapper');
 
 					if ($body.hasClass('menu-displayed')) {
-						$applicationWrapper.unbind('click');
+						$applicationWrapper.unbind('click touchend');
 
+						$html.css({
+							height: 'auto',
+							overflow: 'auto'
+						});
 						$body.removeClass('menu-displayed');
 					}
 					else {
@@ -38,11 +43,15 @@ define(
 							e.preventDefault();
 							e.stopPropagation();
 
-							$menuToggleButton.trigger('click');
+							$menuToggleButton.trigger('touchend');
 
 							return false;
 						});
 
+						$html.css({
+							height: $('#menu').height(),
+							overflow: 'hidden'
+						});
 						$body.addClass('menu-displayed');
 					}
 

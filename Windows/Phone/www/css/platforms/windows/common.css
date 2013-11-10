@@ -1,0 +1,48 @@
+body {
+	font-family: "Segoe WP Light", "Segoe WP", "Segoe UI", "Roboto", "Sans Droid", "Droid Sans", helvetica, arial, sans-serif, verdana;
+}
+
+body,
+body * {
+	text-transform: lowercase;
+	font-weight: 300;
+	user-select: none;
+}
+
+body button {
+	background: none;
+	border: 2px solid #ca0a00;
+	color: #ca0a00;
+	font-family: "Segoe WP Semibold", "Segoe UI Semibold", sans-serif;
+	border-radius: 0;
+}
+
+body body.login button {
+	background: none;
+	border: 2px solid white;
+	color: white;
+	font-size: 1em;
+}
+
+body #header {
+	background: none !important;
+}
+
+body #header #buttons-area {
+	display: none;
+}
+
+body #page-title {
+	color: #1483ce;
+	font-family: "Segoe WP Light", sans-serif;
+	font-size: 2.5em !important;
+	text-align: left !important;
+	margin: -0.5em 0 -1em 0 !important;
+	padding-left: 0.35em !important;
+	font-weight: 100 !important;
+	white-space: nowrap;
+}
+
+body #latest-notes li {
+	border-bottom: none !important;
+}

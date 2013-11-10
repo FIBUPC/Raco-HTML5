@@ -18,9 +18,8 @@ define(
 
 	    	try
 	    	{
-	    		console.log("URL: " + url);
+	    		Helpers.Environment.log("Requesting " + url);
 		    	OAuthController.oAuthService.get(url, function(data) {
-		    		console.log(data);
 		            deferred.resolve(data.text);
 		        }, function(error){
 		        	deferred.reject(error);

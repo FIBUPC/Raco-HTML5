@@ -1,1 +1,18 @@
-<h1>Latest notes</h1>
+<% if (_.isEmpty(latestNotes)) { %>
+	<div class="">
+		<p>There are no notes.</p>
+	</div>
+<% } else { %>
+	<ul id="latest-notes">
+	<% _.each(latestNotes, function(note){ %>
+		<li>
+			<p class="subject"><%= note.get('subject') %></p>
+			<p class="title"><%= note.get('title') %></p>
+			<p class="timeago"><%= moment(note.get('pubDate')).fromNow() %></p>
+			<% if (!_.isEmpty(note.get('attachments'))) { %>
+				<p class="attachments"><%= _.size(note.get('attachments')) %> attachments</p>
+			<% } %>
+		</li>
+	<% }); %>
+	</ul>
+<% } %>

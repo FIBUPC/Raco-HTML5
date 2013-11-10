@@ -14,8 +14,9 @@ define(
 			},
 			
 			render: function () {
-				$(self.$el.selector).html(self.template);
+				$('body').addClass('login');
 
+				$(self.$el.selector).html(self.template);
 				self.bindEvents();
 			},
 
@@ -28,12 +29,11 @@ define(
 			},
 
 			loginCompletedCallback: function () {
-				// TODO: this doesn't work
-				self.navigate('home', true);
+				window.location.reload();
 			},
 
 			loginErrorCallback: function () {
-				// TODO: show error message
+				alert("An error occurred while trying to authorize this application. Please try again.");
 			}
 		});
 

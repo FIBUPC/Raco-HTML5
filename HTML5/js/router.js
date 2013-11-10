@@ -24,7 +24,10 @@ define(
             },
 
             default: function() {
-                self.requireLogin();
+                if (!LoginController.isLoggedIn()) {
+                    self.navigate('login', { trigger: true });
+                    return;
+                }
 
                 // TODO: check for predefined user default action
                 self.navigate(self.defaultAction, { trigger: true });
@@ -40,7 +43,10 @@ define(
             },
 
             logout: function() {
-                self.requireLogin();
+                if (!LoginController.isLoggedIn()) {
+                    self.navigate('login', { trigger: true });
+                    return;
+                }
 
                 LoginController.logout(function() {
                     window.location.reload();
@@ -48,22 +54,21 @@ define(
             },
 
             latestNotes: function() {
-                self.requireLogin();
+                if (!LoginController.isLoggedIn()) {
+                    self.navigate('login', { trigger: true });
+                    return;
+                }
 
                 LatestNotesView.render();
             },
 
             subjects: function() {
-                self.requireLogin();
-
-                SubjectsView.render();
-            },
-
-            requireLogin: function() {
                 if (!LoginController.isLoggedIn()) {
                     self.navigate('login', { trigger: true });
                     return;
                 }
+
+                SubjectsView.render();
             }
         });
         

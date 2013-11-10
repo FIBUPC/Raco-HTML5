@@ -1,38 +1,38 @@
-body.ios.standalone #header {
-	padding-top: 1em;
+body.standalone #header {
+	padding-top: 1em !important;
 }
 
 body.ios {
-	font: 17px /21px -apple-system-font;
+	font: 17px /21px -apple-system-fonts;
 	font-weight: 100;
 }
 
-body.ios #header {
+body #header {
 	box-shadow: none;
 	opacity: 0.9;
 }
 
-body.ios #header #page-title {
+body #header #page-title {
 	font: 17px/21px -apple-system-font;
 	font-weight: bold;
 	line-height: 3em;
 }
 
-body.ios #menu #personal-info .name,
-body.ios #menu #personal-info .surname {
+body #menu #personal-info .name,
+body #menu #personal-info .surname {
 	margin: 0.5em 0 0 0;
 }
 
-body.ios #menu #personal-info .surname {
+body #menu #personal-info .surname {
 	margin: 0 0 0 0;
 }
 
-body.ios #menu #personal-info .role {
+body #menu #personal-info .role {
 	padding: 0.5em 0.25em 0.5em 0.25em;
 	margin: 0.75em 0 0 0;
 }
 
-body.ios #menu .profile-picture img {
+body #menu .profile-picture img {
 	border-radius: 5em;
 	box-shadow: none;
 }

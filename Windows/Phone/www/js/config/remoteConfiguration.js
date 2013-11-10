@@ -1,7 +1,8 @@
 var RemoteConfiguration = {
 	Urls: {
-		Base: 'http://m.raco.fib.upc.edu/api',
+		Base: ((DEBUG && !MobileDetector.isNativeApp()) ? 'http://' + window.location.hostname + '/api' : 'http://192.168.1.128/api'),
 		Subjects: {
+			subjects: "/api-v1/assignatures.json",
 			Notes: {
 				latestNotes: '/api-v1/avisos.json'
 			}

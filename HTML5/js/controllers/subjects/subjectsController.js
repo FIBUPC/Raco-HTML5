@@ -1,22 +1,45 @@
 define(
 	['utils/httpClient',
+	 'utils/dispatcher',
 	 'collections/subjectList'],
-	function(HttpClient, SubjectList) {
+	function(HttpClient, Dispatcher, SubjectList) {
 	    'use strict';
 	    
-	    var SubjectsController = {
-	    	subjects: null //Observable collection
+	    var self,
+	    SubjectsController = {
+	    	subjects: new SubjectList(), //Observable collection
+	    	latestSync: null
 	    };
 
 	    SubjectsController.initialize = function() {
-	    	
+	    	self = this;
+
+	    	self.fetchSubjectsAsync();
 	    };
 
-	    SubjectsController.getSubjectsAsync = function() {
+	    SubjectsController.fetchSubjectsAsync = function() {
+	    	Dispatcher.beginInvoke(function(){
+		    	var subjects = localStorage.getItem('SUBJECTS');
+		    	if (subjects != null) {
+		    		self.latestSync = moment(localStorage.getItem('SUBJECTS_LATEST_SYNC'));
+		    		self.subjects = new SubjectList(JSON.parse(subjects));
+		    	}
+		    });
+	    };
+
+	    SubjectsController.getSubjectsAsync = function(force) {
+	    	if (self.latestSync != null && !force) {
+	    		if (moment().diff(self.latestSync) < Constants.Application.AutoSyncDelay) {
+	    			return;
+	    		}
+	    	}
+
 	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Subjects.subjects)
 	    	.done(function(data) {
-	    		this.subjects = new SubjectList(JSON.parse(data));
+	    		self.subjects.reset(JSON.parse(data));
+	    		self.latestSync = moment();
+	    		Helpers.Environment.log('Subjects synced.');
 	    	}).fail(function(error) {
 	    		console.log("Error retrieving subjects");
 	    	});

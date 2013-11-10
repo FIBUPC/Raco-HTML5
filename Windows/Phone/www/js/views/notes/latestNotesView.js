@@ -9,20 +9,29 @@ define(
 			el: '#content',
 			template: LatestNotesTemplate,
 
+			pageTitle: 'Latest notes',
+			menuElement: '.notes',
+
 			initialize: function () {
 				self = this;
+				self.collection = NotesController.latestNotes;
 			},
 			
 			render: function () {
-				NotesController.getLatestNotesAsync();
+				$(Constants.Application.PageTitle).html(self.pageTitle);
+				Helpers.Application.setMenuActiveElement(self.menuElement);
 
-				$(self.$el.selector).html(self.template);
+				var compiledTemplate = _.template(self.template, {latestNotes: self.collection.models});
+				$(self.$el.selector).html(compiledTemplate);
 
 				self.bindEvents();
+
+				NotesController.getLatestNotesAsync();
 			},
 
 			bindEvents: function () {
-				
+				self.collection.on('change', self.render);
+				self.collection.on('reset', self.render);
 			}
 		});
 

@@ -1,8 +1,9 @@
 define(
 	['text!templates/app/appTemplate.html',
 	 './headerView',
-	 './menuView'],
-	function (AppTemplate, HeaderView, MenuView) {
+	 './menuView',
+	 '../../controllers/login/loginController'],
+	function (AppTemplate, HeaderView, MenuView, LoginController) {
 		'use strict';
 
 		var self,
@@ -19,11 +20,13 @@ define(
 			render: function() {				
 				self.$el.html(self.template);
 
-				self.headerView = new HeaderView();
-				self.menuView = new MenuView();
+				if (LoginController.isLoggedIn()) {
+					self.headerView = new HeaderView();
+					self.headerView.render();
 
-				self.headerView.render();
-				self.menuView.render();
+					self.menuView = new MenuView();
+					self.menuView.render();
+				}
 			}
 		});
 

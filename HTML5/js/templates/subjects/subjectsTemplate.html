@@ -1,1 +1,14 @@
-Subjects
+<% if (_.isEmpty(subjects)) { %>
+	<div class="">
+		<p>There are no subjects.</p>
+	</div>
+<% } else { %>
+	<ul id="subject-list">
+	<% _.each(subjects, function(subject){ %>
+		<li>
+			<p class="acronym"><%= subject.get('idAssig') %></p>
+			<p class="title"><%= subject.get('nom') %></p>
+		</li>
+	<% }); %>
+	</ul>
+<% } %>

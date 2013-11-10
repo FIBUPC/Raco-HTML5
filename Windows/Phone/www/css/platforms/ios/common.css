@@ -1,0 +1,49 @@
+body.standalone #header {
+	padding-top: 1em;
+}
+
+body.ios {
+	font: 17px /21px -apple-system-fonts;
+	font-weight: 100;
+}
+
+body #header {
+	box-shadow: none;
+	opacity: 0.9;
+}
+
+body #header #page-title {
+	font: 17px/21px -apple-system-font;
+	font-weight: bold;
+	line-height: 3em;
+}
+
+body #menu #personal-info .name,
+body #menu #personal-info .surname {
+	margin: 0.5em 0 0 0;
+}
+
+body #menu #personal-info .surname {
+	margin: 0 0 0 0;
+}
+
+body #menu #personal-info .role {
+	padding: 0.5em 0.25em 0.5em 0.25em;
+	margin: 0.75em 0 0 0;
+}
+
+body #menu .profile-picture img {
+	border-radius: 5em;
+	box-shadow: none;
+}
+
+button {
+	border-radius: 0;
+	font-size: 1em;
+}
+
+#latest-notes li {
+	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
+	background-size: auto 1em;
+	padding-right: 3em;
+}

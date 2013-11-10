@@ -1,0 +1,27 @@
+body {
+	width: 160%;
+	min-width: 160%;
+	max-width: 160%;
+}
+
+body.menu-displayed {
+	margin-left: -60%;
+}
+
+#application-wrapper {
+	float: left;
+	width: 62.5%;
+	min-width: 62.5%;
+	max-width: 62.5%;
+}
+
+#menu {
+	width: 37.5%;
+	min-width: 37.5%;
+	max-width: 37.5%;
+	float: right;
+}
+
+#menu .header {
+	display: none;
+}

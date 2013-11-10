@@ -4,8 +4,9 @@
     require.config({
         paths: {
             templates: 'templates',
-            text: 'libraries/vendor/text',
-            jsOAuth: 'libraries/vendor/js-oauth'
+            text: (MobileDetector.isNativeApp() && MobileDetector.isWindowsPhone() ?
+                'libraries/platform/windowsphone/text' : 'libraries/common/text'),
+            jsOAuth: 'libraries/common/js-oauth'
         }
     });
 
