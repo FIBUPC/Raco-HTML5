@@ -52,6 +52,8 @@ define(
 							height: $('#menu').height(),
 							overflow: 'hidden'
 						});
+
+						window.scrollTo(0, 0);
 						$body.addClass('menu-displayed');
 					}
 

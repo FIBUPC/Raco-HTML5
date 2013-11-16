@@ -14,7 +14,9 @@ define (
             NotesController.initialize();
             SubjectsController.initialize();
             
-            if (MobileDetector.isIOS()) { // In iOS, we must check first for the app launching directly from the Start Screen
+            if (MobileDetector.isIOS()) {
+                // In iOS, we must check first for the app launching directly from the Start Screen
+
                 try
                 {
                     if (navigator.standalone) {
@@ -25,6 +27,9 @@ define (
             }
 
             AppView.render();
+
+            // Add active class to clickable elements when they're touched
+            Helpers.Application.setActiveElements();
 
             Backbone.history.start();
         };

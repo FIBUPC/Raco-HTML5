@@ -1,0 +1,11 @@
+<div class="page hide">
+	<% if (_.isNull(note)) { %>
+		<p>Les dades de l'avís no estan disponibles.</p>
+	<% } else { %>
+		<div class="note inner-content">
+			<h2><%= note.get('title') %></h2>
+			<p class="timeago"><%= moment(note.get('pubDate')).fromNow() %></p>
+			<div id="note-description"></div>
+		</div>
+	<% } %>
+</div>

@@ -1,7 +1,8 @@
 define(
 	['controllers/notes/notesController',
-	 'text!templates/notes/latestNotesTemplate.html'],
-	function (NotesController, LatestNotesTemplate) {
+	 'text!templates/notes/latestNotesTemplate.html',
+	 'utils/dispatcher'],
+	function (NotesController, LatestNotesTemplate, Dispatcher) {
 		'use strict';
 
 		var self,
@@ -24,6 +25,8 @@ define(
 				var compiledTemplate = _.template(self.template, {latestNotes: self.collection.models});
 				$(self.$el.selector).html(compiledTemplate);
 
+				$('.page').removeClass('hide');
+
 				self.bindEvents();
 
 				NotesController.getLatestNotesAsync();
@@ -32,6 +35,14 @@ define(
 			bindEvents: function () {
 				self.collection.on('change', self.render);
 				self.collection.on('reset', self.render);
+
+				$('#latest-notes li').click(function(e) {
+					var $self = $(this);
+
+					Dispatcher.beginInvoke(function(){
+						window.location.hash = '#latestNotes/' + $self.data('id');
+					});
+				});
 			}
 		});
 

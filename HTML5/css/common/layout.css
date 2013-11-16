@@ -20,6 +20,25 @@ body {
 	min-height: 100%;
 }
 
+#content {
+	position: relative;
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 100% !important;
+}
+
+#content .page {
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 100% !important;
+	left: 0;
+	position: absolute;
+}
+
+#content .page.hide {
+	left: 60%;
+}
+
 .header,
 #header {
 	min-height: 3em;
@@ -97,9 +116,8 @@ body {
 }
 
 #content h2 {
-	font-size: 1em;
-	padding: 0.5em 0.75em;
 	width: 100%;
+	margin-bottom: 0.5em;
 }
 
 #menu #personal-info {
@@ -190,4 +208,21 @@ button {
 .regular-list li .timeago,
 .regular-list li .attachments {
 	display: inline-block;
+}
+
+.inner-content {
+	padding: 1em 1em;
+}
+
+.note #note-description {
+	margin-top: 2em;
+}
+
+.note #note-description p {
+	margin-bottom: 1em;
+}
+
+.note #note-description .examen .extraInfo .label {
+	margin-top: 1em;
+	display: block;
 }

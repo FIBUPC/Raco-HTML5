@@ -2,8 +2,9 @@ define(
     ['controllers/login/loginController',
      'views/login/loginView',
      'views/notes/latestNotesView',
+     'views/notes/latestNoteView',
      'views/subjects/subjectsView'],
-    function (LoginController, LoginView, LatestNotesView, SubjectsView) {
+    function (LoginController, LoginView, LatestNotesView, LatestNoteView, SubjectsView) {
         'use strict';
 
         var self,
@@ -14,7 +15,8 @@ define(
                 'login': 'login',
                 'logout': 'logout',
                 'latestNotes': 'latestNotes',
-                'subjects': 'subjects'
+                'subjects': 'subjects',
+                'latestNotes/:id': 'latestNote'
             },
 
             defaultAction: 'latestNotes',
@@ -60,6 +62,15 @@ define(
                 }
 
                 LatestNotesView.render();
+            },
+
+            latestNote: function(id) {
+                if (!LoginController.isLoggedIn()) {
+                    self.navigate('login', { trigger: true });
+                    return;
+                }
+
+                (new LatestNoteView({ id: id })).render();
             },
 
             subjects: function() {

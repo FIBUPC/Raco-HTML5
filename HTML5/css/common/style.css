@@ -6,14 +6,22 @@
  *
  */
 
- body {
- 	font-family: Arial, sans-serif;
- 	font-weight: 300;	
- }
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
- #app {
- 	transition: margin-left 0.5s ease;
- }
+body {
+	font-family: Arial, sans-serif;
+	font-weight: 300;	
+}
+
+#app {
+	transition: margin-left 0.5s ease;
+}
+
+#content .page {
+	transition: left 0.5s ease;
+}
 
 .primary-color-background {
 	/*background: #ca0a00;*/
@@ -31,21 +39,21 @@
 
 #menu {
 	background: #efefef;
-	color: white;
+	color: #333333;
 }
 
 #menu #tabs > li.divider {
-	background: #ccc;
+	background: #cccccc;
 }
 
-#menu #tabs > li.active {
+#menu #tabs > li.current {
 	background: url('../../img/common/menu_arrow_inner.png') right center no-repeat;
 	background-color: #D10003;
 }
 
-#menu #tabs > li.active a:link,
-#menu #tabs > li.active a:hover,
-#menu #tabs > li.active a:visited {
+#menu #tabs > li.current a:link,
+#menu #tabs > li.current a:hover,
+#menu #tabs > li.current a:visited {
 	color: white;
 }
 
@@ -60,7 +68,7 @@
 #menu #tabs > li a:visited,
 #menu #tabs > li a:hover {
 	text-decoration: none;
-	color: #333;
+	color: #333333;
 }
 
 #menu #tabs > li.notes a {
@@ -97,27 +105,27 @@
 	background-position: 0.2em 0;
 }
 
-#menu #tabs > li.notes.active a {
+#menu #tabs > li.notes.current a {
 	background-image: url('../../img/common/icons/notes.png');
 }
 
-#menu #tabs > li.timetable.active a {
+#menu #tabs > li.timetable.current a {
 	background-image: url('../../img/common/icons/timetable.png');
 }
 
-#menu #tabs > li.subjects.active a {
+#menu #tabs > li.subjects.current a {
 	background-image: url('../../img/common/icons/subjects.png');
 }
 
-#menu #tabs > li.calendar.active a {
+#menu #tabs > li.calendar.current a {
 	background-image: url('../../img/common/icons/calendar.png');
 }
 
-#menu #tabs > li.rooms.active a {
+#menu #tabs > li.rooms.current a {
 	background-image: url('../../img/common/icons/rooms.png');
 }
 
-#menu #tabs > li.news.active a {
+#menu #tabs > li.news.current a {
 	background-image: url('../../img/common/icons/news.png');
 }
 
@@ -126,7 +134,7 @@
 	/*background-position: 1em 0.5em;*/
 }
 
-#menu #tabs > li.logout.active a {
+#menu #tabs > li.logout.current a {
 	background-image: url('../../img/common/icons/logout.png');
 	background-position: 0.2em 0;
 }
@@ -137,9 +145,11 @@
 }
 
 #content h2 {
-	background: #ccc;
-	color: #222;
-	font-weight: 500;
+	font-size: 1.15em;
+	color: #ca0a00;
+	font-weight: 600;
+	line-height: 1.5em;
+	text-transform: uppercase;
 }
 
 #menu #personal-info {
@@ -148,7 +158,7 @@
 
 #menu #personal-info .name,
 #menu #personal-info .surname {
-	color: #333;
+	color: #333333;
 }
 
 #menu #personal-info .profile-picture img {
@@ -189,6 +199,12 @@ button:focus {
 	border-bottom: 1px solid #eee;
 }
 
+.regular-list li.active,
+.regular-list li:hover {
+	background-color: #eee !important;
+	cursor: pointer;
+}
+
 .regular-list li:last-child {
 	border-bottom: 0;
 }
@@ -198,6 +214,7 @@ button:focus {
 	color: #ca0a00;
 	line-height: 1.15em;
 	margin-bottom: 0.5em;
+	text-transform: uppercase;
 }
 
 .regular-list li .timeago,
@@ -216,4 +233,29 @@ button:focus {
 	background: url('../../img/common/icons/clip.png') left center no-repeat;
 	background-size: auto 2em;
 	padding-left: 2em;
+}
+
+.note .timeago {
+	font-size: 0.8em;
+	color: #666;
+}
+
+.note #note-description p {
+	line-height: 1.5em;
+}
+
+.note #note-description .examen .topInfo { 
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.note #note-description .examen .extraInfo span:not(.label) {
+	margin-top: 0;
+	display: inline-block;
+}
+
+.note #note-description .examen .extraInfo .label {
+	font-weight: bold;
+	margin-top: 1.5em;
 }

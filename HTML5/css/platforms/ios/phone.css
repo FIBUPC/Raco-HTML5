@@ -1,7 +1,3 @@
-body.standalone #header #buttons-area {
-	top: 1em !important;
-}
-
 body.standalone #menu #personal-info {
-	padding-top: 2em !important;
+	border-top: 1.5em solid #333333 !important;
 }
