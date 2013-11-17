@@ -24,7 +24,7 @@ var Helpers = {
 			}
 		},
 		setActiveElements: function() {
-			$(document.body).on('click', '.clickable', function(e) {
+			$(document.body).on('touchend', '.clickable', function(e) {
 				var $self = $(this);
 
 				$self.addClass('active');

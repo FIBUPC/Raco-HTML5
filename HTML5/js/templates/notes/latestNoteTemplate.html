@@ -4,7 +4,9 @@
 	<% } else { %>
 		<div class="note inner-content">
 			<h2><%= note.get('title') %></h2>
-			<p class="timeago"><%= moment(note.get('pubDate')).fromNow() %></p>
+			<p class="timeago">
+				<%= moment(note.get('pubDate')).fromNow() %> on <%= note.get('subject') %>
+			</p>
 			<div id="note-description"></div>
 		</div>
 	<% } %>
