@@ -1,11 +1,12 @@
 define(
-	['controllers/subjects/subjectsController',
+	['views/app/baseView',
+	 'controllers/subjects/subjectsController',
 	 'text!templates/subjects/subjectsTemplate.html'],
-	function (SubjectsController, SubjectsTemplate) {
+	function (BaseView, SubjectsController, SubjectsTemplate) {
 		'use strict';
 
 		var self,
-		SubjectsView = Backbone.View.extend({
+		SubjectsView = BaseView.extend({
 			el: '#content',
 			template: SubjectsTemplate,
 
@@ -14,26 +15,20 @@ define(
 
 			initialize: function () {
 				self = this;
+				BaseView.prototype.wrapRender.call(self, self);
+
 				self.collection = SubjectsController.subjects;
 			},
 			
 			render: function () {
-				$(Constants.Application.PageTitle).html(self.pageTitle);
-				Helpers.Application.setMenuActiveElement(self.menuElement);
-
 				var compiledTemplate = _.template(self.template, {subjects: self.collection.models});
 				$(self.$el.selector).html(compiledTemplate);
-
-				$('.page').removeClass('hide');
-
-				self.bindEvents();
-
-				SubjectsController.getSubjectsAsync();
 			},
 
-			bindEvents: function () {
-				self.collection.on('change', self.render);
-				self.collection.on('reset', self.render);
+			afterRender: function() {
+				BaseView.prototype.afterRender.call(self);
+
+				SubjectsController.getSubjectsAsync();
 			}
 		});
 

@@ -7,8 +7,8 @@
 		<ul id="subject-list" class="regular-list">
 		<% _.each(subjects, function(subject){ %>
 			<li data-id="<%= subject.get('codi_upc') %>" class="clickable">
-				<p class="acronym"><%= subject.get('idAssig') %></p>
 				<p class="title"><%= subject.get('nom') %></p>
+				<p class="acronym"><%= subject.get('idAssig') %></p>
 			</li>
 		<% }); %>
 		</ul>

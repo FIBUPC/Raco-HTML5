@@ -25,3 +25,15 @@ body.menu-displayed {
 #menu-toggle-button {
 	display: none !important;
 }
+
+body.login #connect-button-box {
+	width: 40%;
+	margin: 0 auto;
+	left: 30%;
+	right: 30%;
+	bottom: 20%;
+}
+
+body.login #connect-logo {
+	padding-left: 30%;
+}

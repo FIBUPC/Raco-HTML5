@@ -174,8 +174,19 @@ body {
 }
 
 body.login {
-	background-color: #ca0a00;
+	background: url('../../img/common/login_background.jpg') center center no-repeat;
+	background-size: auto 120%;
 	color: white;
+	max-width: 100%;
+	max-height: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
+body.login #connect-logo {
+	background: #1483ce;
+	opacity: 0.75;
 }
 
 button {
@@ -186,8 +197,14 @@ button {
 }
 
 body.login button {
-	background-color: white;
-	color: #ca0a00;
+	font-weight: bold;
+	font-size: 1.2em;
+	box-shadow: 0 0 0.5em rgba(45, 45, 45, 1);
+}
+
+body.login button:hover,
+body.login button.active {
+	background-color: #333333;
 }
 
 button:hover,

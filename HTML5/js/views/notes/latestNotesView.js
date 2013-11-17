@@ -1,47 +1,41 @@
 define(
-	['controllers/notes/notesController',
-	 'text!templates/notes/latestNotesTemplate.html',
-	 'utils/dispatcher'],
-	function (NotesController, LatestNotesTemplate, Dispatcher) {
+	['views/app/baseView',
+	 'controllers/notes/notesController',
+	 'text!templates/notes/latestNotesTemplate.html'],
+	function (BaseView, NotesController, LatestNotesTemplate) {
 		'use strict';
 
 		var self,
-		LatestNotesView = Backbone.View.extend({
+		LatestNotesView = BaseView.extend({
 			el: '#content',
 			template: LatestNotesTemplate,
 
 			pageTitle: 'Latest notes',
 			menuElement: '.notes',
 
-			initialize: function () {
+			initialize: function() {
 				self = this;
-				self.collection = NotesController.latestNotes;
+				BaseView.prototype.wrapRender.call(self, self);
+
+			    self.collection = NotesController.latestNotes;
 			},
 			
-			render: function () {
-				$(Constants.Application.PageTitle).html(self.pageTitle);
-				Helpers.Application.setMenuActiveElement(self.menuElement);
-
+			render: function() {
 				var compiledTemplate = _.template(self.template, {latestNotes: self.collection.models});
 				$(self.$el.selector).html(compiledTemplate);
+			},
 
-				$('.page').removeClass('hide');
-
-				self.bindEvents();
+			afterRender: function() {
+				BaseView.prototype.afterRender.call(self);
 
 				NotesController.getLatestNotesAsync();
 			},
 
-			bindEvents: function () {
-				self.collection.on('change', self.render);
-				self.collection.on('reset', self.render);
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
 
 				$('#latest-notes li').click(function(e) {
-					var $self = $(this);
-
-					Dispatcher.beginInvoke(function(){
-						window.location.hash = '#latestNotes/' + $self.data('id');
-					});
+					self.navigate('#latestNotes/' + $(this).data('id'));
 				});
 			}
 		});

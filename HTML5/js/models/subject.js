@@ -6,7 +6,8 @@ define(
 				idAssig: null,
 				codi_upc: null,
 				nom: null
-			}
+			},
+			idAttribute: 'codi_upc'
 		});
 
 		return Subject;
