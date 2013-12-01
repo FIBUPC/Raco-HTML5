@@ -29,6 +29,14 @@ define(
 				BaseView.prototype.afterRender.call(self);
 
 				SubjectsController.getSubjectsAsync();
+			},
+
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
+
+				$('#subject-list li').click(function(e) {
+					self.navigate('#!/subjects/' + $(this).data('id'));
+				});
 			}
 		});
 

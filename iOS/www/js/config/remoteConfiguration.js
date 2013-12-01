@@ -1,6 +1,6 @@
 var RemoteConfiguration = {
 	Urls: {
-		Base: (DEBUG ? 'http://' + window.location.hostname + '/api' : 'http://m.raco.fib.upc.edu/api'),
+		Base: (DEBUG ? 'http://' + window.location.hostname + '/api' : 'http://racomobile.azurewebsites.net/api'),
 		Subjects: {
 			subjects: "/api-v1/assignatures.json",
 			Notes: {

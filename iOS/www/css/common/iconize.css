@@ -1,0 +1,154 @@
+/* Iconize 0.5 */
+
+/* websites (pictures and movies) */
+.note .attachments ul li a[title *="youtube.com/watch?"],
+.note .attachments ul li a[title *="sevenload.com/videos/"],
+.note .attachments ul li a[title *="metacafe.com/watch/"] { 
+	background: transparent url('../../img/common/iconize/icon_film.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title *="flickr.com/photos/"],
+.note .attachments ul li a[title *="zooomr.com"],
+.note .attachments ul li a[title *="imageshack.us"],
+.note .attachments ul li a[title *="bubbleshare.com"],
+.note .attachments ul li a[title *="sevenload.com/bilder/"] { 
+	background: transparent url('../../img/common/iconize/icon_pic.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+/* extensions */
+.note .attachments ul li a[title$='.doc'],
+.note .attachments ul li a[title$='.rtf'],
+.note .attachments ul li a[title$='.docx'] {
+	background: transparent url('../../img/common/iconize/icon_doc.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.txt'] {
+	background: transparent url('../../img/common/iconize/icon_txt.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.xls'],
+.note .attachments ul li a[title$='.xlsx'] {
+	background: transparent url('../../img/common/iconize/icon_xls.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.rss'],
+.note .attachments ul li a[title$='.atom'] { 
+	background: transparent url('../../img/common/iconize/icon_feed.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.opml'] { 
+	background: transparent url('../../img/common/iconize/icon_opml.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.phps'] { 
+	background: transparent url('../../img/common/iconize/icon_phps.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.torrent'] { 
+	background: transparent url('../../img/common/iconize/icon_torrent.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.vcard'] { 
+	background: transparent url('../../img/common/iconize/icon_vcard.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.exe'] { 
+	background: transparent url('../../img/common/iconize/icon_exe.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.dmg'],
+.note .attachments ul li a[title$='.app'] { 
+	background: transparent url('../../img/common/iconize/icon_dmg.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.pps'] { 
+	background: transparent url('../../img/common/iconize/icon_pps.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.pdf'] { 
+	background: transparent url('../../img/common/iconize/icon_pdf.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.xpi'] { 
+	background: transparent url('../../img/common/iconize/icon_plugin.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.fla'],
+.note .attachments ul li a[title$='.swf'] { 
+	background: transparent url('../../img/common/iconize/icon_flash.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.zip'],
+.note .attachments ul li a[title$='.rar'],
+.note .attachments ul li a[title$='.gzip'],
+.note .attachments ul li a[title$='.bzip'],
+.note .attachments ul li a[title$='.ace'] { 
+	background: transparent url('../../img/common/iconize/icon_archive.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.ical'] { 
+	background: transparent url('../../img/common/iconize/icon_ical.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.css'] { 
+	background: transparent url('../../img/common/iconize/icon_css.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.ttf'] { 
+	background: transparent url('../../img/common/iconize/icon_ttf.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.jpg'],
+.note .attachments ul li a[title$='.png'],
+.note .attachments ul li a[title$='.png'],
+.note .attachments ul li a[title$='.bmp'],
+.note .attachments ul li a[title$='.jpeg'],
+.note .attachments ul li a[title$='.svg'],
+.note .attachments ul li a[title$='.eps'] { 
+	background: transparent url('../../img/common/iconize/icon_pic.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.mov'],
+.note .attachments ul li a[title$='.wmv'],
+.note .attachments ul li a[title$='.mp4'],
+.note .attachments ul li a[title$='.avi'],
+.note .attachments ul li a[title$='.mpg'] { 
+	background: transparent url('../../img/common/iconize/icon_film.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+.note .attachments ul li a[title$='.mp3'],
+.note .attachments ul li a[title$='.wav'],
+.note .attachments ul li a[title$='.ogg'],
+.note .attachments ul li a[title$='.wma'],
+.note .attachments ul li a[title$='.m4a'] { 
+	background: transparent url('../../img/common/iconize/icon_music.png') left center no-repeat;
+	background-size: auto 80%;
+}
+
+/* use this class to make sure that images won't get iconized */
+.note .attachments ul li a.no-image {
+	padding-left: 0 !important;
+	background: none !important;
+}
