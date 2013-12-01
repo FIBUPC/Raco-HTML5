@@ -1,7 +1,0 @@
-body.standalone:not(.login) #menu #personal-info {
-	border-top: 1.5em solid #333333 !important;
-}
-
-body.standalone.login #connect-logo {
-	padding: 2em 1.5em 1.5em 1.5em;
-}
