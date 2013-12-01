@@ -242,3 +242,35 @@ button {
 	margin-top: 1em;
 	display: block;
 }
+
+.note .attachments {
+	margin: 2em 0 0 0;
+}
+
+.note .attachments ul {
+	padding: 1em;
+	margin: 0.5em 0 0 0;
+	box-sizing: border-box;
+}
+
+.note .attachments ul li {
+	line-height: 2em;
+	margin-bottom: 0.5em;
+	overflow: hidden;
+}
+
+.note .attachments ul li a {
+	padding: 0 0 0 2em;
+	text-overflow: ellipsis;
+	width: 90%;
+	white-space: nowrap;
+	display: block;
+}
+
+.note .attachments ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+.inner-content .subtitle {
+	font-size: 0.8em;
+}

@@ -276,3 +276,35 @@ button:focus {
 	font-weight: bold;
 	margin-top: 1.5em;
 }
+
+.note .attachments ul {
+	list-style: none;
+	background: #c8eaf1;
+	border-radius: 0.3em;
+	border: 1px solid #cdecf2;
+	padding: 1em;
+}
+
+.note .attachments ul li {
+	border-bottom: 1px solid #cdecf2;
+}
+
+.note .attachments ul li:last-child {
+	border-bottom: 0 !important;
+}
+
+.note .attachments ul li a:link,
+.note .attachments ul li a:visited {
+	text-decoration: none;
+	color: #01476d;
+}
+
+.note .attachments ul li a:hover,
+.note .attachments ul li a.active {
+	color: #ca0a00;
+}
+
+.inner-content .subtitle {
+	text-transform: uppercase;
+	color: #333333;
+}
