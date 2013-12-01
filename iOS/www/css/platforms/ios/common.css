@@ -1,0 +1,78 @@
+body.standalone:not(.login) #header {
+	border-top: 1.5em solid #1483ce;
+}
+
+body.standalone.menu-displayed:not(.login) #header {
+	border-top: 1.5em solid #333333;
+	opacity: 1;
+}
+
+body.ios {
+	font: 17px /21px -apple-system-fonts;
+	font-weight: 100;
+}
+
+body #header {
+	box-shadow: none;
+	opacity: 0.95;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	transition: left 0.5s ease;
+}
+
+body.menu-displayed #header {
+	left: 79.5%;
+}
+
+body:not(.login) #content {
+	margin-top: 3em;
+}
+
+body.standalone:not(.login) #content {
+	margin-top: 5em;
+}
+
+body #header #page-title {
+	font: 17px/21px -apple-system-font;
+	font-weight: bold;
+	line-height: 3em;
+}
+
+body #menu #personal-info .name,
+body #menu #personal-info .surname {
+	margin: 0.5em 0 0 0;
+}
+
+body #menu #personal-info .surname {
+	margin: 0 0 0 0;
+}
+
+body #menu #personal-info .role {
+	padding: 0.5em 0.25em 0.5em 0.25em;
+	margin: 0.75em 0 0 0;
+}
+
+body #menu .profile-picture img {
+	border-radius: 5em;
+	box-shadow: none;
+}
+
+button {
+	border-radius: 0;
+	font-size: 1em;
+}
+
+.regular-list li {
+	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
+	background-size: auto 1em;
+	padding-right: 3em;
+}
+
+.regular-list li.active,
+.regular-list li:hover {
+	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
+	background-size: auto 1em;
+}

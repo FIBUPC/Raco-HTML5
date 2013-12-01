@@ -1,0 +1,38 @@
+body {
+	min-width: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+#app {
+	width: 180%;
+	min-width: 180%;
+	max-width: 180%;
+	margin-left: -80%;
+}
+
+body.menu-displayed #app {
+	margin-left: 0;
+}
+
+#application-wrapper {
+	float: right;
+	width: 55.56%;
+	min-width: 55.56%;
+	max-width: 55.56%;
+}
+
+#menu {
+	width: 44.44%;
+	min-width: 44.44%;
+	max-width: 44.44%;
+	float: left;
+}
+
+#menu .header {
+	display: none;
+}
+
+#menu #personal-info .profile-card {
+	max-width: 49%;
+}

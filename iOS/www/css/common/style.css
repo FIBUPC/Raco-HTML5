@@ -1,0 +1,278 @@
+/*
+ * Primary color: #ca0a00 (red)
+ *
+ * Secondary color: #141414 (dark gray)
+ *
+ *
+ */
+
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-weight: 300;	
+}
+
+#app {
+	transition: margin-left 0.5s ease;
+}
+
+#content .page {
+	transition: left 0.5s ease;
+}
+
+.primary-color-background {
+	/*background: #ca0a00;*/
+	background: #1483ce;
+	color: white;
+}
+
+.primary-color-foreground {
+	color: #ca0a00;
+}
+
+#header #page-title {
+	font-weight: bold;
+}
+
+#menu {
+	background: #efefef;
+	color: #333333;
+}
+
+#menu #tabs > li.divider {
+	background: #cccccc;
+}
+
+#menu #tabs > li.current {
+	background: url('../../img/common/menu_arrow_inner.png') right center no-repeat;
+	background-color: #D10003;
+}
+
+#menu #tabs > li.current a:link,
+#menu #tabs > li.current a:hover,
+#menu #tabs > li.current a:visited {
+	color: white;
+}
+
+#menu #tabs > li a {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	padding-left: 2em;
+}
+
+#menu #tabs > li a:link,
+#menu #tabs > li a:visited,
+#menu #tabs > li a:hover {
+	text-decoration: none;
+	color: #333333;
+}
+
+#menu #tabs > li.notes a {
+	background-image: url('../../img/common/icons/notes_red.png');
+}
+
+#menu #tabs > li.timetable a {
+	background-image: url('../../img/common/icons/timetable_red.png');
+}
+
+#menu #tabs > li.subjects a {
+	background-image: url('../../img/common/icons/subjects_red.png');
+}
+
+#menu #tabs > li.calendar a {
+	background-image: url('../../img/common/icons/calendar_red.png');
+}
+
+#menu #tabs > li.rooms a {
+	background-image: url('../../img/common/icons/rooms_red.png');
+}
+
+#menu #tabs > li.news a {
+	background-image: url('../../img/common/icons/news_red.png');
+}
+
+#menu #tabs > li.settings a {
+	background-image: url('../../img/common/icons/settings_red.png');
+	/*background-position: 1em 0.5em;*/
+}
+
+#menu #tabs > li.logout a {
+	background-image: url('../../img/common/icons/logout_red.png');
+	background-position: 0.2em 0;
+}
+
+#menu #tabs > li.notes.current a {
+	background-image: url('../../img/common/icons/notes.png');
+}
+
+#menu #tabs > li.timetable.current a {
+	background-image: url('../../img/common/icons/timetable.png');
+}
+
+#menu #tabs > li.subjects.current a {
+	background-image: url('../../img/common/icons/subjects.png');
+}
+
+#menu #tabs > li.calendar.current a {
+	background-image: url('../../img/common/icons/calendar.png');
+}
+
+#menu #tabs > li.rooms.current a {
+	background-image: url('../../img/common/icons/rooms.png');
+}
+
+#menu #tabs > li.news.current a {
+	background-image: url('../../img/common/icons/news.png');
+}
+
+#menu #tabs > li.settings.active a {
+	background-image: url('../../img/common/icons/settings.png');
+	/*background-position: 1em 0.5em;*/
+}
+
+#menu #tabs > li.logout.current a {
+	background-image: url('../../img/common/icons/logout.png');
+	background-position: 0.2em 0;
+}
+
+#header .header-button.menu {
+	background: url('../../img/common/icons/menu.png') center center no-repeat;
+	background-size: auto 60%;
+}
+
+#content h2 {
+	font-size: 1.15em;
+	color: #ca0a00;
+	font-weight: 600;
+	line-height: 1.5em;
+	text-transform: uppercase;
+}
+
+#menu #personal-info {
+	background: #efefef;
+}
+
+#menu #personal-info .name,
+#menu #personal-info .surname {
+	color: #333333;
+}
+
+#menu #personal-info .profile-picture img {
+	box-shadow: 0 0 1em rgba(45, 45, 45, 0.15);
+	border-radius: 0.3em;
+}
+
+#menu #personal-info .profile-card .role {
+	color: white;
+	background: #009CEB;
+	border-radius: 0.3em;
+	text-transform: uppercase;
+}
+
+body.login {
+	background: url('../../img/common/login_background.jpg') center center no-repeat;
+	background-size: auto 120%;
+	color: white;
+	max-width: 100%;
+	max-height: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
+body.login #connect-logo {
+	background: #1483ce;
+	opacity: 0.75;
+}
+
+button {
+	background-color: #ca0a00;
+	color: white;
+	border: 0;
+	border-radius: 0.3em;
+}
+
+body.login button {
+	font-weight: bold;
+	font-size: 1.2em;
+	box-shadow: 0 0 0.5em rgba(45, 45, 45, 1);
+}
+
+body.login button:hover,
+body.login button.active {
+	background-color: #333333;
+}
+
+button:hover,
+button:focus {
+	opacity: 0.9;
+}
+
+.regular-list li {
+	border-bottom: 1px solid #eee;
+}
+
+.regular-list li.active,
+.regular-list li:hover {
+	background-color: #eee !important;
+	cursor: pointer;
+}
+
+.regular-list li:last-child {
+	border-bottom: 0;
+}
+
+.regular-list li .title {
+	font-weight: 600;
+	color: #ca0a00;
+	line-height: 1.15em;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+.regular-list li .timeago,
+.regular-list li .attachments {
+	font-size: 0.7em;
+	color: #666;
+}
+
+.regular-list li .acronym {
+	margin-bottom: 0.3em;
+	font-size: 0.8em;
+}
+
+.regular-list li .attachments {
+	margin-left: 1em;
+	background: url('../../img/common/icons/clip.png') left center no-repeat;
+	background-size: auto 2em;
+	padding-left: 2em;
+}
+
+.note .timeago {
+	font-size: 0.8em;
+	color: #666;
+}
+
+.note #note-description p {
+	line-height: 1.5em;
+}
+
+.note #note-description .examen .topInfo { 
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.note #note-description .examen .extraInfo span:not(.label) {
+	margin-top: 0;
+	display: inline-block;
+}
+
+.note #note-description .examen .extraInfo .label {
+	font-weight: bold;
+	margin-top: 1.5em;
+}

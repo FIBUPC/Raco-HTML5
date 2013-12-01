@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta id="viewport" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="charset" content="utf-8" />
+		<title>Racó Mobile</title>
+		
+		<!-- Reset CSS -->
+		<link href="css/common/reset.css" rel="stylesheet" type="text/css" media="screen" />
+		
+		<!-- Layout CSS -->
+		<link href="css/common/layout.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="css/common/layout_phone.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
+		<link href="css/common/layout_tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" />
+		
+		<!-- Style CSS -->
+		<link href="css/common/style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="css/common/style_phone.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
+		<link href="css/common/style_tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" />
+		
+        <script type="text/javascript">
+        	var DEBUG = true;
+			var APPLICATION = true;
+        </script>
+        
+        <script type="text/javascript" src="js/libraries/common/jquery.js"></script>
+		<script type="text/javascript" src="js/libraries/common/underscore.js"></script>
+		<script type="text/javascript" src="js/libraries/common/backbone.js"></script>
+		<script type="text/javascript" src="js/libraries/common/moment.js"></script>
+		
+		<script type="text/javascript" src="js/utils/mobileDetector.js"></script>
+		<script type="text/javascript" src="js/config/constants.js"></script>
+		<script type="text/javascript" src="js/config/remoteConfiguration.js"></script>
+		<script type="text/javascript" src="js/utils/helpers.js"></script>
+		
+		<!-- Application launcher -->
+        <script type="text/javascript" src="js/initialize.js"></script>
+        <script type="text/javascript">
+	        // Run the app directly or wait for deviceReady event
+			function RunApplication() {
+				var script = document.createElement('script');
+			    script.setAttribute('data-main', 'js/main');
+			    script.src = 'js/libraries/common/require.js';
+			    head.appendChild(script);
+			}
+
+			if (MobileDetector.isNativeApp()) {
+				document.addEventListener('deviceready', RunApplication, false);
+			}
+			else {
+				RunApplication();
+			}
+        </script>
+	</head>
+	<body class="web browser" onselectstart="return false;">
+		<div id="app">
+			<!-- Application's content appears here -->
+		</div>
+	</body>
+</html>
