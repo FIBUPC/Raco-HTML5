@@ -73,7 +73,7 @@ define(
 	    	}
 	    	
 		    function openAuthorizationWindow(url) {
-		    	if (!Helpers.Environment.isNativeApp()) {
+		    	if (!MobileDetector.isNativeApp()) {
 		    		var iframe = document.createElement('iframe');
 			    	iframe.id = that.iFrameLoginId;
 			    	iframe.src = url;
@@ -93,7 +93,18 @@ define(
 			        }
 		    	}
 		    	else {
-		    		// TODO: use Cordova ChildBrowser plugin
+		    		window.plugins.childBrowser.showWebPage(url, function(resp){
+		    			if (resp.location.endsWith('authorize')) {
+		    				window.plugins.childBrowser.close();
+		    				that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);	
+		    			}
+		    			else if (resp.location.endsWith('no-authorize')) {
+		    				window.plugins.childBrowser.close();
+		    				failureHandler();
+		    			}
+		    		}, function() {
+		    			failureHandler();
+		    		});
 		    	}
 		    }
 

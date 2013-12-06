@@ -66,7 +66,11 @@ define(
 	    		'&d_id_attachment=' + id);
 
 	    	if (MobileDetector.isNativeApp()) {
-	    		
+	    		window.plugins.childBrowser.showWebPage(signedUrl, function(resp){
+	    			alert("attachment opened");
+	    		}, function(error) {
+	    			alert("error opening attachment");
+	    		}, true); //opening externally
 	    	}
 	    	else {
 	    		window.open(signedUrl, '_blank');

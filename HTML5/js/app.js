@@ -30,7 +30,7 @@ define (
 
                 try
                 {
-                    if (navigator.standalone) {
+                    if (navigator.standalone || MobileDetector.isNativeApp()) {
                         $('body').addClass('standalone');
                     }
                 }

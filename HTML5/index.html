@@ -23,8 +23,8 @@
 		<link href="css/common/iconize.css" rel="stylesheet" type="text/css" media="screen" />
 		
         <script type="text/javascript">
-        	var DEBUG = true;
-			var APPLICATION = false;
+        	var DEBUG = false;
+			var APPLICATION = true;
         </script>
         
         <script type="text/javascript" src="js/libraries/common/jquery.js"></script>
@@ -40,6 +40,10 @@
 		<!-- Application launcher -->
         <script type="text/javascript" src="js/initialize.js"></script>
         <script type="text/javascript">
+        	String.prototype.endsWith = function(suffix) {
+			    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+			};
+
 	        // Run the app directly or wait for deviceReady event
 			function RunApplication() {
 				var script = document.createElement('script');

@@ -31,13 +31,21 @@
 
 - (void)showWebPage:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options {
 	[self.callbackIds setValue:[arguments pop] forKey:@"onEvent"];
-  NSString *url = [options objectForKey:@"url"] ?: @"";
-  BOOL invisible = NO;
-  _modalWebView = [[ModalWebView alloc] initWithURL:url
-                                           params:[options objectForKey:@"params"]
-                                  isViewInvisible:invisible
-                                         delegate:self];
-  [_modalWebView show];
+    NSString *url = [options objectForKey:@"url"] ?: @"";
+    NSString *external = [options objectForKey:@"external"] ? : @"";
+    BOOL invisible = NO;
+    
+    if([external isEqualToString:@"external"]) {
+        NSURL *urlToOpen = [NSURL URLWithString:url];
+        [[UIApplication sharedApplication] openURL:urlToOpen];
+    }
+    else {
+        _modalWebView = [[ModalWebView alloc] initWithURL:url
+                                                params:[options objectForKey:@"params"]
+                                                isViewInvisible:invisible
+                                                delegate:self];
+        [_modalWebView show];
+    }
 }
 
 - (void)close:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options {

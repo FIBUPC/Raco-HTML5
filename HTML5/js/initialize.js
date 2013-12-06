@@ -6,10 +6,11 @@ if (!window.plugins) {
 var libraries = {
 	platform: {
 		ios: [
-			'cordova'
+			'cordova',
+			'modalwebview'
 		],
 		android: [
-
+			'cordova'
 		],
 		windowsphone: [
 			'cordova',
