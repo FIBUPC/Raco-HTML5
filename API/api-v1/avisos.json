@@ -1,59 +1,205 @@
-[
-	{
-		"id": 1,
-		"subject": "GRAU-ASMI",
-		"title": "EXAMEN FINAL (10/06/2013)",
-		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59715&assig=GRAU-ASMI",
-		"description": "&lt;div class=&quot;examen&quot;&gt;&lt;div class=&quot;topInfo&quot;&gt;&lt;span class=&quot;convocatoria&quot;&gt;Convocat&ograve;ria d'examen Final de GRAU-ASMI&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Data i hora&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;dataExamen&quot;&gt;10/06/2013&lt;/span&gt; a les &lt;span class=&quot;data&quot; id=&quot;horaExamen&quot;&gt;18:30&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Distribuci&oacute; d'aules&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;aulesExamen&quot;&gt;A5001 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;extraInfo&quot;&gt;&lt;span class=&quot;label&quot;&gt;Comentaris&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;data&quot; id=&quot;comentarisExamen&quot;&gt;El examen final de ASAI ser&agrave;:&lt;br&gt;&lt;br&gt;el lunes 10 de junio de 2013&lt;br&gt;&lt;br&gt;a las 18:30 horas, con una duraci&oacute;n prevista de una hora y media.&lt;br&gt;&lt;br&gt;en el aula A5.001.&lt;br&gt;&lt;br&gt;Incluir&aacute;:&lt;br&gt;&lt;br&gt;- un test de 10 a 15 preguntas para elegir entre tres opciones y algunos items de la historia de la inform&aacute;tica de los que habr&aacute; que indicar el a&ntilde;o.&lt;br&gt;&lt;br&gt;- 3 preguntas breves sobre conceptos&lt;br&gt;&lt;br&gt;- un caso de &eacute;tica&lt;br&gt;&lt;br&gt;- un texto para ser comentado.&lt;br&gt;&lt;br&gt;Miquel Barcel&oacute;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;",
-		"pubDate": "Wed, 29 May 2013 12:28:34 +0200",
-		"llegit": false
-	},
-	{
-		"id": 2,
-		"subject": "GRAU-ASMI",
-		"title": "Presentació - 2013-05-28 - Violencia, videojuegos y sociedad",
-		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59706&assig=GRAU-ASMI",
-		"description": "",
-		"pubDate": "Wed, 29 May 2013 11:56:08 +0200",
-		"attachments": [
-			{
-				"title": "Violencia, videojuegos y sociedad.pdf",
-				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59706&assig=GRAU-ASMI"
-			}
-		]
-	},
-	{
-		"id": 3,
-		"subject": "GRAU-CBDE",
-		"title": "Seminars, peer-marking and CBDE course survey",
-		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59719&assig=GRAU-CBDE",
-		"description": "&lt;p&gt;Ja teniu disponible al Learn-SQL una activitat d'avaluaci&amp;oacute; de l'&amp;uacute;ltim seminari (Everis). Teniu una setmana per respondre'l i manar-lo per email a oromero@essi.upc.edu. A m&amp;eacute;s, recordeu que avui &amp;eacute;s l'&amp;uacute;ltim dia per enviar el q&amp;uuml;estionari del seminari anterior (vinchucas, chagas i bases de dades).&lt;/p&gt;&lt;p&gt;Recordar-vos tamb&amp;eacute; que dilluns vinent s'obrir&amp;agrave; l'activitat de peer-marking per avaluar companys. Tindreu de temps fins el dia de l'examen (13/06/2013) per enviar les vostres notes.&lt;/p&gt;&lt;p&gt;Per &amp;uacute;ltim, el mateix dilluns, apareixer&amp;agrave; un link a una enquesta sobre el curs. Recordeu que CBDE &amp;eacute;s de nova implantaci&amp;oacute;. Per aquest motiu &amp;eacute;s molt important que ens doneu el vostre feedback per tal de millorar-la. Tindreu temps fins a finals de mes (30/06/2013) per a respondre-la i us hi estarem agra&amp;iuml;ts si us preneu la mol&amp;egrave;stia.&lt;/p&gt;",
-		"pubDate": "Wed, 29 May 2013 15:05:31 +0200"
-	},
-	{
-		"id": 4,
-		"subject": "GRAU-CBDE",
-		"title": "Video del seminari: A Real Case Study",
-		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE",
-		"description": "&lt;p&gt;El video del seminari del 17/5/2013 sobre un cas d'&amp;uacute;s real ja est&amp;agrave; disponible al Learn-SQL.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;line-height: 1.5em;&quot;&gt;Com sempre, aquest seminari t&amp;eacute; un q&amp;uuml;estionari assignat que heu de manar per mail a l'Oscar Romero (data l&amp;iacute;mit: 29/5/2013, el mateix dia incl&amp;ograve;s).&lt;/span&gt;&lt;/p&gt;",
-		"pubDate": "Wed, 29 May 2013 15:05:31 +0200",
-		"attachments": [
-			{
-				"title": "Video del seminari.mov",
-				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE"
-			},
-			{
-				"title": "Questionari seminari.docx",
-				"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE"
-			}
-		]
-	},
-	{
-		"id": 5,
-		"subject": "GRAU-CBDE",
-		"title": "Classe dimarts dia 30 d'Abril",
-		"link": "https://raco.fib.upc.edu/avisos/veure.jsp?id=59523&assig=GRAU-CBDE",
-		"description": "&lt;p&gt;Dem&amp;agrave; dimarts dia 30 d'Abril &lt;strong&gt;hi haura classe tal com estava previst&lt;/strong&gt;. Tot i aix&amp;ograve;, per no coartar el dret a vaga de ning&amp;uacute;, &lt;strong&gt;no es far&amp;agrave; cap acte avaluatori&lt;/strong&gt; i a la corresponent sessi&amp;oacute; del Moodle &lt;strong&gt;s'han penjat materials&lt;/strong&gt; per tal de facilitar que pugueu asolir aquesta part del temari.&lt;/p&gt;",
-		"pubDate": "Mon, 29 Apr 2013 16:08:52 +0200"
-	}
-]
+{
+   "GRAU-GEP":[
+      {
+         "id": 1,
+         "pubDate":"Wed, 30 Jan 2013 22:53:07 +0100",
+         "title":"Mòdul 3",
+         "description":null,
+         "link":"https:\/\/raco.fib.upc.edu\/avisos\/veure.jsp?id=56539&assig=GRAU-GEP",
+         "read":false,
+         "attachments":[
+            {
+               "extension":"pdf",
+               "id":41075,
+               "fileName":"Gestores_de_referencias_(Modulo_3.2.2).pdf",
+               "mimeType":"application\/pdf",
+               "size":14012379
+            },
+            {
+               "extension":"pdf",
+               "id":41074,
+               "fileName":"Habilidades_informacionales_(Modulo_3.2.1).pdf",
+               "mimeType":"application\/pdf",
+               "size":18590334
+            },
+            {
+               "extension":"pdf",
+               "id":41072,
+               "fileName":"Modul_3.1_-_Direccion_de_personas_y_equipos.pdf",
+               "mimeType":"application\/pdf",
+               "size":5124175
+            },
+            {
+               "extension":"pdf",
+               "id":41071,
+               "fileName":"Modul_3.2_-_Habilidades_informacionales.pdf",
+               "mimeType":"application\/pdf",
+               "size":786091
+            },
+            {
+               "extension":"pdf",
+               "id":41070,
+               "fileName":"Modul_3.3_-_Tecnicas_de_comunicacion_eficientes.pdf",
+               "mimeType":"application\/pdf",
+               "size":3326092
+            },
+            {
+               "extension":"pdf",
+               "id":41073,
+               "fileName":"Modul_3_-_Temari.pdf",
+               "mimeType":"application\/pdf",
+               "size":291948
+            },
+            {
+               "extension":"pdf",
+               "id":41069,
+               "fileName":"Rubrica_4_-_Presentacion_preliminar.pdf",
+               "mimeType":"application\/pdf",
+               "size":47105
+            },
+            {
+               "extension":"pdf",
+               "id":41068,
+               "fileName":"Rubrica_5_-_Contexto_y_referencias.pdf",
+               "mimeType":"application\/pdf",
+               "size":49808
+            },
+            {
+               "extension":"pdf",
+               "id":41280,
+               "fileName":"Videos_Modul_3.pdf",
+               "mimeType":"application\/pdf",
+               "size":47043
+            }
+         ]
+      },
+      {
+         "id": 2,
+         "pubDate":"Wed, 30 Jan 2013 22:52:41 +0100",
+         "title":"Mòdul 2",
+         "description":null,
+         "link":"https:\/\/raco.fib.upc.edu\/avisos\/veure.jsp?id=56538&assig=GRAU-GEP",
+         "read":true,
+         "attachments":[
+            {
+               "extension":"pdf",
+               "id":41279,
+               "fileName":"GEP_-_Exemple_PERT.pdf",
+               "mimeType":"application\/pdf",
+               "size":94867
+            },
+            {
+               "extension":"pdf",
+               "id":41066,
+               "fileName":"Modul_2.1_-_Gestion_integral_de_proyectos.pdf",
+               "mimeType":"application\/pdf",
+               "size":1733359
+            },
+            {
+               "extension":"pdf",
+               "id":41065,
+               "fileName":"Modul_2.2_-_Gestion_del_alcance.pdf",
+               "mimeType":"application\/pdf",
+               "size":735613
+            },
+            {
+               "extension":"pdf",
+               "id":41064,
+               "fileName":"Modul_2.3_-_Gestion_del_tiempo.pdf",
+               "mimeType":"application\/pdf",
+               "size":1665845
+            },
+            {
+               "extension":"pdf",
+               "id":41063,
+               "fileName":"Modul_2.4_-_Gestion_economica.pdf",
+               "mimeType":"application\/pdf",
+               "size":1286252
+            },
+            {
+               "extension":"pdf",
+               "id":41062,
+               "fileName":"Modul_2.5_-_Otras_areas_de_gestion.pdf",
+               "mimeType":"application\/pdf",
+               "size":490625
+            },
+            {
+               "extension":"pdf",
+               "id":41067,
+               "fileName":"Modul_2_-_Temari.pdf",
+               "mimeType":"application\/pdf",
+               "size":288008
+            },
+            {
+               "extension":"pdf",
+               "id":41061,
+               "fileName":"Rubrica_1_-_Alcance.pdf",
+               "mimeType":"application\/pdf",
+               "size":44757
+            },
+            {
+               "extension":"pdf",
+               "id":41060,
+               "fileName":"Rubrica_2_-_Planificacion.pdf",
+               "mimeType":"application\/pdf",
+               "size":44929
+            },
+            {
+               "extension":"pdf",
+               "id":41059,
+               "fileName":"Rubrica_3_-_Presupuesto.pdf",
+               "mimeType":"application\/pdf",
+               "size":42852
+            }
+         ]
+      },
+      {
+         "id": 3,
+         "pubDate":"Mon, 21 Jan 2013 10:07:22 +0100",
+         "title":"Informació general dels mòduls transversals (1, 2 i 3)",
+         "description":null,
+         "link":"https:\/\/raco.fib.upc.edu\/avisos\/veure.jsp?id=56535&assig=GRAU-GEP",
+         "read":true,
+         "attachments":[
+            {
+               "extension":"pdf",
+               "id":41116,
+               "fileName":"Guia_GEP.pdf",
+               "mimeType":"application\/pdf",
+               "size":128578
+            },
+            {
+               "extension":"pdf",
+               "id":41053,
+               "fileName":"Temario.pdf",
+               "mimeType":"application\/pdf",
+               "size":551191
+            }
+         ]
+      },
+      {
+         "id": 4,
+         "pubDate":"Thu, 17 Jan 2013 17:09:34 +0100",
+         "title":"Mòdul 1",
+         "description":null,
+         "link":"https:\/\/raco.fib.upc.edu\/avisos\/veure.jsp?id=56536&assig=GRAU-GEP",
+         "read":true,
+         "attachments":[
+            {
+               "extension":"pdf",
+               "id":41057,
+               "fileName":"Modul_1_-_Eines_TIC.pdf",
+               "mimeType":"application\/pdf",
+               "size":976907
+            },
+            {
+               "extension":"pdf",
+               "id":41056,
+               "fileName":"Modul_1_-_Temari.pdf",
+               "mimeType":"application\/pdf",
+               "size":282790
+            }
+         ]
+      }
+   ]
+}

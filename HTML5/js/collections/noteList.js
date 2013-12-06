@@ -5,7 +5,7 @@ define(
 			model: Note,
 			
 			initialize: function(models, options) {
-
+				
 			}
 		});
 

@@ -12,8 +12,8 @@
 					<p class="subtitle">Attachments (<%= _.size(note.get('attachments')) %>)</p>
 					<ul class="attachments">
 						<% _.each(note.get('attachments'), function(attachment) { %>
-							<li>
-								<a href="javascript: return false;" title="<%= attachment.title %>"><%= attachment.title %></a>
+							<li data-id="<%= attachment.id %>">
+								<a href="javascript: return false;" title="<%= attachment.fileName %>" class="<%= attachment.extension %>"><%= attachment.fileName %></a>
 							</li>
 						<% }) %>
 					</ul>

@@ -33,8 +33,8 @@ define(
 						$applicationWrapper.unbind('click touchend');
 
 						$html.css({
-							height: 'auto',
-							overflow: 'auto'
+							height: '100%',
+							overflow: 'visible'
 						});
 						$body.removeClass('menu-displayed');
 					}

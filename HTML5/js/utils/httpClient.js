@@ -9,6 +9,10 @@ define(
 	    	
 	    };
 
+	    HttpClient.signUrl = function(url) {
+	    	return OAuthController.oAuthService.signUrl(url);
+	    };
+
 	    HttpClient.postSignedAsync = function(url, parameters) {
 	    	var deferred = $.Deferred();
 

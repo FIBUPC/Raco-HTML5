@@ -34,7 +34,7 @@ define(
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 
-				$('#latest-notes li').click(function(e) {
+				$('#latest-notes li').on('click', function(e) {
 					self.navigate('#!/latestNotes/' + $(this).data('id'));
 				});
 			}
