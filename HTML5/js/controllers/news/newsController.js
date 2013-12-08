@@ -35,22 +35,23 @@ define(
 	    };
 
 	    NewsController.getNewsAsync = function(force) {
-	    	if (force || (self.upcNewsLatestSync != null && moment().diff(self.upcNewslatestSync)
+	    	if (force || self.upcNewsLatestSync == null || (self.upcNewsLatestSync != null && moment().diff(self.upcNewslatestSync)
 	    		>= Constants.Application.AutoSyncDelay)) {
 	    		NewsController.getUPCNewsAsync();
 	    	}
 
-	    	if (force || (self.fibNewsLatestSync != null && moment().diff(self.fibNewslatestSync)
+	    	if (force || self.fibNewsLatestSync == null || (self.fibNewsLatestSync != null && moment().diff(self.fibNewslatestSync)
 	    		>= Constants.Application.AutoSyncDelay)) {
 	    		NewsController.getFIBNewsAsync();
 	    	}
 	    };
 
 	    NewsController.getUPCNewsAsync = function() {
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.News.upc)
+	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.News.upc.format("en"))
 	    	.done(function(data) {
-	    		self.upcNews.reset(JSON.parse(data));
+	    		data = Helpers.Data.stringToXml(data);
+	    		data = Helpers.Data.xmlToJson(data);
+	    		self.upcNews.reset(data);
 	    		self.upcNewsLatestSync = moment();
 
 	    		Helpers.Environment.log('UPC news synced.');
@@ -60,10 +61,11 @@ define(
 	    };
 
 	    NewsController.getFIBNewsAsync = function() {
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.News.fib)
+	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.News.fib.format("en"))
 	    	.done(function(data) {
-	    		self.fibNews.reset(JSON.parse(data));
+	    		data = Helpers.Data.stringToXml(data);
+	    		data = Helpers.Data.xmlToJson(data);
+	    		self.fibNews.reset(data);
 	    		self.fibNewsLatestSync = moment();
 
 	    		Helpers.Environment.log('FIB news synced.');

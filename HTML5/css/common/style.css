@@ -226,12 +226,20 @@ button:focus {
 	border-bottom: 0;
 }
 
+.regular-list li.unread {
+	background-color: #E1F5FC;
+}
+
 .regular-list li .title {
-	font-weight: 600;
+	font-weight: 300;
 	color: #ca0a00;
 	line-height: 1.15em;
 	margin-bottom: 0.5em;
 	text-transform: uppercase;
+}
+
+.regular-list li.unread .title {
+	font-weight: 600;
 }
 
 .regular-list li .timeago,

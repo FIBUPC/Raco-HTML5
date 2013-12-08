@@ -7,7 +7,7 @@ define(
 	    
 	    var self,
 	    RoomsController = {
-	    	subjects: new RoomsList(), //Observable collection
+	    	rooms: new RoomsList(), //Observable collection
 	    	latestSync: null
 	    };
 
@@ -35,7 +35,7 @@ define(
 	    	}
 
 	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Rooms.occupation)
+	    		RemoteConfiguration.Urls.Rooms.freeSpots)
 	    	.done(function(data) {
 	    		self.rooms.reset(JSON.parse(data));
 	    		self.latestSync = moment();

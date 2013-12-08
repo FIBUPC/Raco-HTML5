@@ -27,8 +27,8 @@ define(
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-
-				//TimetableController.getTimetableAsync();
+				
+				TimetableController.getTimetableAsync();
 			}
 		});
 

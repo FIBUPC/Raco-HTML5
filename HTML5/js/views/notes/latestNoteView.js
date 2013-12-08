@@ -4,7 +4,7 @@ define(
 	 'text!templates/notes/latestNoteTemplate.html'],
 	function(BaseView, NotesController, LatestNoteTemplate) {
 		'use strict';
-
+		
 		var self,
 		LatestNoteView = BaseView.extend({
 			el: '#content',

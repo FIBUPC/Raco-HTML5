@@ -29,8 +29,8 @@ define(
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-
-				//NewsController.getNewsAsync();
+				
+				NewsController.getNewsAsync();
 			},
 
 			bindEvents: function() {

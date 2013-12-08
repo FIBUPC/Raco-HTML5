@@ -35,7 +35,7 @@ define(
 	    	}
 
 	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Subjects.subjects)
+	    		RemoteConfiguration.Urls.Subjects)
 	    	.done(function(data) {
 	    		self.subjects.reset(JSON.parse(data));
 	    		self.latestSync = moment();

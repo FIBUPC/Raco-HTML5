@@ -16,7 +16,7 @@ define(
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
-
+				
 			    self.collection = RoomsController.rooms;
 			},
 			
@@ -28,7 +28,7 @@ define(
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
 
-				//RoomsController.getRoomsAsync();
+				RoomsController.getRoomsAsync();
 			}
 		});
 

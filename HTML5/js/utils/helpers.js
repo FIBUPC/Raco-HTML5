@@ -33,5 +33,62 @@ var Helpers = {
 				}, 300);
 			});
 		}
+	},
+	Data: {
+		stringToXml: function(xml) {
+			var xmlDoc;
+
+			if (window.DOMParser) {
+				var parser = new DOMParser();
+			  	xmlDoc = parser.parseFromString(xml,'text/xml');
+			}
+			else {
+				xmlDoc = new ActiveXObject('Microsoft.XMLDOM');
+				xmlDoc.async = false;
+				xmlDoc.loadXML(xml);
+			}
+
+			return xmlDoc;
+		},
+		xmlToJson: function(xml) {
+			// Create the return object as empty
+			var obj = {};
+
+			// Element
+			if (xml.nodeType == 1) {
+				// Do attributes
+				if (xml.attributes.length > 0) {
+				obj["@attributes"] = {};
+					for (var j = 0; j < xml.attributes.length; j++) {
+						var attribute = xml.attributes.item(j);
+						obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+					}
+				}
+			}
+			// Text
+			else if (xml.nodeType == 3) {
+				obj = xml.nodeValue;
+			}
+
+			// Do the same for child nodes
+			if (xml.hasChildNodes()) {
+				for(var i = 0; i < xml.childNodes.length; i++) {
+					var item = xml.childNodes.item(i);
+					var nodeName = item.nodeName;
+					if (typeof(obj[nodeName]) == "undefined") {
+						obj[nodeName] = this.xmlToJson(item);
+					} else {
+						if (typeof(obj[nodeName].push) == "undefined") {
+							var old = obj[nodeName];
+							obj[nodeName] = [];
+							obj[nodeName].push(old);
+						}
+						obj[nodeName].push(this.xmlToJson(item));
+					}
+				}
+			}
+
+			return obj;
+		}
 	}
 };

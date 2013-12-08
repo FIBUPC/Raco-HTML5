@@ -1,0 +1,8 @@
+EQ:00|EQ00|R
+10:00|1059|Classe de GRAU-BD
+11:00|1159|Classe de GRAU-BD
+12:00|1259|Classe de GRAU-PAR
+13:00|1359|Classe de GRAU-PAR
+16:00|1659|Classe de GRAU-PAR
+17:00|1759|Classe de GRAU-PAR
+

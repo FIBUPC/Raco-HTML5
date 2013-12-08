@@ -13,7 +13,7 @@ define(
 
 	    NotesController.initialize = function() {
 	    	self = this;
-
+	    	
 	    	self.fetchLatestNotesAsync();
 	    };
 
@@ -35,7 +35,7 @@ define(
 	    	}
 
 	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Subjects.Notes.latestNotes).done(function(data) {
+	    		RemoteConfiguration.Urls.LatestNotes).done(function(data) {
 	    		// Since notes are coming grouped by subject from the server
 	    		// we flatten the array to get just the notes from all of them
 	    		var notes = JSON.parse(data);
@@ -48,7 +48,7 @@ define(
 
 	    		// Now we sort it by the date they were published, in descending order
 	    		notes = _.sortBy(notes, function(note) {
-	    			return -moment(note.pubDate);
+	    			return -moment(note.pubDate); //minus means descending
 	    		});
 
 	    		// Now we reset the collection with the flattened notes array
@@ -67,9 +67,9 @@ define(
 
 	    	if (MobileDetector.isNativeApp()) {
 	    		window.plugins.childBrowser.showWebPage(signedUrl, function(resp){
-	    			alert("attachment opened");
+	    			
 	    		}, function(error) {
-	    			alert("error opening attachment");
+	    			
 	    		}, true); //opening externally
 	    	}
 	    	else {
