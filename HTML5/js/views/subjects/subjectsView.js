@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: SubjectsTemplate,
 
-			pageTitle: 'Subjects',
+			pageTitle: 'Assignatures',
 			menuElement: '.subjects',
 
 			initialize: function () {

@@ -37,7 +37,8 @@ define(
 	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Rooms.freeSpots)
 	    	.done(function(data) {
-	    		self.rooms.reset(JSON.parse(data));
+	    		data = (JSON.parse(data)).aules;
+	    		self.rooms.reset(data);
 	    		self.latestSync = moment();
 
 	    		Helpers.Environment.log('Rooms synced.');

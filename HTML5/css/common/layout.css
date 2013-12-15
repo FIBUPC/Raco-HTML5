@@ -241,7 +241,7 @@ button {
 
 .regular-list li .content {
 	float: left;
-	width: 60%;
+	width: 55%;
 }
 
 .inner-content {
@@ -293,6 +293,27 @@ button {
 	font-size: 0.8em;
 }
 
-.news h2 {
-	padding: 1em 1.3em 0 1.3em;
+.inner-content .regular-list {
+	margin: 0 -1em 0 -1em;
+}
+
+.room-map {
+	max-width: 100%;
+	height: auto;
+}
+
+.available-spaces {
+	padding: 0.75em 0.5em;
+	display: inline-block;
+	min-width: 1.5em;
+	margin-right: -1em;
+}
+
+.rooms li .title {
+	float: left;
+	margin-top: 0.75em;
+}
+
+.rooms li .available-spaces {
+	float: right;
 }

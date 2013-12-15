@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: CalendarTemplate,
 
-			pageTitle: 'Calendar',
+			pageTitle: 'Calendari',
 			menuElement: '.calendar',
 
 			initialize: function() {

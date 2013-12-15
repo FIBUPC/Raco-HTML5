@@ -1,3 +1,28 @@
-<div class="page">
-	<%= JSON.stringify(rooms) %>
+<div class="page rooms">
+	<% if (_.isEmpty(buildings)) { %>
+		<p>Aquesta informació no està disponible en aquests moments.</p>
+	<% } else { %>
+		<div class="inner-content">
+			<% _.each(buildings, function(rooms, building) { %>
+				<h2>Edifici <%= building.toUpperCase() %></h2>
+				<img src="http://www.fib.upc.edu/poa/mapa.php?mod=<%= building %>" class="room-map" />
+
+				<ul class="regular-list rooms">
+					<% _.each(rooms, function(room) { %>
+						<li data-id="<%= room.get('nom') %>" class="clickable">
+							<p class="title"><%= room.get('nom').toUpperCase() %></p>
+							<% if (room.get('places') == 0) { %>
+								<p class="available-spaces full">0</p>
+							<% } else if (room.get('places') <= 4) { %>
+								<p class="available-spaces warning"><%= room.get('places') %></p>
+							<% } else { %>
+								<p class="available-spaces free"><%= room.get('places') %></p>
+							<% } %>
+						</li>
+					<% }) %>
+				</ul>
+				<br /><br />
+			<% }) %>
+		</div>
+	<% } %>
 </div>

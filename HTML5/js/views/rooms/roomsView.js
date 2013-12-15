@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: RoomsTemplate,
 
-			pageTitle: 'Rooms',
+			pageTitle: 'Aules',
 			menuElement: '.rooms',
 
 			initialize: function() {
@@ -21,7 +21,11 @@ define(
 			},
 			
 			render: function() {
-				var compiledTemplate = _.template(self.template, {rooms: self.collection.models});
+				var compiledTemplate = _.template(self.template, {buildings: _.groupBy(self.collection.models,
+					function(room){
+		    			return room.get('nom').substring(0, 2);
+		    		})
+				});
 				$(self.$el.selector).html(compiledTemplate);
 			},
 

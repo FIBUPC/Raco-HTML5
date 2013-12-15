@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: NewsTemplate,
 
-			pageTitle: 'News',
+			pageTitle: 'Notícies',
 			menuElement: '.news',
 
 			initialize: function() {
@@ -23,7 +23,7 @@ define(
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template,
-					{upcNews: self.upcNews.models, fibNews: self.fibNews.models});
+					{upcNews: self.upcNews.first(5), fibNews: self.fibNews.first(5)});
 				$(self.$el.selector).html(compiledTemplate);
 			},
 

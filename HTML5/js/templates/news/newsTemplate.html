@@ -1,39 +1,41 @@
 <div class="page news">
-	<h2>FIB news</h2>
-	<% if (_.isEmpty(fibNews)) { %>
-		<p>FIB news are not available at this moment.</p>
-	<% } else { %>
-		<ul class="regular-list news">
-			<% _.each(fibNews, function(fibNew) { %>
-				<li data-link="<%= fibNew.get('link')['#text'] %>" class="clickable">
-					<% if (fibNew.get('media:thumbnail')['@attributes'].url !== '') { %>
-						<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat;"></div>
-					<% } else { %>
+	<div class="inner-content">
+		<h2>Notícies FIB</h2>
+		<% if (_.isEmpty(fibNews)) { %>
+			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
+		<% } else { %>
+			<ul class="regular-list news">
+				<% _.each(fibNews, function(fibNew) { %>
+					<li data-link="<%= fibNew.get('link')['#text'] %>" class="clickable">
+						<% if (fibNew.get('media:thumbnail')['@attributes'].url !== '') { %>
+							<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat;"></div>
+						<% } else { %>
+							<div class="image"></div>
+						<% } %>
+						<div class="content">
+							<p class="title"><%= fibNew.get('title')['#text'] %></p>
+							<p class="timeago"><%= moment(fibNew.get('pubDate')).fromNow() %></p>
+						</div>
+					</li>
+				<% }); %>
+			</ul>
+		<% } %>
+		
+		<h2>Notícies UPC</h2>
+		<% if (_.isEmpty(upcNews)) { %>
+			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
+		<% } else { %>
+			<ul class="regular-list news">
+				<% _.each(upcNews, function(upcNew) { %>
+					<li data-link="<%= upcNew.get('link')['#text'] %>" class="clickable">
 						<div class="image"></div>
-					<% } %>
-					<div class="content">
-						<p class="title"><%= fibNew.get('title')['#text'] %></p>
-						<p class="timeago"><%= moment(fibNew.get('pubDate')).fromNow() %></p>
-					</div>
-				</li>
-			<% }); %>
-		</ul>
-	<% } %>
-	
-	<h2>UPC news</h2>
-	<% if (_.isEmpty(upcNews)) { %>
-		<p>UPC news are not available at this moment.</p>
-	<% } else { %>
-		<ul class="regular-list news">
-			<% _.each(upcNews, function(upcNew) { %>
-				<li data-link="<%= upcNew.get('link')['#text'] %>" class="clickable">
-					<div class="image"></div>
-					<div class="content">
-						<p class="title"><%= upcNew.get('title')['#text'] %></p>
-						<p class="timeago"><%= moment(upcNew.get('dc:date')['#text']).fromNow() %></p>
-					</div>
-				</li>
-			<% }); %>
-		</ul>
-	<% } %>
+						<div class="content">
+							<p class="title"><%= upcNew.get('title')['#text'] %></p>
+							<p class="timeago"><%= moment(upcNew.get('dc:date')['#text']).fromNow() %></p>
+						</div>
+					</li>
+				<% }); %>
+			</ul>
+		<% } %>
+	</div>
 </div>

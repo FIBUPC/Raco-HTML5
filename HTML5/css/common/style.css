@@ -216,8 +216,8 @@ button:focus {
 	border-bottom: 1px solid #eee;
 }
 
-.regular-list li.active,
-.regular-list li:hover {
+.regular-list li.clickable.active,
+.regular-list li.clickable:hover {
 	background-color: #eee !important;
 	cursor: pointer;
 }
@@ -323,20 +323,40 @@ button:focus {
 	color: #333333;
 }
 
-.regular-list li {
+.regular-list li.clickable {
 	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
 	background-size: auto 1em;
 	padding-right: 3em;
 }
 
-.regular-list li.active,
-.regular-list li:hover {
+.regular-list li.clickable.active,
+.regular-list li.clickable:hover {
 	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
 	background-size: auto 1em;
 }
 
-.news h2 {
+.inner-content h2 {
 	color: #333 !important;
-	font-size: 0.8em !important;
-	font-weight: 400;
+	font-size: 2.5em !important;
+	font-weight: 100;
+}
+
+.available-spaces {
+	font-size: 1em;
+	color: white;
+	border-radius: 10em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.available-spaces.free {
+	background: #06A600;
+}
+
+.available-spaces.full {
+	background: #ca0a00;
+}
+
+.available-spaces.warning {
+	background: #F07800;
 }

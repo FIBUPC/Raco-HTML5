@@ -7,8 +7,8 @@ body.standalone.menu-displayed:not(.login) #header {
 	opacity: 1;
 }
 
-body.ios {
-	font: 17px /21px -apple-system-fonts;
+body {
+	font: 17px/21px -apple-system-font;
 	font-weight: 100;
 }
 
@@ -63,4 +63,30 @@ body #menu .profile-picture img {
 button {
 	border-radius: 0;
 	font-size: 1em;
+}
+
+.inner-content h2 {
+	font: 42px/42px -apple-system-font !important;
+	font-weight: 100 !important;
+	text-transform: none !important;
+}
+
+.regular-list li {
+	font-weight: 100;
+}
+
+.regular-list {
+	margin-left: 1em;
+}
+
+.inner-content .regular-list {
+	margin-left: 0;
+}
+
+.regular-list li {
+	padding-left: 0;
+}
+
+.available-spaces {
+	padding: 0.5em 0.4em;
 }
