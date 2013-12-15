@@ -64,15 +64,3 @@ button {
 	border-radius: 0;
 	font-size: 1em;
 }
-
-.regular-list li {
-	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
-	background-size: auto 1em;
-	padding-right: 3em;
-}
-
-.regular-list li.active,
-.regular-list li:hover {
-	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
-	background-size: auto 1em;
-}

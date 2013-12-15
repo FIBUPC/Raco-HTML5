@@ -235,11 +235,17 @@ button:focus {
 	color: #ca0a00;
 	line-height: 1.15em;
 	margin-bottom: 0.5em;
-	text-transform: uppercase;
 }
 
 .regular-list li.unread .title {
 	font-weight: 600;
+}
+
+.regular-list li .image {
+	border: 1px solid #eee;
+	background: url('../../img/common/icons/news.png') center center no-repeat;
+	background-size: 40% auto;
+	background-color: #1483ce;
 }
 
 .regular-list li .timeago,
@@ -315,4 +321,22 @@ button:focus {
 .inner-content .subtitle {
 	text-transform: uppercase;
 	color: #333333;
+}
+
+.regular-list li {
+	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
+	background-size: auto 1em;
+	padding-right: 3em;
+}
+
+.regular-list li.active,
+.regular-list li:hover {
+	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
+	background-size: auto 1em;
+}
+
+.news h2 {
+	color: #333 !important;
+	font-size: 0.8em !important;
+	font-weight: 400;
 }

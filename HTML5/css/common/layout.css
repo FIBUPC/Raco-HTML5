@@ -219,11 +219,29 @@ button {
 
 .regular-list li {
 	padding: 1em;
+	clear: both;
+	overflow: auto;
 }
 
 .regular-list li .timeago,
 .regular-list li .attachments {
 	display: inline-block;
+}
+
+.regular-list li .image {
+	width: 5em;
+	max-width: 5em;
+	min-width: 5em;
+	height: 5em;
+	min-height: 5em;
+	max-height: 5em;
+	float: left;
+	margin-right: 1em;
+}
+
+.regular-list li .content {
+	float: left;
+	width: 60%;
 }
 
 .inner-content {
@@ -273,4 +291,8 @@ button {
 
 .inner-content .subtitle {
 	font-size: 0.8em;
+}
+
+.news h2 {
+	padding: 1em 1.3em 0 1.3em;
 }

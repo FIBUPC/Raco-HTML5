@@ -65,8 +65,8 @@ var Helpers = {
 					}
 				}
 			}
-			// Text
-			else if (xml.nodeType == 3) {
+			// Text or CDATA sections
+			else if (xml.nodeType == 3 || xml.nodeType == 4) {
 				obj = xml.nodeValue;
 			}
 

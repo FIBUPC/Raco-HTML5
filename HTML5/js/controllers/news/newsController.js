@@ -51,7 +51,7 @@ define(
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
-	    		self.upcNews.reset(data);
+	    		self.upcNews.reset(data['rdf:RDF'].item);
 	    		self.upcNewsLatestSync = moment();
 
 	    		Helpers.Environment.log('UPC news synced.');
@@ -65,13 +65,26 @@ define(
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
-	    		self.fibNews.reset(data);
+	    		self.fibNews.reset(data.rss.channel.item);
 	    		self.fibNewsLatestSync = moment();
 
 	    		Helpers.Environment.log('FIB news synced.');
 	    	}).fail(function(error) {
 	    		console.log("Error retrieving FIB news");
 	    	});
+	    };
+
+	    NewsController.openExternal = function(url) {
+	    	if (MobileDetector.isNativeApp()) {
+	    		window.plugins.childBrowser.showWebPage(url, function(resp){
+	    			
+	    		}, function(error) {
+	    			
+	    		}, true); //opening externally
+	    	}
+	    	else {
+	    		window.open(url, '_blank');
+	    	}
 	    };
 	    
 	    return NewsController; // Singleton object, does not require "new" keyword

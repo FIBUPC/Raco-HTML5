@@ -7,8 +7,10 @@ var RemoteConfiguration = {
 		Subjects: '/api-v1/assignatures.json',
 		Timetable: '/api-v1/horari-setmanal.json',
 		News: {
-			fib: 'http://www.fib.upc.edu/en/rss.rss',
-			upc: 'http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=en'
+			//fib: 'http://www.fib.upc.edu/fib/rss.rss',
+			//upc: 'http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=ca'
+			fib: 'http://' + window.location.hostname + '/api/api/fib.rss',
+			upc: 'http://' + window.location.hostname + '/api/api/upc.rss.xml'
 		},
 		Rooms: {
 			freeSpots: '/aules/places-lliures.json',

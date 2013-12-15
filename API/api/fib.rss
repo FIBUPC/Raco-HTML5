@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+
+ 
+
+
+
+
+
+
+
+
+
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">	
+<channel>
+  <atom:link href="http://www.fib.upc.edu/fib/rss.rss" rel="self" type="application/rss+xml" />
+  <title>
+   
+   Facultat d'Inform&#224;tica de Barcelona
+  </title>
+  <link>http://www.fib.upc.edu</link>
+  <description> </description>
+  <image>	
+	<url>http://www.fib.upc.edu/img/logo-quadrat.gif</url>
+	<title>
+   Facultat d'Inform&#224;tica de Barcelona</title>
+	<link>http://www.fib.upc.edu</link>
+  </image>
+  <copyright><![CDATA[Copyright: (C) Facultat d'Informatica de Barcelona (FIB). Universitat Politecnica de Catalunya. ]]></copyright>
+
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Beques Google Europe for Students with Disabilities</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=fbfe83d2-c1d9-4f55-a2f0-0bf54be2f365</link>
+	
+    <pubDate>Thu, 12 Dec 2013 12:09:24 +0100</pubDate>
+	<description><![CDATA[Obert el termini de presentació de candidatures a les beques Google Europe for Students with Disabilities per al curs acadèmic 2014-2015.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=fbfe83d2-c1d9-4f55-a2f0-0bf54be2f365</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/beca_google_disabilities_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/beca_google_disabilities_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Conferència: &#034;Extreme Scaling on SuperMUC&#034;</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=f35e5284-e9ee-42d2-8d8a-c12a6361f861</link>
+	
+    <pubDate>Thu, 12 Dec 2013 10:10:47 +0100</pubDate>
+	<description><![CDATA[Speaker: Dieter Kranzlmueller, Ludwig-Maximilians-University Munich, Germany.</br>  Date: Monday, 16 December, 2013 - 10:00 to 12:00</br>  Venue: Campus Nord, "Aula de Telensenyament" on 1st  Floor of ETSETB (building B3)]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=f35e5284-e9ee-42d2-8d8a-c12a6361f861</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/bsc_logo_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/BSC_logo.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Beques Google Anita Borg Memorial</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=10a4fb95-09ac-4bfe-bcf8-de82fd92f690</link>
+	
+    <pubDate>Thu, 12 Dec 2013 09:36:41 +0100</pubDate>
+	<description><![CDATA[Obert el termini de presentació per a les beques Google Anita Borg Memorial per al curs acadèmic 2014-2015.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=10a4fb95-09ac-4bfe-bcf8-de82fd92f690</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/anita_borg_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/anita-borg-74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Darreres setmanes del projecte de Crowdfunding pel Laboratori d&#039;aplicacions mòbils</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=431e900d-6075-4881-b18f-bad606ed4b1c</link>
+	
+    <pubDate>Wed, 11 Dec 2013 12:17:00 +0100</pubDate>
+	<description><![CDATA[Queden poques setmanes perquè acabi el projecte, i gràcies a l'esforç desinteressat de particulars i empreses hem aconseguit l'import per adquirir 7 dels 13 equips (l'òptim del projecte).]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=431e900d-6075-4881-b18f-bad606ed4b1c</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/aplciacions_mobils_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/aplicacions_mobils_75x75.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Oberta la preinscripció als Màsters oficials de la FIB</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=81f5878a-bece-4e06-9afc-2fe56282c0fd</link>
+	
+    <pubDate>Tue, 10 Dec 2013 11:29:33 +0100</pubDate>
+	<description><![CDATA[Des del 10 de desembre s'ha obert la preinscripció als Màsters oficials organitzats per la Facultat d'Informàtica de Barcelona (FIB), per començar en el Quadrimestre de Primavera del curs 2013-2014 (febrer de 2014)</br>]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=81f5878a-bece-4e06-9afc-2fe56282c0fd</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/masters_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/master_des.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Atos 2014 IT Challenge</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=32bfb215-8fbb-465f-a0e0-2c25776c754c</link>
+	
+    <pubDate>Tue, 10 Dec 2013 09:58:10 +0100</pubDate>
+	<description><![CDATA[The third Atos IT Challenge starts its search for the IT stars of the future. Students from universities in 10 countries are invited to create an app to enhance the Rio 2016 Games experience.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=32bfb215-8fbb-465f-a0e0-2c25776c754c</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/it_challenge_atos_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/Atos_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>11è Premi Abertis</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=63646164-652a-4a81-be7e-7da010eab049</link>
+	
+    <pubDate>Thu, 05 Dec 2013 10:24:36 +0100</pubDate>
+	<description><![CDATA[En col·laboració amb l'École des Ponts Paris Tech i la Universitat de Roma Sapienza, la càtedra abertis-UPC convoca l'11è Premi abertis de recerca en gestió d'infraestructures del transport, obert a tots els estudiants de les universitats espanyoles, franceses i italianes, per reconèixer el millor estudi o treball de recerca inèdit.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=63646164-652a-4a81-be7e-7da010eab049</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/11premi_abertis_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/11premi_abertis_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Escola d&#039;estiu 2014 de la Technische Universität München</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=1c81cc78-6ae9-47ef-9925-c19715fcc542</link>
+	
+    <pubDate>Wed, 04 Dec 2013 12:34:53 +0100</pubDate>
+	<description><![CDATA[La Technische Universität München ha obert la convocatòria per inscriure's a la seva escola d'estiu 2014.  ]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=1c81cc78-6ae9-47ef-9925-c19715fcc542</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/tum_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/tum_75x75.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Inscripció al programa UNITECH</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=09c08c12-dd6a-4cc6-9fb3-5343367821f8</link>
+	
+    <pubDate>Tue, 03 Dec 2013 10:40:00 +0100</pubDate>
+	<description><![CDATA[Fins el 23 de gener de 2014 estarà obert el període de petició de plaça en el Programa Unitech. Aquest programa europeu de mobilitat pretén formar els futurs directius tecnològics i està destinat a estudiants de l'Enginyeria, Grau i Màster.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=09c08c12-dd6a-4cc6-9fb3-5343367821f8</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/unitech_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/unitech_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Acte Acadèmic curs 2013/2014</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=eeb6a9f6-1613-4362-afc4-1e0f937cb8f7</link>
+	
+    <pubDate>Tue, 03 Dec 2013 10:25:25 +0100</pubDate>
+	<description><![CDATA[Dijous 28 de novembre, a les 19 hores, es va celebrar a l'auditori de l'Edifici Vèrtex l'Acte Acadèmic de la FIB on es van lliurar les acreditacions als graduats el curs 2012/2013.    ]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=eeb6a9f6-1613-4362-afc4-1e0f937cb8f7</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/acte_academic2013_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/acte_academic2013_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>FIBApps 2014. Concurs Universitari d&#039;Apps</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=6d6d95df-bd65-4bae-9908-ba90874345c8</link>
+	
+    <pubDate>Mon, 02 Dec 2013 11:10:08 +0100</pubDate>
+	<description><![CDATA[Arriba el FIB Apps 2014 amb nova temàtica, nous premis i nous patrocinadors!]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=6d6d95df-bd65-4bae-9908-ba90874345c8</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/fibapps2014_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/fibapps2014_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>El grup KEMLG guanya el internacioanl HackingBullipedia</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=77813197-6e68-492a-85ec-301dae1000f8</link>
+	
+    <pubDate>Mon, 02 Dec 2013 10:40:58 +0100</pubDate>
+	<description><![CDATA[L'equip KEMLG, liderat pels professors de la FIB Karina Gibert i Javier Vázquez, guanyen la competició internacional HackingBullipedia organitzada per el Bulli Foundation i Telefónica I+D.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=77813197-6e68-492a-85ec-301dae1000f8</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/hackingbullipedia_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/hackinbullipedia_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>La FIB amb el Gran Recapte d&#039;Aliments</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=b4eb8063-9a00-4bb3-9739-3f4f4bf8059d</link>
+	
+    <pubDate>Fri, 29 Nov 2013 13:12:14 +0100</pubDate>
+	<description><![CDATA[La Comunitat UPC vol col·laborar amb aquesta campanya, és per això que al CN s'han establert 6 punts de recollida on podreu dipositar els aliments del 29 de novembre al 20 de desembre de 2013. Els punts de recollida de la FIB són als edificis B6, A5 i C6.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=b4eb8063-9a00-4bb3-9739-3f4f4bf8059d</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/GranRecapte_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/GranRecapte_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Concurs SWERC 2013</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=f8000ca9-063f-4b35-aac0-2394a35c2b7f</link>
+	
+    <pubDate>Thu, 28 Nov 2013 15:01:27 +0100</pubDate>
+	<description><![CDATA[6 estudiants de la FIB en els equips de la UPC que han aconseguit medalles d'or i bronze en el Southwestern Europe Regional Contest.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=f8000ca9-063f-4b35-aac0-2394a35c2b7f</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/swerc-foto-2013.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/swerc-acm_80x80.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Peticions d&#039;estades acadèmiques als EUA, Canadà i la Índia pel curs 2014/2015</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=3fe29529-ec84-4300-a5a7-008c433c23cd</link>
+	
+    <pubDate>Wed, 27 Nov 2013 09:57:53 +0100</pubDate>
+	<description><![CDATA[Vols fer una estada d'un semestre, o de tot el curs 2014/2015, a una Universitat d'EUA, de Canadà o de la Índia?]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=3fe29529-ec84-4300-a5a7-008c433c23cd</guid>
+	
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/EEUU.png" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Inscripció al Programa Vulcanus 2014/2015 </title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=10d5fe1d-f83e-42c5-ace4-3506b6d1b7b7</link>
+	
+    <pubDate>Wed, 27 Nov 2013 09:52:59 +0100</pubDate>
+	<description><![CDATA[Els interessats en demanar l'admissió en el Programa Vulcanus per fer una estada no-acadèmica al Japó de setembre de 2014 a agost de 2015 heu de presentar tota la documentació requerida a l'àrea de Relacions Internacionals de la secretaria de la FIB abans del 14 de gener de 2014.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=10d5fe1d-f83e-42c5-ace4-3506b6d1b7b7</guid>
+	
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/vulcanus.png" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Oberta la convocatòria de beques de mobilitat UE AREAS+</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=4206d556-9af9-4df5-b969-bb8e9bcabda1</link>
+	
+    <pubDate>Tue, 26 Nov 2013 14:23:10 +0100</pubDate>
+	<description><![CDATA[La UPC participa en els projectes de la UE AREAS+ que consisteixen en mobilitats de grau, màster, doctorat, post-doctorat i PDI amb les universitats asiàtiques.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=4206d556-9af9-4df5-b969-bb8e9bcabda1</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/areas_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/areas_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Oberta la convocatòria de beques de mobilitat Eranet-mundus i Eranet-plus</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=14850303-04db-48d2-a0c7-853bcad6dd6b</link>
+	
+    <pubDate>Tue, 26 Nov 2013 14:04:23 +0100</pubDate>
+	<description><![CDATA[La UPC participa en els projectes de la UE ERANET-MUNDUS i ERANET PLUS que consisteixen en mobilitats de grau, màster, doctorat, post-doctorat i PDI amb les universitats de la Federació Russa.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=14850303-04db-48d2-a0c7-853bcad6dd6b</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/eranet_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/eranet_75x75.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Tizen Hack Battle</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=f0122179-65e5-4c08-a5f9-0c3b2fd38feb</link>
+	
+    <pubDate>Tue, 26 Nov 2013 13:49:46 +0100</pubDate>
+	<description><![CDATA[Del 13 al 15 de diciembre, un Hackahton simultáneo entre Toulouse y Barcelona. 4000$ de dotación en total y un premio sorpresa para los ganadores finales. ]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=f0122179-65e5-4c08-a5f9-0c3b2fd38feb</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/tizen_hack_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/tizen_hack_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>2a Edició de Jumping Talent</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=f96396ee-c5b9-4599-b4a7-3b9bcb1686bd</link>
+	
+    <pubDate>Wed, 20 Nov 2013 13:29:29 +0100</pubDate>
+	<description><![CDATA[UPC Alumni i La Comunitat Laboral Universia - Trabajando engega la 2a edició de Jumping Talent, el concurs de talent universitari on 10 grans empreses seleccionaran els joves amb millor expedient.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=f96396ee-c5b9-4599-b4a7-3b9bcb1686bd</guid>
+	
+		
+			<image><url>http://www.fib.upc.edu/img/jumping_pantalles.jpg</url>
+				
+			</image>
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/jumping_75x75.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+	 
+	<!-- si pant=false or (pant=true i rss_pantalles=false -->
+
+	
+	<item>
+	<title>Vols anar a Munich a fer el teu projecte final de titulació (TFG, PFC, TFM)?</title>
+	<link>http://www.fib.upc.edu/fib/noticies.html?id=fd0c3b96-eb46-4096-8460-b02e18158cc2</link>
+	
+    <pubDate>Tue, 19 Nov 2013 15:29:00 +0100</pubDate>
+	<description><![CDATA[TriaGnoSys, una empresa de telecomunicacions aeroespacials alemanya situada a Munich, ens ha fet arribar unes quantes propostes. L'estudiant rep 750€/mes nets i s'espera que treballi una jornada de 40h setmanals. El projecte es porta a terme a les seves oficines de Munich.]]></description>	
+	<guid>http://www.fib.upc.edu/fib/noticies.html?id=fd0c3b96-eb46-4096-8460-b02e18158cc2</guid>
+	
+		
+	
+		
+	
+		
+		
+			<media:thumbnail url="http://www.fib.upc.edu/img/triagnosys_74x74.jpg" width="74" height="74"  />
+		
+		
+				
+	
+	</item>
+	
+	
+
+</channel>
+</rss>
+
+
