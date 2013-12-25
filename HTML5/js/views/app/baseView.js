@@ -28,7 +28,18 @@ define(
 			},
 
 			afterRender: function() {
-				$('.page').removeClass('hide');
+				var $page = $('.page');
+
+				if ($page.hasClass('hide')) {
+					$('#menu-toggle-button').hide();
+					$('#back-button').show();
+
+					$page.removeClass('hide');
+				}
+				else {
+					$('#back-button').hide();
+					$('#menu-toggle-button').show();
+				}
 
 				this.bindEvents();
 			},

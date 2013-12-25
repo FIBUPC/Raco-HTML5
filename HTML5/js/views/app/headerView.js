@@ -16,12 +16,13 @@ define(
 				self.$el.html(self.template);
 
 				this.bindMenuToggleButton();
+				this.bindBackButton();
 			},
 
 			bindMenuToggleButton: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
 
-				$menuToggleButton.bind('click touchend', function(e){
+				$menuToggleButton.on('click', function(e){
 					e.preventDefault();
 					e.stopPropagation();
 
@@ -56,6 +57,19 @@ define(
 						window.scrollTo(0, 0);
 						$body.addClass('menu-displayed');
 					}
+
+					return false;
+				});
+			},
+
+			bindBackButton: function() {
+				var $backButton = $('#back-button');
+
+				$backButton.on('click', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					window.history.back();
 
 					return false;
 				});

@@ -49,7 +49,7 @@
 			    head.appendChild(script);
 			}
 
-			if (MobileDetector.isNativeApp()) {
+			if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
 				document.addEventListener('deviceready', RunApplication, false);
 			}
 			else {

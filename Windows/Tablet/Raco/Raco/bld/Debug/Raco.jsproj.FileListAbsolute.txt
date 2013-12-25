@@ -1,0 +1,15 @@
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bin\Debug\ReverseMap\resources.pri
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bin\Debug\AppxManifest.xml
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bin\Debug\Raco.build.appxrecipe
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\priconfig.xml
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\priconfig.xml.intermediate
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\layout.resfiles
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\layout.resfiles.intermediate
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\resources.resfiles
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\resources.resfiles.intermediate
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\pri.resfiles
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\pri.resfiles.intermediate
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\qualifiers.txt
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\qualifiers.txt.intermediate
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Cristian\Documents\GitHub\racomobile\Windows\Tablet\Raco\Raco\bld\Debug\ProjectArchitectures.txt

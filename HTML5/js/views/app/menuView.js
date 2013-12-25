@@ -21,7 +21,7 @@ define(
 			bindEventHandlers: function() {
 				$('#menu #tabs li.clickable a').click(function(){
 					if ($('body').hasClass('menu-displayed') && $('#menu-toggle-button:visible').length > 0) {
-						$('#menu-toggle-button').trigger('touchend');
+						$('#menu-toggle-button').trigger('click');
 					}
 				});
 			}

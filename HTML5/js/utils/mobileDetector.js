@@ -34,8 +34,12 @@ MobileDetector.isNativeApp = function() {
 
 MobileDetector.isWindowsPhone = function() {
 	return this.getMobileOS() === 'windowsphone';
-}
+};
 
 MobileDetector.isIOS = function() {
 	return this.getMobileOS() === 'ios';
-}
+};
+
+MobileDetector.isWindows = function() {
+	return this.getMobileOS() === 'windows';
+};
