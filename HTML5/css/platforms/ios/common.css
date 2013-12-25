@@ -71,20 +71,25 @@ button {
 	text-transform: none !important;
 }
 
+.inner-content.note h2 {
+	font: 28px/28px -apple-system-font !important;
+	font-weight: 200 !important;
+}
+
 .regular-list li {
 	font-weight: 100;
 }
 
 .regular-list {
-	margin-left: 1em;
-}
-
-.inner-content .regular-list {
 	margin-left: 0;
 }
 
+.inner-content .regular-list {
+	margin-left: -1em;
+}
+
 .regular-list li {
-	padding-left: 0;
+	padding-left: 1em;
 }
 
 .available-spaces {

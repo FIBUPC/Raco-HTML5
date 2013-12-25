@@ -1,0 +1,10 @@
+.attachments li a {
+	background-image: url('../../img/common/files/default.png');
+	background-position: left center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.attachments li a.pdf {
+	background-image: url('../../img/common/files/pdf.png');
+}

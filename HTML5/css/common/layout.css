@@ -213,12 +213,12 @@ button {
 
 .regular-list {
 	list-style: none;
-	margin: 0;
+	margin: 0 0 0 -1em;
 	padding: 0;
 }
 
 .regular-list li {
-	padding: 1em;
+	padding: 1em 1em 1em 2em;
 	clear: both;
 	overflow: auto;
 }
@@ -262,27 +262,27 @@ button {
 }
 
 .note .attachments {
-	margin: 2em 0 0 0;
+	margin: 2em -1em 0 0;
 }
 
 .note .attachments ul {
-	padding: 1em;
 	margin: 0.5em 0 0 0;
 	box-sizing: border-box;
 }
 
 .note .attachments ul li {
 	line-height: 2em;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 	overflow: hidden;
 }
 
 .note .attachments ul li a {
-	padding: 0 0 0 2em;
+	padding: 0 0 0 3em;
 	text-overflow: ellipsis;
 	width: 90%;
 	white-space: nowrap;
 	display: block;
+	overflow: hidden;
 }
 
 .note .attachments ul li:last-child {

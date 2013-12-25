@@ -293,18 +293,6 @@ button:focus {
 
 .note .attachments ul {
 	list-style: none;
-	background: #c8eaf1;
-	border-radius: 0.3em;
-	border: 1px solid #cdecf2;
-	padding: 1em;
-}
-
-.note .attachments ul li {
-	border-bottom: 1px solid #cdecf2;
-}
-
-.note .attachments ul li:last-child {
-	border-bottom: 0 !important;
 }
 
 .note .attachments ul li a:link,
@@ -323,14 +311,17 @@ button:focus {
 	color: #333333;
 }
 
-.regular-list li.clickable {
+.regular-list li.clickable,
+.attachments li.clickable {
 	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
 	background-size: auto 1em;
 	padding-right: 3em;
 }
 
 .regular-list li.clickable.active,
-.regular-list li.clickable:hover {
+.regular-list li.clickable:hover,
+.attachments li.clickable.active,
+.attachments li.clickable:hover {
 	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
 	background-size: auto 1em;
 }
@@ -339,6 +330,13 @@ button:focus {
 	color: #333 !important;
 	font-size: 2.5em !important;
 	font-weight: 100;
+}
+
+.inner-content.note h2 {
+	color: #ca0a00 !important;
+	font-size: 1.4em !important;
+	font-weight: 200;
+	line-height: 1.15em;
 }
 
 .available-spaces {
