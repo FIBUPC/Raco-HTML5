@@ -8,3 +8,92 @@
 .attachments li a.pdf {
 	background-image: url('../../img/common/files/pdf.png');
 }
+
+.attachments li a.doc,
+.attachments li a.docx,
+.attachments li a.rtf {
+	background-image: url('../../img/common/files/docx.png');
+}
+
+.attachments li a.mp3,
+.attachments li a.wav,
+.attachments li a.wma,
+.attachments li a.mp2,
+.attachments li a.ogg, {
+	background-image: url('../../img/common/files/audio.png');
+}
+
+.attachments li a.zip,
+.attachments li a.rar,
+.attachments li a.tar,
+.attachments li a.gz,
+.attachments li a.gzip
+.attachments li a.bz {
+	background-image: url('../../img/common/files/compressed.png');
+}
+
+.attachments li a.eps,
+.attachments li a.ai {
+	background-image: url('../../img/common/files/eps.png');
+}
+
+.attachments li a.psd {
+	background-image: url('../../img/common/files/psd.png');
+}
+
+.attachments li a.xls,
+.attachments li a.xlsx,
+.attachments li a.csv {
+	background-image: url('../../img/common/files/xlsx.png');
+}
+
+.attachments li a.txt,
+.attachments li a.css {
+	background-image: url('../../img/common/files/txt.png');
+}
+
+.attachments li a.mp4,
+.attachments li a.wmv,
+.attachments li a.avi,
+.attachments li a.ogv,
+.attachments li a.mkv {
+	background-image: url('../../img/common/files/video.png');
+}
+
+.attachments li a.png,
+.attachments li a.jpg,
+.attachments li a.jpeg,
+.attachments li a.tiff,
+.attachments li a.gif,
+.attachments li a.bmp {
+	background-image: url('../../img/common/files/picture.png');
+}
+
+.attachments li a.indd {
+	background-image: url('../../img/common/files/indd.png');
+}
+
+.attachments li a.ppt,
+.attachments li a.pptx,
+.attachments li a.pps,
+.attachments li a.ppsx {
+	background-image: url('../../img/common/files/pptx.png');
+}
+
+.attachments li a.html {
+	background-image: url('../../img/common/files/html.png');
+}
+
+.attachments li a.cs,
+.attachments li a.c,
+.attachments li a.cpp,
+.attachments li a.h,
+.attachments li a.java,
+.attachments li a.js,
+.attachments li a.sh,
+.attachments li a.bat,
+.attachments li a.vb,
+.attachments li a.xaml,
+.attachments li a.xml {
+	background-image: url('../../img/common/files/code.png');
+}
