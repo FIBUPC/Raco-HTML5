@@ -213,12 +213,12 @@ button {
 
 .regular-list {
 	list-style: none;
-	margin: 0 0 0 -1em;
+	margin: 0 0 0 0;
 	padding: 0;
 }
 
 .regular-list li {
-	padding: 1em 1em 1em 2em;
+	padding: 1em;
 	clear: both;
 	overflow: auto;
 }

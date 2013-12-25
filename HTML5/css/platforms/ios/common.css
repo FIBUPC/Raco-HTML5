@@ -84,14 +84,6 @@ button {
 	margin-left: 0;
 }
 
-.inner-content .regular-list {
-	margin-left: -1em;
-}
-
-.regular-list li {
-	padding-left: 1em;
-}
-
 .available-spaces {
 	padding: 0.5em 0.4em;
 }
