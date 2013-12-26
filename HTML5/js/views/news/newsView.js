@@ -42,8 +42,12 @@ define(
 				self.fibNews.on('reset', self.render);
 				self.fibNews.on('change', self.render);
 
-				$('.news li').on('click', function(e) {
-					NewsController.openExternal($(this).data('link'));
+				$('.news.fib li').on('click', function(e) {
+					self.navigate('#!/news/fib/' + $(this).data('id'));
+				});
+
+				$('.news.upc li').on('click', function(e) {
+					self.navigate('#!/news/upc/' + $(this).data('id'));
 				});
 			}
 		});

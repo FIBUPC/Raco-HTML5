@@ -1,0 +1,19 @@
+<div class="page hide">
+	<div class="inner-content new">
+		<h2><%= fibNew.get('title')['#text'] %></h2>
+		<p class="timeago"><%= moment(fibNew.get('pubDate')).fromNow() %></p>
+		<br /><br />
+		<div class="content">
+			<% if (fibNew.get('media:thumbnail')['@attributes'].url !== '') { %>
+				<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat;"></div>
+			<% } else { %>
+				<div class="image"></div>
+			<% } %>
+			<p><%= fibNew.get('description')['#cdata-section'] %></p>
+		</div>
+		<br /><br />
+		<button id="read-more" type="button" data-link="<%= fibNew.get('link')['#text'] %>">
+			Continuar llegint &raquo;
+		</button>
+	</div>
+</div>

@@ -247,7 +247,8 @@ button:focus {
 	font-weight: 600;
 }
 
-.regular-list li .image {
+.regular-list li .image,
+.new .image {
 	border: 1px solid #eee;
 	background: url('../../img/common/icons/news.png') center center no-repeat;
 	background-size: 40% auto;
@@ -272,7 +273,8 @@ button:focus {
 	padding-left: 2em;
 }
 
-.note .timeago {
+.note .timeago,
+.new .timeago {
 	font-size: 0.8em;
 	color: #666;
 }
@@ -317,6 +319,12 @@ button:focus {
 	color: #333333;
 }
 
+.new .content p {
+	line-height: 1.5em;
+	color: #333;
+	font-size: 1em;
+}
+
 .regular-list li.clickable,
 .attachments li.clickable {
 	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
@@ -336,9 +344,11 @@ button:focus {
 	color: #333 !important;
 	font-size: 2.5em !important;
 	font-weight: 100;
+	text-transform: none !important;
 }
 
-.inner-content.note h2 {
+.inner-content.note h2,
+.inner-content.new h2 {
 	color: #ca0a00 !important;
 	font-size: 1.4em !important;
 	font-weight: 200;

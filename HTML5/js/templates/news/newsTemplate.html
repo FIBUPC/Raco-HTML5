@@ -4,9 +4,9 @@
 		<% if (_.isEmpty(fibNews)) { %>
 			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
 		<% } else { %>
-			<ul class="regular-list news">
+			<ul class="regular-list news fib">
 				<% _.each(fibNews, function(fibNew) { %>
-					<li data-link="<%= fibNew.get('link')['#text'] %>" class="clickable">
+					<li data-id="<%= fibNew.cid %>" class="clickable">
 						<% if (fibNew.get('media:thumbnail')['@attributes'].url !== '') { %>
 							<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat;"></div>
 						<% } else { %>
@@ -25,9 +25,9 @@
 		<% if (_.isEmpty(upcNews)) { %>
 			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
 		<% } else { %>
-			<ul class="regular-list news">
+			<ul class="regular-list news upc">
 				<% _.each(upcNews, function(upcNew) { %>
-					<li data-link="<%= upcNew.get('link')['#text'] %>" class="clickable">
+					<li data-id="<%= upcNew.cid %>" class="clickable">
 						<div class="image"></div>
 						<div class="content">
 							<p class="title"><%= upcNew.get('title')['#text'] %></p>
