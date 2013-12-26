@@ -1,6 +1,7 @@
 define(
-	['text!templates/app/headerTemplate.html'],
-	function (HeaderTemplate) {
+	['text!templates/app/headerTemplate.html',
+	 'utils/dispatcher'],
+	function (HeaderTemplate, Dispatcher) {
 		'use strict';
 
 		var self,
@@ -15,8 +16,8 @@ define(
 			render: function() {
 				self.$el.html(self.template);
 
-				this.bindMenuToggleButton();
-				this.bindBackButton();
+				self.bindMenuToggleButton();
+				self.bindBackButton();
 			},
 
 			bindMenuToggleButton: function() {
@@ -69,7 +70,10 @@ define(
 					e.preventDefault();
 					e.stopPropagation();
 
-					window.history.back();
+					$('.page').addClass('hide');
+					Dispatcher.beginInvoke(function(){
+						window.history.back();
+					}, 500);
 
 					return false;
 				});

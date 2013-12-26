@@ -11,7 +11,7 @@ define(
 	    };
 
 	    Dispatcher.beginInvoke = function(delegate, delay) {
-	    	// setTimeout creates a new thread to execute delegate
+	    	// setTimeout creates a new thread to execute the delegate method
 	    	setTimeout(delegate, delay);
 	    }
 	    
