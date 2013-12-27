@@ -26,7 +26,39 @@ define(
 
 					self.menuView = new MenuView();
 					self.menuView.render();
+
+					self.bindEvents();
 				}
+			},
+
+			bindEvents: function() {
+				var $menuToggleButton = $('#menu-toggle-button');
+				var $body = $('body');
+				var $app = $('#app');
+
+				$app.on('swiperight', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					alert("swiperight");
+					if (!$body.hasClass('menu-displayed') && $menuToggleButton.is(':visible')) {
+						$menuToggleButton.trigger('click');
+					}
+
+					return false;
+				});
+
+				$app.on('swipeleft', function(){
+					e.preventDefault();
+					e.stopPropagation();
+
+					alert("swipeleft");
+					if ($body.hasClass('menu-displayed') && $menuToggleButton.is(':visible')) {
+						$menuToggleButton.trigger('click');
+					}
+
+					return false;
+				});
 			}
 		});
 
