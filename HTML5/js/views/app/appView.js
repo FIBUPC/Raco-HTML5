@@ -33,6 +33,7 @@ define(
 
 			bindEvents: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
+				var $backButton = $('#back-button');
 				var $body = $('body');
 				var $app = $('#app');
 
@@ -40,19 +41,20 @@ define(
 					e.preventDefault();
 					e.stopPropagation();
 
-					alert("swiperight");
 					if (!$body.hasClass('menu-displayed') && $menuToggleButton.is(':visible')) {
 						$menuToggleButton.trigger('click');
+					}
+					else if ($backButton.is(':visible')) {
+						$backButton.trigger('click');
 					}
 
 					return false;
 				});
 
-				$app.on('swipeleft', function(){
+				$app.on('swipeleft', function(e){
 					e.preventDefault();
 					e.stopPropagation();
 
-					alert("swipeleft");
 					if ($body.hasClass('menu-displayed') && $menuToggleButton.is(':visible')) {
 						$menuToggleButton.trigger('click');
 					}

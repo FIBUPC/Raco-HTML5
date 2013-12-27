@@ -3,12 +3,12 @@
 		<% console.log(upcNew) %>
 		<h2><%= upcNew.get('title')['#text'] %></h2>
 		<p class="timeago"><%= moment(upcNew.get('dc:date')['#text']).fromNow() %></p>
-		<br /><br />
+		<br />
 		<div class="content">
 			<div class="image"></div>
 			<p><%= upcNew.get('entradetahome')['#text'] %></p>
 		</div>
-		<br /><br />
+		<br />
 		<button id="read-more" type="button" data-link="<%= upcNew.get('link')['#text'] %>">
 			Continuar llegint &raquo;
 		</button>

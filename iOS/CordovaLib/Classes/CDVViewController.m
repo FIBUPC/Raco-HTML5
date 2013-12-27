@@ -327,7 +327,7 @@
 
     // prevent webView from bouncing
     // based on the DisallowOverscroll/UIWebViewBounce key in config.xml
-    if (!bounceAllowed) {
+    //if (!bounceAllowed) {
         if ([self.webView respondsToSelector:@selector(scrollView)]) {
             ((UIScrollView*)[self.webView scrollView]).bounces = NO;
         } else {
@@ -337,7 +337,7 @@
                 }
             }
         }
-    }
+    //}
 
     /*
      * iOS 6.0 UIWebView properties
