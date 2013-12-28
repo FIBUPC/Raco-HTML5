@@ -16,7 +16,7 @@ define(
 	    	return OAuthController.oAuthService.signUrl(url);
 	    };
 
-	    HttpClient.getSignedAsync = function(url, parameters) {
+	    HttpClient.getSignedAsync = function(url) {
 	    	this.showLoading();
 
 	    	var deferred = $.Deferred();
@@ -28,7 +28,6 @@ define(
 	    	try
 	    	{
 	    		var that = this;
-	    		Helpers.Environment.log("Requesting " + url);
 		    	OAuthController.oAuthService.get(url, function(data) {
 		    		that.hideLoading();
 		            deferred.resolve(data.text);
@@ -44,16 +43,73 @@ define(
 	    	return deferred.promise();
 	    };
 
-	    HttpClient.postAsync = function(url, parameters) {
+	    HttpClient.postAsync = function(url) {
 	    	this.showLoading();
 
 	    	this.hideLoading();
 	    };
 
-	    HttpClient.getAsync = function(url, parameters) {
+	    HttpClient.getAsync = function(url) {
 	    	this.showLoading();
 
-	    	this.hideLoading();
+	    	var deferred = $.Deferred();
+
+	    	try
+	    	{
+	    		var that = this;
+
+		    	$.get(url).done(function(data) {
+		    		that.hideLoading();
+		            deferred.resolve(data);
+		        }).fail(function(error){
+		        	that.hideLoading();
+		        	deferred.reject(error);
+		        });
+	    	}
+	    	catch (e) {
+	    		deferred.reject(e);
+	    	}
+
+	    	return deferred.promise();
+	    };
+
+	    HttpClient.readStreamAsync = function(url) {
+	    	this.showLoading();
+
+	    	var deferred = $.Deferred();
+
+	    	try {
+		    	var xhr = new XMLHttpRequest();
+				xhr.open('GET', url, true);
+
+				xhr.responseType = 'arraybuffer';
+
+				xhr.onload = function(e) {
+				  	if (this.status == 200) {
+				    	var uInt8Array = new Uint8Array(this.response);
+				    	var i = uInt8Array.length;
+				    	var binaryString = new Array(i);
+				    	while (i--) {
+				    		binaryString[i] = String.fromCharCode(uInt8Array[i]);
+				    	}
+				    	var data = binaryString.join('');
+				    	var base64 = window.btoa(data);
+
+				    	deferred.resolve(base64);
+				  	}
+				  	else {
+				  		deferred.reject(undefined);
+				  	}
+				};
+
+				xhr.send();
+			}
+			catch(e) {
+				alert(e);
+				deferred.reject(e);
+			}
+
+			return deferred.promise();
 	    };
 
 	    HttpClient.putSignedAsync = function(url, parameters) {

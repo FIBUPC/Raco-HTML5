@@ -8,6 +8,11 @@ define(
 	    var self,
 	    RoomsController = {
 	    	rooms: new RoomsList(), //Observable collection,
+	    	maps: {
+	    		a5: null,
+	    		b5: null,
+	    		c6: null
+	    	},
 	    	latestSync: null
 	    };
 
@@ -35,13 +40,22 @@ define(
 	    	}
 
 	    	var freeSpotsRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Rooms.freeSpots);
+	    		RemoteConfiguration.Urls.Rooms.FreeSpots);
 
 	    	var timetableRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Rooms.scheduling);
+	    		RemoteConfiguration.Urls.Rooms.Scheduling);
+
+	    	var a5mapRequest = HttpClient.readStreamAsync(String.format(RemoteConfiguration.Urls.Rooms.Map, 'a5'));
+	    	var b5mapRequest = HttpClient.readStreamAsync(String.format(RemoteConfiguration.Urls.Rooms.Map, 'b5'));
+	    	var c6mapRequest = HttpClient.readStreamAsync(String.format(RemoteConfiguration.Urls.Rooms.Map, 'c6'));
 
 	    	// Wait for the two requests to be completed
-	    	$.when(freeSpotsRequest, timetableRequest).done(function(freeSpots, timetable) {
+	    	$.when(freeSpotsRequest, timetableRequest, a5mapRequest, b5mapRequest, c6mapRequest)
+	    		.done(function(freeSpots, timetable, a5map, b5map, c6map) {
+	    		self.maps.a5 = a5map;
+	    		self.maps.b5 = b5map;
+	    		self.maps.c6 = c6map;
+
 	    		// Parse rooms
 	    		var rooms = (JSON.parse(freeSpots)).aules;
 

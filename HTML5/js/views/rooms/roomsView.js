@@ -25,9 +25,11 @@ define(
 				var compiledTemplate = _.template(self.template, {buildings: _.groupBy(self.collection.models,
 					function(room){
 		    			return room.get('nom').substring(0, 2);
-		    		})
+		    		}),
+					maps: RoomsController.maps
 				});
 				$(self.$el.selector).html(compiledTemplate);
+				console.log(RoomsController.maps);
 			},
 
 			afterRender: function() {

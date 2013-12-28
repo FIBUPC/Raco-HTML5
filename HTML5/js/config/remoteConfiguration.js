@@ -9,12 +9,14 @@ var RemoteConfiguration = {
 		News: {
 			//fib: 'http://www.fib.upc.edu/fib/rss.rss',
 			//upc: 'http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=ca'
-			fib: 'http://' + window.location.hostname + '/api/api/fib.rss',
-			upc: 'http://' + window.location.hostname + '/api/api/upc.rss.xml'
+			Fib: 'http://' + window.location.hostname + '/api/api/fib.rss',
+			Upc: 'http://' + window.location.hostname + '/api/api/upc.rss.xml'
 		},
 		Rooms: {
-			freeSpots: '/aules/places-lliures.json',
-			scheduling: '/aules/horari-avui.ics'
+			FreeSpots: '/aules/places-lliures.json',
+			Scheduling: '/aules/horari-avui.ics',
+			//Map: 'http://www.fib.upc.edu/poa/mapa.php?mod={0}'
+			Map: 'http://' + window.location.hostname + '/api/mapa-{0}.png'
 		}
 	}
 };
