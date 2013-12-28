@@ -12,6 +12,7 @@ define(
 
 			pageTitle: 'Assignatures',
 			menuElement: '.subjects',
+			refreshable: true,
 
 			initialize: function () {
 				self = this;
@@ -27,8 +28,6 @@ define(
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-
-				SubjectsController.getSubjectsAsync();
 			},
 
 			bindEvents: function() {
@@ -37,6 +36,10 @@ define(
 				$('#subject-list li').click(function(e) {
 					self.navigate('#!/subjects/' + $(this).data('id'));
 				});
+			},
+
+			refresh: function(force) {
+				SubjectsController.getSubjectsAsync(force);
 			}
 		});
 

@@ -1,0 +1,26 @@
+<div class="page hide">
+	<div class="inner-content room">
+		<h2><%= room.get('nom').toUpperCase() %></h2>
+		<p>Hi ha <%= room.get('places') %> places lliures</p>
+
+		<br /><br /><br />
+
+		<h3 class="subtitle">Classes d'avui</h3>
+		<% if (_.isEmpty(room.get('timetable'))) { %>
+			<p>No hi ha classes</p>
+		<% } else { %>
+			<ul class="regular-list scheduling">
+				<% _.each(room.get('timetable'), function(event) { %>
+					<% if (moment().isAfter(moment(event.dtstart)) && moment().isBefore(moment(event.dtend))) { %>
+						<li class="current">
+					<% } else { %>
+						<li>
+					<% } %>
+						<p class="fromto">De <%= moment(event.dtstart).format('HH:mm') %> a <%= moment(event.dtend).format('HH:mm') %></p>
+						<p class="title"><%= event.summary %></p>
+					</li>
+				<% }) %>
+			</ul>
+		<% } %>
+	</div>
+</div>

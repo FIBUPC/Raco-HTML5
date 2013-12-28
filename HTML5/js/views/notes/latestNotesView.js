@@ -12,6 +12,7 @@ define(
 
 			pageTitle: 'Últims avisos',
 			menuElement: '.notes',
+			refreshable: true,
 
 			initialize: function() {
 				self = this;
@@ -21,14 +22,12 @@ define(
 			},
 			
 			render: function() {
-				var compiledTemplate = _.template(self.template, {latestNotes: self.collection.models});
+				var compiledTemplate = _.template(self.template, { latestNotes: self.collection.models });
 				$(self.$el.selector).html(compiledTemplate);
 			},
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-
-				NotesController.getLatestNotesAsync();
 			},
 
 			bindEvents: function() {
@@ -37,6 +36,10 @@ define(
 				$('#latest-notes li').on('click', function(e) {
 					self.navigate('#!/latestNotes/' + $(this).data('id'));
 				});
+			},
+
+			refresh: function(force) {
+				NotesController.getLatestNotesAsync(force);
 			}
 		});
 

@@ -47,7 +47,7 @@ define(
 	    };
 
 	    NewsController.getUPCNewsAsync = function() {
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.News.upc.format("en"))
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.News.upc.format("en"))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
@@ -61,7 +61,7 @@ define(
 	    };
 
 	    NewsController.getFIBNewsAsync = function() {
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.News.fib.format("en"))
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.News.fib.format("en"))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);

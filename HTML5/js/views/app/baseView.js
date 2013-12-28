@@ -4,7 +4,6 @@ define(
 		'use strict';
 
 		var BaseView = Backbone.View.extend({
-			buttons: ['menu', 'refresh'],
 			pageTitle: '',
 			menuElement: '',
 
@@ -40,6 +39,26 @@ define(
 					$('#back-button').hide();
 					$('#menu-toggle-button').show();
 				}
+
+				if (this.refreshable && this.refresh) {
+					$('#refresh-button').show();
+					this.refresh.call(this, false);
+
+					var that = this;
+					$('#refresh-button').off('click').on('click', function(e){
+						e.preventDefault();
+						e.stopPropagation();
+
+						that.refresh.call(that, true);
+
+						return false;
+					});
+				}
+				else {
+					$('#refresh-button').off('click').hide();
+				}
+
+				$('.page').height($(document).height() - $('.page').offset().top);
 
 				this.bindEvents();
 			},

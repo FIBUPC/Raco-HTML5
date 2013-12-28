@@ -7,7 +7,7 @@ define(
 	    
 	    var self,
 	    RoomsController = {
-	    	rooms: new RoomsList(), //Observable collection
+	    	rooms: new RoomsList(), //Observable collection,
 	    	latestSync: null
 	    };
 
@@ -34,16 +34,40 @@ define(
 	    		}
 	    	}
 
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Rooms.freeSpots)
-	    	.done(function(data) {
-	    		data = (JSON.parse(data)).aules;
-	    		self.rooms.reset(data);
+	    	var freeSpotsRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
+	    		RemoteConfiguration.Urls.Rooms.freeSpots);
+
+	    	var timetableRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
+	    		RemoteConfiguration.Urls.Rooms.scheduling);
+
+	    	// Wait for the two requests to be completed
+	    	$.when(freeSpotsRequest, timetableRequest).done(function(freeSpots, timetable) {
+	    		// Parse rooms
+	    		var rooms = (JSON.parse(freeSpots)).aules;
+
+	    		// Parse timetable
+	    		var parsedTimetable = $.icalendar.parse(timetable);
+
+	    		// Match each room with its timetable
+	    		if (!_.isEmpty(rooms) && !_.isEmpty(parsedTimetable)) {
+	    			_.each(rooms, function(room, index) {
+	    				var currentRoomTimetable = _.filter(parsedTimetable.vevent, function(event){
+	    					return event.location.toLowerCase() === room.nom.toLowerCase();
+	    				});
+
+	    				rooms[index].timetable = _.sortBy(currentRoomTimetable, function(event){
+	    					return event.dtstart;
+	    				});
+	    			});
+	    		}
+
+	    		// Reset our collection with actual updated data
+	    		self.rooms.reset(rooms);
 	    		self.latestSync = moment();
 
 	    		Helpers.Environment.log('Rooms synced.');
-	    	}).fail(function(error) {
-	    		console.log("Error retrieving rooms");
+	    	}).fail(function() {
+				console.log("Error retrieving rooms");
 	    	});
 	    };
 	    

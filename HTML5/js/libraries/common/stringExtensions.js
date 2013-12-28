@@ -12,3 +12,9 @@ if (!String.prototype.format) {
     	});
   	};
 }
+
+if (!String.prototype.contains) {
+	String.prototype.contains = function(c, s) {
+		return s.indexOf(c) !== -1;
+	};
+}

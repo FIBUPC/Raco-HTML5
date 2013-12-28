@@ -12,6 +12,7 @@ define(
 
 			pageTitle: 'Aules',
 			menuElement: '.rooms',
+			refreshable: true,
 
 			initialize: function() {
 				self = this;
@@ -30,9 +31,24 @@ define(
 			},
 
 			afterRender: function() {
-				BaseView.prototype.afterRender.call(self);
+				BaseView.prototype.afterRender.call(self);	
+			},
 
-				RoomsController.getRoomsAsync();
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
+
+				$('.rooms li').on('click', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					self.navigate('#!/rooms/' + $(this).data('id'));
+
+					return false;
+				});
+			},
+
+			refresh: function(force) {
+				RoomsController.getRoomsAsync(force);
 			}
 		});
 

@@ -12,6 +12,7 @@ define(
 
 			pageTitle: 'Notícies',
 			menuElement: '.news',
+			refreshable: true,
 
 			initialize: function() {
 				self = this;
@@ -29,8 +30,6 @@ define(
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-				
-				NewsController.getNewsAsync();
 			},
 
 			bindEvents: function() {
@@ -49,6 +48,10 @@ define(
 				$('.news.upc li').on('click', function(e) {
 					self.navigate('#!/news/upc/' + $(this).data('id'));
 				});
+			},
+
+			refresh: function(force) {
+				NewsController.getNewsAsync(force);
 			}
 		});
 

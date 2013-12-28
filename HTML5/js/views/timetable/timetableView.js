@@ -12,6 +12,7 @@ define(
 
 			pageTitle: 'Horari',
 			menuElement: '.timetable',
+			refreshable: true,
 
 			initialize: function() {
 				self = this;
@@ -27,8 +28,10 @@ define(
 
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
-				
-				TimetableController.getTimetableAsync();
+			},
+
+			refresh: function(force) {
+				TimetableController.getTimetableAsync(force);
 			}
 		});
 

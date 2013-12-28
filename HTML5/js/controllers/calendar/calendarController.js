@@ -34,7 +34,7 @@ define(
 	    		}
 	    	}
 
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Calendar.calendar)
 	    	.done(function(data) {
 	    		self.calendar.reset(JSON.parse(data));

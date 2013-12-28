@@ -28,13 +28,13 @@ define(
 	    };
 
 	    NotesController.getLatestNotesAsync = function(force) {
-	    	if (self.latestSync != null && !force) {
+	    	if (!force && self.latestSync != null) {
 	    		if (moment().diff(self.latestSync) < Constants.Application.AutoSyncDelay) {
 	    			return;
 	    		}
 	    	}
 
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.LatestNotes).done(function(data) {
 	    		// Since notes are coming grouped by subject from the server
 	    		// we flatten the array to get just the notes from all of them

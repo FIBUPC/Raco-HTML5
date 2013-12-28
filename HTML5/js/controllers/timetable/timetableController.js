@@ -34,7 +34,7 @@ define(
 	    		}
 	    	}
 
-	    	HttpClient.postSignedAsync(RemoteConfiguration.Urls.Base + 
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Timetable)
 	    	.done(function(data) {
 	    		self.timetable.reset(JSON.parse(data));

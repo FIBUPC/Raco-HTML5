@@ -9,8 +9,21 @@
 
 				<ul class="regular-list rooms">
 					<% _.each(rooms, function(room) { %>
-						<li data-id="<%= room.get('nom') %>" class="clickable">
-							<p class="title"><%= room.get('nom').toUpperCase() %></p>
+						<% if (!_.isEmpty(room.currentEvent())) { %>
+							<li data-id="<%= room.get('nom') %>" class="clickable occupied">
+						<% } else { %>
+							<li data-id="<%= room.get('nom') %>" class="clickable">
+						<% } %>
+							<div class="pull-left">
+								<p class="title"><%= room.get('nom').toUpperCase() %></p>
+								<p class="currently">
+									<% if (!_.isEmpty(room.currentEvent())) { %>
+										<%= room.currentEvent().summary %>
+									<% } else { %>
+										No hi ha classe
+									<% } %>
+								</p>
+							</div>
 							<% if (room.get('places') == 0) { %>
 								<p class="available-spaces full">0</p>
 							<% } else if (room.get('places') <= 4) { %>

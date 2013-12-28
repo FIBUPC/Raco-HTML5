@@ -16,8 +16,9 @@ html {
 }
 
 body {
-	overflow-x: hidden;
+	overflow: hidden;
 	min-height: 100%;
+	height: 100%;
 }
 
 #content {
@@ -82,6 +83,7 @@ body {
 #header .header-button {
 	min-height: 1em;
 	min-width: 1em;
+	width: 1em;
 }
 
 #header #buttons-area {
@@ -89,11 +91,18 @@ body {
 	top: 0;
 	left: 0;
 	padding: 0.5em;
+	width: 100%;
 }
 
 #header #buttons-area .header-button {
 	display: block;
 	padding: 0.5em 0.75em;
+}
+
+#header .header-button.refresh {
+	position: absolute;
+	right: 1.2em;
+	top: 0.5em;
 }
 
 #iframe-login {
@@ -228,6 +237,10 @@ button {
 	display: inline-block;
 }
 
+.regular-list li .fromto {
+	margin-bottom: 0.5em;
+}
+
 .regular-list li .image,
 .new .image {
 	width: 5em;
@@ -316,11 +329,24 @@ button {
 	margin-right: -1em;
 }
 
-.rooms li .title {
+.pull-left {
 	float: left;
-	margin-top: 0.75em;
 }
 
 .rooms li .available-spaces {
 	float: right;
+}
+
+#loading-layer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: none;
+}
+
+.page {
+	overflow: auto;
 }
