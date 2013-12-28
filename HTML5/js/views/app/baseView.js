@@ -64,14 +64,14 @@ define(
 			},
 
 			bindEvents: function() {
-				if (typeof(this.collection) != 'undefined') {
-					this.collection.on('change', this.render);
-					this.collection.on('reset', this.render);
+				if (this.collection) {
+					this.collection.on('change', this.render, this);
+					this.collection.on('reset', this.render, this);
 				}
 
-				if (typeof(self.model) != 'undefined') {
-					this.model.on('change', this.render);
-					this.model.on('reset', this.render);
+				if (this.model) {
+					this.model.on('change', this.render, this);
+					this.model.on('reset', this.render, this);
 				}
 			},
 

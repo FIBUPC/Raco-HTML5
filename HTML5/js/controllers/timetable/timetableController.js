@@ -1,13 +1,13 @@
 define(
 	['utils/httpClient',
 	 'utils/dispatcher',
-	 'collections/timetable'],
+	 'models/timetable'],
 	function(HttpClient, Dispatcher, Timetable) {
 	    'use strict';
 	    
 	    var self,
 	    TimetableController = {
-	    	timetable: new Timetable(), //Observable collection
+	    	timetable: new Timetable(),
 	    	latestSync: null
 	    };
 
@@ -37,7 +37,28 @@ define(
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Timetable)
 	    	.done(function(data) {
-	    		self.timetable.reset(JSON.parse(data));
+	    		var parsedTimetable = JSON.parse(data);
+
+	    		var timetable = new Array(6); // from monday to friday
+	    		for (var i = 0; i < timetable.length; ++i) {
+	    			timetable[i] = new Array(24); // from 00:00 to 23:00
+
+	    			for (var j = 0; j < 24; ++j) {
+	    				timetable[i][j] = new Array();
+	    			}
+	    		}
+
+	    		// Now insert each class in the correct field of the matrix
+	    		_.each(parsedTimetable, function(classEvent) {
+	    			timetable[classEvent.Dia][classEvent.HoraInici].push({
+	    				subject: classEvent.Assig,
+	    				group: classEvent.Grup,
+	    				type: classEvent.Tipus,
+	    				rooms: classEvent.Aules
+	    			});
+	    		});
+
+	    		self.timetable.set('classes', timetable);
 	    		self.latestSync = moment();
 
 	    		Helpers.Environment.log('Timetable synced.');

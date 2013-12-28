@@ -350,3 +350,25 @@ button {
 .page {
 	overflow: auto;
 }
+
+.inner-content.timetable table {
+	width: 100%;
+}
+
+.inner-content.timetable table tr th,
+.inner-content.timetable table tr td {
+	padding: 0.5em;
+}
+
+.inner-content.timetable table tr td .empty {
+	min-height: 1.4em;
+}
+
+.inner-content.timetable table tr td .class {
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+.inner-content.timetable table tr td .class:last-child {
+	margin-bottom: 0;
+}

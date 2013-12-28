@@ -18,11 +18,11 @@ define(
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
 
-			    self.collection = TimetableController.timetable;
+			    self.model = TimetableController.timetable;
 			},
 			
 			render: function() {
-				var compiledTemplate = _.template(self.template, {timetable: self.collection.models});
+				var compiledTemplate = _.template(self.template, {timetable: self.model});
 				$(self.$el.selector).html(compiledTemplate);
 			},
 

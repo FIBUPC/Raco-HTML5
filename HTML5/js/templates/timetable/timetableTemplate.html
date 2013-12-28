@@ -1,3 +1,40 @@
 <div class="page">
-	<%= JSON.stringify(timetable) %>
+	<div class="inner-content timetable">
+		<% if (_.isEmpty(timetable.get('classes'))) { %>
+			<p>No tens horari.</p>
+		<% } else { %>
+			<table>
+				<thead>
+					<tr>
+						<th>Dilluns</th>
+						<th>Dimarts</th>
+						<th>Dimecres</th>
+						<th>Dijous</th>
+						<th>Divendres</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%  var classes = timetable.get('classes');
+						for (var hour = 8; hour <= 21; ++hour) { /* from 8AM to 21PM */ %>
+						<tr>
+							<% for (var day = 1; day < 6; ++day) { /* from Monday to Friday */ %>
+								<td>
+									<% if (_.isEmpty(classes[day][hour])) { %>
+										<div class="empty"></div>
+									<% } else { %>
+										<% _.each(classes[day][hour], function(classEvent, startTime){ %>
+											<div class="class">
+												<p class="subject"><%= classEvent.subject %> <%= classEvent.type %></p>
+												<p class="rooms"><%= JSON.stringify(classEvent.rooms) %></p>
+											</div>
+										<% }) %>
+									<% } %>
+								</td>
+							<% } %>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		<% } %>
+	<div>
 </div>
