@@ -358,6 +358,12 @@ button {
 .inner-content.timetable table tr th,
 .inner-content.timetable table tr td {
 	padding: 0.5em;
+	width: 15%;
+}
+
+.inner-content.timetable table tr th:first-child,
+.inner-content.timetable table tr td:first-child {
+	width: 10%;
 }
 
 .inner-content.timetable table tr td .empty {

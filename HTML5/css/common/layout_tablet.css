@@ -37,3 +37,7 @@ body.login #connect-button-box {
 body.login #connect-logo {
 	padding-left: 30%;
 }
+
+.day-selector {
+	display: none;
+}

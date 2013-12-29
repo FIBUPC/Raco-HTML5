@@ -36,3 +36,42 @@ body.menu-displayed #app {
 #menu #personal-info .profile-card {
 	max-width: 49%;
 }
+
+.inner-content.timetable table td:not(.current),
+.inner-content.timetable table th:not(.current) {
+	display: none;
+}
+
+.inner-content.timetable table tr th:first-child,
+.inner-content.timetable table tr tr:first-child {
+	display: table-cell !important;
+	width: 1%;
+	text-align: left !important;
+	padding: 0.5em 0 !important;
+}
+
+.inner-content.timetable table thead tr th {
+	text-align: center;
+	text-indent: -20%;
+}
+
+.day-selector {
+	position: absolute;
+	top: 1rem;
+	font-size: 1.2em;
+	padding: 0.3em 1em;
+	color: transparent;
+	background-color: #ca0a00 !important;
+}
+
+.day-selector.previous {
+	left: 0.9rem;
+	background: url('../../img/common/icons/back.png') 75% center no-repeat;
+	background-size: auto 80%;
+}
+
+.day-selector.next {
+	right: 0.9rem;
+	background: url('../../img/common/icons/next.png') 25% center no-repeat;
+	background-size: auto 80%;
+}

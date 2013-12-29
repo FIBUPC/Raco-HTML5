@@ -22,7 +22,10 @@ define(
 			},
 			
 			render: function() {
-				var compiledTemplate = _.template(self.template, {timetable: self.model});
+				var compiledTemplate = _.template(self.template, {
+					timetable: self.model,
+					subjects: TimetableController.subjects
+				});
 				$(self.$el.selector).html(compiledTemplate);
 			},
 
@@ -32,6 +35,46 @@ define(
 
 			refresh: function(force) {
 				TimetableController.getTimetableAsync(force);
+			},
+
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
+
+				$('#next-day').on('click', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					var $timetableCurrent = $('.timetable .current');
+					if ($timetableCurrent.index() === 5) {
+						// Go back to Monday
+						$timetableCurrent.removeClass('current');
+						$('.timetable tr th:nth-child(2), .timetable tr td:nth-child(2)').addClass('current');
+					}
+					else {
+						// Go to next day
+						$timetableCurrent.removeClass('current').next().addClass('current');
+					}
+
+					return false;
+				});
+
+				$('#previous-day').on('click', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					var $timetableCurrent = $('.timetable .current');
+					if ($timetableCurrent.index() === 1) {
+						// Go back to Friday
+						$timetableCurrent.removeClass('current');
+						$('.timetable tr th:nth-child(6), .timetable tr td:nth-child(6)').addClass('current');
+					}
+					else {
+						// Go to previous day
+						$timetableCurrent.removeClass('current').prev().addClass('current');
+					}
+
+					return false;
+				});
 			}
 		});
 

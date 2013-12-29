@@ -8,6 +8,7 @@ define(
 	    var self,
 	    TimetableController = {
 	    	timetable: new Timetable(),
+	    	subjects: null,
 	    	latestSync: null
 	    };
 
@@ -39,6 +40,8 @@ define(
 	    	.done(function(data) {
 	    		var parsedTimetable = JSON.parse(data);
 
+	    		var subjects = _.uniq(_.pluck(parsedTimetable, 'Assig'));
+
 	    		var timetable = new Array(6); // from monday to friday
 	    		for (var i = 0; i < timetable.length; ++i) {
 	    			timetable[i] = new Array(24); // from 00:00 to 23:00
@@ -58,6 +61,7 @@ define(
 	    			});
 	    		});
 
+	    		self.subjects = subjects;
 	    		self.timetable.set('classes', timetable);
 	    		self.latestSync = moment();
 

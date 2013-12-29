@@ -3,29 +3,39 @@
 		<% if (_.isEmpty(timetable.get('classes'))) { %>
 			<p>No tens horari.</p>
 		<% } else { %>
+			<%
+				var currentWeekDay = moment().isoWeekday();
+				if (currentWeekDay > 5) { // If weekend set it to Monday
+					currentWeekDay = 1;
+				}
+			%>
+			<button type="button" id="previous-day" class="day-selector previous clickable">&laquo;</button>
+			<button type="button" id="next-day" class="day-selector next clickable">&raquo;</button>
 			<table>
 				<thead>
 					<tr>
-						<th>Dilluns</th>
-						<th>Dimarts</th>
-						<th>Dimecres</th>
-						<th>Dijous</th>
-						<th>Divendres</th>
+						<th></th>
+						<th<%= (currentWeekDay === 1) ? ' class="current"' : '' %>>Dilluns</th>
+						<th<%= (currentWeekDay === 2) ? ' class="current"' : '' %>>Dimarts</th>
+						<th<%= (currentWeekDay === 3) ? ' class="current"' : '' %>>Dimecres</th>
+						<th<%= (currentWeekDay === 4) ? ' class="current"' : '' %>>Dijous</th>
+						<th<%= (currentWeekDay === 5) ? ' class="current"' : '' %>>Divendres</th>
 					</tr>
 				</thead>
 				<tbody>
 					<%  var classes = timetable.get('classes');
-						for (var hour = 8; hour <= 21; ++hour) { /* from 8AM to 21PM */ %>
+						for (var hour = 8; hour < 20; ++hour) { /* from 8AM to 20PM */ %>
 						<tr>
+							<th><%= (hour < 10) ? '0' + hour : hour %>:00</th>
 							<% for (var day = 1; day < 6; ++day) { /* from Monday to Friday */ %>
-								<td>
+								<td<%= (currentWeekDay === day) ? ' class="current"' : '' %>>
 									<% if (_.isEmpty(classes[day][hour])) { %>
 										<div class="empty"></div>
 									<% } else { %>
 										<% _.each(classes[day][hour], function(classEvent, startTime){ %>
-											<div class="class">
+											<div class="class s<%= _.indexOf(subjects, classEvent.subject) %>">
 												<p class="subject"><%= classEvent.subject %> <%= classEvent.type %></p>
-												<p class="rooms"><%= JSON.stringify(classEvent.rooms) %></p>
+												<p class="rooms"><%= classEvent.rooms.join(', ') %></p>
 											</div>
 										<% }) %>
 									<% } %>
