@@ -34,10 +34,12 @@ define(
 					$('#back-button').show();
 
 					$page.removeClass('hide');
+					$('body').addClass('can-go-back');
 				}
 				else {
 					$('#back-button').hide();
 					$('#menu-toggle-button').show();
+					$('body').removeClass('can-go-back');
 				}
 
 				if (this.refreshable && this.refresh) {

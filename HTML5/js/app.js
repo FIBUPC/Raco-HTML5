@@ -5,12 +5,11 @@ define (
      'controllers/subjects/subjectsController',
      'controllers/news/newsController',
      'controllers/timetable/timetableController',
-     'controllers/calendar/calendarController',
      'controllers/rooms/roomsController',
      'controllers/settings/settingsController',
      'views/app/appView'],
     function (Router, LoginController, NotesController, SubjectsController, NewsController,
-        TimetableController, CalendarController, RoomsController, SettingsController, AppView) {
+        TimetableController, RoomsController, SettingsController, AppView) {
         'use strict';
         
         var App = {};
@@ -21,7 +20,6 @@ define (
             SubjectsController.initialize();
             NewsController.initialize();
             TimetableController.initialize();
-            CalendarController.initialize();
             RoomsController.initialize();
             SettingsController.initialize();
             

@@ -12,10 +12,9 @@ define(
      'views/rooms/roomsView',
      'views/rooms/roomView',
      'views/timetable/timetableView',
-     'views/calendar/calendarView',
      'views/settings/settingsView'],
     function (LoginController, LoginView, LatestNotesView, LatestNoteView, SubjectsView, SubjectView, SubjectNoteView,
-        NewsView, FIBNewView, UPCNewView, RoomsView, RoomView, TimetableView, CalendarView, SettingsView) {
+        NewsView, FIBNewView, UPCNewView, RoomsView, RoomView, TimetableView, SettingsView) {
         'use strict';
 
         var self,
@@ -31,7 +30,6 @@ define(
                 '!/subjects/:id': 'subject',
                 '!/subjects/:subject/notes/:note': 'subjectNote',
                 '!/timetable': 'timetable',
-                '!/calendar': 'calendar',
                 '!/rooms': 'rooms',
                 '!/rooms/:id': 'room',
                 '!/news': 'news',
@@ -128,15 +126,6 @@ define(
                 }
 
                 TimetableView.render();
-            },
-
-            calendar: function() {
-                if (!LoginController.isLoggedIn()) {
-                    self.navigate('!/login', { trigger: true });
-                    return;
-                }
-
-                CalendarView.render();
             },
 
             news: function() {

@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v9/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(http://themes.googleusercontent.com/static/fonts/roboto/v9/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(http://themes.googleusercontent.com/static/fonts/roboto/v9/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(http://themes.googleusercontent.com/static/fonts/roboto/v9/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+body,
+html,
+body *,
+html * {
+  font-family: Roboto, "Droid Sans", sans-serif;
+}
+
+#header {
+  width: 101%;
+  left: -1px;
+}
+
+#menu #personal-info {
+  background: #222;
+}
+
+#header #page-title {
+  text-align: left;
+  margin: 0 0 0 1em;
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
+#header #menu-toggle-button {
+  position: absolute;
+  top: 0.6em;
+  right: 1.7em;
+}
+
+#header #refresh-button {
+  top: 0.6em;
+  right: 4.2em;
+}
+
+body.can-go-back #header #refresh-button {
+  right: 1em;
+}
+
+body.can-go-back #header #page-title {
+  margin-left: 2em;
+}
+
+#header .header-button.back { 
+  top: 0.6em !important;
+  position: absolute;
+}
+
+.regular-list li .title {
+  font-size: 1.1em;
+}
+
+#menu .role {
+  font-size: 1.1em !important;
+  margin-top: 0.4em !important;
+}
+
+#header,
+#menu li.current,
+body:not(.login) button {
+  box-shadow: inset 0 -1em 1em rgba(100, 100, 100, 0.15);
+}
+
+.regular-list li.unread .title {
+  font-weight: 800;
+}
+
+.inner-content h2 {
+  font-weight: 400 !important;
+  font-size: 1.5em !important;
+}
+
+#loading-layer {
+  background: #222;
+  opacity: 0.8;
+}
+
+#loading-layer #floatingCirclesG {
+  position: absolute;
+}

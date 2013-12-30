@@ -55,14 +55,16 @@ body #menu #personal-info .surname {
 }
 
 body #menu #personal-info .role {
-	padding: 0.5em 0.25em 0.5em 0.25em;
-	margin: 0.75em 0 0 0;
+	padding: 0 !important;
+	margin: 0.75em 0 0 0 !important;
 }
 
 body #menu .profile-picture img {
 	border-radius: 5em;
 	box-shadow: none;
 }
+
+
 
 button {
 	border-radius: 3px;

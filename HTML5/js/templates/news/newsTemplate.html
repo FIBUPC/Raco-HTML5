@@ -8,7 +8,7 @@
 				<% _.each(fibNews, function(fibNew) { %>
 					<li data-id="<%= fibNew.cid %>" class="clickable">
 						<% if (fibNew.get('media:thumbnail')['@attributes'].url !== '') { %>
-							<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat;"></div>
+							<div class="image" style="background: url('<%= fibNew.get('media:thumbnail')['@attributes'].url %>') center center no-repeat; background-size: auto 100%;"></div>
 						<% } else { %>
 							<div class="image"></div>
 						<% } %>

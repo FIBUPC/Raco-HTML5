@@ -17,6 +17,7 @@ body {
 
 #app {
 	transition: margin-left 0.5s ease;
+	-webkit-transition: margin-left 0.5s ease;
 }
 
 #content .page {
@@ -53,8 +54,8 @@ body {
 }
 
 #menu #tabs > li.current {
-	background: url('../../img/common/menu_arrow_inner.png') right center no-repeat;
-	background-color: #D10003;
+	background: url('../../img/common/menu_arrow_inner.png') right center no-repeat !important;
+	background-color: #D10003 !important;
 }
 
 #menu #tabs > li.current a:link,
@@ -176,12 +177,12 @@ body {
 }
 
 #menu #personal-info {
-	background: #efefef;
+	background: #222;
 }
 
 #menu #personal-info .name,
 #menu #personal-info .surname {
-	color: #333333;
+	color: white;
 }
 
 #menu #personal-info .profile-picture img {
@@ -190,8 +191,7 @@ body {
 }
 
 #menu #personal-info .profile-card .role {
-	color: white;
-	background: #009CEB;
+	color: #E1F5FC;
 	border-radius: 0.3em;
 	text-transform: uppercase;
 }
@@ -259,7 +259,7 @@ button:focus {
 }
 
 .regular-list li.unread {
-	background-color: #E1F5FC;
+	background-color: #E1F5FC !important;
 }
 
 .regular-list li .title {
@@ -311,12 +311,7 @@ button:focus {
 	padding-left: 2em;
 }
 
-.regular-list.rooms li {
-	border-left: 3px solid #06A600;
-}
-
 .regular-list.rooms li.occupied {
-	border-left: 3px solid #ca0a00;
 	background-color: #eee;
 	opacity: 0.6;
 }
@@ -404,6 +399,10 @@ button:focus {
 	font-size: 1.4em !important;
 	font-weight: 200;
 	line-height: 1.15em;
+}
+
+.inner-content.note h2,
+.inner-content-subject h2 {
 	text-transform: lowercase !important;
 }
 
