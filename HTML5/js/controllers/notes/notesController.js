@@ -61,9 +61,9 @@ define(
 	    	});
 	    };
 
-	    NotesController.openAttachment = function(id, subject) {
-	    	var signedUrl = HttpClient.signUrl('https://raco.fib.upc.edu/api-v1/attachment?assig=' + subject + 
-	    		'&d_id_attachment=' + id);
+	    NotesController.openAttachment = function(id, subject, name) {
+	    	var signedUrl = HttpClient.signUrl(RemoteConfiguration.Urls.Base +
+	    		String.format(RemoteConfiguration.Urls.Attachment, subject, id, name));
 
 	    	if (MobileDetector.isNativeApp()) {
 	    		window.plugins.childBrowser.showWebPage(signedUrl, function(resp){

@@ -10,7 +10,8 @@ var libraries = {
 			'modalwebview'
 		],
 		android: [
-			'cordova'
+			'cordova',
+			'childbrowser'
 		],
 		windowsphone: [
 			'cordova',

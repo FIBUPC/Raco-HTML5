@@ -93,7 +93,8 @@ define(
 			        }
 		    	}
 		    	else {
-		    		window.plugins.childBrowser.showWebPage(url, function(resp){
+		    		function checkLocation(resp) {
+		    			console.log("checkLocation with location " + resp.location);
 		    			if (resp.location.endsWith('authorize')) {
 		    				window.plugins.childBrowser.close();
 		    				that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);	
@@ -102,7 +103,14 @@ define(
 		    				window.plugins.childBrowser.close();
 		    				failureHandler();
 		    			}
-		    		}, function() {
+		    		}
+
+		    		// Android ChildBrowser plugin compatibility
+		    		if (!window.plugins.childBrowser.onLocationChange) {
+		    			window.plugins.childBrowser.onLocationChange = checkLocation;
+		    		}
+
+		    		window.plugins.childBrowser.showWebPage(url, checkLocation, function() {
 		    			failureHandler();
 		    		});
 		    	}

@@ -6,6 +6,7 @@ if (APPLICATION) {
 		Urls: {
 			Base: 'https://raco.fib.upc.edu',
 			LatestNotes: '/api-v1/avisos.json',
+			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
 				Details: '/api/assignatures/info.json?codi_upc={0}',
@@ -13,8 +14,8 @@ if (APPLICATION) {
 			},
 			Timetable: '/api-v1/horari-setmanal.json',
 			News: {
-				fib: 'http://www.fib.upc.edu/{0}/rss.rss',
-				upc: 'http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language={0}'
+				Fib: 'http://www.fib.upc.edu/{0}/rss.rss',
+				Upc: 'http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language={0}'
 			},
 			Rooms: {
 				FreeSpots: '/api/aules/places-lliures.json',
@@ -26,10 +27,15 @@ if (APPLICATION) {
 }
 else {
 	// Test environment (used to test from the default phone browser)
+	if (!window.location.hostname) {
+		window.location.hostname = '192.168.1.132';
+	}
+
 	RemoteConfiguration = {
 		Urls: {
 			Base: 'http://' + window.location.hostname + '/api',
 			LatestNotes: '/api-v1/avisos.json',
+			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
 				Details: '/api/assignatures/info-{0}.json',
