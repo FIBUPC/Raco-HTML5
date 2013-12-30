@@ -408,8 +408,6 @@ button:focus {
 }
 
 .inner-content.note h2::first-letter,
-.inner-content.new h2::first-letter,
-.inner-content.room h2::first-letter,
 .inner-content.subject h2::first-letter {
 	text-transform: capitalize !important;
 }
