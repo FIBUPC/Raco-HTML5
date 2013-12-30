@@ -1,8 +1,9 @@
 define(
 	['utils/httpClient',
 	 'utils/dispatcher',
-	 'collections/subjectList'],
-	function(HttpClient, Dispatcher, SubjectList) {
+	 'collections/subjectList',
+	 'collections/noteList'],
+	function(HttpClient, Dispatcher, SubjectList, NoteList) {
 	    'use strict';
 	    
 	    var self,
@@ -35,11 +36,34 @@ define(
 	    	}
 
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
-	    		RemoteConfiguration.Urls.Subjects)
+	    		RemoteConfiguration.Urls.Subjects.List)
 	    	.done(function(data) {
-	    		self.subjects.reset(JSON.parse(data));
-	    		self.latestSync = moment();
-	    		Helpers.Environment.log('Subjects synced.');
+	    		var subjects = JSON.parse(data);
+				
+	    		// Retrieve information and notes for all subjects in the list
+	    		var requests = new Array();
+	    		_.each(subjects, function(subject, index) {
+	    			var informationRequest = HttpClient.getAsync(RemoteConfiguration.Urls.Base +
+	    				String.format(RemoteConfiguration.Urls.Subjects.Details, subject.codi_upc));
+	    			var notesRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base +
+	    				String.format(RemoteConfiguration.Urls.Subjects.Notes, subject.idAssig));
+
+	    			requests.push(informationRequest);
+	    			requests.push(notesRequest);
+	    			$.when(informationRequest, notesRequest).done(function(information, notes) {
+	    				subjects[index].info = information;
+	    				subjects[index].notes = new NoteList(JSON.parse(notes));
+	    			});
+	    		});
+
+	    		$.when.apply(null, requests).done(function(){
+	    			self.subjects.reset(subjects);
+					self.latestSync = moment();
+
+					Helpers.Environment.log('Subjects synced.');
+				}).fail(function(error){
+					console.log("Error retrieving subjects information")
+				});
 	    	}).fail(function(error) {
 	    		console.log("Error retrieving subjects");
 	    	});

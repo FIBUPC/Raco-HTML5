@@ -4,7 +4,7 @@
 			<p>No tens assignatures.</p>
 		</div>
 	<% } else { %>
-		<ul id="subject-list" class="regular-list">
+		<ul id="subject-list" class="regular-list subjects">
 		<% _.each(subjects, function(subject){ %>
 			<li data-id="<%= subject.get('codi_upc') %>" class="clickable">
 				<p class="title"><%= subject.get('nom') %></p>

@@ -269,6 +269,16 @@ button:focus {
 	margin-bottom: 0.5em;
 }
 
+.regular-list.subjects li .title,
+.regular-list.notes li .title {
+	text-transform: lowercase;
+}
+
+.regular-list.subjects li .title::first-letter,
+.regular-list.notes li .title::first-letter {
+	text-transform: capitalize;
+}
+
 .regular-list li.unread .title {
 	font-weight: 600;
 }
@@ -312,7 +322,8 @@ button:focus {
 }
 
 .note .timeago,
-.new .timeago {
+.new .timeago,
+.subject .acronym {
 	font-size: 0.8em;
 	color: #666;
 }
@@ -387,11 +398,20 @@ button:focus {
 
 .inner-content.note h2,
 .inner-content.new h2,
-.inner-content.room h2 {
+.inner-content.room h2,
+.inner-content.subject h2 {
 	color: #ca0a00 !important;
 	font-size: 1.4em !important;
 	font-weight: 200;
 	line-height: 1.15em;
+	text-transform: lowercase !important;
+}
+
+.inner-content.note h2::first-letter,
+.inner-content.new h2::first-letter,
+.inner-content.room h2::first-letter,
+.inner-content.subject h2::first-letter {
+	text-transform: capitalize !important;
 }
 
 .available-spaces {

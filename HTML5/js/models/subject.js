@@ -5,7 +5,9 @@ define(
 			defaults: {
 				idAssig: null,
 				codi_upc: null,
-				nom: null
+				nom: null,
+				notes: null,
+				info: null
 			},
 			idAttribute: 'codi_upc'
 		});

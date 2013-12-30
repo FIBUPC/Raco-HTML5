@@ -14,20 +14,29 @@ define(
 			menuElement: '.subjects',
 			refreshable: true,
 
-			initialize: function () {
+			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
 
 				self.model = SubjectsController.subjects.get(self.options.id);
 			},
 			
-			render: function () {
+			render: function() {
 				var compiledTemplate = _.template(self.template, {subject: self.model});
 				$(self.$el.selector).html(compiledTemplate);
 			},
 
 			refresh: function(force) {
 				// TODO: refresh subject information
+			},
+
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
+
+				$('#subject-notes li').on('click', function(){
+					self.navigate('#!/subjects/' + self.model.get('codi_upc') + 
+						'/notes/' + $(this).data('id'));
+				});
 			}
 		});
 

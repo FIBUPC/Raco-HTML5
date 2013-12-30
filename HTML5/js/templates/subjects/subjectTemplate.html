@@ -1,3 +1,47 @@
 <div class="page hide">
+	<% console.log(subject) %>
+	<div class="inner-content subject">
+		<h2><%= subject.get('nom') %></h2>
+		<p class="acronym"><%= subject.get('idAssig') %></p>
+		<br /><br />
 
+		<h3 class="subtitle">Professors</h3>
+		<% if (_.isEmpty(subject.get('info').professors)) { %>
+			<p>Aquesta assignatura no té cap professor assignat.</p>
+		<% } else { %>
+			<ul class="lecturers regular-list">
+				<% _.each(subject.get('info').professors, function(lecturer) { %>
+					<li>
+						<p class="title"><%= lecturer.nom %></p>
+						<p class="timeago"><%= lecturer.email %></p>
+					</li>
+				<% }); %>
+			</ul>
+		<% } %>
+		<br /><br />
+
+		<h3 class="subtitle">Avisos</h3>
+		<% if (_.isEmpty(subject.get('notes').models)) { %>
+			<p>Aquesta assignatura no té cap avís.<p>
+		<% } else { %>
+			<ul id="subject-notes" class="regular-list notes">
+				<% _.each(subject.get('notes').models, function(note){ %>
+					<%
+						var readStatus = '';
+						if (!note.get('read')) {
+							readStatus = ' unread';
+						}
+					%>
+					<li data-id="<%= note.get('id') %>" class="clickable<%= readStatus %>">
+						<p class="acronym"><%= note.get('subject') %></p>
+						<p class="title"><%= note.get('title') %></p>
+						<p class="timeago"><%= moment(note.get('pubDate')).fromNow() %></p>
+						<% if (!_.isEmpty(note.get('attachments'))) { %>
+							<p class="attachments"><%= _.size(note.get('attachments')) %> attachments</p>
+						<% } %>
+					</li>
+				<% }); %>
+			</ul>
+		<% } %>
+	</div>
 </div>

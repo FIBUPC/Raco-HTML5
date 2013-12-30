@@ -1,0 +1,25 @@
+<div class="page hide">
+	<% if (_.isNull(note)) { %>
+		<p>Les dades de l'avís no estan disponibles.</p>
+	<% } else { %>
+		<div class="note inner-content">
+			<h2><%= note.get('title') %></h2>
+			<p class="timeago">
+				<%= moment(note.get('pubDate')).fromNow() %> on <%= subject.get('idAssig') %>
+			</p>
+			<% if (!_.isEmpty(note.get('attachments'))) { %>
+				<div class="attachments">
+					<p class="subtitle">Attachments (<%= _.size(note.get('attachments')) %>)</p>
+					<ul class="attachments">
+						<% _.each(note.get('attachments'), function(attachment) { %>
+							<li data-id="<%= attachment.id %>" class="clickable">
+								<a href="javascript: return false;" title="<%= attachment.fileName %>" class="<%= attachment.extension %>"><%= attachment.fileName.replace(/_/g, ' ') %></a>
+							</li>
+						<% }) %>
+					</ul>
+				</div>
+			<% } %>
+			<div id="note-description"></div>
+		</div>
+	<% } %>
+</div>

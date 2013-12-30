@@ -82,6 +82,7 @@ define(
 
 				// Navigate on a new thread to avoid freezing effects
 				Dispatcher.beginInvoke(function(){
+					window.scrollTo(0, 0);
 					window.location.hash = view;
 				});
 			}
