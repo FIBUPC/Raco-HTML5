@@ -72,6 +72,16 @@
 			else {
 				RunApplication();
 			}
+
+			$(document).ready(function(){
+				// When loading layer is visible any interaction must be cancelled to avoid weird layout issues
+				$('#loading-layer').on('touchstart touchend touchmove click tap swipeleft swiperight swipeup swipedown swipe', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					return false;
+				});
+			});
         </script>
 	</head>
 	<body class="web browser" onselectstart="return false;">
