@@ -10,8 +10,9 @@ var libraries = {
 			'modalwebview'
 		],
 		android: [
-			'cordova',
-			'childbrowser'
+			'cordova'
+			//'childbrowser' // ChildBrowser plugin is included in Cordova for Android file
+							 // for backward compatibility purposes
 		],
 		windowsphone: [
 			'cordova',
