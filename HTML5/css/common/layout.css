@@ -57,6 +57,7 @@ body {
 	width: 100%;
 	z-index: 50;
 	transition: left 0.5s ease;
+	-webkit-transition: left 0.5s ease;
 }
 
 #header #page-title {

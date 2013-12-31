@@ -19,6 +19,8 @@
 
 package edu.upc.fib.raco;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -30,9 +32,28 @@ public class RacoMobile extends DroidGap
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+    	super.onCreate(savedInstanceState);
+        
+        if (!isTablet()) {
+    		// Is phone, support portrait only
+    		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
         
         super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
         super.loadUrl(Config.getStartUrl(), 10000);
+    }
+    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+    	super.onConfigurationChanged(newConfig);
+    	
+    	if (!isTablet()) {
+    		return;
+    	}
+    }
+    
+    public boolean isTablet() {
+    	return (this.getContext().getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) 
+    			>= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 }

@@ -535,8 +535,8 @@ button:focus {
 }
 
 #loading-layer {
-	opacity: 0.75;
-	background: #333;
+  	background: #222;
+  	opacity: 0.8;
 }
 
 /* Windows 8 ProgressRing style */
