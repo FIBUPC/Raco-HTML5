@@ -49,6 +49,12 @@
 			    script.setAttribute('data-main', 'js/main');
 			    script.src = 'js/libraries/common/require.js';
 			    head.appendChild(script);
+
+			    if (navigator.splashscreen && navigator.splashscreen.hide) {
+			    	setTimeout(function(){
+			    		navigator.splashscreen.hide();
+			    	}, 1500);
+			    }
 			}
 
 			if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
