@@ -1,6 +1,6 @@
 <div class="page rooms">
 	<% if (_.isEmpty(buildings)) { %>
-		<p>Aquesta informació no està disponible en aquests moments.</p>
+		<p class="no-results centered">Aquesta informació no està disponible en aquests moments.</p>
 	<% } else { %>
 		<div class="inner-content">
 			<% _.each(buildings, function(rooms, building) { %>

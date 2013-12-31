@@ -1,6 +1,6 @@
 <div class="page hide">
 	<% if (_.isNull(note)) { %>
-		<p>Les dades de l'avís no estan disponibles.</p>
+		<p class="no-results centered">Les dades de l'avís no estan disponibles.</p>
 	<% } else { %>
 		<div class="note inner-content">
 			<h2><%= note.get('title') %></h2>

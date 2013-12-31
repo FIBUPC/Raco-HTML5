@@ -1,8 +1,6 @@
 <div class="page">
 	<% if (_.isEmpty(subjects)) { %>
-		<div class="">
-			<p>No tens assignatures.</p>
-		</div>
+		<p class="no-results centered">No tens assignatures.</p>
 	<% } else { %>
 		<ul id="subject-list" class="regular-list subjects">
 		<% _.each(subjects, function(subject){ %>

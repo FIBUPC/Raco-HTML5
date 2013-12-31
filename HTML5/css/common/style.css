@@ -371,7 +371,7 @@ button:focus {
 
 .regular-list li.clickable,
 .attachments li.clickable {
-	background: url('../../../img/platforms/ios/chevron.png') 95% center no-repeat;
+	background: url('../../../img/common/chevron.png') 95% center no-repeat;
 	background-size: auto 1em;
 	padding-right: 3em;
 }
@@ -380,7 +380,7 @@ button:focus {
 .regular-list li.clickable:hover,
 .attachments li.clickable.active,
 .attachments li.clickable:hover {
-	background: url('../../../img/platforms/ios/chevron_hover.png') 95% center no-repeat;
+	background: url('../../../img/common/chevron_hover.png') 95% center no-repeat;
 	background-size: auto 1em;
 }
 
@@ -504,6 +504,34 @@ button:focus {
 .inner-content.timetable table tr td .class.s5 {
 	background: #D10000;
 	border: 1px solid #A60000;
+}
+
+.inner-content {
+	position: relative;
+}
+
+.no-results {
+	font-size: 1.1em;
+	color: #666;
+	font-weight: 200;
+}
+
+.no-results.centered {
+	font-size: 1.4em;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 10em;
+	height: 2em;
+	line-height: 1em;
+	text-align: center;
+}
+
+.no-results:not(.centered) {
+	margin-top: 0.5em;
 }
 
 #loading-layer {

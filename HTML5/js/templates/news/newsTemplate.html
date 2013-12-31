@@ -2,7 +2,7 @@
 	<div class="inner-content">
 		<h2>Notícies FIB</h2>
 		<% if (_.isEmpty(fibNews)) { %>
-			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
+			<p class="no-results">Les notícies de la FIB no estan disponibles en aquest moment.</p>
 		<% } else { %>
 			<ul class="regular-list news fib">
 				<% _.each(fibNews, function(fibNew) { %>
@@ -23,7 +23,7 @@
 		
 		<h2>Notícies UPC</h2>
 		<% if (_.isEmpty(upcNews)) { %>
-			<p>Les notícies de la FIB no estan disponibles en aquest moment.</p>
+			<p class="no-results">Les notícies de la FIB no estan disponibles en aquest moment.</p>
 		<% } else { %>
 			<ul class="regular-list news upc">
 				<% _.each(upcNews, function(upcNew) { %>

@@ -7,7 +7,7 @@
 
 		<h3 class="subtitle">Classes d'avui</h3>
 		<% if (_.isEmpty(room.get('timetable'))) { %>
-			<p>No hi ha classes</p>
+			<p class="no-results">No hi ha classes.</p>
 		<% } else { %>
 			<ul class="regular-list scheduling">
 				<% _.each(room.get('timetable'), function(event) { %>
