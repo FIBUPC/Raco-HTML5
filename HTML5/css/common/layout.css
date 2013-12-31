@@ -21,6 +21,10 @@ body {
 	height: 100%;
 }
 
+.page {
+	-webkit-overflow-scrolling: touch;
+}
+
 #content {
 	position: relative;
 	width: 100% !important;
@@ -44,6 +48,15 @@ body {
 #header {
 	min-height: 3em;
 	position: relative;
+}
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	transition: left 0.5s ease;
 }
 
 #header #page-title {
@@ -122,6 +135,14 @@ body {
 	clear: both;
 	margin: 0;
 	padding: 0;
+}
+
+body.menu-displayed #header {
+	left: 79.5%;
+}
+
+body:not(.login) #content {
+	margin-top: 3em;
 }
 
 #content h2 {

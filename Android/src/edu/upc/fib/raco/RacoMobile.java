@@ -20,6 +20,9 @@
 package edu.upc.fib.raco;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+
 import org.apache.cordova.*;
 
 public class RacoMobile extends DroidGap
@@ -28,9 +31,8 @@ public class RacoMobile extends DroidGap
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html")
+        
+        super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
+        super.loadUrl(Config.getStartUrl(), 10000);
     }
 }
-

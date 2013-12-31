@@ -1,8 +1,8 @@
 <div class="page">
-	<div class="inner-content timetable">
-		<% if (_.isEmpty(timetable.get('classes'))) { %>
-			<p class="no-results centered">No tens horari.</p>
-		<% } else { %>
+	<% if (_.isEmpty(timetable.get('classes'))) { %>
+		<p class="no-results centered">No tens horari.</p>
+	<% } else { %>
+		<div class="inner-content timetable">
 			<%
 				var currentWeekDay = moment().isoWeekday();
 				if (currentWeekDay > 5) { // If weekend set it to Monday
@@ -44,7 +44,7 @@
 						</tr>
 					<% } %>
 				</tbody>
-			</table>
-		<% } %>
-	<div>
+			</table>	
+		<div>
+	<% } %>
 </div>

@@ -20,30 +20,27 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         id        = "io.cordova.helloCordova"
         version   = "2.0.0">
-    <name>Hello Cordova</name>
+    <name>Racó mobile</name>
 
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Racó mobile for Barcelona School of Informatics
     </description>
 
     <author href="http://cordova.io" email="dev@cordova.apache.org">
-        Apache Cordova Team
+        Cristian Ortega
     </author>
 
     <access origin="*"/>
 
-    <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
 
     <preference name="loglevel" value="DEBUG" />
-    <!--
-      <preference name="splashscreen" value="resourceName" />
-      <preference name="backgroundColor" value="0xFFF" />
-      <preference name="loadUrlTimeoutValue" value="20000" />
-      <preference name="InAppBrowserStorageEnabled" value="true" />
-      <preference name="disallowOverscroll" value="true" />
-    -->
-
+    <preference name="splashscreen" value="resourceName" />
+    <preference name="backgroundColor" value="0xFFF" />
+    <preference name="loadUrlTimeoutValue" value="20000" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="disallowOverscroll" value="true" />
+	
     <feature name="App">
       <param name="android-package" value="org.apache.cordova.App"/>
     </feature>
@@ -101,8 +98,9 @@
     <feature name="InAppBrowser">
       <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
     </feature>
-    <!-- Deprecated plugins element. Remove in 3.0 -->
+    
     <plugins>
+        <!-- This is a deprecated plugin. This app should be updated to use the modern InAppBrowser feature -->
         <plugin name="ChildBrowser" value="com.phonegap.plugins.childBrowser.ChildBrowser"/>
     </plugins>
 </widget>
