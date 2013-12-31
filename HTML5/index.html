@@ -55,6 +55,15 @@
 			    		navigator.splashscreen.hide();
 			    	}, 1500);
 			    }
+
+			    document.addEventListener('backbutton', function(){
+			    	if (!$('body').hasClass('can-go-back')) {
+			    		navigator.app.exitApp();
+			    	}
+			    	else {
+			    		$('#back-button').trigger('click');
+			    	}
+			    });
 			}
 
 			if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
