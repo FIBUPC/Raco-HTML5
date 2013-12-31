@@ -1,7 +1,7 @@
 <div class="page">
 	<div class="inner-content timetable">
 		<% if (_.isEmpty(timetable.get('classes'))) { %>
-			<p>No tens horari.</p>
+			<p class="no-results centered">No tens horari.</p>
 		<% } else { %>
 			<%
 				var currentWeekDay = moment().isoWeekday();

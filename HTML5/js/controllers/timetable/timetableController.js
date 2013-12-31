@@ -39,27 +39,29 @@ define(
 	    		RemoteConfiguration.Urls.Timetable)
 	    	.done(function(data) {
 	    		var parsedTimetable = JSON.parse(data);
-
 	    		var subjects = _.uniq(_.pluck(parsedTimetable, 'Assig'));
 
-	    		var timetable = new Array(6); // from monday to friday
-	    		for (var i = 0; i < timetable.length; ++i) {
-	    			timetable[i] = new Array(24); // from 00:00 to 23:00
+	    		var timetable = [];
+	    		if (!_.isEmpty(parsedTimetable)) {
+		    		var timetable = new Array(6); // from monday to friday
+		    		for (var i = 0; i < timetable.length; ++i) {
+		    			timetable[i] = new Array(24); // from 00:00 to 23:00
 
-	    			for (var j = 0; j < 24; ++j) {
-	    				timetable[i][j] = new Array();
-	    			}
+		    			for (var j = 0; j < 24; ++j) {
+		    				timetable[i][j] = new Array();
+		    			}
+		    		}
+
+		    		// Now insert each class in the correct field of the matrix
+		    		_.each(parsedTimetable, function(classEvent) {
+		    			timetable[classEvent.Dia][classEvent.HoraInici].push({
+		    				subject: classEvent.Assig,
+		    				group: classEvent.Grup,
+		    				type: classEvent.Tipus,
+		    				rooms: classEvent.Aules
+		    			});
+		    		});
 	    		}
-
-	    		// Now insert each class in the correct field of the matrix
-	    		_.each(parsedTimetable, function(classEvent) {
-	    			timetable[classEvent.Dia][classEvent.HoraInici].push({
-	    				subject: classEvent.Assig,
-	    				group: classEvent.Grup,
-	    				type: classEvent.Tipus,
-	    				rooms: classEvent.Aules
-	    			});
-	    		});
 
 	    		self.subjects = subjects;
 	    		self.timetable.set('classes', timetable);
