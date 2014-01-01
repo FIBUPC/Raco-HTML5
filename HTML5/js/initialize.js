@@ -19,7 +19,9 @@ var libraries = {
 			'fileBridge'
 		],
 		windows: [
-            'childbrowser'
+            'childbrowser',
+            '//Microsoft.WinJS.2.0/js/base',
+            '//Microsoft.WinJS.2.0/js/ui'
 		]
 	}
 };
@@ -34,8 +36,19 @@ function addScript(scriptName) {
 var mobileOS = MobileDetector.getMobileOS();
 // Add platform dependent scripts if application is executing inside a native app
 if (MobileDetector.isNativeApp()) {
-	for (var j = 0; j < libraries.platform[mobileOS].length; ++j) {
-        addScript('js/libraries/platform/' + mobileOS + '/' + libraries.platform[mobileOS][j]);
+    for (var j = 0; j < libraries.platform[mobileOS].length; ++j) {
+        var scriptName = libraries.platform[mobileOS][j];
+        if (!scriptName.startsWith('//')) {
+            scriptName = 'js/libraries/platform/' + mobileOS + '/' + scriptName;
+        }
+        addScript(scriptName);
+	}
+
+	if (MobileDetector.isWindows()) {
+	    var winJSCSSReference = document.createElement('link');
+	    winJSCSSReference.setAttribute('rel', 'stylesheet');
+	    winJSCSSReference.setAttribute('href', '//Microsoft.WinJS.2.0/css/ui-light.css');
+	    head.appendChild(winJSCSSReference);
 	}
 }
 

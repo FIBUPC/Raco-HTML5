@@ -176,13 +176,9 @@ body {
 	text-transform: uppercase;
 }
 
-#menu #personal-info {
-	background: #222;
-}
-
 #menu #personal-info .name,
 #menu #personal-info .surname {
-	color: white;
+	color: #333;
 }
 
 #menu #personal-info .profile-picture img {

@@ -4,7 +4,8 @@ if (APPLICATION) {
 	// Production environment
 	RemoteConfiguration = {
 		Urls: {
-			Base: 'https://raco.fib.upc.edu',
+		    //Base: 'https://raco.fib.upc.edu',
+            Base: 'http://192.168.1.135/api',
 			LatestNotes: '/api-v1/avisos.json',
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {

@@ -1,4 +1,4 @@
-body {
+/*body {
 	font-family: "Segoe WP Light", "Segoe WP", "Segoe UI", "Roboto", "Sans Droid", "Droid Sans", helvetica, arial, sans-serif, verdana;
 }
 
@@ -7,14 +7,15 @@ body * {
 	text-transform: lowercase;
 	font-weight: 300;
 	user-select: none;
-}
+}*/
 
 button {
 	background: none;
 	border: 2px solid #ca0a00;
 	color: #ca0a00;
-	font-family: "Segoe WP Semibold", "Segoe UI Semibold", sans-serif;
+	// font-family: "Segoe WP Semibold", "Segoe UI Semibold", sans-serif;
 	border-radius: 0;
+    font-weight: bold
 }
 
 body.login button {

@@ -41,3 +41,35 @@ body.login #connect-logo {
 .day-selector {
 	display: none;
 }
+
+@media(min-width: 480px) and (max-width: 1100px) {
+    #menu {
+        max-width: 5em !important;
+        width: 5em !important;
+        max-width: 5em !important;
+    }
+
+    #menu li a span {
+        display: none;
+    }
+
+    #menu li a {
+        background-position: center center !important;
+    }
+
+    #menu #personal-info .name,
+    #menu #personal-info .surname,
+    #menu #personal-info .role {
+        display: none;
+    }
+
+    #menu #personal-info .profile-picture {
+        float: none !important;
+        text-align: center;
+    }
+
+    #menu #personal-info .profile-picture img {
+        width: 100%;
+        max-width: 4em;
+    }
+}

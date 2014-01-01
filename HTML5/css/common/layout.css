@@ -86,6 +86,10 @@ body {
 	padding: 0.75em 1em;
 }
 
+#menu #tabs > li a {
+    width: 100%;
+}
+
 #menu #tabs > li.divider {
 	height: 1px;
 	max-height: 1px;

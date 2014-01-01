@@ -34,6 +34,23 @@ define (
                 }
                 catch(e) { }
             }
+            else if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+                $('<button id="winBackButton" class="win-backbutton" style="display: none;"></button>').prependTo('body');
+                document.getElementById('winBackButton').addEventListener('click', function () {
+                    $('#back-button').trigger('click');
+                }, false);
+
+                $('<div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">' +
+                    '<button id="refresh-command" disabled="disabled" data-win-control="WinJS.UI.AppBarCommand" data-win-options="' +
+                        '{icon:\'refresh\', label: \'Refresh\', section:\'global\', type:\'button\'}">' +
+                    '</button></div>').appendTo('body');
+                WinJS.UI.process(document.getElementById('appBar')).then(function () {
+                    document.getElementById('refresh-command').addEventListener('click', function () {
+                        document.getElementById('appBar').winControl.hide();
+                        $('#refresh-button').trigger('click');
+                    }, false);
+                });
+            }
 
             AppView.render();
 

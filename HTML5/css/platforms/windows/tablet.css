@@ -1,0 +1,89 @@
+body {
+    font-size: 120%;
+}
+
+.win-backbutton {
+    position: fixed;
+    left: 6%;
+    top: 2.3em;
+    z-index: 99;
+    color: #333;
+    border-color: #333;
+}
+
+#menu .header {
+    display: none;
+}
+
+#menu {
+    padding-top: 7em;
+}
+
+#page-title {
+    padding-left: 22% !important;
+    font-size: 4em !important;
+    margin-top: -0.75em !important;
+}
+
+#content {
+    margin-top: 7em !important;
+}
+
+.win-appbar {
+    background: #222;
+}
+
+.win-appbar .win-commandimage,
+.win-appbar button,
+.win-appbar button:hover:active,
+.win-appbar button:-ms-keyboard-active,
+.win-appbar button:active {
+    color: white;
+}
+
+.win-appbar .win-commandring,
+.win-appbar button:active .win-commandring {
+    background-color: transparent;
+    border-color: white;
+}
+
+.win-appbar button:hover:active .win-commandring,
+.win-appbar button:-ms-keyboard-active .win-commandring {
+    background-color: white;
+    border-color: white;
+}
+
+.win-appbar button:hover:active .win-commandimage,
+.win-appbar button:-ms-keyboard-active .win-commandimage {
+    color: #222;
+}
+
+.win-appbar button:hover .win-commandring {
+    background-color: white;
+    border-color: white;
+}
+
+.win-appbar button:hover .win-commandimage {
+    color: #222;
+}
+
+.win-appbar button:focus {
+    border-color: white;
+}
+
+.win-appbar button.win-hidefocus:focus {
+    border-color: transparent;
+}
+
+.win-appbar button:disabled .win-label,
+.win-appbar button:disabled:active .win-label,
+.win-appbar button:disabled .win-commandimage,
+.win-appbar button:disabled:active .win-commandimage {
+   color: #666;
+}
+
+.win-appbar button:disabled .win-commandring,
+.win-appbar button:disabled:active .win-commandring {
+    background-color: transparent;
+    border-color: #666;
+}
