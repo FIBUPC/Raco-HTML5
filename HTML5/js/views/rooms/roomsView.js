@@ -28,8 +28,8 @@ define(
 		    		}),
 					maps: RoomsController.maps
 				});
-				$(self.$el.selector).html(compiledTemplate);
-				console.log(RoomsController.maps);
+
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
 			afterRender: function() {

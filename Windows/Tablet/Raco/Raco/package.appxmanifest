@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="www/index.html">
-      <m2:VisualElements DisplayName="El Racó" Description="El Racó per a Windows 8" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="true">
+      <m2:VisualElements DisplayName="El Racó" Description="El Racó per a Windows 8" ForegroundText="light" BackgroundColor="#1483ce" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="true">
         <m2:DefaultTile ShortName="El Racó" DefaultSize="square150x150Logo">
         </m2:DefaultTile>
         <m2:SplashScreen Image="images\splashscreen.png" />

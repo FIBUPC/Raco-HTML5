@@ -22,7 +22,7 @@ define(
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template, { fibNew: self.model });
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
 			afterRender: function() {

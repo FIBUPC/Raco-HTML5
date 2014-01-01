@@ -77,6 +77,8 @@
     <Content Include="www\css\platforms\windows\common.css" />
     <Content Include="www\css\platforms\windows\phone.css" />
     <Content Include="www\css\platforms\windows\tablet.css" />
+    <Content Include="www\img\common\chevron.png" />
+    <Content Include="www\img\common\chevron_hover.png" />
     <Content Include="www\img\common\files\audio.png" />
     <Content Include="www\img\common\files\code.png" />
     <Content Include="www\img\common\files\compressed.png" />
@@ -92,6 +94,7 @@
     <Content Include="www\img\common\files\txt.png" />
     <Content Include="www\img\common\files\video.png" />
     <Content Include="www\img\common\files\xlsx.png" />
+    <Content Include="www\img\common\icons\back.png" />
     <Content Include="www\img\common\icons\calendar.png" />
     <Content Include="www\img\common\icons\calendar_red.png" />
     <Content Include="www\img\common\icons\clip.png" />
@@ -100,8 +103,10 @@
     <Content Include="www\img\common\icons\menu.png" />
     <Content Include="www\img\common\icons\news.png" />
     <Content Include="www\img\common\icons\news_red.png" />
+    <Content Include="www\img\common\icons\next.png" />
     <Content Include="www\img\common\icons\notes.png" />
     <Content Include="www\img\common\icons\notes_red.png" />
+    <Content Include="www\img\common\icons\refresh.png" />
     <Content Include="www\img\common\icons\rooms.png" />
     <Content Include="www\img\common\icons\rooms_red.png" />
     <Content Include="www\img\common\icons\settings.png" />
@@ -114,8 +119,7 @@
     <Content Include="www\img\common\login_background.png" />
     <Content Include="www\img\common\logo_raco.png" />
     <Content Include="www\img\common\menu_arrow_inner.png" />
-    <Content Include="www\img\platforms\ios\chevron.png" />
-    <Content Include="www\img\platforms\ios\chevron_hover.png" />
+    <Content Include="www\img\platforms\android\icons\back.png" />
     <Content Include="www\img\test\profile_picture.jpg" />
     <Content Include="www\index.html" />
     <Content Include="www\js\app.js" />
@@ -126,10 +130,8 @@
     <Content Include="www\js\collections\noteList.js" />
     <Content Include="www\js\collections\roomsList.js" />
     <Content Include="www\js\collections\subjectList.js" />
-    <Content Include="www\js\collections\timetable.js" />
     <Content Include="www\js\config\constants.js" />
     <Content Include="www\js\config\remoteConfiguration.js" />
-    <Content Include="www\js\controllers\calendar\calendarController.js" />
     <Content Include="www\js\controllers\login\loginController.js" />
     <Content Include="www\js\controllers\login\oAuthController.js" />
     <Content Include="www\js\controllers\news\newsController.js" />
@@ -141,7 +143,9 @@
     <Content Include="www\js\initialize.js" />
     <Content Include="www\js\libraries\common\backbone.js" />
     <Content Include="www\js\libraries\common\i18n.js" />
+    <Content Include="www\js\libraries\common\jquery.icalendar.js" />
     <Content Include="www\js\libraries\common\jquery.js" />
+    <Content Include="www\js\libraries\common\jquery.mobile.events.js" />
     <Content Include="www\js\libraries\common\js-oauth.js" />
     <Content Include="www\js\libraries\common\moment.js" />
     <Content Include="www\js\libraries\common\order.js" />
@@ -155,6 +159,7 @@
     <Content Include="www\js\libraries\platform\windowsphone\cordova.js" />
     <Content Include="www\js\libraries\platform\windowsphone\fileBridge.js" />
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
+    <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
     <Content Include="www\js\main.js" />
     <Content Include="www\js\models\action.js" />
     <Content Include="www\js\models\calendarEvent.js" />
@@ -163,17 +168,20 @@
     <Content Include="www\js\models\note.js" />
     <Content Include="www\js\models\room.js" />
     <Content Include="www\js\models\subject.js" />
-    <Content Include="www\js\models\timetableEvent.js" />
+    <Content Include="www\js\models\timetable.js" />
     <Content Include="www\js\router.js" />
     <Content Include="www\js\templates\app\appTemplate.html" />
     <Content Include="www\js\templates\app\headerTemplate.html" />
     <Content Include="www\js\templates\app\menuTemplate.html" />
-    <Content Include="www\js\templates\calendar\calendarTemplate.html" />
     <Content Include="www\js\templates\login\loginTemplate.html" />
+    <Content Include="www\js\templates\news\FIBNewTemplate.html" />
     <Content Include="www\js\templates\news\newsTemplate.html" />
+    <Content Include="www\js\templates\news\UPCNewTemplate.html" />
     <Content Include="www\js\templates\notes\latestNotesTemplate.html" />
     <Content Include="www\js\templates\notes\latestNoteTemplate.html" />
+    <Content Include="www\js\templates\notes\subjectNoteTemplate.html" />
     <Content Include="www\js\templates\rooms\roomsTemplate.html" />
+    <Content Include="www\js\templates\rooms\roomTemplate.html" />
     <Content Include="www\js\templates\settings\settingsTemplate.html" />
     <Content Include="www\js\templates\subjects\subjectsTemplate.html" />
     <Content Include="www\js\templates\subjects\subjectTemplate.html" />
@@ -188,10 +196,14 @@
     <Content Include="www\js\views\app\menuView.js" />
     <Content Include="www\js\views\calendar\calendarView.js" />
     <Content Include="www\js\views\login\loginView.js" />
+    <Content Include="www\js\views\news\fibNewView.js" />
     <Content Include="www\js\views\news\newsView.js" />
+    <Content Include="www\js\views\news\upcNewView.js" />
     <Content Include="www\js\views\notes\latestNotesView.js" />
     <Content Include="www\js\views\notes\latestNoteView.js" />
+    <Content Include="www\js\views\notes\subjectNoteView.js" />
     <Content Include="www\js\views\rooms\roomsView.js" />
+    <Content Include="www\js\views\rooms\roomView.js" />
     <Content Include="www\js\views\settings\settingsView.js" />
     <Content Include="www\js\views\subjects\subjectsView.js" />
     <Content Include="www\js\views\subjects\subjectView.js" />
@@ -203,7 +215,7 @@
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="www\js\libraries\platform\w8\" />
+    <Folder Include="www\img\platforms\ios\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

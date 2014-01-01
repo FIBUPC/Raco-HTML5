@@ -29,10 +29,10 @@ define(
 					note: self.note,
 					subject: self.subject
 				});
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
-				var descriptionHTML = $('<div />').html(self.note.get('description')).text();
-				$('#note-description').html(descriptionHTML);
+				var descriptionHTML = $('<div />').html(self.model.get('description')).text();
+				Helpers.Environment.showView(descriptionHTML, $('#note-description'));
 			},
 
 			bindEvents: function() {

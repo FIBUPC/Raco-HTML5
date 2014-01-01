@@ -16,7 +16,7 @@ define(
 			render: function () {
 				$('body').addClass('login');
 
-				$(self.$el.selector).html(self.template);
+				Helpers.Environment.showView(self.template, $(self.$el.selector));
 				self.bindEvents();
 			},
 
@@ -33,7 +33,7 @@ define(
 			},
 
 			loginErrorCallback: function () {
-				alert("An error occurred while trying to authorize this application. Please try again.");
+				console.log("An error occurred while trying to authorize this application. Please try again.");
 			}
 		});
 

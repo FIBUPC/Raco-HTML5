@@ -19,10 +19,17 @@ define(
 			},
 
 			bindEventHandlers: function() {
-				$('#menu #tabs li.clickable a').click(function(){
+			    $('#menu #tabs li.clickable a').click(function (e) {
+			        e.preventDefault();
+			        e.stopPropagation();
+
+			        window.location.hash = decodeURI($(this).attr('href'));
+
 					if ($('body').hasClass('menu-displayed') && $('#menu-toggle-button:visible').length > 0) {
 						$('#menu-toggle-button').trigger('click');
 					}
+
+					return false;
 				});
 			}
 		});

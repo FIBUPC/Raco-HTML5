@@ -25,7 +25,7 @@ define(
 			render: function() {
 				var compiledTemplate = _.template(self.template,
 					{upcNews: self.upcNews.first(5), fibNews: self.fibNews.first(5)});
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
 			afterRender: function() {

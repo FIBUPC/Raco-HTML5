@@ -16,7 +16,7 @@ MobileDetector.getMobileOS = function() {
 		mobileOS = "windowsphone";
 	}
 	// Windows desktop/tablet device
-	else if (navigator.userAgent.match(/Tablet\ PC/i)){
+	else if (navigator.userAgent.match(/MSAppHost/i)) {
 		mobileOS = "windows";
 	}
 

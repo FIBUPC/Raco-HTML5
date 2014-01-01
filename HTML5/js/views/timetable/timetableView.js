@@ -26,7 +26,7 @@ define(
 					timetable: self.model,
 					subjects: TimetableController.subjects
 				});
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
 			afterRender: function() {

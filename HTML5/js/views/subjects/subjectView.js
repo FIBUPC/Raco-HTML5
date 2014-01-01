@@ -23,7 +23,7 @@ define(
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template, {subject: self.model});
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
 			refresh: function(force) {

@@ -22,10 +22,10 @@ define(
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template, {note: self.model});
-				$(self.$el.selector).html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
 				var descriptionHTML = $('<div />').html(self.model.get('description')).text();
-				$('#note-description').html(descriptionHTML);
+				Helpers.Environment.showView(descriptionHTML, $('#note-description'));
 			},
 
 			bindEvents: function() {

@@ -6,10 +6,6 @@ define(
 		        consumerKey: "d84ae868-ae73-49e9-98d6-d4e4e3504a16",
 		        consumerSecret: "dd73c2b6-f398-47fd-9f94-83a72fb89ddf",
 
-		        /*requestTokenUrl: "https://raco.fib.upc.edu/oauth/request_token",
-		        authorizationUrl: "https://raco.fib.upc.edu/oauth/protected/authorize",
-		        accessTokenUrl: "https://raco.fib.upc.edu/oauth/access_token"*/
-
 		        requestTokenUrl: "https://raco.fib.upc.edu/oauth/request_token",
 		        authorizationUrl: "https://raco.fib.upc.edu/oauth/protected/authorize",
 		        accessTokenUrl: "https://raco.fib.upc.edu/oauth/access_token",
@@ -93,26 +89,49 @@ define(
 			        }
 		    	}
 		    	else {
-		    		function checkLocation(resp) {
-		    			console.log("checkLocation with location " + resp.location);
-		    			if (resp.location.endsWith('authorize')) {
-		    				window.plugins.childBrowser.close();
-		    				that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);	
-		    			}
-		    			else if (resp.location.endsWith('no-authorize')) {
-		    				window.plugins.childBrowser.close();
-		    				failureHandler();
-		    			}
-		    		}
+		    	    if (MobileDetector.isWindows()) {
+		    	        // Windows 8 does not have support for Apache Cordova yet.
+		    	        // We have to use Windows.Security WebAuthenticationBroker to
+		    	        // let the user authorize this application.
+		    	        var endURIString = 'http://www.fib.upc.edu/';
+		    	        var endURI = new Windows.Foundation.Uri(endURIString);
+		    	        var startURI = new Windows.Foundation.Uri(url + '&oauth_callback=' + encodeURI(endURIString));
 
-		    		// Android ChildBrowser plugin compatibility
-		    		if (!window.plugins.childBrowser.onLocationChange) {
-		    			window.plugins.childBrowser.onLocationChange = checkLocation;
-		    		}
+		    	        Windows.Security.Authentication.Web.WebAuthenticationBroker.authenticateAsync(
+                            Windows.Security.Authentication.Web.WebAuthenticationOptions.none, startURI, endURI)
+                            .done(function (result) {
+                                if (result.responseStatus === Windows.Security.Authentication.Web.WebAuthenticationStatus.errorHttp) {
+                                    failureHandler();
+                                }
+                                else {
+                                    that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);
+                                }
+                            }, function (error) {
+                                failureHandler(error);
+;                           });
+		    	    }
+		    	    else {
+		    	        function checkLocation(resp) {
+		    	            console.log("checkLocation with location " + resp.location);
+		    	            if (resp.location.endsWith('authorize')) {
+		    	                window.plugins.childBrowser.close();
+		    	                that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);
+		    	            }
+		    	            else if (resp.location.endsWith('no-authorize')) {
+		    	                window.plugins.childBrowser.close();
+		    	                failureHandler();
+		    	            }
+		    	        }
 
-		    		window.plugins.childBrowser.showWebPage(url, checkLocation, function() {
-		    			failureHandler();
-		    		});
+		    	        // Android ChildBrowser plugin compatibility
+		    	        if (!window.plugins.childBrowser.onLocationChange) {
+		    	            window.plugins.childBrowser.onLocationChange = checkLocation;
+		    	        }
+
+		    	        window.plugins.childBrowser.showWebPage(url, checkLocation, function () {
+		    	            failureHandler();
+		    	        });
+		    	    }
 		    	}
 		    }
 

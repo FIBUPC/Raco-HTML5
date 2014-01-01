@@ -19,7 +19,7 @@ var libraries = {
 			'fileBridge'
 		],
 		windows: [
-			
+            'childbrowser'
 		]
 	}
 };
@@ -35,7 +35,7 @@ var mobileOS = MobileDetector.getMobileOS();
 // Add platform dependent scripts if application is executing inside a native app
 if (MobileDetector.isNativeApp()) {
 	for (var j = 0; j < libraries.platform[mobileOS].length; ++j) {
-		addScript('js/libraries/platform/' + mobileOS + '/' + libraries.platform[mobileOS][j]);
+        addScript('js/libraries/platform/' + mobileOS + '/' + libraries.platform[mobileOS][j]);
 	}
 }
 

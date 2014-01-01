@@ -8,6 +8,17 @@ var Helpers = {
 			if (DEBUG && console && console.log) {
 				console.log(message);
 			}
+		},
+		showView: function (content, element) {
+		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+                // Adding HTML with scripts or data URI schemes is considered unsafe in Windows 8
+		        MSApp.execUnsafeLocalFunction(function () {
+		            element.html(content);
+		        });
+		    }
+		    else {
+		        element.html(content);
+		    }
 		}
 	},
 	Application: {

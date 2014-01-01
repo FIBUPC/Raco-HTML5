@@ -44,7 +44,9 @@
         <script type="text/javascript" src="js/initialize.js"></script>
         <script type="text/javascript">
 	        // Run the app directly or wait for deviceReady event
-			function RunApplication() {
+            function RunApplication() {
+                jQuery.isUnsafe = true;
+
 				var script = document.createElement('script');
 			    script.setAttribute('data-main', 'js/main');
 			    script.src = 'js/libraries/common/require.js';
