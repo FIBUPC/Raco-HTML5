@@ -34,6 +34,7 @@ define(
 	    		}
 	    	}
 
+	    	self.latestSync = moment();
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.LatestNotes).done(function(data) {
 	    		// Since notes are coming grouped by subject from the server
@@ -53,7 +54,6 @@ define(
 
 	    		// Now we reset the collection with the flattened notes array
 	    		self.latestNotes.reset(notes);
-	    		self.latestSync = moment();
 	    		Helpers.Environment.log('Notes synced.');
 	    	}).fail(function(error) {
 	    		// TODO: throw error to the view

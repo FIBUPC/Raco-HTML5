@@ -6,11 +6,18 @@ button {
     font-weight: bold
 }
 
+#personal-info .profile-picture img {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: 1px solid #ccc;
+}
+
 body.login button {
-	background: none;
-	border: 2px solid white;
-	color: white;
 	font-size: 1em;
+    border-radius: 0 !important;
+    background: #ca0a00;
+    color: white;
+    box-shadow: none !important;
 }
 
 .timetable .class {

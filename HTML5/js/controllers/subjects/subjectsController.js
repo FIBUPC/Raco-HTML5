@@ -35,6 +35,7 @@ define(
 	    		}
 	    	}
 
+	    	self.latestSync = moment();
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Subjects.List)
 	    	.done(function(data) {
@@ -58,7 +59,6 @@ define(
 
 	    		$.when.apply(null, requests).done(function(){
 	    			self.subjects.reset(subjects);
-					self.latestSync = moment();
 
 					Helpers.Environment.log('Subjects synced.');
 				}).fail(function(error){

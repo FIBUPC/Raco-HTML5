@@ -39,6 +39,8 @@ define(
 	    		}
 	    	}
 
+	    	self.latestSync = moment();
+
 	    	var freeSpotsRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Rooms.FreeSpots);
 
@@ -77,7 +79,6 @@ define(
 
 	    		// Reset our collection with actual updated data
 	    		self.rooms.reset(rooms);
-	    		self.latestSync = moment();
 
 	    		Helpers.Environment.log('Rooms synced.');
 	    	}).fail(function() {

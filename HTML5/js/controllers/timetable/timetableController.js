@@ -35,6 +35,7 @@ define(
 	    		}
 	    	}
 
+	    	self.latestSync = moment();
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Timetable)
 	    	.done(function(data) {
@@ -65,7 +66,6 @@ define(
 
 	    		self.subjects = subjects;
 	    		self.timetable.set('classes', timetable);
-	    		self.latestSync = moment();
 
 	    		Helpers.Environment.log('Timetable synced.');
 	    	}).fail(function(error) {

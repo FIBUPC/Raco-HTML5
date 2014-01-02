@@ -19,18 +19,22 @@ define(
 			},
 
 			bindEventHandlers: function() {
-			    $('#menu #tabs li.clickable a').click(function (e) {
+			    $('#menu #tabs li.clickable').click(function (e) {
 			        e.preventDefault();
 			        e.stopPropagation();
 
-			        window.location.hash = decodeURI($(this).attr('href'));
+			        if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+			            WinJS.Navigation.history.backStack.push(window.location.hash);
+			        }
+
+			        window.location.hash = decodeURI($(this).find('a').attr('href'));
 
 					if ($('body').hasClass('menu-displayed') && $('#menu-toggle-button:visible').length > 0) {
 						$('#menu-toggle-button').trigger('click');
 					}
 
 					return false;
-				});
+			    });
 			}
 		});
 		

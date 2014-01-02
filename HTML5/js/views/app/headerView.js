@@ -70,9 +70,20 @@ define(
 					e.preventDefault();
 					e.stopPropagation();
 
-					$('.page').addClass('hide');
-					Dispatcher.beginInvoke(function(){
-						window.history.back();
+					if (!(MobileDetector.isWindows())) {
+					    $('.page').addClass('hide');
+					}
+					Dispatcher.beginInvoke(function () {
+					    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+					        var previousUrl = WinJS.Navigation.history.backStack.pop();
+
+					        if (previousUrl !== undefined) {
+					            window.location.hash = previousUrl;
+					        }
+					    }
+					    else {
+					        window.history.back();
+					    }   
 					}, 500);
 
 					return false;

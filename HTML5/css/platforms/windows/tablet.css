@@ -12,6 +12,10 @@ body {
     border-color: #333;
 }
 
+#content h2 {
+    font-weight: 200;
+}
+
 #content .page {
     -ms-transition-property: opacity left;
     -ms-transition-duration: 0.5s 0.5s;
@@ -34,7 +38,7 @@ body {
     text-transform: lowercase;
 }
 
-#content {
+body:not(.login) #content {
     margin-top: 7em !important;
 }
 
@@ -106,6 +110,15 @@ body {
     overflow-x: hidden !important;
 }
 
+.available-spaces {
+    padding: 0.5em;
+    border-radius: 0;
+}
+
+.attachments li.clickable:hover {
+    cursor: pointer;
+}
+
 /* Tablet portrait */
 @media (max-width: 767px) {
     .win-backbutton {
@@ -115,12 +128,106 @@ body {
     #page-title {
         padding-left: 6.5rem !important;
     }
+
+    .inner-content.timetable table td:not(.current),
+    .inner-content.timetable table th:not(.current) {
+        display: none;
+    }
+
+    .inner-content.timetable table tr th:first-child,
+    .inner-content.timetable table tr tr:first-child {
+        display: table-cell !important;
+        width: 3%;
+        text-align: left !important;
+        padding: 0.5em 0 !important;
+    }
+
+    .inner-content.timetable table thead tr th {
+        text-align: center;
+        text-indent: -20%;
+        font-weight: 200;
+    }
+
+    .day-selector {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        font-size: 1.2em;
+        padding: 0.3em 1em;
+        color: transparent;
+        background-color: #ca0a00 !important;
+    }
+
+    .day-selector.previous {
+        left: 0.9rem;
+        background-image: url('../../../img/common/icons/back.png') !important;
+        background-position: 60% center;
+        background-repeat: no-repeat;
+        background-size: auto 80%;
+    }
+
+    .day-selector.next {
+        right: 1rem;
+        background-image: url('../../../img/common/icons/next.png') !important;
+        background-position: 40% center;
+        background-repeat: no-repeat;
+        background-size: auto 80%;
+    }
 }
 
 /* Tablet landscape */
 @media (min-width: 768px) and (max-width: 1199px) {
     .win-backbutton {
         left: 7.5%;
+    }
+
+    .inner-content.timetable table td:not(.current),
+    .inner-content.timetable table th:not(.current) {
+        display: none;
+    }
+
+    .inner-content.timetable table tr th:first-child,
+    .inner-content.timetable table tr tr:first-child {
+        display: table-cell !important;
+        width: 2%;
+        text-align: left !important;
+        padding: 0.5em 0 !important;
+    }
+
+    .inner-content.timetable table thead tr th {
+        text-align: center;
+        text-indent: -20%;
+        font-weight: 200;
+    }
+
+    .day-selector {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        font-size: 1.2em;
+        padding: 0.3em 1em;
+        color: transparent;
+        background-color: #ca0a00 !important;
+    }
+
+    .day-selector.previous {
+        left: 0.9rem;
+        background-image: url('../../../img/common/icons/back.png') !important;
+        background-position: 60% center;
+        background-repeat: no-repeat;
+        background-size: auto 80%;
+    }
+
+    .day-selector.next {
+        right: 1rem;
+        background-image: url('../../../img/common/icons/next.png') !important;
+        background-position: 40% center;
+        background-repeat: no-repeat;
+        background-size: auto 80%;
+    }
+
+    .available-spaces {
+        margin-right: -2em;
     }
 }
 
@@ -149,6 +256,10 @@ body {
     .regular-list li:nth-child(even) {
         margin-right: 0;
     }
+
+    .attachments li.clickable {
+        background: none !important;
+    }
 }
 
 /* Desktop only */
@@ -159,5 +270,20 @@ body {
 
     .regular-list li {
         width: 48.4%;
+    }
+
+    .inner-content.timetable table tr th:first-child,
+    .inner-content.timetable table tr tr:first-child {
+        width: 4%;
+        text-align: left !important;
+        padding: 0.5em 0 !important;
+    }
+
+    .inner-content.timetable table thead tr th {
+        font-weight: 200;
+    }
+
+    .available-spaces {
+        margin-right: -2em;
     }
 }

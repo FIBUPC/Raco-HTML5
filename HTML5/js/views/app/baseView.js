@@ -29,15 +29,20 @@ define(
 			afterRender: function() {
 				var $page = $('.page');
 
+				if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+				    WinJS.UI.Animation.enterPage($('.page')[0]);
+				}
+
 				if ($page.hasClass('hide')) {
 				    $('#menu-toggle-button').hide();
 				    $('#back-button').show();
 
 				    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
-				        $('#winBackButton').show();
+				        $('#winBackButton').show();   
 				    }
 
-					$page.removeClass('hide');
+				    $page.removeClass('hide');
+					
 					$('body').addClass('can-go-back');
 				}
 				else {
@@ -76,8 +81,6 @@ define(
 				    }
 				}
 
-				$('.page').height($(document).height() - $('.page').offset().top);
-
 				this.bindEvents();
 
 				if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
@@ -94,6 +97,8 @@ define(
 				        }, false);
 				    });
 				}
+
+				$('.page').height($(window).height() - $('.page').offset().top);
 			},
 
 			bindEvents: function() {
@@ -115,9 +120,13 @@ define(
 
 				// Navigate on a new thread to avoid freezing effects
 				Dispatcher.beginInvoke(function(){
-					window.scrollTo(0, 0);
-					window.location.hash = view;
-				});
+				    window.scrollTo(0, 0);
+
+				    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+				        WinJS.Navigation.history.backStack.push(window.location.hash);
+				    }
+				    window.location.hash = view;
+				}, 500);
 			}
 		});
 

@@ -79,15 +79,18 @@ body {
 	color: #333333;
 }
 
-#menu #tabs > li.notes a {
+#menu #tabs > li.notes a:link,
+#menu #tabs > li.notes a:visited {
 	background-image: url('../../img/common/icons/notes_red.png');
 }
 
-#menu #tabs > li.timetable a {
+#menu #tabs > li.timetable a:link,
+#menu #tabs > li.timetable a:visited {
 	background-image: url('../../img/common/icons/timetable_red.png');
 }
 
-#menu #tabs > li.subjects a {
+#menu #tabs > li.subjects a:link,
+#menu #tabs > li.subjects a:visited {
 	background-image: url('../../img/common/icons/subjects_red.png');
 }
 
