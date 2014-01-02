@@ -27,9 +27,6 @@
         </m2:InitialRotationPreference>
         <m2:ApplicationView MinWidth="width500" />
       </m2:VisualElements>
-      <ApplicationContentUriRules>
-        <Rule Match="https://raco.fib.upc.edu" Type="include" />
-      </ApplicationContentUriRules>
     </Application>
   </Applications>
   <Capabilities>

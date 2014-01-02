@@ -15,12 +15,12 @@ body.menu-displayed {
 	max-width: 80%;
 }
 
-#menu {
+/*#menu {
 	width: 20%;
 	min-width: 20%;
 	max-width: 20%;
 	float: left;
-}
+}*/
 
 #menu-toggle-button {
 	display: none !important;
@@ -42,11 +42,24 @@ body.login #connect-logo {
 	display: none;
 }
 
-@media(min-width: 480px) and (max-width: 1100px) {
+#menu li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#menu li.current,
+#menu li.current a,
+#menu li.current a span {
+    color: white !important;
+}
+
+/* Tablet portrait */
+@media (max-width: 767px) {
     #menu {
-        max-width: 5em !important;
+        min-width: 5em !important;
         width: 5em !important;
         max-width: 5em !important;
+        float: left;
     }
 
     #menu li a span {
@@ -71,5 +84,99 @@ body.login #connect-logo {
     #menu #personal-info .profile-picture img {
         width: 100%;
         max-width: 4em;
+    }
+
+    #application-wrapper {
+        width: calc(100% - 5em);
+        min-width: calc(100% - 5em);
+        max-width: calc(100% - 5em);
+    }
+
+    .inner-content.timetable table td:not(.current),
+    .inner-content.timetable table th:not(.current) {
+        display: none;
+    }
+
+    .inner-content.timetable table tr th:first-child,
+    .inner-content.timetable table tr tr:first-child {
+        display: table-cell !important;
+        width: 1%;
+        text-align: left !important;
+        padding: 0.5em 0 !important;
+    }
+
+    .inner-content.timetable table thead tr th {
+        text-align: center;
+        text-indent: -20%;
+    }
+
+    .day-selector {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        font-size: 1.2em;
+        padding: 0.3em 1em;
+        color: transparent;
+        background-color: #ca0a00 !important;
+    }
+
+    .day-selector.previous {
+        left: 0.9rem;
+        background: url('../../img/common/icons/back.png') 75% center no-repeat;
+        background-size: auto 80%;
+    }
+
+    .day-selector.next {
+        right: 0.9rem;
+        background: url('../../img/common/icons/next.png') 25% center no-repeat;
+        background-size: auto 80%;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1199px) {
+    #menu {
+        width: 20%;
+        min-width: 20%;
+        max-width: 20%;
+        float: left;
+    }
+
+    #application-wrapper {
+        width: 80%;
+        min-width: 80%;
+        max-width: 80%;
+    }
+
+    #menu #personal-info .profile-picture {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+
+    #menu #personal-info .profile-card {
+        width: 100% !important;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 110%;
+    }
+
+    #menu {
+        width: 20%;
+        min-width: 20%;
+        max-width: 20%;
+        float: left;
+    }
+
+    #application-wrapper {
+        width: 80%;
+        min-width: 80%;
+        max-width: 80%;
     }
 }
