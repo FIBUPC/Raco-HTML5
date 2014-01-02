@@ -1,0 +1,17 @@
+#menu .header {
+	display: none;
+}
+
+#menu {
+	padding-top: 6em;
+}
+
+.timetable tbody tr th {
+	text-align: left !important;
+	padding-left: 0 !important;
+	width: 1% !important;
+}
+
+.timetable thead tr th {
+	font-weight: 200;
+}
