@@ -39,8 +39,7 @@ public class RacoMobile extends DroidGap
     		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         
-        super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
-        super.loadUrl(Config.getStartUrl(), 10000);
+        super.loadUrl(Config.getStartUrl());
     }
     
     @Override

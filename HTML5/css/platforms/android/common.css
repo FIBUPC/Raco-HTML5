@@ -38,10 +38,6 @@ html * {
   left: -1px;
 }
 
-#menu #personal-info {
-  background: #222;
-}
-
 #header #page-title {
   text-align: left;
   margin: 0 0 0 1em;
@@ -99,4 +95,19 @@ body:not(.login) button {
 
 #loading-layer #floatingCirclesG {
   position: absolute;
+}
+
+.regular-list li.clickable,
+.attachments li.clickable {
+  background: url('../../../img/common/chevron.png') 95% center no-repeat;
+  background-size: auto 1em;
+  padding-right: 3em;
+}
+
+.regular-list li.clickable.active,
+.regular-list li.clickable:hover,
+.attachments li.clickable.active,
+.attachments li.clickable:hover {
+  background: url('../../../img/common/chevron_hover.png') 95% center no-repeat;
+  background-size: auto 1em;
 }

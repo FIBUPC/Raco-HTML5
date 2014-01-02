@@ -1,0 +1,40 @@
+#refresh-button {
+	right: 2em !important;
+}
+
+.regular-list li.clickable,
+.attachments li.clickable {
+  background: url('../../../img/common/chevron.png') 98% center no-repeat;
+  background-size: auto 1em;
+  padding-right: 3em;
+}
+
+.regular-list li.clickable.active,
+.regular-list li.clickable:hover,
+.attachments li.clickable.active,
+.attachments li.clickable:hover {
+  background: url('../../../img/common/chevron_hover.png') 98% center no-repeat;
+  background-size: auto 1em;
+}
+
+/* Tablet portrait */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.regular-list li.clickable,
+	.attachments li.clickable {
+	  background: url('../../../img/common/chevron.png') 96% center no-repeat;
+	  background-size: auto 1em;
+	  padding-right: 3em;
+	}
+
+	.regular-list li.clickable.active,
+	.regular-list li.clickable:hover,
+	.attachments li.clickable.active,
+	.attachments li.clickable:hover {
+	  background: url('../../../img/common/chevron_hover.png') 96% center no-repeat;
+	  background-size: auto 1em;
+	}
+
+	.available-spaces {
+		margin-right: 0;
+	}
+}
