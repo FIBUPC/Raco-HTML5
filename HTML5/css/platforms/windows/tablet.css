@@ -1,14 +1,21 @@
 body {
-    font-size: 120%;
+	font-family: "Segoe UI", sans-serif;
+    font-size: 1.1em;
 }
 
 .win-backbutton {
     position: fixed;
-    left: 6%;
+    left: 1.5em;
     top: 2.3em;
     z-index: 99;
     color: #333;
     border-color: #333;
+}
+
+#content .page {
+    -ms-transition-property: opacity left;
+    -ms-transition-duration: 0.5s 0.5s;
+    -ms-transition-timing-function: ease ease;
 }
 
 #menu .header {
@@ -16,13 +23,15 @@ body {
 }
 
 #menu {
-    padding-top: 7em;
+    padding-top: 6em;
+    overflow: auto;
 }
 
 #page-title {
     padding-left: 22% !important;
     font-size: 4em !important;
     margin-top: -0.75em !important;
+    text-transform: lowercase;
 }
 
 #content {
@@ -86,4 +95,69 @@ body {
 .win-appbar button:disabled:active .win-commandring {
     background-color: transparent;
     border-color: #666;
+}
+
+#menu .role {
+    display: none;
+}
+
+.page {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+/* Tablet portrait */
+@media (max-width: 767px) {
+    .win-backbutton {
+        left: 1.3em;
+    }
+
+    #page-title {
+        padding-left: 6.5rem !important;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .win-backbutton {
+        left: 7.5%;
+    }
+}
+
+/* Tablet and desktop ModernUI lists adaption */
+@media (min-width: 768px) {
+    .regular-list li {
+        display: inline-block;
+        width: 48%;
+        background: #eee !important;
+        overflow: hidden;
+        height: 7.5em;
+        box-sizing: border-box;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    .regular-list li .title {
+        max-height: 2.25em;
+        overflow: hidden;
+    }
+
+    .regular-list {
+        padding: 0 1em;
+    }
+
+    .regular-list li:nth-child(even) {
+        margin-right: 0;
+    }
+}
+
+/* Desktop only */
+@media (min-width: 1200px) {
+    #page-title {
+        padding-left: 21% !important;
+    }
+
+    .regular-list li {
+        width: 48.4%;
+    }
 }

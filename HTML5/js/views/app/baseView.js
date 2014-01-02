@@ -79,6 +79,21 @@ define(
 				$('.page').height($(document).height() - $('.page').offset().top);
 
 				this.bindEvents();
+
+				if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+                    // Add tilt effect to clickable elements on Windows 8
+				    $('.clickable').off('MSPointerDown MSPointerUp MSPointerOut').each(function(){
+				        this.addEventListener('MSPointerDown', function () {
+				            WinJS.UI.Animation.pointerDown(this);
+				        }, false);
+				        this.addEventListener('MSPointerUp', function () {
+				            WinJS.UI.Animation.pointerUp(this);
+				        }, false);
+                        this.addEventListener('MSPointerOut', function () {
+				            WinJS.UI.Animation.pointerUp(this);
+				        }, false);
+				    });
+				}
 			},
 
 			bindEvents: function() {

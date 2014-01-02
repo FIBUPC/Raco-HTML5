@@ -45,6 +45,7 @@ body.login #connect-logo {
 #menu li {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #menu li.current,
