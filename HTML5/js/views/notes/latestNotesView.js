@@ -34,7 +34,9 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('#latest-notes li').on('click', function(e) {
-					self.navigate('#!/latestNotes/' + $(this).data('id'));
+					if (!$('body').hasClass('menu-displayed')) {
+						self.navigate('#!/latestNotes/' + $(this).data('id'));
+					}
 				});
 			},
 

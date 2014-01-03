@@ -43,7 +43,9 @@ define(
 					e.preventDefault();
 					e.stopPropagation();
 
-					self.navigate('#!/rooms/' + $(this).data('id'));
+					if (!$('body').hasClass('menu-displayed')) {
+						self.navigate('#!/rooms/' + $(this).data('id'));
+					}
 
 					return false;
 				});

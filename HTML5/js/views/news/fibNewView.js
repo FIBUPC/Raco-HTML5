@@ -33,7 +33,9 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('#read-more').on('click', function(e) {
-					NewsController.openExternal($(this).data('link'));
+					if (!$('body').hasClass('menu-displayed')) {
+						NewsController.openExternal($(this).data('link'));
+					}
 				});
 			}
 		});

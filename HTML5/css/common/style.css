@@ -16,9 +16,12 @@ body {
 }
 
 #app {
-    -webkit-transition: margin-left 0.5s ease;
-	transition: margin-left 0.5s ease;
-    -ms-transition: margin-left 0.5s ease;
+	-webkit-transition: margin-left 0.5s ease,
+						opacity 0.5s ease;
+    -ms-transition: margin-left 0.5s ease,
+    				opacity 0.5s ease;
+    transition: margin-left 0.5s ease,
+    			opacity 0.5s ease;
 }
 
 #content .page {

@@ -34,8 +34,10 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('#subject-notes li').on('click', function(){
-					self.navigate('#!/subjects/' + self.model.get('codi_upc') + 
-						'/notes/' + $(this).data('id'));
+					if (!$('body').hasClass('menu-displayed')) {
+						self.navigate('#!/subjects/' + self.model.get('codi_upc') + 
+							'/notes/' + $(this).data('id'));
+					}
 				});
 			}
 		});

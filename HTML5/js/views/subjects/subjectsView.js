@@ -34,7 +34,9 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('#subject-list li').click(function(e) {
-					self.navigate('#!/subjects/' + $(this).data('id'));
+					if (!$('body').hasClass('menu-displayed')) {
+						self.navigate('#!/subjects/' + $(this).data('id'));
+					}
 				});
 			},
 

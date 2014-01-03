@@ -32,7 +32,9 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('.attachments li').on('click', function(e){
-					NotesController.openAttachment($(this).data('id'), self.model.get('subject'), $(this).data('name'));
+					if (!$('body').hasClass('menu-displayed')) {
+						NotesController.openAttachment($(this).data('id'), self.model.get('subject'), $(this).data('name'));
+					}
 				});
 			}
 		});

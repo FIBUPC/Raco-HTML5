@@ -1,0 +1,60 @@
+body.menu-displayed #header {
+	left: 0 !important;
+}
+
+body #header {
+	width: 100% !important;
+	left: 0 !important;
+}
+
+body #app {
+	width: 100% !important;
+	min-width: 100% !important;
+	max-width: 100% !important;
+	margin-left: 0 !important;
+}
+
+body #application-wrapper {
+	margin-left: 0 !important;
+	float: none !important;
+	width: 100% !important;
+	min-width: 100% !important;
+	max-width: 100% !important;
+}
+
+body.menu-displayed #refresh-button {
+	display: none !important;
+}
+
+body {
+	width: 100% !important;
+}
+
+body.menu-displayed #app {
+	margin-left: 0 !important;
+}
+
+body #menu {
+	position: absolute !important;
+	left: -80% !important;
+	width: 80% !important;
+	min-width: 80% !important;
+	max-width: 80% !important;
+	padding-top: 1em !important;
+	z-index: 50;
+	transition: left 0.5s ease;
+	-webkit-transition: left 0.5s ease;
+}
+
+body.menu-displayed #menu {
+	left: 0 !important;
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.75);
+}
+
+body.menu-displayed .page {
+	opacity: 0.4 !important;
+}
+
+#menu #tabs > li.current {
+	background-image: none !important;
+}

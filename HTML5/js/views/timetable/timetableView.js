@@ -41,21 +41,23 @@ define(
 				BaseView.prototype.bindEvents.call(self);
 
 				$('#next-day').on('click', function(e){
-					e.preventDefault();
-					e.stopPropagation();
+					if (!$('body').hasClass('menu-displayed')) {
+						e.preventDefault();
+						e.stopPropagation();
 
-					var $timetableCurrent = $('.timetable .current');
-					if ($timetableCurrent.index() === 5) {
-						// Go back to Monday
-						$timetableCurrent.removeClass('current');
-						$('.timetable tr th:nth-child(2), .timetable tr td:nth-child(2)').addClass('current');
-					}
-					else {
-						// Go to next day
-						$timetableCurrent.removeClass('current').next().addClass('current');
-					}
+						var $timetableCurrent = $('.timetable .current');
+						if ($timetableCurrent.index() === 5) {
+							// Go back to Monday
+							$timetableCurrent.removeClass('current');
+							$('.timetable tr th:nth-child(2), .timetable tr td:nth-child(2)').addClass('current');
+						}
+						else {
+							// Go to next day
+							$timetableCurrent.removeClass('current').next().addClass('current');
+						}
 
-					return false;
+						return false;
+					}
 				});
 
 				$('#previous-day').on('click', function(e){

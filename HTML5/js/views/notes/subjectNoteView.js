@@ -47,7 +47,9 @@ define(
 				}
 
 				$('.attachments li').on('click', function(e){
-					NotesController.openAttachment($(this).data('id'), self.subject.get('idAssig'), $(this).data('name'));
+					if (!$('body').hasClass('menu-displayed')) {
+						NotesController.openAttachment($(this).data('id'), self.subject.get('idAssig'), $(this).data('name'));
+					}
 				});
 			}
 		});

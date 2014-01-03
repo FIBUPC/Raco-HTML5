@@ -29,10 +29,9 @@ define(
 
 					var $body = $('body');
 					var $html = $('html');
-					var $applicationWrapper = $('#application-wrapper');
 
 					if ($body.hasClass('menu-displayed')) {
-						$applicationWrapper.unbind('click touchend');
+						//$('#application-wrapper, .page').unbind('click');
 
 						$html.css({
 							height: '100%',
@@ -41,13 +40,19 @@ define(
 						$body.removeClass('menu-displayed');
 					}
 					else {
-						$applicationWrapper.click(function(e){
-							e.preventDefault();
-							e.stopPropagation();
+						$('#application-wrapper, .page').click(function(e){
+							if ($body.hasClass('menu-displayed')) {
+								e.stopImmediatePropagation();
+								e.preventDefault();
 
-							$menuToggleButton.trigger('touchend');
+								$('#application-wrapper, .page').off('click');
+								$menuToggleButton.trigger('click');
 
-							return false;
+								return false;
+							}
+							else {
+								$('#application-wrapper, .page').off('click');
+							}
 						});
 
 						$html.css({
