@@ -23,7 +23,7 @@
 		<link href="css/common/files.css" rel="stylesheet" type="text/css" media="screen" />
 		
         <script type="text/javascript">
-        	var DEBUG = true;
+            var DEBUG = true;
 			var APPLICATION = false;
         </script>
         
@@ -80,6 +80,10 @@
 					e.stopPropagation();
 
 					return false;
+				});
+
+				$(window).on('orientationchange', function () {
+				    $('.page').height($(window).height() - $('.page').offset().top);
 				});
 			});
         </script>
