@@ -7,6 +7,7 @@ if (APPLICATION) {
 		    //Base: 'https://raco.fib.upc.edu',
             Base: 'http://192.168.1.129/api',
 			LatestNotes: '/api-v1/avisos.json',
+			MarkNoteAsRead: '/api-v1/marcar-llegit?id={0}',
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
@@ -33,12 +34,13 @@ else {
 	if (!window.location.hostname) {
 		window.location.hostname = '192.168.1.132';
 	}
-
+	
 	RemoteConfiguration = {
 		Urls: {
 			Base: 'http://' + window.location.hostname + '/api',
 			LatestNotes: '/api-v1/avisos.json',
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
+			MarkNoteAsRead: '/api-v1/marcar-llegit?id={0}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
 				Details: '/api/assignatures/info-{0}.json',

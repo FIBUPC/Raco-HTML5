@@ -23,6 +23,15 @@ define(
 					self.note = self.subject.get('notes').get(self.options.note);
 				}
 			},
+
+			beforeRender: function() {
+				BaseView.prototype.beforeRender.call(self);
+
+				if (!self.note.get('read')) {
+					self.note.set('read', true);
+					NotesController.markNoteAsRead(self.note.get('id'));
+				}
+			},
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template, {

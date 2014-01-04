@@ -20,6 +20,15 @@ define(
 				self.model = NotesController.latestNotes.get(self.options.id);
 			},
 			
+			beforeRender: function() {
+				BaseView.prototype.beforeRender.call(self);
+
+				if (!self.model.get('read')) {
+					self.model.set('read', true);
+					NotesController.markNoteAsRead(self.model.get('id'));
+				}
+			},
+
 			render: function () {
 			    var compiledTemplate = _.template(self.template, { note: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));

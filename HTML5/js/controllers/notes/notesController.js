@@ -76,6 +76,13 @@ define(
 	    		window.open(signedUrl, '_blank');
 	    	}
 	    };
+
+	    NotesController.markNoteAsRead = function(id) {
+	    	// Send request and ignore result as we already set
+	    	// this note as read in our own collection
+	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base +
+	    		String.format(RemoteConfiguration.Urls.MarkNoteAsRead, id), true);
+	    };
 	    
 	    return NotesController; 
 	}

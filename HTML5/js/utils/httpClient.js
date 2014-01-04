@@ -16,8 +16,10 @@ define(
 	    	return OAuthController.oAuthService.signUrl(url);
 	    };
 
-	    HttpClient.getSignedAsync = function(url) {
-	    	this.showLoading();
+	    HttpClient.getSignedAsync = function(url, silent) {
+	    	if (!silent) {
+	    		this.showLoading();
+	    	}
 
 	    	var deferred = $.Deferred();
 
@@ -29,10 +31,14 @@ define(
 	    	{
 	    		var that = this;
 		    	OAuthController.oAuthService.get(url, function(data) {
-		    		that.hideLoading();
+		    		if (!silent) {
+		    			that.hideLoading();
+		    		}
 		            deferred.resolve(data.text);
 		        }, function(error){
-		        	that.hideLoading();
+		        	if (!silent) {
+		        		that.hideLoading();
+		        	}
 		        	deferred.reject(error);
 		        });
 	    	}
@@ -53,7 +59,7 @@ define(
 	    	this.showLoading();
 
 	    	var deferred = $.Deferred();
-
+	    	
 	    	try
 	    	{
 	    		var that = this;
