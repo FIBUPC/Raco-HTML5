@@ -358,7 +358,7 @@ namespace WPCordovaClassLib
 
         void page_BackKeyPress(object sender, CancelEventArgs e)
         {
-
+            /*
             if (OverrideBackButton)
             {
                 try
@@ -389,12 +389,12 @@ namespace WPCordovaClassLib
                 {
                     e.Cancel = false; // exit the app ... ?
                 }
-            }
+            }*/
         }
 
         void GapBrowser_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            if (_nativeReady) return;
+            //if (_nativeReady) return;
 
             string nativeReady = "(function(){ cordova.require('cordova/channel').onNativeReady.fire()})();";
 

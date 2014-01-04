@@ -68,7 +68,9 @@ define(
 						e.preventDefault();
 						e.stopPropagation();
 
-						that.refresh.call(that, true);
+						if (!$('#loading-layer').is(':visible')) {
+						    that.refresh.call(that, true);
+						}
 
 						return false;
 					});
@@ -97,8 +99,10 @@ define(
 				        }, false);
 				    });
 				}
-
-				$('.page').height($(window).height() - $('.page').offset().top);
+                
+				if (!MobileDetector.isWindowsPhone()) {
+				    $('.page').height($(window).height() - $('.page').offset().top);
+				}
 			},
 
 			bindEvents: function() {
@@ -126,7 +130,7 @@ define(
 				        WinJS.Navigation.history.backStack.push(window.location.hash);
 				    }
 				    window.location.hash = view;
-				}, 500);
+				}, (MobileDetector.isWindows() ? 500 : 0));
 			}
 		});
 

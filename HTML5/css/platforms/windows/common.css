@@ -1,9 +1,22 @@
+#menu #tabs li.divider,
+#menu #tabs li.settings,
+#menu #tabs li.logout {
+    display: none !important;
+}
+
 button {
 	background: none;
 	border: 2px solid #ca0a00;
 	color: #ca0a00;
 	border-radius: 0;
-    font-weight: bold
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+body:not(.login) button:hover,
+body:not(.login) button.active {
+    background: #ca0a00;
+    color: white;
 }
 
 #personal-info .profile-picture img {
@@ -18,6 +31,13 @@ body.login button {
     background: #ca0a00;
     color: white;
     box-shadow: none !important;
+}
+
+body.login button:hover,
+body.login button.active {
+    background: #333;
+    border-color: #333;
+    color: white;
 }
 
 .timetable .class {

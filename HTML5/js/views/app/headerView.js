@@ -27,6 +27,10 @@ define(
 					e.preventDefault();
 					e.stopPropagation();
 
+					if ($('#loading-layer').is(':visible')) {
+					    return false;
+					}
+
 					var $body = $('body');
 					var $html = $('html');
 

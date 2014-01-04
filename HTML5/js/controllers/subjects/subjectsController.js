@@ -38,7 +38,7 @@ define(
 	    	self.latestSync = moment();
 	    	HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.Subjects.List)
-	    	.done(function(data) {
+	    	.done(function (data) {
 	    		var subjects = JSON.parse(data);
 				
 	    		// Retrieve information and notes for all subjects in the list
@@ -51,13 +51,13 @@ define(
 
 	    			requests.push(informationRequest);
 	    			requests.push(notesRequest);
-	    			$.when(informationRequest, notesRequest).done(function(information, notes) {
+	    			$.when(informationRequest, notesRequest).done(function (information, notes) {
 	    				subjects[index].info = information;
 	    				subjects[index].notes = new NoteList(JSON.parse(notes));
 	    			});
 	    		});
 
-	    		$.when.apply(null, requests).done(function(){
+	    	    $.when.apply(null, requests).done(function () {
 	    			self.subjects.reset(subjects);
 
 					Helpers.Environment.log('Subjects synced.');

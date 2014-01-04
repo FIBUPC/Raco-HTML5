@@ -5,9 +5,11 @@
 		<div class="inner-content">
 			<% _.each(buildings, function(rooms, building) { %>
 				<h2>Edifici <%= building.toUpperCase() %></h2>
-                <div class="room-area">
-				    <img src="data:image/png;base64,<%= maps[building.toLowerCase()] %>" class="room-map" />
-                </div>
+                <% if (maps[building.toLowerCase()]) { %>
+                    <div class="room-area">
+				        <img src="data:image/png;base64,<%= maps[building.toLowerCase()] %>" class="room-map" />
+                    </div>
+                <% } %>
 
 				<ul class="regular-list rooms">
 					<% _.each(rooms, function(room) { %>

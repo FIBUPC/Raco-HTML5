@@ -16,7 +16,10 @@ var libraries = {
 		],
 		windowsphone: [
 			'cordova',
-			'fileBridge'
+			'fileBridge',
+            'binaryBridge',
+            'childbrowser',
+            'tiltEffect'
 		],
 		windows: [
             'childbrowser',

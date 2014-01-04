@@ -7,19 +7,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:cordova="clr-namespace:WPCordovaClassLib;assembly=WPCordovaClassLib"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+	shell:SystemTray.ForegroundColor="White"
+    shell:SystemTray.BackgroundColor="#FF1483CE">
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <cordova:CordovaView x:Name="Browser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
+        <Border BorderBrush="Black" BorderThickness="1">
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener DragCompleted="OnDragCompleted" />
+            </toolkit:GestureService.GestureListener>
+        </Border>
     </Grid>
-
+    
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" BackgroundColor="#FFE2E2E2">
+        <shell:ApplicationBar IsVisible="True" BackgroundColor="#FF222222" ForegroundColor="White">
+        	<shell:ApplicationBar.MenuItems>
+        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="configuració" Click="Settings"/>
+        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="sortir" Click="Logout"/>
+        	</shell:ApplicationBar.MenuItems>
+        	<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/refresh.png" IsEnabled="True" Text="refresh" Click="Refresh"/>
+        	<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/menu.png" IsEnabled="True" Text="menu" Click="ToggleMenu"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

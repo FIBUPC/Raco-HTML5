@@ -12,7 +12,6 @@ define(
 
 			pageTitle: 'Assignatures',
 			menuElement: '.subjects',
-			refreshable: true,
 
 			initialize: function() {
 				self = this;
@@ -24,10 +23,6 @@ define(
 			render: function() {
 				var compiledTemplate = _.template(self.template, {subject: self.model});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
-			},
-
-			refresh: function(force) {
-				// TODO: refresh subject information
 			},
 
 			bindEvents: function() {

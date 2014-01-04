@@ -10,8 +10,10 @@ if (APPLICATION) {
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
-				Details: '/api/assignatures/info.json?codi_upc={0}',
-				Notes: '/api-v1/avisos-assignatura.json?assig={0}'
+			    //Details: '/api/assignatures/info.json?codi_upc={0}',
+				Details: '/api/assignatures/info-{0}.json',
+			    //Notes: '/api-v1/avisos-assignatura.json?assig={0}'
+				Notes: '/api-v1/avisos-assignatura-{0}.json'
 			},
 			Timetable: '/api-v1/horari-setmanal.json',
 			News: {

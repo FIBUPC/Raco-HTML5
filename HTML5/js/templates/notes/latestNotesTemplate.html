@@ -2,7 +2,7 @@
 	<% if (_.isEmpty(latestNotes)) { %>
 		<p class="no-results centered">No tens avisos.</p>
 	<% } else { %>
-		<ul id="latest-notes" class="regular-list subjects">
+		<ul id="latest-notes" class="regular-list notes">
 			<% _.each(latestNotes, function(note){ %>
 				<%
 					var readStatus = '';

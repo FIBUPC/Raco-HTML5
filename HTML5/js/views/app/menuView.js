@@ -23,13 +23,17 @@ define(
 			        e.preventDefault();
 			        e.stopPropagation();
 
+			        if ($('#loading-layer').is(':visible')) {
+			            return false;
+			        }
+
 			        if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
 			            WinJS.Navigation.history.backStack.push(window.location.hash);
 			        }
 
 			        window.location.hash = decodeURI($(this).find('a').attr('href'));
 
-					if ($('body').hasClass('menu-displayed') && $('#menu-toggle-button:visible').length > 0) {
+					if ($('body').hasClass('menu-displayed')) {
 						$('#menu-toggle-button').trigger('click');
 					}
 

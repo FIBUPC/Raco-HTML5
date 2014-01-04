@@ -50,8 +50,8 @@ var Helpers = {
 			var xmlDoc;
 
 			if (window.DOMParser) {
-				var parser = new DOMParser();
-			  	xmlDoc = parser.parseFromString(xml,'text/xml');
+			    var parser = new DOMParser();
+			  	xmlDoc = parser.parseFromString(xml, 'text/xml');
 			}
 			else {
 				xmlDoc = new ActiveXObject('Microsoft.XMLDOM');

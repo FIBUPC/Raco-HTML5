@@ -5669,7 +5669,7 @@ try {
     //console.log("caught exception trying to access document.domain");
 }
 
-if (!docDomain || docDomain.length === 0) {
+/*if (!docDomain || docDomain.length === 0) {
 
     var aliasXHR = win.XMLHttpRequest;
 
@@ -5841,7 +5841,7 @@ if (!docDomain || docDomain.length === 0) {
         status: 404
     };
 } // if doc domain
-
+*/
 // end closure wrap
 })(window, document);
 

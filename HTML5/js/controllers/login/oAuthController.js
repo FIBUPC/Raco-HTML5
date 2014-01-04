@@ -112,7 +112,6 @@ define(
 		    	    }
 		    	    else {
 		    	        function checkLocation(resp) {
-		    	            console.log("checkLocation with location " + resp.location);
 		    	            if (resp.location.endsWith('authorize')) {
 		    	                window.plugins.childBrowser.close();
 		    	                that.oAuthService.fetchAccessToken(saveAccessToken, failureHandler);
@@ -123,7 +122,7 @@ define(
 		    	            }
 		    	        }
 
-		    	        // Android ChildBrowser plugin compatibility
+		    	        // Android and Windows Phone ChildBrowser plugin compatibility
 		    	        if (!window.plugins.childBrowser.onLocationChange) {
 		    	            window.plugins.childBrowser.onLocationChange = checkLocation;
 		    	        }

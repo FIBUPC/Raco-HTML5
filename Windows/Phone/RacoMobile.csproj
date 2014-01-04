@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -93,6 +94,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bridges\BinaryBridge.cs" />
+    <Compile Include="Bridges\ChildBrowserCommand.cs" />
     <Compile Include="Bridges\FileBridge.cs" />
     <Compile Include="Helpers\BackButtonHandler.cs" />
     <Compile Include="Helpers\DisableBrowserDoubleTapEffect.cs" />
@@ -120,30 +123,34 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="www\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\menu.png" />
+    <Content Include="Assets\AppBar\refresh.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Assets\Tiles\FlipTemplate_Normal.png" />
+    <Content Include="Assets\Tiles\FlipTemplate_Small.png" />
+    <Content Include="Assets\Tiles\FlipTemplate_Wide.png" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="SplashScreenImage.Screen-720p.jpg" />
+    <Content Include="SplashScreenImage.Screen-WVGA.jpg" />
+    <Content Include="SplashScreenImage.Screen-WXGA.jpg" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="www\css\common\files.css" />
     <Content Include="www\css\common\layout.css" />
     <Content Include="www\css\common\layout_phone.css" />
     <Content Include="www\css\common\layout_tablet.css" />
@@ -161,6 +168,24 @@
     <Content Include="www\css\platforms\windows\common.css" />
     <Content Include="www\css\platforms\windows\phone.css" />
     <Content Include="www\css\platforms\windows\tablet.css" />
+    <Content Include="www\img\common\chevron.png" />
+    <Content Include="www\img\common\chevron_hover.png" />
+    <Content Include="www\img\common\files\audio.png" />
+    <Content Include="www\img\common\files\code.png" />
+    <Content Include="www\img\common\files\compressed.png" />
+    <Content Include="www\img\common\files\default.png" />
+    <Content Include="www\img\common\files\docx.png" />
+    <Content Include="www\img\common\files\eps.png" />
+    <Content Include="www\img\common\files\html.png" />
+    <Content Include="www\img\common\files\indd.png" />
+    <Content Include="www\img\common\files\pdf.png" />
+    <Content Include="www\img\common\files\picture.png" />
+    <Content Include="www\img\common\files\pptx.png" />
+    <Content Include="www\img\common\files\psd.png" />
+    <Content Include="www\img\common\files\txt.png" />
+    <Content Include="www\img\common\files\video.png" />
+    <Content Include="www\img\common\files\xlsx.png" />
+    <Content Include="www\img\common\icons\back.png" />
     <Content Include="www\img\common\icons\calendar.png" />
     <Content Include="www\img\common\icons\calendar_red.png" />
     <Content Include="www\img\common\icons\clip.png" />
@@ -169,8 +194,10 @@
     <Content Include="www\img\common\icons\menu.png" />
     <Content Include="www\img\common\icons\news.png" />
     <Content Include="www\img\common\icons\news_red.png" />
+    <Content Include="www\img\common\icons\next.png" />
     <Content Include="www\img\common\icons\notes.png" />
     <Content Include="www\img\common\icons\notes_red.png" />
+    <Content Include="www\img\common\icons\refresh.png" />
     <Content Include="www\img\common\icons\rooms.png" />
     <Content Include="www\img\common\icons\rooms_red.png" />
     <Content Include="www\img\common\icons\settings.png" />
@@ -179,50 +206,97 @@
     <Content Include="www\img\common\icons\subjects_red.png" />
     <Content Include="www\img\common\icons\timetable.png" />
     <Content Include="www\img\common\icons\timetable_red.png" />
+    <Content Include="www\img\common\login_background.jpg" />
+    <Content Include="www\img\common\login_background.png" />
     <Content Include="www\img\common\logo_raco.png" />
     <Content Include="www\img\common\menu_arrow_inner.png" />
-    <Content Include="www\img\platforms\ios\chevron.png" />
+    <Content Include="www\img\platforms\android\icons\back.png" />
     <Content Include="www\img\test\profile_picture.jpg" />
     <Content Include="www\index.html" />
     <Content Include="www\js\app.js" />
-    <Content Include="www\js\collections\eventList.js" />
+    <Content Include="www\js\collections\actions.js" />
+    <Content Include="www\js\collections\calendar.js" />
+    <Content Include="www\js\collections\languages.js" />
+    <Content Include="www\js\collections\newsList.js" />
     <Content Include="www\js\collections\noteList.js" />
+    <Content Include="www\js\collections\roomsList.js" />
     <Content Include="www\js\collections\subjectList.js" />
-    <Content Include="www\js\collections\timetable.js" />
     <Content Include="www\js\config\constants.js" />
     <Content Include="www\js\config\remoteConfiguration.js" />
     <Content Include="www\js\controllers\login\loginController.js" />
     <Content Include="www\js\controllers\login\oAuthController.js" />
+    <Content Include="www\js\controllers\news\newsController.js" />
     <Content Include="www\js\controllers\notes\notesController.js" />
+    <Content Include="www\js\controllers\rooms\roomsController.js" />
+    <Content Include="www\js\controllers\settings\settingsController.js" />
     <Content Include="www\js\controllers\subjects\subjectsController.js" />
+    <Content Include="www\js\controllers\timetable\timetableController.js" />
     <Content Include="www\js\initialize.js" />
     <Content Include="www\js\libraries\common\backbone.js" />
     <Content Include="www\js\libraries\common\i18n.js" />
+    <Content Include="www\js\libraries\common\jquery.icalendar.js" />
     <Content Include="www\js\libraries\common\jquery.js" />
+    <Content Include="www\js\libraries\common\jquery.mobile.events.js" />
     <Content Include="www\js\libraries\common\js-oauth.js" />
     <Content Include="www\js\libraries\common\moment.js" />
     <Content Include="www\js\libraries\common\order.js" />
     <Content Include="www\js\libraries\common\require.js" />
+    <Content Include="www\js\libraries\common\stringExtensions.js" />
     <Content Include="www\js\libraries\common\text.js" />
     <Content Include="www\js\libraries\common\underscore.js" />
+    <Content Include="www\js\libraries\platform\android\cordova.js" />
+    <Content Include="www\js\libraries\platform\ios\cordova.js" />
+    <Content Include="www\js\libraries\platform\ios\modalwebview.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\binaryBridge.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\childbrowser.js" />
     <Content Include="www\js\libraries\platform\windowsphone\cordova.js" />
     <Content Include="www\js\libraries\platform\windowsphone\fileBridge.js" />
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\tiltEffect.js" />
+    <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
     <Content Include="www\js\main.js" />
+    <Content Include="www\js\models\action.js" />
+    <Content Include="www\js\models\calendarEvent.js" />
+    <Content Include="www\js\models\language.js" />
+    <Content Include="www\js\models\new.js" />
     <Content Include="www\js\models\note.js" />
+    <Content Include="www\js\models\room.js" />
     <Content Include="www\js\models\subject.js" />
+    <Content Include="www\js\models\timetable.js" />
     <Content Include="www\js\router.js" />
-    <Content Include="www\js\templates\subjects\subjectsTemplate.html" />
+    <Resource Include="www\js\templates\news\FIBNewTemplate.html" />
+    <Resource Include="www\js\templates\news\newsTemplate.html" />
+    <Resource Include="www\js\templates\news\UPCNewTemplate.html" />
+    <Resource Include="www\js\templates\notes\latestNoteTemplate.html" />
+    <Resource Include="www\js\templates\notes\subjectNoteTemplate.html" />
+    <Resource Include="www\js\templates\rooms\roomsTemplate.html" />
+    <Resource Include="www\js\templates\rooms\roomTemplate.html" />
+    <Resource Include="www\js\templates\settings\settingsTemplate.html" />
+    <Resource Include="www\js\templates\subjects\subjectsTemplate.html" />
+    <Resource Include="www\js\templates\subjects\subjectTemplate.html" />
+    <Resource Include="www\js\templates\timetable\timetableTemplate.html" />
     <Content Include="www\js\utils\dispatcher.js" />
     <Content Include="www\js\utils\helpers.js" />
     <Content Include="www\js\utils\httpClient.js" />
     <Content Include="www\js\utils\mobileDetector.js" />
     <Content Include="www\js\views\app\appView.js" />
+    <Content Include="www\js\views\app\baseView.js" />
     <Content Include="www\js\views\app\headerView.js" />
     <Content Include="www\js\views\app\menuView.js" />
+    <Content Include="www\js\views\calendar\calendarView.js" />
     <Content Include="www\js\views\login\loginView.js" />
+    <Content Include="www\js\views\news\fibNewView.js" />
+    <Content Include="www\js\views\news\newsView.js" />
+    <Content Include="www\js\views\news\upcNewView.js" />
     <Content Include="www\js\views\notes\latestNotesView.js" />
+    <Content Include="www\js\views\notes\latestNoteView.js" />
+    <Content Include="www\js\views\notes\subjectNoteView.js" />
+    <Content Include="www\js\views\rooms\roomsView.js" />
+    <Content Include="www\js\views\rooms\roomView.js" />
+    <Content Include="www\js\views\settings\settingsView.js" />
     <Content Include="www\js\views\subjects\subjectsView.js" />
+    <Content Include="www\js\views\subjects\subjectView.js" />
+    <Content Include="www\js\views\timetable\timetableView.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\AppResources.resx">
@@ -231,11 +305,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="www\img\platforms\android\" />
+    <Folder Include="www\img\platforms\ios\" />
     <Folder Include="www\img\platforms\windows\" />
     <Folder Include="www\js\bridges\" />
-    <Folder Include="www\js\libraries\platform\android\" />
-    <Folder Include="www\js\libraries\platform\ios\" />
     <Folder Include="www\js\libraries\platform\w8\" />
     <Folder Include="www\js\libraries\vendor\" />
   </ItemGroup>
@@ -251,6 +323,11 @@
     <Resource Include="www\js\templates\app\menuTemplate.html" />
     <Resource Include="www\js\templates\login\loginTemplate.html" />
     <Resource Include="www\js\templates\notes\latestNotesTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

@@ -31,7 +31,7 @@ define(
 				});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
-				var descriptionHTML = $('<div />').html(self.model.get('description')).text();
+				var descriptionHTML = $('<div />').html(self.note.get('description')).text();
 				Helpers.Environment.showView(descriptionHTML, $('#note-description'));
 			},
 

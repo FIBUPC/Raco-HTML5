@@ -35,7 +35,6 @@
                           VerticalAlignment="Stretch" 
                           IsScriptEnabled="True" 
                           Foreground="White"
-                          Background="Black"
                           Navigated="GapBrowser_Navigated" 
                           Loaded="GapBrowser_Loaded" 
                           Unloaded="GapBrowser_Unloaded" 

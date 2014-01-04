@@ -61,11 +61,11 @@ namespace RacoMobile.Helpers
                 e.Handled = true;
             }
 
-            // Disable scroll
+            /*// Disable scroll
             if (e.DeltaManipulation.Translation.X != 0.0 || e.DeltaManipulation.Translation.Y != 0.0)
             {
                 e.Handled = true;
-            }
+            }*/
         }
     }
 }

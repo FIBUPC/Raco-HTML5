@@ -7,3 +7,112 @@ body * {
 	font-weight: 400;
 	user-select: none;
 }*/
+
+#page-title {
+    text-transform: lowercase;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100% !important;
+}
+
+body:not(.login) #content {
+    margin-top: 5em !important;
+}
+
+.timetable tbody tr th {
+    width: 5% !important;
+}
+
+.clickable.center:active {
+    transform:          perspective(1200px) translateZ(-24px);
+    -o-transform:       perspective(1200px) translateZ(-24px);
+    -moz-transform:     perspective(1200px) translateZ(-24px);
+    -webkit-transform:  perspective(1200px) translateZ(-24px);
+}
+
+.clickable.top:active {
+    transform:          perspective(1200px) rotateX(12deg);
+    -o-transform:       perspective(1200px) rotateX(12deg);
+    -moz-transform:     perspective(1200px) rotateX(12deg);
+    -webkit-transform:  perspective(1200px) rotateX(12deg);
+}
+
+.clickable.right:active {
+    transform:          perspective(1200px) rotateY(12deg);
+    -o-transform:       perspective(1200px) rotateY(12deg);
+    -moz-transform:     perspective(1200px) rotateY(12deg);
+    -webkit-transform:  perspective(1200px) rotateY(12deg);
+}
+
+.clickable.bottom:active {
+    transform:          perspective(1200px) rotateX(-12deg);
+    -o-transform:       perspective(1200px) rotateX(-12deg);
+    -moz-transform:     perspective(1200px) rotateX(-12deg);
+    -webkit-transform:  perspective(1200px) rotateX(-12deg);
+}
+
+.clickable.left:active {
+    transform:          perspective(1200px) rotateY(-12deg);
+    -o-transform:       perspective(1200px) rotateY(-12deg);
+    -moz-transform:     perspective(1200px) rotateY(-12deg);
+    -webkit-transform:  perspective(1200px) rotateY(-12deg);
+}
+
+.no-results.centered {
+    position: relative;
+    margin: 0 0 0 0.6em !important;
+    text-align: left;
+    width: 75%;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: auto !important;
+    line-height: 1.15em;
+}
+
+.available-spaces {
+    border-radius: 0 !important;
+}
+
+.regular-list.subjects {
+    padding: 0 1em;
+    overflow: hidden !important;
+}
+
+.regular-list.subjects li {
+    position: relative;
+    display: inline-block;
+    width: 7em;
+    height: 7em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    background: #ca0a00 !important;
+    color: white;
+    padding: 0.5em;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+.regular-list.subjects li .title {
+    font-size: 0.8em;
+    color: #FFB4B0;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding-right: 0.5em;
+    width: 80% !important;
+}
+
+.regular-list.subjects li .acronym {
+    position: absolute;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 400;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}

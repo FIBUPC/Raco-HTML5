@@ -49,7 +49,7 @@ define(
 	    NewsController.getUPCNewsAsync = function () {
 	        self.upcNewsLatestSync = moment();
 
-	    	HttpClient.getSignedAsync(String.format(RemoteConfiguration.Urls.News.Upc, 'ca'))
+	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Upc, 'ca'))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
@@ -64,7 +64,7 @@ define(
 	    NewsController.getFIBNewsAsync = function () {
 	        self.fibNewsLatestSync = moment();
 
-	    	HttpClient.getSignedAsync(String.format(RemoteConfiguration.Urls.News.Fib, 'fib'))
+	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Fib, 'fib'))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);

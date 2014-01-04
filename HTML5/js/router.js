@@ -44,7 +44,7 @@ define(
                 self = this;
             },
 
-            default: function() {
+            default: function () {
                 if (!LoginController.isLoggedIn()) {
                     self.navigate('!/login', { trigger: true });
                     return;
@@ -74,7 +74,7 @@ define(
                 });
             },
 
-            latestNotes: function() {
+            latestNotes: function () {
                 if (!LoginController.isLoggedIn()) {
                     self.navigate('!/login', { trigger: true });
                     return;

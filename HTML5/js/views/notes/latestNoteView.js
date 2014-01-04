@@ -20,8 +20,8 @@ define(
 				self.model = NotesController.latestNotes.get(self.options.id);
 			},
 			
-			render: function() {
-				var compiledTemplate = _.template(self.template, {note: self.model});
+			render: function () {
+			    var compiledTemplate = _.template(self.template, { note: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
 				var descriptionHTML = $('<div />').html(self.model.get('description')).text();

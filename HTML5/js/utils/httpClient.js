@@ -58,13 +58,27 @@ define(
 	    	{
 	    		var that = this;
 
-		    	$.get(url).done(function(data) {
-		    		that.hideLoading();
-		            deferred.resolve(data);
-		        }).fail(function(error){
-		        	that.hideLoading();
-		        	deferred.reject(error);
-		        });
+	    		var xhr = new XMLHttpRequest();
+	    		xhr.open('GET', url, true);
+
+	    		xhr.onreadystatechange = function () {
+	    		    if (this.readyState == this.DONE) {
+	    		        if (this.status == 200 && this.response) {
+	    		            deferred.resolve(this.response);
+	    		        }
+	    		        else {
+	    		            deferred.reject(undefined);
+	    		        }
+
+	    		        that.hideLoading();
+	    		    }
+	    		};
+
+	    		xhr.onerror = function () {
+	    		    deferred.reject(undefined);
+	    		};
+
+	    		xhr.send();
 	    	}
 	    	catch (e) {
 	    		deferred.reject(e);
@@ -79,33 +93,45 @@ define(
 	    	var deferred = $.Deferred();
 
 	    	try {
-		    	var xhr = new XMLHttpRequest();
-				xhr.open('GET', url, true);
+	    	    if (!MobileDetector.isWindowsPhone()) {
+	    	        var xhr = new XMLHttpRequest();
+	    	        xhr.open('GET', url, true);
 
-				xhr.responseType = 'arraybuffer';
+				    xhr.responseType = 'arraybuffer';
 
-				xhr.onload = function(e) {
-				  	if (this.status == 200) {
-				    	var uInt8Array = new Uint8Array(this.response);
-				    	var i = uInt8Array.length;
-				    	var binaryString = new Array(i);
-				    	while (i--) {
-				    		binaryString[i] = String.fromCharCode(uInt8Array[i]);
-				    	}
-				    	var data = binaryString.join('');
-				    	var base64 = window.btoa(data);
+				    xhr.onload = function (e) {
+				        if (this.status == 200) {
+				            var uInt8Array = new Uint8Array(this.response);
+				            var i = uInt8Array.length;
+				            var binaryString = new Array(i);
+				            while (i--) {
+				                binaryString[i] = String.fromCharCode(uInt8Array[i]);
+				            }
+				            var data = binaryString.join('');
+				            var base64 = window.btoa(data);
 
-				    	deferred.resolve(base64);
-				  	}
-				  	else {
-				  		deferred.reject(undefined);
-				  	}
-				};
+				            deferred.resolve(base64);
+				        }
+				        else {
+				            deferred.reject(undefined);
+				        }
+				    };
 
-				xhr.send();
+				    xhr.send();
+				}
+				else {
+	    	        // Windows Phone does not provide support to read binary data with XHR
+                    // Use a native bridge instead
+	    	        window.plugins.binaryBridge.readStreamAsync(function(response) {
+	    	            deferred.resolve(response);
+	    	        }, function() {
+	    	            deferred.reject(undefined);
+	    	        }, { url: url });
+				}
 			}
-			catch(e) {
-				alert(e);
+	        catch (e) {
+	            console.log("error");
+			    console.log(e);
 				deferred.reject(e);
 			}
 

@@ -1,0 +1,46 @@
+/*----------------------------------------------------*\
+
+    METRO TILES TILT EFFECT
+    URL - http://github.com/SalvoGentile/tiltEffect
+    LICENSE - New BSD License (BSD)
+
+\*----------------------------------------------------*/
+
+.tile {
+    transition:         all .3s linear; 
+    -o-transition:      all .3s linear; 
+    -moz-transition:    all .3s linear; 
+    -webkit-transition: all .3s linear;
+}
+
+.center:active {
+    transform:          perspective(1200px) translateZ(-24px);
+    -o-transform:       perspective(1200px) translateZ(-24px);
+    -moz-transform:     perspective(1200px) translateZ(-24px);
+    -webkit-transform:  perspective(1200px) translateZ(-24px);
+}
+
+.top:active {
+    transform:          perspective(1200px) rotateX(12deg);
+    -o-transform:       perspective(1200px) rotateX(12deg);
+    -moz-transform:     perspective(1200px) rotateX(12deg);
+    -webkit-transform:  perspective(1200px) rotateX(12deg);
+}
+.right:active {
+    transform:          perspective(1200px) rotateY(12deg);
+    -o-transform:       perspective(1200px) rotateY(12deg);
+    -moz-transform:     perspective(1200px) rotateY(12deg);
+    -webkit-transform:  perspective(1200px) rotateY(12deg);
+}
+.bottom:active {
+    transform:          perspective(1200px) rotateX(-12deg);
+    -o-transform:       perspective(1200px) rotateX(-12deg);
+    -moz-transform:     perspective(1200px) rotateX(-12deg);
+    -webkit-transform:  perspective(1200px) rotateX(-12deg);
+}
+.left:active {
+    transform:          perspective(1200px) rotateY(-12deg);
+    -o-transform:       perspective(1200px) rotateY(-12deg);
+    -moz-transform:     perspective(1200px) rotateY(-12deg);
+    -webkit-transform:  perspective(1200px) rotateY(-12deg);
+}

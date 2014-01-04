@@ -10,7 +10,7 @@
 		
 		<!-- Reset CSS -->
 		<link href="css/common/reset.css" rel="stylesheet" type="text/css" media="screen" />
-
+		
 		<!-- Layout CSS -->
 		<link href="css/common/layout.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="css/common/layout_phone.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
@@ -56,17 +56,19 @@
 			    	}, 1500);
 			    }
 
-			    document.addEventListener('backbutton', function(){
-			    	if (!$('body').hasClass('can-go-back')) {
-			    		navigator.app.exitApp();
-			    	}
-			    	else {
-			    		$('#back-button').trigger('click');
-			    	}
-			    });
+			    if (!MobileDetector.isWindowsPhone()) {
+			        document.addEventListener('backbutton', function () {
+			            if (!$('body').hasClass('can-go-back')) {
+			                navigator.app.exitApp();
+			            }
+			            else {
+			                $('#back-button').trigger('click');
+			            }
+			        });
+			    }
 			}
 
-			if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
+            if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
 				document.addEventListener('deviceready', RunApplication, false);
 			}
 			else {
