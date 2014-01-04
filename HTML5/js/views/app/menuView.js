@@ -12,7 +12,8 @@ define(
 			},
 			
 			render: function() {
-				self.$el.html(self.template);
+				var compiledTemplate = _.template(self.template);
+				self.$el.html(compiledTemplate);
 
 				self.bindEventHandlers();
 			},
@@ -40,7 +41,7 @@ define(
 			        }
 
 			        if ($(this).hasClass('logout') && !MobileDetector.isWindowsPhone()) {
-			            Helpers.Environment.showConfirmationDialogAsync('Estàs segur que vols tancar la sessió?', 'Sortir')
+			            Helpers.Environment.showConfirmationDialogAsync(t('Are you sure do you want to sign out?'), t('Sign out'))
                             .done(function (result) {
                                 if (result) {
                                     doAction();

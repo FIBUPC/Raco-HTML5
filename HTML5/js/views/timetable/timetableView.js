@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: TimetableTemplate,
 
-			pageTitle: 'Horari',
+			pageTitle: t('Timetable'),
 			menuElement: '.timetable',
 			refreshable: true,
 

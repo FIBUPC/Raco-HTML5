@@ -182,6 +182,7 @@
     <Content Include="www\js\libraries\common\require.js" />
     <Content Include="www\js\libraries\common\stringExtensions.js" />
     <Content Include="www\js\libraries\common\text.js" />
+    <Content Include="www\js\libraries\common\underi18n.js" />
     <Content Include="www\js\libraries\common\underscore.js" />
     <Content Include="www\js\libraries\platform\android\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\cordova.js" />
@@ -193,6 +194,9 @@
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
     <Content Include="www\js\libraries\platform\windowsphone\tiltEffect.js" />
     <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
+    <Content Include="www\js\locales\locales_ca.js" />
+    <Content Include="www\js\locales\locales_en.js" />
+    <Content Include="www\js\locales\locales_es.js" />
     <Content Include="www\js\main.js" />
     <Content Include="www\js\models\action.js" />
     <Content Include="www\js\models\calendarEvent.js" />
@@ -250,7 +254,6 @@
   <ItemGroup>
     <Folder Include="www\img\platforms\ios\" />
     <Folder Include="www\img\platforms\windows\" />
-    <Folder Include="www\js\bridges\" />
     <Folder Include="www\js\libraries\platform\w8\" />
     <Folder Include="www\js\libraries\vendor\" />
   </ItemGroup>

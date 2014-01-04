@@ -1,10 +1,10 @@
 <div class="page rooms">
 	<% if (_.isEmpty(buildings)) { %>
-		<p class="no-results centered">Aquesta informació no està disponible en aquests moments.</p>
+		<p class="no-results centered"><%= t('This information is not available at this moment.') %></p>
 	<% } else { %>
 		<div class="inner-content">
 			<% _.each(buildings, function(rooms, building) { %>
-				<h2>Edifici <%= building.toUpperCase() %></h2>
+				<h2><%= t('Building') %> <%= building.toUpperCase() %></h2>
                 <% if (maps[building.toLowerCase()]) { %>
                     <div class="room-area">
 				        <img src="data:image/png;base64,<%= maps[building.toLowerCase()] %>" class="room-map" />
@@ -24,7 +24,7 @@
 									<% if (!_.isEmpty(room.currentEvent())) { %>
 										<%= room.currentEvent().summary %>
 									<% } else { %>
-										No hi ha classe
+										<%= t('Free room') %>
 									<% } %>
 								</p>
 							</div>

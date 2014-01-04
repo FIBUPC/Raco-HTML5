@@ -1,6 +1,6 @@
 <div class="page">
 	<% if (_.isEmpty(timetable.get('classes'))) { %>
-		<p class="no-results centered">No tens horari.</p>
+		<p class="no-results centered"><%= t('You do not have a timetable.') %></p>
 	<% } else { %>
 		<div class="inner-content timetable">
 			<%
@@ -15,11 +15,11 @@
 				<thead>
 					<tr>
 						<th></th>
-						<th<%= (currentWeekDay === 1) ? ' class="current"' : '' %>>Dilluns</th>
-						<th<%= (currentWeekDay === 2) ? ' class="current"' : '' %>>Dimarts</th>
-						<th<%= (currentWeekDay === 3) ? ' class="current"' : '' %>>Dimecres</th>
-						<th<%= (currentWeekDay === 4) ? ' class="current"' : '' %>>Dijous</th>
-						<th<%= (currentWeekDay === 5) ? ' class="current"' : '' %>>Divendres</th>
+						<th<%= (currentWeekDay === 1) ? ' class="current"' : '' %>><%= t('Monday') %></th>
+						<th<%= (currentWeekDay === 2) ? ' class="current"' : '' %>><%= t('Tuesday') %></th>
+						<th<%= (currentWeekDay === 3) ? ' class="current"' : '' %>><%= t('Wednesday') %></th>
+						<th<%= (currentWeekDay === 4) ? ' class="current"' : '' %>><%= t('Thursday') %></th>
+						<th<%= (currentWeekDay === 5) ? ' class="current"' : '' %>><%= t('Friday') %></th>
 					</tr>
 				</thead>
 				<tbody>

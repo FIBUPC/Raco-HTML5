@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: SettingsTemplate,
 
-			pageTitle: 'Configuració',
+			pageTitle: t('Settings'),
 			menuElement: '.settings',
 
 			initialize: function() {

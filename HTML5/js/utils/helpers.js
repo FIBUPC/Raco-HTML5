@@ -25,10 +25,10 @@ var Helpers = {
 
 		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
 		        var confirmationMessage = new Windows.UI.Popups.MessageDialog(message, title);
-		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand("Sí", function () {
+		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand(t('Yes'), function () {
 		            deferred.resolve(true);
 		        }));
-		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand("No", function () {
+		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand(t('No'), function () {
 		            deferred.resolve(false);
 		        }));
 		        confirmationMessage.defaultCommandIndex = 0;
@@ -38,7 +38,7 @@ var Helpers = {
 		    else if (MobileDetector.isNativeApp()) {
 		        notification.confirm(message, function (result) {
 		            deferred.resolve(result);
-		        }, title, ['Sí', 'No']);
+		        }, title, [t('Yes'), t('No')]);
 		    }
 		    else {
 		        setTimeout(function () {
@@ -48,6 +48,29 @@ var Helpers = {
 		    }
 
 		    return deferred.promise();
+		},
+		getApplicationLanguage: function() {
+			var currentLanguage = null;
+			if (MobileDetector.isWindowsPhone()) {
+				currentLanguage = clientInformation.browserLanguage;
+			}
+			else {
+				currentLanguage = navigator.language;
+			}
+
+			if (currentLanguage !== null && currentLanguage.contains('-')) {
+				currentLanguage = currentLanguage.split('-')[0];
+			}
+
+			if (currentLanguage !== null && currentLanguage.contains('_')) {
+				currentLanguage = currentLanguage.split('_')[0];
+			}
+
+			if (currentLanguage === null || currentLanguage === undefined) {
+				currentLanguage = Constants.Application.DefaultLanguage;
+			}
+
+			return currentLanguage;
 		}
 	},
 	Application: {

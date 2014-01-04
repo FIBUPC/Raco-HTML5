@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: LatestNotesTemplate,
 
-			pageTitle: 'Últims avisos',
+			pageTitle: t('Latest notes'),
 			menuElement: '.notes',
 			refreshable: true,
 

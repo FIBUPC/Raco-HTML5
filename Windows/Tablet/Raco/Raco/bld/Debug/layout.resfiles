@@ -125,6 +125,7 @@ www\js\libraries\common\order.js
 www\js\libraries\common\require.js
 www\js\libraries\common\stringExtensions.js
 www\js\libraries\common\text.js
+www\js\libraries\common\underi18n.js
 www\js\libraries\common\underscore.js
 www\js\libraries\platform\android\cordova.js
 www\js\libraries\platform\ios\cordova.js
@@ -136,6 +137,9 @@ www\js\libraries\platform\windowsphone\cordova.js
 www\js\libraries\platform\windowsphone\fileBridge.js
 www\js\libraries\platform\windowsphone\text.js
 www\js\libraries\platform\windowsphone\tiltEffect.js
+www\js\locales\locales_ca.js
+www\js\locales\locales_en.js
+www\js\locales\locales_es.js
 www\js\main.js
 www\js\models\action.js
 www\js\models\calendarEvent.js

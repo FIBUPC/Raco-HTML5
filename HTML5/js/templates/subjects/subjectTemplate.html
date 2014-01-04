@@ -1,13 +1,12 @@
 <div class="page hide">
-	<% console.log(subject) %>
 	<div class="inner-content subject">
 		<h2><%= subject.get('nom') %></h2>
 		<p class="acronym"><%= subject.get('idAssig') %></p>
 		<br /><br />
 
-		<h3 class="subtitle">Professors</h3>
+		<h3 class="subtitle"><%= t('Teachers') %></h3>
 		<% if (_.isEmpty(subject.get('info').professors)) { %>
-			<p>Aquesta assignatura no té cap professor assignat.</p>
+			<p><%= t('This subject does not have any teacher.') %></p>
 		<% } else { %>
 			<ul class="lecturers regular-list">
 				<% _.each(subject.get('info').professors, function(lecturer) { %>
@@ -20,9 +19,9 @@
 		<% } %>
 		<br /><br />
 
-		<h3 class="subtitle">Avisos</h3>
+		<h3 class="subtitle"><%= t('Notes') %></h3>
 		<% if (_.isEmpty(subject.get('notes').models)) { %>
-			<p>Aquesta assignatura no té cap avís.<p>
+			<p><%= t('This subject does not have any note.') %><p>
 		<% } else { %>
 			<ul id="subject-notes" class="regular-list notes">
 				<% _.each(subject.get('notes').models, function(note){ %>

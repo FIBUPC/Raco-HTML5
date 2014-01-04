@@ -1,6 +1,5 @@
 <div class="page hide">
 	<div class="inner-content new">
-		<% console.log(upcNew) %>
 		<h2><%= upcNew.get('title')['#text'] %></h2>
 		<p class="timeago"><%= moment(upcNew.get('dc:date')['#text']).fromNow() %></p>
 		<br />
@@ -10,7 +9,7 @@
 		</div>
 		<br />
 		<button id="read-more" type="button" data-link="<%= upcNew.get('link')['#text'] %>">
-			Continuar llegint &raquo;
+			<%= t('Continue reading') %> &raquo;
 		</button>
 	</div>
 </div>

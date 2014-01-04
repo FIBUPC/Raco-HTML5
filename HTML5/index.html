@@ -33,6 +33,7 @@
         <script type="text/javascript" src="js/libraries/common/jquery.icalendar.js"></script>
 		<script type="text/javascript" src="js/libraries/common/underscore.js"></script>
 		<script type="text/javascript" src="js/libraries/common/backbone.js"></script>
+		<script type="text/javascript" src="js/libraries/common/underi18n.js"></script>
 		<script type="text/javascript" src="js/libraries/common/moment.js"></script>
 		
 		<script type="text/javascript" src="js/utils/mobileDetector.js"></script>
@@ -45,17 +46,24 @@
         <script type="text/javascript">
 	        // Run the app directly or wait for deviceReady event
             function RunApplication() {
+            	// Initialize language
+            	var script = document.createElement('script');
+			    script.src = 'js/locales/locales_' + Helpers.Environment.getApplicationLanguage() + '.js';
+			    head.appendChild(script);
+			    moment.lang(Helpers.Environment.getApplicationLanguage());
+
+            	// Initalize application
 				var script = document.createElement('script');
 			    script.setAttribute('data-main', 'js/main');
 			    script.src = 'js/libraries/common/require.js';
 			    head.appendChild(script);
 
+			    // Initialize bridge communication
 			    if (navigator.splashscreen && navigator.splashscreen.hide) {
 			    	setTimeout(function(){
 			    		navigator.splashscreen.hide();
 			    	}, 1500);
 			    }
-
 			    if (!MobileDetector.isWindowsPhone()) {
 			        document.addEventListener('backbutton', function () {
 			            if (!$('body').hasClass('can-go-back')) {
@@ -68,6 +76,7 @@
 			    }
 			}
 
+			// Start app or wait for device to be ready depending on the environment
             if (MobileDetector.isNativeApp() && !MobileDetector.isWindows()) {
 				document.addEventListener('deviceready', RunApplication, false);
 			}
@@ -84,6 +93,7 @@
 					return false;
 				});
 
+				// Resize the page element on orientation change - only tablets
 				$(window).on('orientationchange', function () {
 				    $('.page').height($(window).height() - $('.page').offset().top);
 				});

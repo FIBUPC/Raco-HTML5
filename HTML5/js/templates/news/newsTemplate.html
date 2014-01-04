@@ -1,8 +1,8 @@
 <div class="page news">
 	<div class="inner-content">
-		<h2>Notícies FIB</h2>
+		<h2><%= t('FIB news') %></h2>
 		<% if (_.isEmpty(fibNews)) { %>
-			<p class="no-results">Les notícies de la FIB no estan disponibles en aquest moment.</p>
+			<p class="no-results"><%= t('FIB news are not available at this moment.') %></p>
 		<% } else { %>
 			<ul class="regular-list news fib">
 				<% _.each(fibNews, function(fibNew) { %>
@@ -21,9 +21,9 @@
 			</ul>
 		<% } %>
 		
-		<h2>Notícies UPC</h2>
+		<h2><%= t('UPC news') %></h2>
 		<% if (_.isEmpty(upcNews)) { %>
-			<p class="no-results">Les notícies de la FIB no estan disponibles en aquest moment.</p>
+			<p class="no-results"><%= t('UPC news are not available at this moment.') %></p>
 		<% } else { %>
 			<ul class="regular-list news upc">
 				<% _.each(upcNews, function(upcNew) { %>

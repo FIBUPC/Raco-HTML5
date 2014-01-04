@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: RoomTemplate,
 
-			pageTitle: 'Aules',
+			pageTitle: t('Rooms'),
 			menuElement: '.rooms',
 
 			initialize: function() {

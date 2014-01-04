@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: NewsTemplate,
 
-			pageTitle: 'Notícies',
+			pageTitle: t('News'),
 			menuElement: '.news',
 			refreshable: true,
 

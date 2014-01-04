@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: UPCNewTemplate,
 
-			pageTitle: 'Notícies',
+			pageTitle: t('News'),
 			menuElement: '.news',
 
 			initialize: function() {

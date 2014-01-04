@@ -10,7 +10,7 @@ define(
 			el: '#content',
 			template: RoomsTemplate,
 
-			pageTitle: 'Aules',
+			pageTitle: t('Rooms'),
 			menuElement: '.rooms',
 			refreshable: true,
 

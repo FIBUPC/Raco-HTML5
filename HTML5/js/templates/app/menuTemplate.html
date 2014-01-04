@@ -11,38 +11,40 @@
 <ul id="tabs">
 	<li class="clickable notes">
         <a href="#!/latestNotes">
-            <span>Últims avisos</span>
+            <% console.log("hello") %>
+            <% console.log(t('Latest notes')) %>
+            <span><%= t('Latest notes') %></span>
         </a>
     </li>
 	<li class="clickable subjects">
         <a href="#!/subjects">
-            <span>Assignatures</span>
+            <span><%= t('Subjects') %></span>
         </a>
     </li>
 	<li class="clickable timetable">
         <a href="#!/timetable">
-            <span>Horari</span>
+            <span><%= t('Timetable') %></span>
         </a>
     </li>
 	<li class="clickable rooms">
         <a href="#!/rooms">
-            <span>Aules</span>
+            <span><%= t('Rooms') %></span>
         </a>
     </li>
 	<li class="clickable news">
         <a href="#!/news">
-            <span>Notícies</span>
+            <span><%= t('News') %></span>
         </a>
     </li>
 	<li class="clickable divider"></li>
 	<li class="clickable settings">
         <a href="#!/settings">
-            <span>Configuració</span>
+            <span><%= t('Settings') %></span>
         </a>
     </li>
 	<li class="clickable logout">
         <a href="#!/logout">
-            <span>Sortir</span>
+            <span><%= t('Sign out') %></span>
         </a>
     </li>
 </ul>

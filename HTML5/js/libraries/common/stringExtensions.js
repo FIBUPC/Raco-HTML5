@@ -59,6 +59,10 @@
         return this.replace(/\s+$/, '');
     }
 
+    $prototype.contains = function String$contains(query) {
+        return (this.indexOf(query) !== -1);
+    }
+
     $prototype.trimStart = function String$trimStart() {
         /// <summary >Removes all leading white spaces from the current String object.</summary>
         /// <returns type="String">The string that remains after all white-space characters are removed from the start of the current String object.</returns>

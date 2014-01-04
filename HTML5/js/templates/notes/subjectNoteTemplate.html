@@ -1,15 +1,15 @@
 <div class="page hide">
 	<% if (_.isNull(note)) { %>
-		<p class="no-results centered">Les dades de l'avís no estan disponibles.</p>
+		<p class="no-results centered"><%= t('Note details are not available at this moment.') %></p>
 	<% } else { %>
 		<div class="note inner-content">
 			<h2><%= note.get('title') %></h2>
 			<p class="timeago">
-				<%= moment(note.get('pubDate')).fromNow() %> on <%= subject.get('idAssig') %>
+				<%= moment(note.get('pubDate')).fromNow() %> <%= t('on') %> <%= subject.get('idAssig') %>
 			</p>
 			<% if (!_.isEmpty(note.get('attachments'))) { %>
 				<div class="attachments">
-					<p class="subtitle">Attachments (<%= _.size(note.get('attachments')) %>)</p>
+					<p class="subtitle"><%= t('Attachments') %> (<%= _.size(note.get('attachments')) %>)</p>
 					<ul class="attachments">
 						<% _.each(note.get('attachments'), function(attachment) { %>
 							<li data-id="<%= attachment.id %>" data-name="<%= attachment.fileName %>" class="clickable">

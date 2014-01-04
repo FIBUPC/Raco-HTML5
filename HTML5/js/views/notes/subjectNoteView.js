@@ -11,7 +11,7 @@ define(
 			el: '#content',
 			template: SubjectNoteTemplate,
 
-			pageTitle: 'Assignatures',
+			pageTitle: t('Subjects'),
 			menuElement: '.subjects',
 
 			initialize: function() {
