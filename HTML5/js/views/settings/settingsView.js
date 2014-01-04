@@ -18,9 +18,13 @@ define(
 				BaseView.prototype.wrapRender.call(self, self);
 			},
 			
-			render: function() {
-				var compiledTemplate = _.template(self.template);
-				$(self.$el.selector).html(compiledTemplate);
+			render: function () {
+			    var compiledTemplate = _.template(self.template);
+			    $(self.$el.selector).html(compiledTemplate);
+
+			    if (MobileDetector.isWindows()) {
+			        $('.page').addClass('hide');
+			    }
 			}
 		});
 

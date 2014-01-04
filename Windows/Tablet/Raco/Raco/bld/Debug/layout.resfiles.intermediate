@@ -49,6 +49,7 @@ www\css\platforms\ios\tablet.css
 www\css\platforms\windows\common.css
 www\css\platforms\windows\phone.css
 www\css\platforms\windows\tablet.css
+www\css\platforms\windows\tiltEffect.css
 www\img\common\chevron.png
 www\img\common\chevron_hover.png
 www\img\common\files\audio.png
@@ -129,9 +130,12 @@ www\js\libraries\platform\android\cordova.js
 www\js\libraries\platform\ios\cordova.js
 www\js\libraries\platform\ios\modalwebview.js
 www\js\libraries\platform\windows\childbrowser.js
+www\js\libraries\platform\windowsphone\binaryBridge.js
+www\js\libraries\platform\windowsphone\childbrowser.js
 www\js\libraries\platform\windowsphone\cordova.js
 www\js\libraries\platform\windowsphone\fileBridge.js
 www\js\libraries\platform\windowsphone\text.js
+www\js\libraries\platform\windowsphone\tiltEffect.js
 www\js\main.js
 www\js\models\action.js
 www\js\models\calendarEvent.js

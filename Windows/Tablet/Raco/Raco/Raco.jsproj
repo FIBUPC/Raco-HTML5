@@ -106,6 +106,7 @@
     <Content Include="www\css\platforms\windows\common.css" />
     <Content Include="www\css\platforms\windows\phone.css" />
     <Content Include="www\css\platforms\windows\tablet.css" />
+    <Content Include="www\css\platforms\windows\tiltEffect.css" />
     <Content Include="www\img\common\chevron.png" />
     <Content Include="www\img\common\chevron_hover.png" />
     <Content Include="www\img\common\files\audio.png" />
@@ -185,9 +186,12 @@
     <Content Include="www\js\libraries\platform\android\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\modalwebview.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\binaryBridge.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\childbrowser.js" />
     <Content Include="www\js\libraries\platform\windowsphone\cordova.js" />
     <Content Include="www\js\libraries\platform\windowsphone\fileBridge.js" />
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\tiltEffect.js" />
     <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
     <Content Include="www\js\main.js" />
     <Content Include="www\js\models\action.js" />
@@ -245,6 +249,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="www\img\platforms\ios\" />
+    <Folder Include="www\img\platforms\windows\" />
+    <Folder Include="www\js\bridges\" />
+    <Folder Include="www\js\libraries\platform\w8\" />
+    <Folder Include="www\js\libraries\vendor\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

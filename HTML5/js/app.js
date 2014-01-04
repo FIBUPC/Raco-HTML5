@@ -43,12 +43,24 @@ define (
 
                     $('<div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">' +
                         '<button id="refresh-command" disabled="disabled" data-win-control="WinJS.UI.AppBarCommand" data-win-options="' +
-                            '{icon:\'refresh\', label: \'Refresh\', section:\'global\', type:\'button\'}">' +
+                            '{icon:\'refresh\', label: \'Refresh\', section:\'selection\', type:\'button\'}">' +
+                        '<button id="settings-command" data-win-control="WinJS.UI.AppBarCommand" data-win-options="' +
+                            '{icon:\'settings\', label: \'Settings\', section:\'global\', type:\'button\'}">' +
+                        '<button id="logout-command" data-win-control="WinJS.UI.AppBarCommand" data-win-options="' +
+                            '{icon:\'closepane\', label: \'Sign out\', section:\'global\', type:\'button\'}">' +
                         '</button></div>').appendTo('body');
                     WinJS.UI.process(document.getElementById('appBar')).then(function () {
                         document.getElementById('refresh-command').addEventListener('click', function () {
                             document.getElementById('appBar').winControl.hide();
                             $('#refresh-button').trigger('click');
+                        }, false);
+                        document.getElementById('settings-command').addEventListener('click', function () {
+                            document.getElementById('appBar').winControl.hide();
+                            $('#menu #tabs li.settings').trigger('click');
+                        }, false);
+                        document.getElementById('logout-command').addEventListener('click', function () {
+                            document.getElementById('appBar').winControl.hide();
+                            $('#menu #tabs li.logout').trigger('click');
                         }, false);
                     });
                 }

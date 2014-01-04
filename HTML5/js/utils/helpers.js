@@ -19,6 +19,35 @@ var Helpers = {
 		    else {
 		        element.html(content);
 		    }
+		},
+		showConfirmationDialogAsync: function (message, title) {
+		    var deferred = $.Deferred();
+
+		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+		        var confirmationMessage = new Windows.UI.Popups.MessageDialog(message, title);
+		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand("Sí", function () {
+		            deferred.resolve(true);
+		        }));
+		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand("No", function () {
+		            deferred.resolve(false);
+		        }));
+		        confirmationMessage.defaultCommandIndex = 0;
+		        confirmationMessage.cancelCommandIndex = 1;
+		        confirmationMessage.showAsync();
+		    }
+		    else if (MobileDetector.isNativeApp()) {
+		        notification.confirm(message, function (result) {
+		            deferred.resolve(result);
+		        }, title, ['Sí', 'No']);
+		    }
+		    else {
+		        setTimeout(function () {
+		            var result = confirm(message);
+		            deferred.resolve(result);
+		        }, 0);
+		    }
+
+		    return deferred.promise();
 		}
 	},
 	Application: {
