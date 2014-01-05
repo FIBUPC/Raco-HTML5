@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="5f0fcd90-9b4d-473f-b35f-16f2e8bdf4d7" Version="1.0.0.0" Publisher="CN=Cristian" />
+  <Identity Name="51288corteggo.Racmobile" Version="1.1.0.0" Publisher="CN=3553526C-14A9-4627-B9B7-A7B04DE3D305" />
   <Properties>
-    <DisplayName>RacoMobile</DisplayName>
-    <PublisherDisplayName>Facultat d'Informàtica de Barcelona</PublisherDisplayName>
+    <DisplayName>Racó mobile</DisplayName>
+    <PublisherDisplayName>corteggo</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -12,8 +12,8 @@
   </Prerequisites>
   <Resources>
     <Resource Language="en" />
-	<Resource Language="es" />
-	<Resource Language="ca-ES" />
+    <Resource Language="es" />
+    <Resource Language="ca-ES" />
   </Resources>
   <Applications>
     <Application Id="App" StartPage="www/index.html">

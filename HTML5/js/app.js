@@ -7,9 +7,10 @@ define (
      'controllers/timetable/timetableController',
      'controllers/rooms/roomsController',
      'controllers/settings/settingsController',
+     'controllers/notifications/notificationsController',
      'views/app/appView'],
     function (Router, LoginController, NotesController, SubjectsController, NewsController,
-        TimetableController, RoomsController, SettingsController, AppView) {
+        TimetableController, RoomsController, SettingsController, NotificationsController, AppView) {
         'use strict';
         
         var App = {};
@@ -22,6 +23,7 @@ define (
             TimetableController.initialize();
             RoomsController.initialize();
             SettingsController.initialize();
+            NotificationsController.initialize();
             
             if (MobileDetector.isIOS()) {
                 // In iOS, we must check first for the app launching directly from the Start Screen
@@ -35,6 +37,10 @@ define (
                 catch(e) { }
             }
             else if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+                // Clear tile updates
+                var tileUpdater = Windows.UI.Notifications.TileUpdateManager.createTileUpdaterForApplication();
+                tileUpdater.clear();
+
                 if (LoginController.isLoggedIn()) {
                     $('<button id="winBackButton" class="win-backbutton" style="display: none;"></button>').prependTo('body');
                     document.getElementById('winBackButton').addEventListener('click', function () {
@@ -65,6 +71,8 @@ define (
                     });
                 }
             }
+
+            NotificationsController.enablePushNotifications();
 
             AppView.render();
 

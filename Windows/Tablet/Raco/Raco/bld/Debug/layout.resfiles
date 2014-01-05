@@ -109,6 +109,7 @@ www\js\controllers\login\loginController.js
 www\js\controllers\login\oAuthController.js
 www\js\controllers\news\newsController.js
 www\js\controllers\notes\notesController.js
+www\js\controllers\notifications\notificationsController.js
 www\js\controllers\rooms\roomsController.js
 www\js\controllers\settings\settingsController.js
 www\js\controllers\subjects\subjectsController.js
@@ -131,6 +132,7 @@ www\js\libraries\platform\android\cordova.js
 www\js\libraries\platform\ios\cordova.js
 www\js\libraries\platform\ios\modalwebview.js
 www\js\libraries\platform\windows\childbrowser.js
+www\js\libraries\platform\windows\pushNotifications.js
 www\js\libraries\platform\windowsphone\binaryBridge.js
 www\js\libraries\platform\windowsphone\childbrowser.js
 www\js\libraries\platform\windowsphone\cordova.js

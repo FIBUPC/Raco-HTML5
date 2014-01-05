@@ -22,9 +22,10 @@ var libraries = {
             'tiltEffect'
 		],
 		windows: [
-            'childbrowser',
             '//Microsoft.WinJS.2.0/js/base',
-            '//Microsoft.WinJS.2.0/js/ui'
+            '//Microsoft.WinJS.2.0/js/ui',
+            'childbrowser',
+            'pushNotifications'            
 		]
 	}
 };

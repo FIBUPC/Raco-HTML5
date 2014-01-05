@@ -95,7 +95,9 @@
 
 				// Resize the page element on orientation change - only tablets
 				$(window).on('orientationchange', function () {
-				    $('.page').height($(window).height() - $('.page').offset().top);
+				    if ($('.page').length > 0) {
+				        $('.page').height($(window).height() - $('.page').offset().top);
+				    }
 				});
 			});
         </script>
