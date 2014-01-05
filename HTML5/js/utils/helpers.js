@@ -36,8 +36,13 @@ var Helpers = {
 		        confirmationMessage.showAsync();
 		    }
 		    else if (MobileDetector.isNativeApp()) {
-		        notification.confirm(message, function (result) {
-		            deferred.resolve(result);
+		        navigator.notification.confirm(message, function (result) {
+		        	if (result === 1) {
+		        		deferred.resolve(true);
+		        	}
+		        	else {
+		        		deferred.resolve(false);
+		        	}
 		        }, title, [t('Yes'), t('No')]);
 		    }
 		    else {

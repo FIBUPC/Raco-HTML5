@@ -5,7 +5,7 @@ if (APPLICATION) {
 	RemoteConfiguration = {
 		Urls: {
 		    //Base: 'https://raco.fib.upc.edu',
-            Base: 'http://192.168.1.129/api',
+            Base: 'http://192.168.1.133/api',
 			LatestNotes: '/api-v1/avisos.json',
 			MarkNoteAsRead: '/api-v1/marcar-llegit?id={0}',
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',

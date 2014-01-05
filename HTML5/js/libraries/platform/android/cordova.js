@@ -7096,7 +7096,7 @@ var ChildBrowser = (function (gap) {
     ChildBrowser.showWebPage = function (url, successCallback, errorCallback, external) {
         if (external) {
             this.openExternal(url, false);
-            return;
+            return false;
         }
 
         options = { showLocationBar: false, showNavigationBar: false, showAddress: false };

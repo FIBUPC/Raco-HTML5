@@ -14,7 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.bool;
+import edu.upc.fib.raco.R;
 import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.Context;
@@ -37,6 +37,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView.CommaTokenizer;
+import android.widget.Toast;
 
 import org.apache.cordova.api.*;
 
@@ -130,12 +131,13 @@ public class ChildBrowser extends Plugin {
                 intent.putExtra("loadingDialog", "Wait,Loading web page...");
                 intent.putExtra("hideLoadingDialogOnPageLoad", true);
             } else {
-            	if (url.startsWith("https://raco.fib.upc.edu/api-v1/attachment")) {
+            	if (url.contains("/api-v1/attachment")) {
             		Uri uri = Uri.parse(url);
             		String fileName = uri.getQueryParameter("attachment_name");
             		if (fileName == null || fileName.isEmpty()) {
             			fileName = "attachment";
             		}
+            		
             		DownloadManager.Request r = new DownloadManager.Request(uri);
             		
             		// This put the download in the same Download dir the browser uses
@@ -152,6 +154,23 @@ public class ChildBrowser extends Plugin {
             		// Start download
             		DownloadManager dm = (DownloadManager) cordova.getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
             		dm.enqueue(r);
+            		
+            		try {
+            			// Show toast message
+            			this.cordova.getActivity().runOnUiThread(new Runnable() {
+            			    public void run() {
+		                		Context context = cordova.getActivity();
+		                		CharSequence text = cordova.getActivity().getResources().getString(R.string.downloading);
+		                		int duration = Toast.LENGTH_SHORT;
+		
+		                		Toast toast = Toast.makeText(context, text, duration);
+		                		toast.show();
+            			    }
+            			});
+            		}
+            		catch (Exception e) {
+            			// Ignore this exception
+            		}
             	}
             	else {
             		intent = new Intent(Intent.ACTION_VIEW);
@@ -162,7 +181,7 @@ public class ChildBrowser extends Plugin {
             return "";
         } catch (android.content.ActivityNotFoundException e) {
             Log.d(LOG_TAG, "ChildBrowser: Error loading url " + url + ":" + e.toString());
-            return e.toString();
+            return "";
         }
     }
 
