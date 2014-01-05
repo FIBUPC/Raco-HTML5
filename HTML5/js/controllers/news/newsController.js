@@ -49,7 +49,7 @@ define(
 	    NewsController.getUPCNewsAsync = function () {
 	        self.upcNewsLatestSync = moment();
 
-	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Upc, 'ca'))
+	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Upc, Helpers.Environment.getApplicationLanguage()))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
@@ -64,7 +64,11 @@ define(
 	    NewsController.getFIBNewsAsync = function () {
 	        self.fibNewsLatestSync = moment();
 
-	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Fib, 'fib'))
+	        var currentLanguage = Helpers.Environment.getApplicationLanguage();
+	        if (currentLanguage === 'ca') {
+	        	currentLanguage = 'fib'; // For some reason we have to use 'fib' instead of 'ca' for news in catalan
+	        }
+	    	HttpClient.getAsync(String.format(RemoteConfiguration.Urls.News.Fib, currentLanguage))
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
