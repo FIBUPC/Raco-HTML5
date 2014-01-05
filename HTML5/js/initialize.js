@@ -19,7 +19,8 @@ var libraries = {
 			'fileBridge',
             'binaryBridge',
             'childbrowser',
-            'tiltEffect'
+            'tiltEffect',
+            'pushNotifications'
 		],
 		windows: [
             '//Microsoft.WinJS.2.0/js/base',

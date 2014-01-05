@@ -96,6 +96,7 @@
     <Compile Include="Bridges\BinaryBridge.cs" />
     <Compile Include="Bridges\ChildBrowserCommand.cs" />
     <Compile Include="Bridges\FileBridge.cs" />
+    <Compile Include="Bridges\PushNotificationsBridge.cs" />
     <Compile Include="Helpers\BackButtonHandler.cs" />
     <Compile Include="Helpers\DisableBrowserDoubleTapEffect.cs" />
     <Compile Include="Helpers\DisableBrowserZoom.cs" />
@@ -167,6 +168,7 @@
     <Content Include="www\css\platforms\windows\common.css" />
     <Content Include="www\css\platforms\windows\phone.css" />
     <Content Include="www\css\platforms\windows\tablet.css" />
+    <Content Include="www\css\platforms\windows\tiltEffect.css" />
     <Content Include="www\img\common\chevron.png" />
     <Content Include="www\img\common\chevron_hover.png" />
     <Content Include="www\img\common\files\audio.png" />
@@ -226,6 +228,7 @@
     <Content Include="www\js\controllers\login\oAuthController.js" />
     <Content Include="www\js\controllers\news\newsController.js" />
     <Content Include="www\js\controllers\notes\notesController.js" />
+    <Content Include="www\js\controllers\notifications\notificationsController.js" />
     <Content Include="www\js\controllers\rooms\roomsController.js" />
     <Content Include="www\js\controllers\settings\settingsController.js" />
     <Content Include="www\js\controllers\subjects\subjectsController.js" />
@@ -251,9 +254,11 @@
     <Content Include="www\js\libraries\platform\windowsphone\childbrowser.js" />
     <Content Include="www\js\libraries\platform\windowsphone\cordova.js" />
     <Content Include="www\js\libraries\platform\windowsphone\fileBridge.js" />
+    <Content Include="www\js\libraries\platform\windowsphone\pushNotifications.js" />
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
     <Content Include="www\js\libraries\platform\windowsphone\tiltEffect.js" />
     <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
+    <Content Include="www\js\libraries\platform\windows\pushNotifications.js" />
     <Content Include="www\js\locales\locales_ca.js" />
     <Content Include="www\js\locales\locales_en.js" />
     <Content Include="www\js\locales\locales_es.js" />
@@ -267,17 +272,6 @@
     <Content Include="www\js\models\subject.js" />
     <Content Include="www\js\models\timetable.js" />
     <Content Include="www\js\router.js" />
-    <Resource Include="www\js\templates\news\FIBNewTemplate.html" />
-    <Resource Include="www\js\templates\news\newsTemplate.html" />
-    <Resource Include="www\js\templates\news\UPCNewTemplate.html" />
-    <Resource Include="www\js\templates\notes\latestNoteTemplate.html" />
-    <Resource Include="www\js\templates\notes\subjectNoteTemplate.html" />
-    <Resource Include="www\js\templates\rooms\roomsTemplate.html" />
-    <Resource Include="www\js\templates\rooms\roomTemplate.html" />
-    <Resource Include="www\js\templates\settings\settingsTemplate.html" />
-    <Resource Include="www\js\templates\subjects\subjectsTemplate.html" />
-    <Resource Include="www\js\templates\subjects\subjectTemplate.html" />
-    <Resource Include="www\js\templates\timetable\timetableTemplate.html" />
     <Content Include="www\js\utils\dispatcher.js" />
     <Content Include="www\js\utils\helpers.js" />
     <Content Include="www\js\utils\httpClient.js" />
@@ -323,16 +317,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="www\js\templates\app\appTemplate.html" />
     <Resource Include="www\js\templates\app\headerTemplate.html" />
     <Resource Include="www\js\templates\app\menuTemplate.html" />
     <Resource Include="www\js\templates\login\loginTemplate.html" />
+    <Resource Include="www\js\templates\news\FIBNewTemplate.html" />
+    <Resource Include="www\js\templates\news\newsTemplate.html" />
+    <Resource Include="www\js\templates\news\UPCNewTemplate.html" />
     <Resource Include="www\js\templates\notes\latestNotesTemplate.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Phone.Controls.Toolkit">
-      <HintPath>packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
-    </Reference>
+    <Resource Include="www\js\templates\notes\latestNoteTemplate.html" />
+    <Resource Include="www\js\templates\notes\subjectNoteTemplate.html" />
+    <Resource Include="www\js\templates\rooms\roomsTemplate.html" />
+    <Resource Include="www\js\templates\rooms\roomTemplate.html" />
+    <Resource Include="www\js\templates\settings\settingsTemplate.html" />
+    <Resource Include="www\js\templates\subjects\subjectsTemplate.html" />
+    <Resource Include="www\js\templates\subjects\subjectTemplate.html" />
+    <Resource Include="www\js\templates\timetable\timetableTemplate.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

@@ -20,11 +20,19 @@
     };
 
     window.plugins.pushNotifications.closeChannel = function (channelId, channelObject) {
-        try {
-            channelObject.close();
-        }
-        catch (e) {
-            // Ignore this exception
-        }
+        var deferred = $.Deferred();
+
+        setTimeout(function(){
+            try {
+                channelObject.close();
+                deferred.resolve();
+            }
+            catch (e) {
+                // Ignore this exception
+                deferred.reject();
+            }
+        }, 0);
+
+        return deferred.promise();
     };
 })();

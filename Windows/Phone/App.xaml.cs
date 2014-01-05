@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using RacoMobile.Localization;
+using System;
 using System.Diagnostics;
-using System.Resources;
+using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using RacoMobile.Localization;
 
 namespace RacoMobile
 {
@@ -61,6 +61,18 @@ namespace RacoMobile
         // Este código no se ejecutará cuando la aplicación se reactive
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            // Clean-up tile notifications
+            var appTile = ShellTile.ActiveTiles.FirstOrDefault();
+            if (appTile == null)
+            {
+                return;
+            }
+
+            appTile.Update(new StandardTileData() {
+                BackTitle = "",
+                BackContent = "",
+                Count = 0
+            });
         }
 
         // Código para ejecutar cuando la aplicación se activa (se trae a primer plano)
