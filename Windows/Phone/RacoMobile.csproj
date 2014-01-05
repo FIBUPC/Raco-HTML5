@@ -15,8 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures>ca-ES%3bes%3ben</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>RacoMobile_$(Configuration)_$(Platform).xap</XapFilename>
@@ -243,6 +242,7 @@
     <Content Include="www\js\libraries\common\require.js" />
     <Content Include="www\js\libraries\common\stringExtensions.js" />
     <Content Include="www\js\libraries\common\text.js" />
+    <Content Include="www\js\libraries\common\underi18n.js" />
     <Content Include="www\js\libraries\common\underscore.js" />
     <Content Include="www\js\libraries\platform\android\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\cordova.js" />
@@ -254,6 +254,9 @@
     <Content Include="www\js\libraries\platform\windowsphone\text.js" />
     <Content Include="www\js\libraries\platform\windowsphone\tiltEffect.js" />
     <Content Include="www\js\libraries\platform\windows\childbrowser.js" />
+    <Content Include="www\js\locales\locales_ca.js" />
+    <Content Include="www\js\locales\locales_en.js" />
+    <Content Include="www\js\locales\locales_es.js" />
     <Content Include="www\js\main.js" />
     <Content Include="www\js\models\action.js" />
     <Content Include="www\js\models\calendarEvent.js" />
@@ -299,6 +302,8 @@
     <Content Include="www\js\views\timetable\timetableView.js" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Localization\AppResources.ca-ES.resx" />
+    <EmbeddedResource Include="Localization\AppResources.es.resx" />
     <EmbeddedResource Include="Localization\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>

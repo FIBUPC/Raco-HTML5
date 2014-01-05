@@ -11,7 +11,9 @@
     <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="en" />
+	<Resource Language="es" />
+	<Resource Language="ca-ES" />
   </Resources>
   <Applications>
     <Application Id="App" StartPage="www/index.html">

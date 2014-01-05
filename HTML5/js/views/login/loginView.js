@@ -16,7 +16,8 @@ define(
 			render: function () {
 				$('body').addClass('login');
 
-				Helpers.Environment.showView(self.template, $(self.$el.selector));
+				var compiledTemplate = _.template(self.template);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 				self.bindEvents();
 			},
 

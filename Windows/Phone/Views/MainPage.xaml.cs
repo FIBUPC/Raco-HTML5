@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using RacoMobile.Helpers;
 using System;
 using System.ComponentModel;
@@ -13,10 +14,21 @@ namespace RacoMobile
         {
             InitializeComponent();
 
+            this.Loaded += MainPageLoaded;
+
             new DisableBrowserZoom(this.Browser.Browser);
             new DisableBrowserDoubleTapEffect(this.Browser.Browser);
 
             this.Browser.Browser.Navigated += OnBrowserNavigated;
+        }
+
+        private void MainPageLoaded(object sender, EventArgs e)
+        {
+            (this.ApplicationBar.Buttons[0] as ApplicationBarIconButton).Text = Localization.AppResources.AppBarRefresh;
+            (this.ApplicationBar.Buttons[1] as ApplicationBarIconButton).Text = Localization.AppResources.AppBarMenu;
+
+            (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = Localization.AppResources.AppBarSettings;
+            (this.ApplicationBar.MenuItems[1] as ApplicationBarMenuItem).Text = Localization.AppResources.AppBarSignOut;
         }
 
         private void OnBrowserNavigated(object sender, NavigationEventArgs args)
@@ -74,7 +86,7 @@ namespace RacoMobile
 
         private void Logout(object sender, EventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Estàs segur que vols tancar la sessió?", "Sortir", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show(Localization.AppResources.SignOutMessage, Localization.AppResources.SignOutTitle, MessageBoxButton.OKCancel);
 
             if (result.Equals(MessageBoxResult.OK))
             {

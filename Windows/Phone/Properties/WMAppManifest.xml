@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="es-ES" />
-  <App xmlns="" ProductID="{a83f0074-d42f-412e-98af-032e54ced84e}" Title="Racó de la FIB" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RacoMobile author" Description="Sample description" Publisher="RacoMobile" PublisherID="{dec90736-bd4c-451c-a9ac-4a8121c05e72}">
+  <DefaultLanguage xmlns="" code="en" />
+  <Languages xmlns="">
+    <Language code="ca-ES" />
+    <Language code="es" />
+    <Language code="en" />
+  </Languages>
+  <App xmlns="" ProductID="{a83f0074-d42f-412e-98af-032e54ced84e}" Title="Racó de la FIB" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Cristian Ortega" Description="Sample description" Publisher="Facultat d'Informàtica de Barcelona" PublisherID="{dec90736-bd4c-451c-a9ac-4a8121c05e72}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -19,20 +24,14 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipTemplate_Small.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipTemplate_Normal.png</BackgroundImageURI>
-          <Title>
-          </Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI IsRelative="true" IsResource="false">
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
+          <Title></Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false"></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
           <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipTemplate_Wide.png</LargeBackgroundImageURI>
           <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
-          </DeviceLockImageURI>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false"></LargeBackBackgroundImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
           <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
