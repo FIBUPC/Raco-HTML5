@@ -102,5 +102,6 @@
     <plugins>
         <!-- This is a deprecated plugin. This app should be updated to use the modern InAppBrowser feature -->
         <plugin name="ChildBrowser" value="com.phonegap.plugins.childBrowser.ChildBrowser"/>
+        <plugin name="PushPlugin" value="com.plugin.gcm.PushPlugin" />
     </plugins>
 </widget>

@@ -11,9 +11,7 @@ var libraries = {
 			'pushNotifications'
 		],
 		android: [
-			'cordova'
-			//'childbrowser' // ChildBrowser plugin is included in Cordova for Android file
-							 // for backward compatibility purposes
+			'cordova' // this includes plugins
 		],
 		windowsphone: [
 			'cordova',
