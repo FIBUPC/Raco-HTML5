@@ -31,7 +31,7 @@
 	    };
 
 	    NotificationsController.disablePushNotifications = function(id) {
-	        if (window.plugins.pushNotifications && self.notificationsActive) {
+	        if (window.plugins.pushNotifications) {
 	            window.plugins.pushNotifications.closeChannel(self.channelId, self.channelObject).done(function () {
 	                self.channelObject = null;
 	                self.channelId = null;

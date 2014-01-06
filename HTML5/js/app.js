@@ -26,15 +26,27 @@ define (
             NotificationsController.initialize();
             
             if (MobileDetector.isIOS()) {
-                // In iOS, we must check first for the app launching directly from the Start Screen
-
+                // Check if app or browser to make the header bigger
                 try
                 {
                     if (navigator.standalone || MobileDetector.isNativeApp()) {
                         $('body').addClass('standalone');
                     }
                 }
-                catch(e) { }
+                catch(e) {
+                    // Ignore this exception
+                }
+
+                // Clear badge notifications on launch
+                /*if (window.plugins.pushNotifications) {
+                    try
+                    {
+                        window.plugins.pushNotifications.setApplicationIconBadgeNumber(function(){}, function(){}, 0);
+                    }
+                    catch (e) {
+                        // Ignore this exception
+                    }
+                }*/
             }
             else if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
                 // Clear tile updates
@@ -73,6 +85,7 @@ define (
             }
 
             NotificationsController.enablePushNotifications();
+            //NotificationsController.disablePushNotifications();
 
             AppView.render();
 

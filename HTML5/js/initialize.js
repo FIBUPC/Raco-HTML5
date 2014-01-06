@@ -7,7 +7,8 @@ var libraries = {
 	platform: {
 		ios: [
 			'cordova',
-			'modalwebview'
+			'modalwebview',
+			'pushNotifications'
 		],
 		android: [
 			'cordova'

@@ -113,6 +113,9 @@
     <feature name="CordovaModalWebView">
         <param name="ios-package" value="CordovaModalWebView"/>
     </feature>
+    <feature name="PushPlugin">
+        <param name="ios-package" value="PushPlugin"/>
+    </feature>
     <!-- Deprecated plugins element. REmove in 3.0 -->
     <plugins>
     </plugins>
