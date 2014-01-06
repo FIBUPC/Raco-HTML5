@@ -1,18 +1,16 @@
 <div class="header primary-color-background"></div>
 <div id="personal-info">
 	<div class="profile-picture">
-		<img src="img/test/profile_picture.jpg" alt="" />
+		<img src="data:image/jpg;base64,<%= currentUser.get('image') %>" alt="" />
 	</div>
 	<div class="profile-card">
-		<p class="name">CRISTIAN</p>
-		<p class="surname">ORTEGA GÓMEZ</p>
+		<p class="name"><%= currentUser.get('nom') %></p>
+		<p class="surname"><%= currentUser.get('cognoms') %></p>
 	</div>
 </div>
 <ul id="tabs">
 	<li class="clickable notes">
         <a href="#!/latestNotes">
-            <% console.log("hello") %>
-            <% console.log(t('Latest notes')) %>
             <span><%= t('Latest notes') %></span>
         </a>
     </li>

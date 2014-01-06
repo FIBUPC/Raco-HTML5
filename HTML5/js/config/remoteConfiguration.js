@@ -25,6 +25,10 @@ if (APPLICATION) {
 				FreeSpots: '/api/aules/places-lliures.json',
 				Scheduling: '/api/aules/horari-avui.ics',
 				Map: 'http://www.fib.upc.edu/poa/mapa.php?mod={0}'
+			},
+			CurrentUser: {
+				Data: '/api-v1/info-personal.json',
+				Image: '/api-v1/foto-personal.jpg'
 			}
 		}
 	};
@@ -55,6 +59,10 @@ else {
 				FreeSpots: '/api/aules/places-lliures.json',
 				Scheduling: '/api/aules/horari-avui.ics',
 				Map: 'http://' + window.location.hostname + '/api/api/mapa-{0}.png'
+			},
+			CurrentUser: {
+				Data: '/api-v1/info-personal.json',
+				Image: '/api-v1/foto-personal.jpg'
 			}
 		}
 	};

@@ -1,6 +1,7 @@
 define(
-	['text!templates/app/menuTemplate.html'],
-	function (MenuTemplate) {
+	['text!templates/app/menuTemplate.html',
+	 'controllers/login/loginController'],
+	function (MenuTemplate, LoginController) {
 
 		var self,
 		MenuView = Backbone.View.extend({
@@ -9,16 +10,29 @@ define(
 
 			initialize: function() {
 				self = this;
+
+				self.model = LoginController.currentUser;
 			},
 			
 			render: function() {
-				var compiledTemplate = _.template(self.template);
+				var compiledTemplate = _.template(self.template, {currentUser: self.model});
 				self.$el.html(compiledTemplate);
 
 				self.bindEventHandlers();
+
+				self.afterRender();
+			},
+
+			afterRender: function() {
+				if (!self.model.get('nom')) {
+					LoginController.getCurrentUserDataAsync(true);
+				}
 			},
 
 			bindEventHandlers: function() {
+				self.model.on('change', this.render, this);
+				self.model.on('reset', this.render, this);
+
 			    $('#menu #tabs li.clickable').click(function (e) {
 			        e.preventDefault();
 			        e.stopPropagation();
