@@ -23,7 +23,7 @@ define(
 	    LoginController.login = function (successCallback, errorCallback) {
 	    	OAuthController.connect(successCallback, errorCallback);
 	    };
-
+	    
 	    LoginController.logout = function(callback) {
 	    	OAuthController.logout(callback);
 	    };
