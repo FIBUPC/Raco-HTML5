@@ -14,7 +14,7 @@ define(
 			},
 
 			render: function() {
-				self.$el.html(self.template);
+				Helpers.Environment.showView(self.template, $(self.$el.selector));
 
 				self.bindMenuToggleButton();
 				self.bindBackButton();

@@ -48,7 +48,7 @@ define(
 	    	self.latestSync = moment();
 	    	var currentUserDataRequest = HttpClient.getSignedAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.CurrentUser.Data);
-	    	var currentUserImageRequest = HttpClient.readStreamAsync(RemoteConfiguration.Urls.Base + 
+	    	var currentUserImageRequest = HttpClient.readSignedStreamAsync(RemoteConfiguration.Urls.Base + 
 	    		RemoteConfiguration.Urls.CurrentUser.Image);
 	    	
 	    	$.when(currentUserDataRequest, currentUserImageRequest)

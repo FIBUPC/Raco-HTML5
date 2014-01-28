@@ -16,7 +16,7 @@ define(
 			
 			render: function() {
 				var compiledTemplate = _.template(self.template, {currentUser: self.model});
-				self.$el.html(compiledTemplate);
+				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
 				self.bindEventHandlers();
 

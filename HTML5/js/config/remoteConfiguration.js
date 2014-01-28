@@ -1,6 +1,6 @@
 var RemoteConfiguration = null;
 
-if (APPLICATION) {
+if (APPLICATION || !DEBUG) {
 	// Production environment
 	RemoteConfiguration = {
 		Urls: {
@@ -28,7 +28,7 @@ if (APPLICATION) {
 			},
 			CurrentUser: {
 				Data: '/api-v1/info-personal.json',
-				Image: '/api-v1/foto-personal.jpg'
+				Image: '/api-v1/foto-personal.jpg?cache=false'
 			}
 		}
 	};

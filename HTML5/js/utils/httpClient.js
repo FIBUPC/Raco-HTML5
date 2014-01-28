@@ -91,6 +91,10 @@ define(
 	    	return deferred.promise();
 	    };
 
+	    HttpClient.readSignedStreamAsync = function(url) {
+	    	return this.readStreamAsync(this.signUrl(url));
+	    };
+
 	    HttpClient.readStreamAsync = function(url) {
 	    	this.showLoading();
 

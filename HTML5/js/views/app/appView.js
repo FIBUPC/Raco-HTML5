@@ -17,8 +17,8 @@ define(
 				self = this;
 			},
 
-			render: function() {				
-				self.$el.html(self.template);
+			render: function() {
+				Helpers.Environment.showView(self.template, $(self.$el.selector));
 
 				if (LoginController.isLoggedIn()) {
 					self.headerView = new HeaderView();

@@ -2,7 +2,7 @@ var Helpers = {
 	Environment: {
 		isNativeApp: function() {
 			// Check if Cordova declaration exists
-			return typeof(window.cordova) != 'undefined';
+			return typeof(window.cordova) !== 'undefined';
 		},
 		log: function(message) {
 			if (DEBUG && console && console.log) {
@@ -10,7 +10,7 @@ var Helpers = {
 			}
 		},
 		showView: function (content, element) {
-		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows() && MSApp) {
                 // Adding HTML with scripts or data URI schemes is considered unsafe in Windows 8
 		        MSApp.execUnsafeLocalFunction(function () {
 		            element.html(content);
