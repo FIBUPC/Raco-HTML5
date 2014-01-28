@@ -131,12 +131,14 @@ www\js\libraries\common\underscore.js
 www\js\libraries\platform\android\cordova.js
 www\js\libraries\platform\ios\cordova.js
 www\js\libraries\platform\ios\modalwebview.js
+www\js\libraries\platform\ios\pushNotifications.js
 www\js\libraries\platform\windows\childbrowser.js
 www\js\libraries\platform\windows\pushNotifications.js
 www\js\libraries\platform\windowsphone\binaryBridge.js
 www\js\libraries\platform\windowsphone\childbrowser.js
 www\js\libraries\platform\windowsphone\cordova.js
 www\js\libraries\platform\windowsphone\fileBridge.js
+www\js\libraries\platform\windowsphone\pushNotifications.js
 www\js\libraries\platform\windowsphone\text.js
 www\js\libraries\platform\windowsphone\tiltEffect.js
 www\js\locales\locales_ca.js
@@ -151,6 +153,7 @@ www\js\models\note.js
 www\js\models\room.js
 www\js\models\subject.js
 www\js\models\timetable.js
+www\js\models\user.js
 www\js\router.js
 www\js\templates\app\appTemplate.html
 www\js\templates\app\headerTemplate.html

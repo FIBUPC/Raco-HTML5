@@ -4,17 +4,17 @@ if (APPLICATION) {
 	// Production environment
 	RemoteConfiguration = {
 		Urls: {
-		    //Base: 'https://raco.fib.upc.edu',
-            Base: 'http://192.168.1.133/api',
+		    Base: 'https://raco.fib.upc.edu',
+            //Base: 'http://192.168.1.133/api',
 			LatestNotes: '/api-v1/avisos.json',
 			MarkNoteAsRead: '/api-v1/marcar-llegit?id={0}',
 			Attachment: '/api-v1/attachment?assig={0}&d_id_attachment={1}&attachment_name={2}',
 			Subjects: {
 				List: '/api-v1/assignatures.json',
-			    //Details: '/api/assignatures/info.json?codi_upc={0}',
-				Details: '/api/assignatures/info-{0}.json',
-			    //Notes: '/api-v1/avisos-assignatura.json?assig={0}'
-				Notes: '/api-v1/avisos-assignatura-{0}.json'
+			    Details: '/api/assignatures/info.json?codi_upc={0}',
+				//Details: '/api/assignatures/info-{0}.json',
+			    Notes: '/api-v1/avisos-assignatura.json?assig={0}'
+				//Notes: '/api-v1/avisos-assignatura-{0}.json'
 			},
 			Timetable: '/api-v1/horari-setmanal.json',
 			News: {

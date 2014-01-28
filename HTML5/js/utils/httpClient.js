@@ -8,10 +8,6 @@ define(
 	    	loadingIsGoingToHide: false
 	    };
 
-	    HttpClient.initialize = function() {
-	    	
-	    };
-
 	    HttpClient.signUrl = function(url) {
 	    	return OAuthController.oAuthService.signUrl(url);
 	    };
@@ -52,12 +48,14 @@ define(
 	    HttpClient.postAsync = function(url) {
 	    	this.showLoading();
 
+	    	// TODO: method not supported
+
 	    	this.hideLoading();
 	    };
 
 	    HttpClient.getAsync = function(url) {
 	    	this.showLoading();
-
+	    	
 	    	var deferred = $.Deferred();
 	    	
 	    	try
