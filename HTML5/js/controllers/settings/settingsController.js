@@ -18,6 +18,7 @@ define(
 
 	    SettingsController.initialize = function() {
 	    	self = this;
+	    	
 	    	self.loadAvailableLanguages();
 	    	self.loadAvailableActions();
 	    	self.fetchSettingsAsync();

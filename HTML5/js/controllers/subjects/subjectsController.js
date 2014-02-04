@@ -23,8 +23,15 @@ define(
 		    	var subjects = localStorage.getItem('SUBJECTS');
 		    	if (subjects != null) {
 		    		self.latestSync = moment(localStorage.getItem('SUBJECTS_LATEST_SYNC'));
-		    		self.subjects = new SubjectList(JSON.parse(subjects));
+		    		self.subjects.reset(JSON.parse(subjects));
 		    	}
+		    });
+	    };
+
+	    SubjectsController.saveSubjectsAsync = function(subjects) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('SUBJECTS', JSON.stringify(subjects));
+		    	localStorage.setItem('SUBJECTS_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -59,6 +66,7 @@ define(
 
 	    	    $.when.apply(null, requests).done(function () {
 	    			self.subjects.reset(subjects);
+	    			self.saveSubjectsAsync(subjects);
 
 					Helpers.Environment.log('Subjects synced.');
 				}).fail(function(error){

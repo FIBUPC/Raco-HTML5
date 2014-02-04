@@ -25,10 +25,20 @@ define(
 	    RoomsController.fetchRoomsAsync = function() {
 	    	Dispatcher.beginInvoke(function(){
 		    	var rooms = localStorage.getItem('ROOMS');
-		    	if (rooms != null) {
+		    	var maps = localStorage.getItem('ROOMS_MAPS');
+		    	if (rooms != null && maps != null) {
 		    		self.latestSync = moment(localStorage.getItem('ROOMS_LATEST_SYNC'));
-		    		self.rooms = new RoomsList(JSON.parse(rooms));
+		    		self.maps = JSON.parse(maps);
+		    		self.rooms.reset(JSON.parse(rooms));
 		    	}
+		    });
+	    };
+
+	    RoomsController.saveRoomsAsync = function(rooms, maps) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('ROOMS', JSON.stringify(rooms));
+		    	localStorage.setItem('ROOMS_MAPS', JSON.stringify(maps));
+		    	localStorage.setItem('ROOMS_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -80,6 +90,8 @@ define(
 
 	    		// Reset our collection with actual updated data
 	    		self.rooms.reset(rooms);
+
+	    		self.saveRoomsAsync(rooms, self.maps);
 
 	    		Helpers.Environment.log('Rooms synced.');
 	    	}).fail(function() {

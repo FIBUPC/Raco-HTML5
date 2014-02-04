@@ -20,11 +20,21 @@ define(
 
 	    TimetableController.fetchTimetableAsync = function() {
 	    	Dispatcher.beginInvoke(function(){
-		    	var timetable = localStorage.getItem('TIMETABLE');
-		    	if (timetable != null) {
+		    	var classes = localStorage.getItem('TIMETABLE_CLASSES');
+		    	var subjects = localStorage.getItem('TIMETABLE_SUBJECTS');
+		    	if (classes != null && subjects != null) {
 		    		self.latestSync = moment(localStorage.getItem('TIMETABLE_LATEST_SYNC'));
-		    		self.timetable = new Timetable(JSON.parse(timetable));
+		    		self.subjects = JSON.parse(subjects);
+		    		self.timetable.set('classes', JSON.parse(classes));
 		    	}
+		    });
+	    };
+
+	    TimetableController.saveTimetableAsync = function(classes, subjects) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('TIMETABLE_CLASSES', JSON.stringify(classes));
+		    	localStorage.setItem('TIMETABLE_SUBJECTS', JSON.stringify(subjects));
+		    	localStorage.setItem('TIMETABLE_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -66,6 +76,8 @@ define(
 
 	    		self.subjects = subjects;
 	    		self.timetable.set('classes', timetable);
+
+	    		self.saveTimetableAsync(timetable, subjects);
 
 	    		Helpers.Environment.log('Timetable synced.');
 	    	}).fail(function(error) {

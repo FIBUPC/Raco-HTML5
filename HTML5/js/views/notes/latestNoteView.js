@@ -33,8 +33,7 @@ define(
 			    var compiledTemplate = _.template(self.template, { note: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 
-				var descriptionHTML = $('<div />').html(self.model.get('description')).text();
-				Helpers.Environment.showView(descriptionHTML, $('#note-description'));
+				Helpers.Environment.showView(self.model.get('description'), $('#note-description'));
 			},
 
 			bindEvents: function() {

@@ -22,8 +22,15 @@ define(
 		    	var latestNotes = localStorage.getItem('LATEST_NOTES');
 		    	if (latestNotes != null) {
 		    		self.latestSync = moment(localStorage.getItem('LATEST_NOTES_LATEST_SYNC'));
-		    		self.latestNotes = new NoteList(JSON.parse(latestNotes));
+		    		self.latestNotes.reset(JSON.parse(latestNotes));
 		    	}
+		    });
+	    };
+
+	    NotesController.saveLatestNotesAsync = function(latestNotes) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('LATEST_NOTES', JSON.stringify(latestNotes));
+		    	localStorage.setItem('LATEST_NOTES_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -54,6 +61,9 @@ define(
 
 	    		// Now we reset the collection with the flattened notes array
 	    		self.latestNotes.reset(notes);
+
+	    		self.saveLatestNotesAsync(notes);
+
 	    		Helpers.Environment.log('Notes synced.');
 	    	}).fail(function(error) {
 	    		// TODO: throw error to the view

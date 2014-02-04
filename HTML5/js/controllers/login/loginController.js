@@ -1,8 +1,9 @@
 define(
 	['./oAuthController',
 	 'models/user',
-	 'utils/httpClient'],
-	function (OAuthController, User, HttpClient) {
+	 'utils/httpClient',
+	 'utils/dispatcher'],
+	function (OAuthController, User, HttpClient, Dispatcher) {
 	    'use strict';
 	    
 	    var self,
@@ -14,6 +15,7 @@ define(
 	    	self = this;
 
 	    	OAuthController.initialize();
+	    	self.fetchCurrentUserAsync();
 	    };
 		
 	    LoginController.isLoggedIn = function () {       
@@ -33,8 +35,15 @@ define(
 		    	var currentUser = localStorage.getItem('CURRENT_USER');
 		    	if (currentUser != null) {
 		    		self.currentUserLatestSync = moment(localStorage.getItem('CURRENT_USER_LATEST_SYNC'));
-		    		self.currentUser = new User(JSON.parse(currentUser));
+		    		self.currentUser.set(JSON.parse(currentUser));
 		    	}
+		    });
+	    };
+
+	    LoginController.saveCurrentUserAsync = function(currentUser) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('CURRENT_USER', JSON.stringify(currentUser));
+		    	localStorage.setItem('CURRENT_USER_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -55,11 +64,13 @@ define(
 	    		.done(function(currentUserData, currentUserImage) {
 	    		var currentUser = JSON.parse(currentUserData);
 	    		currentUser.image = currentUserImage;
-	    		console.log(currentUser);
+
 	    		self.currentUser.set(currentUser);
-	    		console.log("User information synced.");
+	    		self.saveCurrentUserAsync(currentUser);
+
+	    		Helpers.Environment.log("User information synced.");
 	    	}).fail(function(error){
-	    		console.log("Error retrieving user information.");
+	    		Helpers.Environment.log("Error retrieving user information.");
 	    	});
 	    };
 	    

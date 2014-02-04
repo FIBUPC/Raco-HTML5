@@ -39,9 +39,8 @@ define(
 					subject: self.subject
 				});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
-
-				var descriptionHTML = $('<div />').html(self.note.get('description')).text();
-				Helpers.Environment.showView(descriptionHTML, $('#note-description'));
+				
+				Helpers.Environment.showView(self.note.get('description'), $('#note-description'));
 			},
 
 			bindEvents: function() {

@@ -25,12 +25,26 @@ define(
 		    	var fibNews = localStorage.getItem('FIB_NEWS');
 		    	if (upcNews != null) {
 		    		self.upcNewsLatestSync = moment(localStorage.getItem('UPC_NEWS_LATEST_SYNC'));
-		    		self.upcNews = new NewsList(JSON.parse(upcNews));
+		    		self.upcNews.reset(JSON.parse(upcNews));
 		    	}
 		    	if (fibNews != null) {
 		    		self.upcNewsLatestSync = moment(localStorage.getItem('FIB_NEWS_LATEST_SYNC'));
-		    		self.fibNews = new NewsList(JSON.parse(fibNews));
+		    		self.fibNews.reset(JSON.parse(fibNews));
 		    	}
+		    });
+	    };
+
+	    NewsController.saveFIBNewsAsync = function(fibNews) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('FIB_NEWS', JSON.stringify(fibNews));
+		    	localStorage.setItem('FIB_NEWS_LATEST_SYNC', new Date());
+		    });
+	    };
+	    
+	    NewsController.saveUPCNewsAsync = function(upcNews) {
+	    	Dispatcher.beginInvoke(function(){
+		    	localStorage.setItem('UPC_NEWS', JSON.stringify(upcNews));
+		    	localStorage.setItem('UPC_NEWS_LATEST_SYNC', new Date());
 		    });
 	    };
 
@@ -53,7 +67,9 @@ define(
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
+
 	    		self.upcNews.reset(data['rdf:RDF'].item);
+	    		self.saveUPCNewsAsync(data['rdf:RDF'].item);
 
 	    		Helpers.Environment.log('UPC news synced.');
 	    	}).fail(function(error) {
@@ -72,7 +88,9 @@ define(
 	    	.done(function(data) {
 	    		data = Helpers.Data.stringToXml(data);
 	    		data = Helpers.Data.xmlToJson(data);
+
 	    		self.fibNews.reset(data.rss.channel.item);
+	    		self.saveFIBNewsAsync(data.rss.channel.item);
 
 	    		Helpers.Environment.log('FIB news synced.');
 	    	}).fail(function(error) {
