@@ -7,6 +7,7 @@
 
 define(
     ['controllers/login/loginController',
+     'controllers/settings/settingsController',
      'views/login/loginView',
      'views/notes/latestNotesView',
      'views/notes/latestNoteView',
@@ -20,13 +21,14 @@ define(
      'views/rooms/roomView',
      'views/timetable/timetableView',
      'views/settings/settingsView'],
-    function (LoginController, LoginView, LatestNotesView, LatestNoteView, SubjectsView, SubjectView, SubjectNoteView,
-        NewsView, FIBNewView, UPCNewView, RoomsView, RoomView, TimetableView, SettingsView) {
+    function (LoginController, SettingsController, LoginView, LatestNotesView,
+        LatestNoteView, SubjectsView, SubjectView, SubjectNoteView, NewsView,
+        FIBNewView, UPCNewView, RoomsView, RoomView, TimetableView, SettingsView) {
         'use strict';
 
         var self,
         AppRouter = Backbone.Router.extend({
-            // These are the main point of entrance to the app
+            // These are the main points of entrance to the app
             routes: {
                 '': 'default', // default action (no hash specified)
                 '!/login': 'login',
@@ -56,9 +58,13 @@ define(
                     self.navigate('!/login', { trigger: true });
                     return;
                 }
-
-                // TODO: check for predefined user default action
-                self.navigate(self.defaultAction, { trigger: true });
+                
+                if (SettingsController.selectedAction != null) {
+                    self.navigate(SettingsController.selectedAction, { trigger: true });
+                }
+                else {
+                    self.navigate(self.defaultAction, { trigger: true });
+                }
             },
 
             login: function() {

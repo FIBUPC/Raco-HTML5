@@ -422,3 +422,26 @@ button {
 .inner-content.timetable table tr td .class:last-child {
 	margin-bottom: 0;
 }
+
+label {
+	width: 100%;
+	display: block;
+	font-size: 1.1em;
+}
+
+select {
+	width: 100%;
+	padding: 0.5em;
+	font-size: 1.1em;
+	margin: 0.5em 0;
+}
+
+.copyright {
+	padding-top: 1em;
+	margin-top: 7em;
+	font-size: 0.7em;
+}
+
+.copyright p {
+	margin-bottom: 0.5em;
+}

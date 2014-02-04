@@ -32,12 +32,19 @@ define(
 			 * Renders the view
 			 **/
 			render: function () {
-			    var compiledTemplate = _.template(self.template);
-			    $(self.$el.selector).html(compiledTemplate);
+			    var compiledTemplate = _.template(self.template, {
+			    	selectedAction: SettingsController.selectedAction
+			    });
+			    Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
+			},
 
-			    if (MobileDetector.isWindows()) {
-			        $('.page').addClass('hide');
-			    }
+			bindEvents: function() {
+				BaseView.prototype.bindEvents.call(self);
+
+				$('#actions').on('change', function(){
+					var selectedAction = $(this).find(':selected').val();
+					SettingsController.saveSelectedActionAsync(selectedAction);
+				});
 			}
 		});
 

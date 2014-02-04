@@ -18,6 +18,15 @@ pre {
 	font-family: 'Courier New', sans-serif !important;
 }
 
+.small {
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+.settings label {
+	color: #ca0a00;
+}
+
 #app {
 	-webkit-transition: margin-left 0.5s ease,
 						opacity 0.5s ease;
@@ -189,6 +198,7 @@ pre {
 #menu #personal-info .name,
 #menu #personal-info .surname {
 	color: #333;
+	text-transform: uppercase;
 }
 
 #menu #personal-info .profile-picture img {
@@ -549,6 +559,15 @@ button:focus {
 	height: 2em;
 	line-height: 1em;
 	text-align: center;
+}
+
+.copyright {
+	color: #666;
+	border-top: 1px solid #eee;
+}
+
+.inlab-logo {
+	width: 20em;
 }
 
 .no-results:not(.centered) {

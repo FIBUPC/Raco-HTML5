@@ -26,13 +26,14 @@ define (
          * Initializes the application
          **/
         App.init = function () {
+            // Initialize application controllers
             LoginController.initialize();
+            SettingsController.initialize();
             NotesController.initialize();
             SubjectsController.initialize();
             NewsController.initialize();
             TimetableController.initialize();
             RoomsController.initialize();
-            SettingsController.initialize();
             NotificationsController.initialize();
             
             // iOS push notifications

@@ -6,5 +6,21 @@
 -->
 
 <div class="page">
-	
+	<div class="inner-content settings">
+		<label for="actions"><%= t('Initial page') %></label>
+		<select id="actions">
+			<option value="#!/latestNotes"<%= (selectedAction == '#!/latestNotes') ? ' selected="selected"' : '' %>><%= t('Latest notes') %></option>
+			<option value="#!/subjects"<%= (selectedAction == '#!/subjects') ? ' selected="selected"' : '' %>><%= t('Subjects') %></option>
+			<option value="#!/timetable"<%= (selectedAction == '#!/timetable') ? ' selected="selected"' : '' %>><%= t('Timetable') %></option>
+			<option value="#!/rooms"<%= (selectedAction == '#!/rooms') ? ' selected="selected"' : '' %>><%= t('Rooms') %></option>
+			<option value="#!/news"<%= (selectedAction == '#!/news') ? ' selected="selected"' : '' %>><%= t('News') %></option>
+		</select>
+		<p class="small"><%= t('Choose which page you want to see on application startup.') %><p>
+
+		<div class="copyright">
+			<p><%= t('©2014 Barcelona School of Informatics. All rights reserved.') %></p>
+			<p><%= t('This application is developed and maintained by inLabFIB.') %></p>
+			<img src="img/common/logo_inlab.png" class="inlab-logo" />
+		</div>
+	</div>
 </div>
