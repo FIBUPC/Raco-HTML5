@@ -88,7 +88,7 @@ define(
 
 	    		Helpers.Environment.log('Timetable synced.');
 	    	}).fail(function(error) {
-	    		console.log("Error retrieving timetable");
+	    		Helpers.Environment.log("Error retrieving timetable");
 	    	});
 	    };
 	    

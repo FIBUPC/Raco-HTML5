@@ -44,7 +44,9 @@ var localeCatalog = {
 	'Refresh': 'Refresh',
 	'Are you sure do you want to sign out?': 'Are you sure do you want to sign out?',
 	'Yes': 'Yes',
-	'No': 'No'
+	'No': 'No',
+	'An error occurred while trying to authorize this application. Please try again.': 'An error occurred while trying to authorize this application. Please try again.',
+	'Authorization error': 'Authorization error'
 };
 
 window.t = underi18n.MessageFactory(localeCatalog);

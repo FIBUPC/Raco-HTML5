@@ -146,7 +146,7 @@ pre {
 	background-image: url('../../img/common/icons/news.png');
 }
 
-#menu #tabs > li.settings.active a {
+#menu #tabs > li.settings.current a {
 	background-image: url('../../img/common/icons/settings.png');
 	/*background-position: 1em 0.5em;*/
 }

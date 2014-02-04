@@ -145,8 +145,6 @@ define(
 				}
 			}
 	        catch (e) {
-	            console.log("error");
-			    console.log(e);
 				deferred.reject(e);
 			}
 

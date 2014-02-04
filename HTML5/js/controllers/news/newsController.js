@@ -80,7 +80,7 @@ define(
 
 	    		Helpers.Environment.log('UPC news synced.');
 	    	}).fail(function(error) {
-	    		console.log("Error retrieving UPC news");
+	    		Helpers.Environment.log("Error retrieving UPC news");
 	    	});
 	    };
 
@@ -101,7 +101,7 @@ define(
 
 	    		Helpers.Environment.log('FIB news synced.');
 	    	}).fail(function(error) {
-	    		console.log("Error retrieving FIB news");
+	    		Helpers.Environment.log("Error retrieving FIB news");
 	    	});
 	    };
 

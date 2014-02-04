@@ -15,12 +15,7 @@ define(
 
 		        requestTokenUrl: "https://raco.fib.upc.edu/oauth/request_token",
 		        authorizationUrl: "https://raco.fib.upc.edu/oauth/protected/authorize",
-		        accessTokenUrl: "https://raco.fib.upc.edu/oauth/access_token",
-
-		        testAccessToken: {
-		        	key: "b8d2bc68690a807eda9a8ca5bda64d88",
-		        	secret: "24a0ffbce136a5be75e3e61496b318b5"
-		        }
+		        accessTokenUrl: "https://raco.fib.upc.edu/oauth/access_token"
 	    	},
 	    	oAuthService: null,
 	    	accessToken: {
@@ -64,16 +59,7 @@ define(
 	    		return;
 	    	}
 
-	    	if (DEBUG) {
-	    		// use test access token
-	    		this.oAuthService.setAccessToken(this.config.testAccessToken.key,
-	    			this.config.testAccessToken.secret);
-
-	    		saveAccessToken();
-	    	}
-	    	else {
-	    		this.oAuthService.fetchRequestToken(openAuthorizationWindow, failureHandler);
-	    	}
+	    	this.oAuthService.fetchRequestToken(openAuthorizationWindow, failureHandler);
 	    	
 		    function openAuthorizationWindow(url) {
 		    	if (!MobileDetector.isNativeApp()) {

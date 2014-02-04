@@ -27,13 +27,13 @@ define(
 	                self.channelUri = channelUri;
 	                self.channelObject = channelObject;
 	                self.notificationsActive = true;
-	                console.log("Push notification channel has been opened with channel identifier " + self.channelUri);
+	                Helpers.Environment.log("Push notification channel has been opened with channel identifier " + self.channelUri);
 	            }).fail(function() {
-                    console.log("Push notifications channel could not be opened.")
+                    Helpers.Environment.log("Push notifications channel could not be opened.")
 	            });
 	        }
 	        else {
-	            console.log("Push notifications are not supported on this platform.");
+	            Helpers.Environment.log("Push notifications are not supported on this platform.");
 	        }
 	    };
 
@@ -43,16 +43,16 @@ define(
 	                self.channelObject = null;
 	                self.channelId = null;
 	                self.notificationsActive = false;
-	                console.log("Push notification channel has been closed.");
+	                Helpers.Environment.log("Push notification channel has been closed.");
 	            }).fail(function () {
 	                self.channelObject = null;
 	                self.channelId = null;
 	                self.notificationsActive = false;
-	                console.log("Push notifications channel could not be closed.")
+	                Helpers.Environment.log("Push notifications channel could not be closed.")
 	            });
 	        }
 	        else {
-	            console.log("Push notifications are not supported on this platform.");
+	            Helpers.Environment.log("Push notifications are not supported on this platform.");
 	        }
 	    };
 

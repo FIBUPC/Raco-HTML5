@@ -19,11 +19,9 @@
 		setTimeout(function(){
 			try {
 				that.register(function(deviceToken){
-					console.log("register ok callback");
 					deferred.resolve(deviceToken);
 				},
 				function(error){
-					console.log("register error callback");
 					deferred.reject(error);
 				}, {
 					alert: true,
@@ -46,10 +44,8 @@
 		// APNS does not need to close the channel
 		setTimeout(function(){
 			that.unregister(function(){
-				console.log("Unregistration succeeded");
 				deferred.resolve();
 			}, function(){
-				console.log("Unregistration failed");
 				deferred.reject();
 			});
 		}, 0);
@@ -62,12 +58,12 @@
 	    if (errorCallback == null) { errorCallback = function() {}}
 
 	    if (typeof errorCallback != "function")  {
-	        console.log("PushNotification.register failure: failure parameter not a function");
+	        Helpers.Environment.log("PushNotification.register failure: failure parameter not a function");
 	        return
 	    }
 
 	    if (typeof successCallback != "function") {
-	        console.log("PushNotification.register failure: success callback parameter must be a function");
+	        Helpers.Environment.log("PushNotification.register failure: success callback parameter must be a function");
 	        return
 	    }
 
@@ -79,12 +75,12 @@
 	    if (errorCallback == null) { errorCallback = function() {}}
 
 	    if (typeof errorCallback != "function")  {
-	        console.log("PushNotification.unregister failure: failure parameter not a function");
+	        Helpers.Environment.log("PushNotification.unregister failure: failure parameter not a function");
 	        return
 	    }
 
 	    if (typeof successCallback != "function") {
-	        console.log("PushNotification.unregister failure: success callback parameter must be a function");
+	        Helpers.Environment.log("PushNotification.unregister failure: success callback parameter must be a function");
 	        return
 	    }
 
@@ -97,12 +93,12 @@
 	    if (errorCallback == null) { errorCallback = function() {}}
 
 	    if (typeof errorCallback != "function")  {
-	        console.log("PushNotification.setApplicationIconBadgeNumber failure: failure parameter not a function");
+	        Helpers.Environment.log("PushNotification.setApplicationIconBadgeNumber failure: failure parameter not a function");
 	        return
 	    }
 
 	    if (typeof successCallback != "function") {
-	        console.log("PushNotification.setApplicationIconBadgeNumber failure: success callback parameter must be a function");
+	        Helpers.Environment.log("PushNotification.setApplicationIconBadgeNumber failure: success callback parameter must be a function");
 	        return
 	    }
 

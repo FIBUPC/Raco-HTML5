@@ -37,11 +37,15 @@ define(
 			},
 
 			loginCompletedCallback: function () {
+				// Reload the page so the application initializes again
 				window.location.reload();
 			},
 
 			loginErrorCallback: function () {
-				console.log("An error occurred while trying to authorize this application. Please try again.");
+				Helpers.Environment.showDialogAsync(
+					t('An error occurred while trying to authorize this application. Please try again.'),
+					t('Authorization error')
+				);
 			}
 		});
 

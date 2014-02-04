@@ -68,7 +68,6 @@ define(
 	    	var b5mapRequest = HttpClient.readStreamAsync(String.format(RemoteConfiguration.Urls.Rooms.Map, 'b5'));
 	    	var c6mapRequest = HttpClient.readStreamAsync(String.format(RemoteConfiguration.Urls.Rooms.Map, 'c6'));
 
-	    	console.log("before when");
 	    	// Wait for all requests to be completed
 	    	$.when(freeSpotsRequest, timetableRequest, a5mapRequest, b5mapRequest, c6mapRequest)
 	    		.done(function (freeSpots, timetable, a5map, b5map, c6map) {
@@ -102,7 +101,7 @@ define(
 
 	    		Helpers.Environment.log('Rooms synced.');
 	    	}).fail(function() {
-				console.log("Error retrieving rooms");
+				Helpers.Environment.log("Error retrieving rooms");
 	    	});
 	    };
 	    

@@ -61,6 +61,37 @@ var Helpers = {
 
 		    return deferred.promise();
 		},
+		showDialogAsync: function (message, title) {
+		    var deferred = $.Deferred();
+
+		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
+		        var confirmationMessage = new Windows.UI.Popups.MessageDialog(message, title);
+		        confirmationMessage.commands.append(new Windows.UI.Popups.UICommand(t('Accept'), function () {
+		            deferred.resolve(true);
+		        }));
+		        confirmationMessage.defaultCommandIndex = 0;
+		        confirmationMessage.cancelCommandIndex = 0;
+		        confirmationMessage.showAsync();
+		    }
+		    else if (MobileDetector.isNativeApp()) {
+		        navigator.notification.alert(message, function (result) {
+		        	if (result === 1) {
+		        		deferred.resolve(true);
+		        	}
+		        	else {
+		        		deferred.resolve(false);
+		        	}
+		        }, title, [t('Accept')]);
+		    }
+		    else {
+		        setTimeout(function () {
+		            var result = confirm(message);
+		            deferred.resolve(result);
+		        }, 0);
+		    }
+
+		    return deferred.promise();
+		},
 		getApplicationLanguage: function() {
 			var currentLanguage = null;
 			if (MobileDetector.isWindowsPhone()) {

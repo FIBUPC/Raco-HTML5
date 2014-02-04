@@ -77,10 +77,10 @@ define(
 
 					Helpers.Environment.log('Subjects synced.');
 				}).fail(function(error){
-					console.log("Error retrieving subjects information")
+					Helpers.Environment.log("Error retrieving subjects information")
 				});
 	    	}).fail(function(error) {
-	    		console.log("Error retrieving subjects");
+	    		Helpers.Environment.log("Error retrieving subjects");
 	    	});
 	    };
 	    
