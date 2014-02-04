@@ -513,6 +513,21 @@ button:focus {
 	border: 1px solid #A60000;
 }
 
+.inner-content.timetable table tr td .class.s6 {
+	background: #BD04A7;
+	border: 1px solid #A80295;
+}
+
+.inner-content.timetable table tr td .class.s7 {
+	background: #009CCC;
+	border: 1px solid #0089B3;
+}
+
+.inner-content.timetable table tr td .class.s8 {
+	background: #C24100;
+	border: 1px solid #B33B00;
+}
+
 .inner-content {
 	position: relative;
 }
