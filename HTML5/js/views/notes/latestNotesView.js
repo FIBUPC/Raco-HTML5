@@ -21,6 +21,9 @@ define(
 			menuElement: '.notes',
 			refreshable: true,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -28,15 +31,17 @@ define(
 			    self.collection = NotesController.latestNotes;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, { latestNotes: self.collection.models });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
-			afterRender: function() {
-				BaseView.prototype.afterRender.call(self);
-			},
-
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 
@@ -47,6 +52,9 @@ define(
 				});
 			},
 
+			/**
+			 * Refreshes view contents
+			 **/
 			refresh: function(force) {
 				NotesController.getLatestNotesAsync(force);
 			}

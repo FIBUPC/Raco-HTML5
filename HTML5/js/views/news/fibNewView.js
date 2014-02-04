@@ -20,6 +20,9 @@ define(
 			pageTitle: t('News'),
 			menuElement: '.news',
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -27,15 +30,24 @@ define(
 			    self.model = NewsController.fibNews.get(self.options.id);
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, { fibNew: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 

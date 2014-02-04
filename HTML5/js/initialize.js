@@ -10,6 +10,7 @@ if (!window.plugins) {
     window.plugins = { };
 }
 
+// Set the libraries for each platform
 var libraries = {
 	platform: {
 		ios: [
@@ -18,7 +19,7 @@ var libraries = {
 			'pushNotifications'
 		],
 		android: [
-			'cordova' // this includes plugins
+			'cordova' // this includes plugins for Android
 		],
 		windowsphone: [
 			'cordova',
@@ -37,6 +38,7 @@ var libraries = {
 	}
 };
 
+// Appends a script to the head element
 var head = document.getElementsByTagName('head')[0];
 function addScript(scriptName) {
 	var script = document.createElement('script');

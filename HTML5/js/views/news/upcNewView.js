@@ -20,6 +20,9 @@ define(
 			pageTitle: t('News'),
 			menuElement: '.news',
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -27,15 +30,17 @@ define(
 			    self.model = NewsController.upcNews.get(self.options.id);
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, { upcNew: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
-			afterRender: function() {
-				BaseView.prototype.afterRender.call(self);
-			},
-
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 

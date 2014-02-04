@@ -20,10 +20,16 @@ define(
 			headerView: null,
 			menuView: null,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 			},
 
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				Helpers.Environment.showView(self.template, $(self.$el.selector));
 
@@ -38,6 +44,9 @@ define(
 				}
 			},
 
+			/**
+			 * Bind view events
+			 **/
 			bindEvents: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
 				var $backButton = $('#back-button');

@@ -14,9 +14,15 @@ define(
 			pageTitle: '',
 			menuElement: '',
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 			},
 
+			/**
+			 * Wraps the render function with before and after render events
+			 **/
 			wrapRender: function(scope) {
 				_.bindAll(scope, 'beforeRender', 'render', 'afterRender');
 				scope.render = _.wrap(scope.render, function(render) { 
@@ -28,11 +34,18 @@ define(
 			    });
 			},
 
+			/**
+			 * Callback for before render event
+			 **/
 			beforeRender: function() {
 				$(Constants.Application.PageTitle).html(this.pageTitle);
 				Helpers.Application.setMenuActiveElement(this.menuElement);
 			},
 
+
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				var $page = $('.page');
 
@@ -112,6 +125,9 @@ define(
 				}
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				if (this.collection) {
 					this.collection.on('change', this.render, this);
@@ -124,6 +140,9 @@ define(
 				}
 			},
 
+			/**
+			 * Navigates to another view
+			 **/
 			navigate: function(view) {
 				if (typeof(view) == 'undefined' || view === '' || view === '#') {
 					return;

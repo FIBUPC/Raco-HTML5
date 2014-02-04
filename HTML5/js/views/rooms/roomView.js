@@ -20,6 +20,9 @@ define(
 			pageTitle: t('Rooms'),
 			menuElement: '.rooms',
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -27,13 +30,12 @@ define(
 			    self.model = RoomsController.rooms.get(self.options.id);
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, { room: self.model });
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
-			},
-
-			afterRender: function() {
-				BaseView.prototype.afterRender.call(self);
 			}
 		});
 

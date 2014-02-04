@@ -21,6 +21,9 @@ define(
 			menuElement: '.timetable',
 			refreshable: true,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -28,6 +31,9 @@ define(
 			    self.model = TimetableController.timetable;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, {
 					timetable: self.model,
@@ -36,14 +42,23 @@ define(
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
 			},
 
+			/**
+			 * Refreshes the view
+			 **/
 			refresh: function(force) {
 				TimetableController.getTimetableAsync(force);
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 

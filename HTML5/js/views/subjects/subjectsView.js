@@ -21,6 +21,9 @@ define(
 			menuElement: '.subjects',
 			refreshable: true,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function () {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -28,15 +31,24 @@ define(
 				self.collection = SubjectsController.subjects;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function () {
 				var compiledTemplate = _.template(self.template, {subjects: self.collection.models});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 
@@ -47,6 +59,9 @@ define(
 				});
 			},
 
+			/**
+			 * Refreshes the view
+			 **/
 			refresh: function(force) {
 				SubjectsController.getSubjectsAsync(force);
 			}

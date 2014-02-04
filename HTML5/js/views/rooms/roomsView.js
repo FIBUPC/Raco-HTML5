@@ -21,6 +21,9 @@ define(
 			menuElement: '.rooms',
 			refreshable: true,
 
+			/**
+			 * Initalizes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
@@ -28,6 +31,9 @@ define(
 			    self.collection = RoomsController.rooms;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function () {
 				var compiledTemplate = _.template(self.template, {buildings: _.groupBy(self.collection.models,
 					function(room){
@@ -38,10 +44,16 @@ define(
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
 			},
 
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				BaseView.prototype.afterRender.call(self);	
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function() {
 				BaseView.prototype.bindEvents.call(self);
 
@@ -57,6 +69,9 @@ define(
 				});
 			},
 
+			/**
+			 * Refreshes view contents
+			 **/
 			refresh: function(force) {
 				RoomsController.getRoomsAsync(force);
 			}

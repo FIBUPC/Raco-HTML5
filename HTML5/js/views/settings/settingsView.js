@@ -20,11 +20,17 @@ define(
 			pageTitle: t('Settings'),
 			menuElement: '.settings',
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 				BaseView.prototype.wrapRender.call(self, self);
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function () {
 			    var compiledTemplate = _.template(self.template);
 			    $(self.$el.selector).html(compiledTemplate);

@@ -15,10 +15,16 @@ define(
 	    	loadingIsGoingToHide: false
 	    };
 
+	    /**
+		 * Signs an URL with an oAuth signature
+		 **/
 	    HttpClient.signUrl = function(url) {
 	    	return OAuthController.oAuthService.signUrl(url);
 	    };
 
+	    /**
+		 * Gets the content of an URL after signing it with an oAuth signature
+		 **/
 	    HttpClient.getSignedAsync = function(url, silent) {
 	    	if (!silent) {
 	    		this.showLoading();
@@ -52,6 +58,9 @@ define(
 	    	return deferred.promise();
 	    };
 
+	    /**
+		 * Posts and returns the contents of an URL after signing it with an oAuth signature
+		 **/
 	    HttpClient.postAsync = function(url) {
 	    	this.showLoading();
 
@@ -60,13 +69,15 @@ define(
 	    	this.hideLoading();
 	    };
 
+	    /**
+		 * Gets the contents of an URL
+		 **/
 	    HttpClient.getAsync = function(url) {
 	    	this.showLoading();
 	    	
 	    	var deferred = $.Deferred();
 	    	
-	    	try
-	    	{
+	    	try {
 	    		var that = this;
 
 	    		var xhr = new XMLHttpRequest();
@@ -98,10 +109,16 @@ define(
 	    	return deferred.promise();
 	    };
 
+	    /**
+		 * Gets the contents of a binary resource after signing the URL with an oAuth signature
+		 **/
 	    HttpClient.readSignedStreamAsync = function(url) {
 	    	return this.readStreamAsync(this.signUrl(url));
 	    };
 
+	    /**
+		 * Gets the contents of a binary resource
+		 **/
 	    HttpClient.readStreamAsync = function(url) {
 	    	this.showLoading();
 
@@ -151,12 +168,20 @@ define(
 			return deferred.promise();
 	    };
 
+	    /**
+		 * Puts and returns the content of an URL after signing it with an oAuth signature
+		 **/
 	    HttpClient.putSignedAsync = function(url, parameters) {
 	    	this.showLoading();
+
+	    	// TODO: method not supported
 
 	    	this.hideLoading();
 	    };
 
+	    /**
+		 * Shows loading layer
+		 **/
 	    HttpClient.showLoading = function() {
 	    	if (this.loadingIsGoingToHide) {
 	    		this.cancelLoadingHide = true;
@@ -165,6 +190,9 @@ define(
 	    	this.loadingLayer.fadeIn();
 	    };
 
+	    /**
+		 * Hides loading layer
+		 **/
 	    HttpClient.hideLoading = function() {
 	    	this.loadingIsGoingToHide = true;
 

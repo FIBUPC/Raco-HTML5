@@ -16,10 +16,16 @@ define(
 			el: '#content',
 			template: LoginTemplate,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function () {
 				self = this;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function () {
 				$('body').addClass('login');
 
@@ -28,19 +34,31 @@ define(
 				self.bindEvents();
 			},
 
+			/**
+			 * Binds view events
+			 **/
 			bindEvents: function () {
 				$('#connectButton').click(self.connect);
 			},
 
+			/**
+			 * Connects to oAuth authentication server
+			 **/
 			connect: function () {
 				LoginController.login(self.loginCompletedCallback, self.loginErrorCallback);
 			},
 
+			/**
+			 * Callback for login completed event
+			 **/
 			loginCompletedCallback: function () {
 				// Reload the page so the application initializes again
 				window.location.reload();
 			},
 
+			/**
+			 * Callback for login error event
+			 **/
 			loginErrorCallback: function () {
 				Helpers.Environment.showDialogAsync(
 					t('An error occurred while trying to authorize this application. Please try again.'),

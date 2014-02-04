@@ -13,12 +13,17 @@ define(
 	    var self,
 	    Dispatcher = { };
 
+	    /**
+		 * Invokes a function within a new thread
+		 **/
 	    Dispatcher.beginInvoke = function(delegate) {
 	    	self.beginInvoke(delegate, 0);
 	    };
-
+	    
+	    /**
+		 * Invokes a function within a new thread with a delay
+		 **/
 	    Dispatcher.beginInvoke = function(delegate, delay) {
-	    	// setTimeout creates a new thread to execute the delegate method
 	    	setTimeout(delegate, delay);
 	    }
 	    

@@ -7,26 +7,40 @@
 
 var Helpers = {
 	Environment: {
+		/**
+		 * Gets whether the application is currently being executed within a native package
+		 **/
 		isNativeApp: function() {
 			// Check if Cordova declaration exists
 			return typeof(window.cordova) !== 'undefined';
 		},
+		/**
+		 * Logs a message (debug mode only)
+		 **/
 		log: function(message) {
 			if (DEBUG && console && console.log) {
 				console.log(message);
 			}
 		},
+		/**
+		 * Renders the view contents
+		 **/
 		showView: function (content, element) {
-		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows() && MSApp) {
+		    if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
                 // Adding HTML with scripts or data URI schemes is considered unsafe in Windows 8
+                // Use execUnsafeLocalFunction instead
 		        MSApp.execUnsafeLocalFunction(function () {
 		            element.html(content);
 		        });
 		    }
 		    else {
+		    	// Append the element normally
 		        element.html(content);
 		    }
 		},
+		/**
+		 * Shows a confirmation dialog asynchronously
+		 **/
 		showConfirmationDialogAsync: function (message, title) {
 		    var deferred = $.Deferred();
 
@@ -61,6 +75,9 @@ var Helpers = {
 
 		    return deferred.promise();
 		},
+		/**
+		 * Shows a dialog asynchronously
+		 **/
 		showDialogAsync: function (message, title) {
 		    var deferred = $.Deferred();
 
@@ -92,6 +109,9 @@ var Helpers = {
 
 		    return deferred.promise();
 		},
+		/**
+		 * Gets the application current language
+		 **/
 		getApplicationLanguage: function() {
 			var currentLanguage = null;
 			if (MobileDetector.isWindowsPhone()) {
@@ -117,6 +137,9 @@ var Helpers = {
 		}
 	},
 	Application: {
+		/**
+		 * Sets the current active menu element
+		 **/
 		setMenuActiveElement: function(element) {
 			$menuElement = $(Constants.Application.MenuTabs);
 
@@ -129,6 +152,9 @@ var Helpers = {
 				$targetElement.addClass('current');
 			}
 		},
+		/**
+		 * Sets the active elements event handlers (for haptick feedback)
+		 **/
 		setActiveElements: function() {
 			$(document.body).on('touchend', '.clickable', function(e) {
 				var $self = $(this);
@@ -141,6 +167,9 @@ var Helpers = {
 		}
 	},
 	Data: {
+		/**
+		 * Transforms a string into an XML object
+		 **/
 		stringToXml: function(xml) {
 			var xmlDoc;
 
@@ -156,8 +185,11 @@ var Helpers = {
 
 			return xmlDoc;
 		},
+		/**
+		 * Transforms an XML object into a JSON one
+		 **/
 		xmlToJson: function(xml) {
-			// Create the return object as empty
+			// Creates the return object as empty
 			var obj = {};
 
 			// Element
@@ -196,6 +228,9 @@ var Helpers = {
 
 			return obj;
 		},
+		/**
+		 * Replaces the new line symbols for breaklines elements (HTML only)
+		 **/
 		nl2br: function(html, is_xhtml) {   
 		    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
 		    return (html + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');

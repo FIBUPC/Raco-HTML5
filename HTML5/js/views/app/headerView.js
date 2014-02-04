@@ -16,10 +16,17 @@ define(
 			el: '#header',
 			template: HeaderTemplate,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 			},
 
+
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				Helpers.Environment.showView(self.template, $(self.$el.selector));
 
@@ -27,6 +34,9 @@ define(
 				self.bindBackButton();
 			},
 
+			/**
+			 * Binds menu toggle button events
+			 **/
 			bindMenuToggleButton: function() {
 				var $menuToggleButton = $('#menu-toggle-button');
 
@@ -79,6 +89,9 @@ define(
 				});
 			},
 
+			/**
+			 * Binds back button events
+			 **/
 			bindBackButton: function() {
 				var $backButton = $('#back-button');
 

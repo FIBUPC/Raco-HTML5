@@ -22,6 +22,9 @@ define (
         
         var App = {};
         
+        /**
+         * Initializes the application
+         **/
         App.init = function () {
             LoginController.initialize();
             NotesController.initialize();
@@ -32,6 +35,7 @@ define (
             SettingsController.initialize();
             NotificationsController.initialize();
             
+            // iOS push notifications
             if (MobileDetector.isIOS()) {
                 // Check if app or browser to make the header bigger
                 try
@@ -45,16 +49,20 @@ define (
                 }
 
                 // Clear badge notifications on launch
-                /*if (window.plugins.pushNotifications) {
-                    try
-                    {
-                        window.plugins.pushNotifications.setApplicationIconBadgeNumber(function(){}, function(){}, 0);
+                if (window.plugins.pushNotifications) {
+                    try {
+                        window.plugins.pushNotifications.setApplicationIconBadgeNumber(function(){
+                            // Ignore this callback
+                        }, function(){
+                            // Ignore this callback
+                        }, 0);
                     }
                     catch (e) {
                         // Ignore this exception
                     }
-                }*/
+                }
             }
+            // Windows 8 push notifications
             else if (MobileDetector.isNativeApp() && MobileDetector.isWindows()) {
                 // Clear tile updates
                 var tileUpdater = Windows.UI.Notifications.TileUpdateManager.createTileUpdaterForApplication();
@@ -91,8 +99,9 @@ define (
                 }
             }
 
+            // TODO: check if push notifications has been disabled by the user
+            // before trying to enable them again
             NotificationsController.enablePushNotifications();
-            //NotificationsController.disablePushNotifications();
 
             AppView.render();
 

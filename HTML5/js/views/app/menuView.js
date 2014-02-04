@@ -15,12 +15,18 @@ define(
 			el: '#menu',
 			template: MenuTemplate,
 
+			/**
+			 * Initializes the view
+			 **/
 			initialize: function() {
 				self = this;
 
 				self.model = LoginController.currentUser;
 			},
 			
+			/**
+			 * Renders the view
+			 **/
 			render: function() {
 				var compiledTemplate = _.template(self.template, {currentUser: self.model});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
@@ -30,12 +36,18 @@ define(
 				self.afterRender();
 			},
 
+			/**
+			 * Callback for after render event
+			 **/
 			afterRender: function() {
 				if (!self.model.get('nom')) {
 					LoginController.getCurrentUserDataAsync(true);
 				}
 			},
 
+			/**
+			 * Bind view events
+			 **/
 			bindEventHandlers: function() {
 				self.model.on('change', this.render, this);
 				self.model.on('reset', this.render, this);
