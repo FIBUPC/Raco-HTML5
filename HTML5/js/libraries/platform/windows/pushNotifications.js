@@ -1,4 +1,11 @@
-﻿(function () {
+﻿/* 
+    (c)2014 Barcelona School of Informatics. All rights reserved.
+
+    @author: Cristian Ortega;
+    @publisher: inLabFIB;
+*/
+
+(function () {
     if (!window.plugins) {
         window.plugins = {};
     }

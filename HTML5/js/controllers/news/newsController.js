@@ -1,3 +1,10 @@
+/* 
+    (c)2014 Barcelona School of Informatics. All rights reserved.
+
+    @author: Cristian Ortega;
+    @publisher: inLabFIB;
+*/
+
 define(
 	['utils/httpClient',
 	 'utils/dispatcher',
@@ -40,7 +47,7 @@ define(
 		    	localStorage.setItem('FIB_NEWS_LATEST_SYNC', new Date());
 		    });
 	    };
-	    
+
 	    NewsController.saveUPCNewsAsync = function(upcNews) {
 	    	Dispatcher.beginInvoke(function(){
 		    	localStorage.setItem('UPC_NEWS', JSON.stringify(upcNews));

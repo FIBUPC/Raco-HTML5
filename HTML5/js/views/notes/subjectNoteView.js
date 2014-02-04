@@ -1,3 +1,10 @@
+/* 
+    (c)2014 Barcelona School of Informatics. All rights reserved.
+
+    @author: Cristian Ortega;
+    @publisher: inLabFIB;
+*/
+
 define(
 	['views/app/baseView',
 	 'controllers/notes/notesController',
@@ -39,7 +46,7 @@ define(
 					subject: self.subject
 				});
 				Helpers.Environment.showView(compiledTemplate, $(self.$el.selector));
-				
+
 				Helpers.Environment.showView(self.note.get('description'), $('#note-description'));
 			},
 

@@ -1,3 +1,10 @@
+/* 
+    (c)2014 Barcelona School of Informatics. All rights reserved.
+
+    @author: Cristian Ortega;
+    @publisher: inLabFIB;
+*/
+
 define(
 	['utils/httpClient',
 	 'utils/dispatcher',
@@ -18,7 +25,7 @@ define(
 
 	    SettingsController.initialize = function() {
 	    	self = this;
-	    	
+
 	    	self.loadAvailableLanguages();
 	    	self.loadAvailableActions();
 	    	self.fetchSettingsAsync();
