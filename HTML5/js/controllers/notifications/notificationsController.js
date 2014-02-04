@@ -57,11 +57,17 @@ define(
 	    };
 
 	    NotificationsController.saveChannelOnServerAsync = function (channelUri) {
-            // Send channel to server to be saved
+            // TODO: Send channel to server to be saved
+            //     channelUri contains the string to be sent to the server
+            //     the platform name could be retrieved from MobileOS object
+            // Hint: Use HttpClient.getSiynedAsync
 	    };
 
 	    NotificationsController.deleteChannelFromServerAsync = function (channelUri) {
 	        // Send channel to server to be deleted
+	        //     channelUri contains the string to be sent to the server
+            //     the platform name could be retrieved from MobileOS object
+            // Hint: Use HttpClient.getSiynedAsync
 	    };
 
 	    return NotificationsController;
