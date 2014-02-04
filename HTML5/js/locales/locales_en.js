@@ -46,7 +46,11 @@ var localeCatalog = {
 	'Yes': 'Yes',
 	'No': 'No',
 	'An error occurred while trying to authorize this application. Please try again.': 'An error occurred while trying to authorize this application. Please try again.',
-	'Authorization error': 'Authorization error'
+	'Authorization error': 'Authorization error',
+	'Initial page': 'Initial page',
+	'Choose which page you want to see on application startup.': 'Choose which page you want to see on application startup.',
+	'©2014 Barcelona School of Informatics. All rights reserved.': '©2014 Barcelona School of Informatics. All rights reserved.',
+	'This application is developed and maintained by inLabFIB.': 'This application is developed and maintained by inLabFIB.'
 };
 
 window.t = underi18n.MessageFactory(localeCatalog);

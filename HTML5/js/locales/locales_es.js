@@ -46,7 +46,11 @@ var localeCatalog = {
 	'Yes': 'Sí',
 	'No': 'No',
 	'An error occurred while trying to authorize this application. Please try again.': 'Se ha producido un error en la autorización. Por favor, vuelve a intentarlo.',
-	'Authorization error': 'Error de autorización'
+	'Authorization error': 'Error de autorización',
+	'Initial page': 'Página de inicio',
+	'Choose which page you want to see on application startup.': 'Selecciona qué página prefieres ver cuando inicies la aplicación.',
+	'©2014 Barcelona School of Informatics. All rights reserved.': '©2014 Facultad de Informática de Barcelona. Todos los derechos reservados.',
+	'This application is developed and maintained by inLabFIB.': 'Esta aplicación es desarrollada y mantenida por inLabFIB.'
 };
 
 window.t = underi18n.MessageFactory(localeCatalog);
