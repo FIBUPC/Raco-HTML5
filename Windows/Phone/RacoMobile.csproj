@@ -250,6 +250,7 @@
     <Content Include="www\js\libraries\platform\android\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\cordova.js" />
     <Content Include="www\js\libraries\platform\ios\modalwebview.js" />
+    <Content Include="www\js\libraries\platform\ios\pushNotifications.js" />
     <Content Include="www\js\libraries\platform\windowsphone\binaryBridge.js" />
     <Content Include="www\js\libraries\platform\windowsphone\childbrowser.js" />
     <Content Include="www\js\libraries\platform\windowsphone\cordova.js" />
@@ -271,6 +272,7 @@
     <Content Include="www\js\models\room.js" />
     <Content Include="www\js\models\subject.js" />
     <Content Include="www\js\models\timetable.js" />
+    <Content Include="www\js\models\user.js" />
     <Content Include="www\js\router.js" />
     <Content Include="www\js\utils\dispatcher.js" />
     <Content Include="www\js\utils\helpers.js" />
